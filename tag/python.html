@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sysadms must be lazy - python</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Juliano Martinez">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 9pt;
+      }
+      .tag-3 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 7pt;
+     }
+    </style>
+    <link href="../theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="../theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../theme/images/apple-touch-icon-114x114.png">
+
+    <link href="../" type="application/atom+xml" rel="alternate" title="sysadms must be lazy ATOM Feed" />
+        <link href="../feeds/rss.xml" type="application/atom+xml" rel="alternate" title="sysadms must be lazy RSS Feed" />
+    
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="../index.html">sysadms must be lazy </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                                    <li class="divider-vertical"></li>
+                                        <ul class="nav pull-right">
+                                <li><a href="../archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span12" id="content">
+                            <div class="article">
+                <h1><a href="../know-the-wheel-binary-package.html">Know the wheel binary package</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2013-02-16T23:07:00">
+        Sat 16 February 2013
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/packaging.html"><i class="icon-tag"></i>packaging</a>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><div><div class="section" id="abstract">
+<h2>&quot;<a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id3">Abstract</a></h2>
+<p>This PEP describes a built-package format for Python called
+&quot;wheel&quot;.</p>
+<p>A wheel is a ZIP-format archive with a specially formatted file
+name and the&nbsp;.whl&nbsp;extension. It contains a single distribution
+nearly as it would be installed according to&nbsp;<a class="reference external" href="http://www.python.org/dev/peps/pep-0376">PEP 376</a>&nbsp;with a
+particular installation scheme. Although a specialized installer is
+recommended, a wheel file may be installed by simply unpacking into
+site-packages with the standard 'unzip' tool while preserving
+enough information to spread its contents out onto their final
+paths at any later time.</p>
+</div><div></div>
+<div class="section" id="pep-acceptance">
+<h2><a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id4">PEP Acceptance</a></h2>
+<p>This PEP was accepted, and the defined wheel version updated to
+1.0, by Nick Coghlan on 16th February, 2013&nbsp;<a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id2">[1]</a></p>
+</div><div></div>
+<div class="section" id="rationale">
+<h2><a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id5">Rationale</a></h2>
+<p>Python needs a package format that is easier to install than sdist.
+Python's sdist packages are defined by and require the distutils
+and setuptools build systems, running arbitrary code to
+build-and-install, and re-compile, code just so it can be installed
+into a new virtualenv. This system of conflating build-install is
+slow, hard to maintain, and hinders innovation in both build
+systems and installers.</p>
+<p>Wheel attempts to remedy these problems by providing a simpler
+interface between the build system and the installer. The wheel
+binary package format frees installers from having to know about
+the build system, saves time by amortizing compile time over many
+installations, and removes the need to install a build system in
+the target environment...&quot;</p>
+<p><a class="reference external" href="http://www.python.org/dev/peps/pep-0427">http://www.python.org/dev/peps/pep-0427/</a></p>
+</div></p></div>
+
+                        <a class="btn primary xsmall" href="../know-the-wheel-binary-package.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../simple-and-fast-jobs-with-python-rq-and-rq-dashboard.html">Simple and Fast jobs with python-rq and rq-dashboard</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2013-01-31T02:01:00">
+        Thu 31 January 2013
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/messagequeue.html"><i class="icon-tag"></i>messagequeue</a>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;RQ (Redis Queue) is a simple Python library for queueing jobs and
+processing them in the background with workers. It is backed by
+Redis and it is designed to have a low barrier to entry. It should
+be integrated in your web stack easily...&quot;</p>
+<p><a class="reference external" href="http://python-rq.org">http://python-rq.org</a>
+&quot;rq-dashboard is a general purpose, lightweight, Flask-based web
+front-end to monitor your RQ queues, jobs, and workers in
+realtime...&quot;</p>
+<p><a class="reference external" href="https://github.com/nvie/rq-dashboard">https://github.com/nvie/rq-dashboard</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../simple-and-fast-jobs-with-python-rq-and-rq-dashboard.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../learn-python-playing-at-wwwcheckioorg.html">Learn python playing at www.checkio.org</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-11-08T09:59:00">
+        Thu 08 November 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;There you can learn Python coding, try yourself in solving various
+kinds of problems and share your ideas with others. Moreover, you
+can consider original solutions of other users, exchange opinions
+and find new friends.</p>
+<p>If you are just starting with Python – CheckIO is a great chance
+for you to learn the basics and get a rich practice in solving
+different tasks. If you’re an experienced coder, here you’ll find
+an exciting opportunity to perfect your skills and learn new
+alternative logics from others. On CheckIO you can not only resolve
+the existing tasks, but also provide your own ones and even get
+points for them. Enjoy the possibility of playing logical games,
+participating in exciting competitions and share your success with
+friends inCheckIO.org!&quot;</p>
+<p><a class="reference external" href="http://www.checkio.org/">http://www.checkio.org</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../learn-python-playing-at-wwwcheckioorg.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../mediacore-a-video-audio-and-podcast-publication-platform-written-in-python.html">mediacore - A video, audio and podcast publication platform written in Python.</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-10-10T23:41:00">
+        Wed 10 October 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/player.html"><i class="icon-tag"></i>player</a>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+	<a href="../tag/video.html"><i class="icon-tag"></i>video</a>
+	<a href="../tag/web.html"><i class="icon-tag"></i>web</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;MediaCore CE provides unparalleled organization, statistics,
+accessibility, and scalability. Well-designed and well-engineered
+it is the ideal solution for any organization with large
+collections of video or audio.
+Run a powerful video site built in Python on your own
+infrastructure...&quot;</p>
+<p><a class="reference external" href="http://mediacorecommunity.org">http://mediacorecommunity.org</a>
+<a class="reference external" href="https://github.com/mediacore/mediacore-community">https://github.com/mediacore/mediacore-community</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../mediacore-a-video-audio-and-podcast-publication-platform-written-in-python.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../polysh-aggregating-several-remote-shells-into-one.html">Polysh - Aggregating several remote shells into one</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-09-20T00:52:00">
+        Thu 20 September 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+	<a href="../tag/sysadmin.html"><i class="icon-tag"></i>sysadmin</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>I've been using this tool for 2 years and it is pretty stable so
+far. The project was rename from gsh to Polysh, is incredible how
+helpful it can be when you need to manage more than 500 or even
+1000 servers at once.</p>
+<p>&quot;Polysh is a tool to aggregate several remote shells into one. It
+is used to launch an interactive remote shell on many machines at
+once. It is written in Python and requires Python ≥ 2.4.&quot;</p>
+<p><a class="reference external" href="http://guichaz.free.fr/polysh/">http://guichaz.free.fr/polysh/</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../polysh-aggregating-several-remote-shells-into-one.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../enter-the-pyed-piper-via-deferraz.html">Enter the Pyed Piper via (&#64;deferraz)</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-25T20:03:00">
+        Fri 25 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+	<a href="../tag/shell.html"><i class="icon-tag"></i>shell</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;The pyed piper, or pyp, is a python-centric command line text
+manipulation tool. It allows you to format, replace, augment and
+otherwise mangle text using standard python syntax with a few
+golden-oldie tricks from unix commands of the past. You can pipe
+data into pyp just like any other unix command line tool. After
+it's in, you can use the standard repertoire of python string and
+list methods to modify the text...&quot;</p>
+<p><a class="reference external" href="http://code.google.com/p/pyp/wiki/intro">http://code.google.com/p/pyp/wiki/intro</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../enter-the-pyed-piper-via-deferraz.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../batch-acknowledged-pipelines-with-zeromq.html">Batch Acknowledged Pipelines with ZeroMQ</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-14T12:27:00">
+        Mon 14 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+	<a href="../tag/zmq.html"><i class="icon-tag"></i>zmq</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Parallel processing with a task ventilator is a common pattern
+with ZeroMQ.&nbsp; The basics of this pattern are outlined in
+the&nbsp;<a class="reference external" href="http://zguide.zeromq.org/page:all#Divide-and-Conquer">“Divide and Conquer”</a>&nbsp;section of the ZeroMQ guide.&nbsp; The
+pattern consists of the following components:</p>
+<ul class="simple">
+<li>A task ventilator that produces tasks.</li>
+<li>A number of workers that do the processing work.</li>
+<li>A sink that collects results from the worker processes...&quot;</li>
+</ul>
+<p><a class="reference external" href="http://blog.aggregateknowledge.com/tag/pyzmq">http://blog.aggregateknowledge.com/tag/pyzmq</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="../batch-acknowledged-pipelines-with-zeromq.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../an-implementation-of-clojure-in-pure-python.html">An implementation of Clojure in pure Python</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-08T12:14:00">
+        Tue 08 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/clojure.html"><i class="icon-tag"></i>clojure</a>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p><strong>&quot;Why Python?</strong></p>
+<p>It is our belief that static virtual machines make very poor
+runtimes for dynamic languages. They constrain the languages to
+their view of what the &quot;world should look like&quot; and limit the
+options available to language implementors. We are attempting to
+prove this by writing an implementation of Clojure that runs on the
+Python VM. We believe that with a proper dynamic JIT (like pypy) a
+version of clojure running on a dynamic VM can outperform its JVM
+and CLR counterparts.</p>
+<p>Aside from that, there are many Python libraries like PySide (Qt
+GUI), numpy, scipy, and stackless that do not have JVM
+counterparts, or at least the Python implementations are easier to
+use and learn. clojure-py will integrate tightly with thy Python VM
+and will be able to use all of these libraries...&quot;</p>
+</p><p><a class="reference external" href="https://github.com/halgari/clojure-py">https://github.com/halgari/clojure-py</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../an-implementation-of-clojure-in-pure-python.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../what-will-pypy-do-for-your-website-benchmarking-python-web-servers-on-pypy-and-cpython.html">What will pypy do for your website? Benchmarking python web servers on pypy and cpython</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-02-22T18:04:00">
+        Wed 22 February 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/bottle.html"><i class="icon-tag"></i>bottle</a>
+	<a href="../tag/ciclone.html"><i class="icon-tag"></i>ciclone</a>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;There are currently quite a few different ways of developing a web
+application in python.&nbsp; When you add in how you deploy the
+application as well, there are even more choices.&nbsp; In terms of
+application frameworks, you have at least:</p>
+<ul class="simple">
+<li>Django</li>
+<li>twisted.web</li>
+<li>flask</li>
+<li>bottle</li>
+<li>cyclone</li>
+<li>tornado</li>
+<li>pyramid</li>
+</ul>
+<p>Then these can be run using many different servers, including:</p>
+<ul class="simple">
+<li>tornado</li>
+<li>twisted</li>
+<li>cyclone</li>
+<li>wsgiref</li>
+<li>rocket</li>
+<li>cherrypy</li>
+<li>gunicorn</li>
+<li>fapws</li>
+<li>google app engine</li>
+<li>gevent</li>
+</ul>
+<p>And many more.&nbsp; Typically, these take one of several approaches.
+Asynchronous either explicit (cyclone, tornado) or via monkey patch
+and event loop (gevent); threaded such as rocket, or written in C
+to use an event loop.&nbsp; In addition to this, you now have several
+different pythons for deployment:</p>
+<ul class="simple">
+<li>cpython</li>
+<li>jython</li>
+<li>pypy</li>
+</ul>
+<p>At some point, these servers are generally dealing with
+asynchronous event loops or using threading.&nbsp; The two approaches to
+handling this are either to program in a normal style (gevent) or
+to explicitly use event based programming (eg cyclone).&nbsp; The rise
+of javascript and node.js has seen event based programming becoming
+more mainstream.&nbsp; I wanted to find out which of these many
+combinations would perform best, and in particular what effect
+using pypy as the interpreter would have on the performance...&quot;</p>
+<p><a class="reference external" href="http://casbon.me/what-will-pypy-do-for-your-website-benchmarki">http://casbon.me/what-will-pypy-do-for-your-website-benchmarki</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="../what-will-pypy-do-for-your-website-benchmarking-python-web-servers-on-pypy-and-cpython.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../python-bindings-for-iptables.html">Python bindings for iptables</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-02-11T17:14:00">
+        Sat 11 February 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/iptables.html"><i class="icon-tag"></i>iptables</a>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Iptables is the tool that is used to manage netfilter, the
+standard packet filtering and manipulation framework under Linux.
+As the iptables manpage puts it:</p>
+<p>Iptables is used to set up, maintain, and inspect the tables of
+IPv4 packet filter rules in the Linux kernel.</p>
+<p>Several different tables may be defined.</p>
+<p>Each table contains a number of built-in chains and may also
+contain user- defined chains.</p>
+<p>Each chain is a list of rules which can match a set of packets.
+Each rule specifies what to do with a packet that matches. This is
+called a target, which may be a jump to a user-defined chain in the
+same table.</p>
+<p>Python-iptables provides python bindings to iptables under Linux.
+Interoperability with iptables is achieved via using the iptables C
+libraries (libiptc, libxtables, and the iptables extensions), not
+calling the iptables binary and parsing its output...&quot;</p>
+<p><a class="reference external" href="https://github.com/ldx/python-iptables">https://github.com/ldx/python-iptables</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../python-bindings-for-iptables.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        
+                <div class="pagination">
+        <ul>
+                                        <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+                                                        <li class="active"><a href="../tag/python.html">1</a></li>
+                                        <li class=""><a href="../tag/python2.html">2</a></li>
+                                                        <li class="next"><a href="../tag/python2.html">Next &rarr;</a></li>
+                        </ul>
+        </div>
+
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h5>Juliano Martinez</h5></li>
+    <a href="http://twitter.com/ncode"><i class="icon-twitter-sign icon-large"></i></a>
+    <a href="https://www.facebook.com/nc0d3"><i class="icon-facebook-sign icon-large"></i></a>
+    <a href="http://br.linkedin.com/in/ncode"><i class="icon-linkedin-sign icon-large"></i></a>
+    <a href="http://github.com/ncode"><i class="icon-github-sign icon-large"></i></a>
+    <a href="https://plus.google.com/u/0/114807336963795227899"><i class="icon-google-plus-sign icon-large"></i></a>
+<a href="../feeds/rss.xml" rel="alternate"><i class="icon-rss icon-large"></i></a>
+<li class="nav-header"></li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-3">
+    <a href="../tag/gevent.html">
+        <i class="icon-tag icon-large"></i>gevent
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xen.html">
+        <i class="icon-tag icon-large"></i>xen
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/databases.html">
+        <i class="icon-tag icon-large"></i>databases
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/html5.html">
+        <i class="icon-tag icon-large"></i>html5
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/kernel.html">
+        <i class="icon-tag icon-large"></i>kernel
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/c.html">
+        <i class="icon-tag icon-large"></i>c
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/bottle.html">
+        <i class="icon-tag icon-large"></i>bottle
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mobile.html">
+        <i class="icon-tag icon-large"></i>mobile
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/mysql.html">
+        <i class="icon-tag icon-large"></i>mysql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/concurrency.html">
+        <i class="icon-tag icon-large"></i>concurrency
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/audit.html">
+        <i class="icon-tag icon-large"></i>audit
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/packaging.html">
+        <i class="icon-tag icon-large"></i>packaging
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/ciclone.html">
+        <i class="icon-tag icon-large"></i>ciclone
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/glusterfs.html">
+        <i class="icon-tag icon-large"></i>glusterfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/player.html">
+        <i class="icon-tag icon-large"></i>player
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/diskless.html">
+        <i class="icon-tag icon-large"></i>diskless
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/git.html">
+        <i class="icon-tag icon-large"></i>git
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/video.html">
+        <i class="icon-tag icon-large"></i>video
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zfs.html">
+        <i class="icon-tag icon-large"></i>zfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zmq.html">
+        <i class="icon-tag icon-large"></i>zmq
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/lxc.html">
+        <i class="icon-tag icon-large"></i>lxc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/hbase.html">
+        <i class="icon-tag icon-large"></i>hbase
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/geolocation.html">
+        <i class="icon-tag icon-large"></i>geolocation
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/cgroups.html">
+        <i class="icon-tag icon-large"></i>cgroups
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cloud.html">
+        <i class="icon-tag icon-large"></i>cloud
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/heatmaps.html">
+        <i class="icon-tag icon-large"></i>heatmaps
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/shell.html">
+        <i class="icon-tag icon-large"></i>shell
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/riak.html">
+        <i class="icon-tag icon-large"></i>riak
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/network.html">
+        <i class="icon-tag icon-large"></i>network
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xcp.html">
+        <i class="icon-tag icon-large"></i>xcp
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailservers.html">
+        <i class="icon-tag icon-large"></i>mailservers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/elasticsearch.html">
+        <i class="icon-tag icon-large"></i>elasticsearch
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/clojure.html">
+        <i class="icon-tag icon-large"></i>clojure
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/torrent.html">
+        <i class="icon-tag icon-large"></i>torrent
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/debian.html">
+        <i class="icon-tag icon-large"></i>debian
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/darner.html">
+        <i class="icon-tag icon-large"></i>darner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openhardware.html">
+        <i class="icon-tag icon-large"></i>openhardware
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/gelf.html">
+        <i class="icon-tag icon-large"></i>gelf
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/android.html">
+        <i class="icon-tag icon-large"></i>android
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/iptables.html">
+        <i class="icon-tag icon-large"></i>iptables
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/freesoc.html">
+        <i class="icon-tag icon-large"></i>freesoc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/containers.html">
+        <i class="icon-tag icon-large"></i>containers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openflow.html">
+        <i class="icon-tag icon-large"></i>openflow
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/osx.html">
+        <i class="icon-tag icon-large"></i>osx
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/fusionio.html">
+        <i class="icon-tag icon-large"></i>fusionio
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/redis.html">
+        <i class="icon-tag icon-large"></i>redis
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/greylog2.html">
+        <i class="icon-tag icon-large"></i>greylog2
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/apache.html">
+        <i class="icon-tag icon-large"></i>apache
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/storage.html">
+        <i class="icon-tag icon-large"></i>storage
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/performance.html">
+        <i class="icon-tag icon-large"></i>performance
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/sysadmin.html">
+        <i class="icon-tag icon-large"></i>sysadmin
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/web.html">
+        <i class="icon-tag icon-large"></i>web
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/spanner.html">
+        <i class="icon-tag icon-large"></i>spanner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/netbsd.html">
+        <i class="icon-tag icon-large"></i>netbsd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/automation.html">
+        <i class="icon-tag icon-large"></i>automation
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailfromd.html">
+        <i class="icon-tag icon-large"></i>mailfromd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/rdbms.html">
+        <i class="icon-tag icon-large"></i>rdbms
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cfengine3.html">
+        <i class="icon-tag icon-large"></i>cfengine3
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/flashcache.html">
+        <i class="icon-tag icon-large"></i>flashcache
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/nosql.html">
+        <i class="icon-tag icon-large"></i>nosql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/routing.html">
+        <i class="icon-tag icon-large"></i>routing
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/messagequeue.html">
+        <i class="icon-tag icon-large"></i>messagequeue
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/postfix.html">
+        <i class="icon-tag icon-large"></i>postfix
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cassandra.html">
+        <i class="icon-tag icon-large"></i>cassandra
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/lua.html">
+        <i class="icon-tag icon-large"></i>lua
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/pxe.html">
+        <i class="icon-tag icon-large"></i>pxe
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/handlersocket.html">
+        <i class="icon-tag icon-large"></i>handlersocket
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../theme/js/jquery-1.7.2.min.js"></script>
+    <script src="../theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

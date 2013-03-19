@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sysadms must be lazy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Juliano Martinez">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 9pt;
+      }
+      .tag-3 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 7pt;
+     }
+    </style>
+    <link href="./theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="./theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="./theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./theme/images/apple-touch-icon-114x114.png">
+
+    <link href="./" type="application/atom+xml" rel="alternate" title="sysadms must be lazy ATOM Feed" />
+        <link href="./feeds/rss.xml" type="application/atom+xml" rel="alternate" title="sysadms must be lazy RSS Feed" />
+    
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">sysadms must be lazy </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                                    <li class="divider-vertical"></li>
+                                        <ul class="nav pull-right">
+                                <li><a href="./archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span12" id="content">
+                            <div class="article">
+                <h1><a href="./batch-acknowledged-pipelines-with-zeromq.html">Batch Acknowledged Pipelines with ZeroMQ</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-14T12:27:00">
+        Mon 14 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/python.html"><i class="icon-tag"></i>python</a>
+	<a href="./tag/zmq.html"><i class="icon-tag"></i>zmq</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Parallel processing with a task ventilator is a common pattern
+with ZeroMQ.&nbsp; The basics of this pattern are outlined in
+the&nbsp;<a class="reference external" href="http://zguide.zeromq.org/page:all#Divide-and-Conquer">“Divide and Conquer”</a>&nbsp;section of the ZeroMQ guide.&nbsp; The
+pattern consists of the following components:</p>
+<ul class="simple">
+<li>A task ventilator that produces tasks.</li>
+<li>A number of workers that do the processing work.</li>
+<li>A sink that collects results from the worker processes...&quot;</li>
+</ul>
+<p><a class="reference external" href="http://blog.aggregateknowledge.com/tag/pyzmq">http://blog.aggregateknowledge.com/tag/pyzmq</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="./batch-acknowledged-pipelines-with-zeromq.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./alchemy-database-a-hybrid-rdbmsnosql-datastore.html">Alchemy Database: A Hybrid RDBMS/NOSQL-Datastore</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-11T16:26:00">
+        Fri 11 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/nosql.html"><i class="icon-tag"></i>nosql</a>
+	<a href="./tag/rdbms.html"><i class="icon-tag"></i>rdbms</a>
+	<a href="./tag/redis.html"><i class="icon-tag"></i>redis</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><table><tr><td valign="top" style="margin:.5px;padding:0 10px;"><p>&quot;Alchemy Database is a low-latency high-TPS NewSQL RDBMS embedded
+in the NOSQL datastore <a class="reference external" href="http://redis.io/">redis</a>. Extensive
+<a class="reference external" href="http://jaksprats.wordpress.com/2010/11/15/datastore-side-scripting-can-prevent-bottlenecks/">datastore-side-scripting</a> is provided via deeply embedded <a class="reference external" href="http://www.lua.org/about.html">Lua</a>.
+Unstructured data, can also be stored, as there are no limits on
+#tables, #indexes, #columns, and <a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/HighLights?ts=1317936394&amp;updated=HighLights#Memory_optimisations">sparsely populated rows</a> use
+minimal memory.</p>
+<p>AlchemyDB believes OLTP traffic's needs are best served by
+extending SQL and has recently added the following experimental
+functionalities:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/LuaTableColumnType">LuaTable</a> - A column type that is a <a class="reference external" href="http://lua-users.org/wiki/TablesTutorial">Lua Table</a>, that single
+handedly adds both Document-Store &amp; Object-DB functionality by
+mixing Lua into SQL.</li>
+<li><a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/LuaGraphDB">GraphDB</a> - so brand new it is not even fully documented :) A
+GraphDB was created on top of AlchemyDB using SQL for indexes and
+Lua for graph-traversal logic. AlchemyDB is a customizable data
+platform.</li>
+<li><a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/AppStack">AppStack</a> - AlchemyDB uses a REST API and already had Lua
+embedded, creating a dynamic HTTP server, serving Lua webpages was
+a logical step, and it is the fastest dynamic webserver I have ever
+benchmarked (probably because it can only make internal AlchemyDB
+calls, i.e. NO backend calls :)</li>
+</ul>
+<p>Alchemy Database is optimised for top notch memory efficiency and
+top notch TPS for OLTP requests:</p>
+<ul class="simple">
+<li>Speed is achieved by being an event driven network server that
+stores 100% of data in RAM, achieving disk persistence by using a
+spare cpu-core to periodically log data changes (i.e. no threads,
+no locks, no undo-logs, no disk-seeks, serving data over a network
+at RAM speed)</li>
+<li>Storage data structures w/ very low memory overhead and data
+compression, via algorithms w/ insignificant performance hits,
+greatly increase the amount of data you can fit in RAM</li>
+<li>Optimising to the <a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/CommandReference#Supported_SQL">SQL statements</a> most commonly used in OLTP
+workloads yields a lightweight RDBMS designed for
+<a class="reference external" href="http://jaksprats.wordpress.com/2010/09/27/next-generation-web-server-pole-low-latency-at-high-concurrency/">low latency at high concurrency</a> (i.e. world class
+speed/thruput).</li>
+</ul>
+<p><strong>RAM is CHEAP these days</strong></p>
+<p>RAM is now affordable enough to be able ...</p></td></tr></table>
+                        <a class="btn primary xsmall" href="./alchemy-database-a-hybrid-rdbmsnosql-datastore.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./an-implementation-of-clojure-in-pure-python.html">An implementation of Clojure in pure Python</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-08T12:14:00">
+        Tue 08 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/clojure.html"><i class="icon-tag"></i>clojure</a>
+	<a href="./tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p><strong>&quot;Why Python?</strong></p>
+<p>It is our belief that static virtual machines make very poor
+runtimes for dynamic languages. They constrain the languages to
+their view of what the &quot;world should look like&quot; and limit the
+options available to language implementors. We are attempting to
+prove this by writing an implementation of Clojure that runs on the
+Python VM. We believe that with a proper dynamic JIT (like pypy) a
+version of clojure running on a dynamic VM can outperform its JVM
+and CLR counterparts.</p>
+<p>Aside from that, there are many Python libraries like PySide (Qt
+GUI), numpy, scipy, and stackless that do not have JVM
+counterparts, or at least the Python implementations are easier to
+use and learn. clojure-py will integrate tightly with thy Python VM
+and will be able to use all of these libraries...&quot;</p>
+</p><p><a class="reference external" href="https://github.com/halgari/clojure-py">https://github.com/halgari/clojure-py</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./an-implementation-of-clojure-in-pure-python.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./advanced-time-series-with-cassandra.html">Advanced Time Series with Cassandra</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-07T12:07:00">
+        Mon 07 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/cassandra.html"><i class="icon-tag"></i>cassandra</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Cassandra is an excellent fit for time series data, and it’s
+widely used for storing many types of data that follow the time
+series pattern: performance metrics, fleet tracking, sensor data,
+logs, financial data (pricing and ratings histories), user
+activity, and so on.</p>
+<p>A great introduction to this topic is Kelley Reynolds’ Basic Time
+Series with Cassandra. If you haven’t read that yet, I highly
+recommend starting with it. This post builds on that material,
+covering a few more details, corner cases, and&nbsp;advanced
+techniques.</p>
+<p><strong>Indexes vs Materialized Views</strong></p>
+<p>When working with time series data, one of two strategies is
+typically employed: either the column values contain row keys
+pointing to a separate column family which contains the actual data
+for events, or the complete set of data for each event is stored in
+the timeline itself. The latter strategy can be implemented by
+serializing the entire event into a single column value or by using
+composite column names of the form &lt;timestamp&gt;:&lt;event_field&gt;.</p>
+<p>With the first strategy, which is similar to building an index, you
+first fetch a set of row keys from a timeline and then multiget the
+matching data rows from a separate column family. This approach is
+appealing to many at first because it is more normalized; it allows
+for easy updates of events, doesn’t require you to repeat the same
+data in multiple timelines, and lets you easily add built-in
+secondary indexes to your main data column family. However, the
+second step of the data fetching process, the multiget, is fairly
+expensive and slow. It requires querying many nodes where each node
+will need to perform many disk seeks to fetch the rows if they
+aren’t well cached. This approach will not scale well with large
+data sets.</p>
+<p>The second strategy ...</p>
+                        <a class="btn primary xsmall" href="./advanced-time-series-with-cassandra.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./salt-a-remote-execution-and-configuration-management-tool.html">Salt a remote execution and configuration management tool.</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-04-02T22:46:00">
+        Mon 02 April 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;<strong>What is Salt?</strong></p>
+<p>Salt is a powerful remote execution manager that can be used to
+administer servers in a fast and efficient way.</p>
+<p>Salt allows commands to be executed across large groups of servers.
+This means systems can be easily managed, but data can also be
+easily gathered. Quick introspection into running systems becomes a
+reality.</p>
+<p>Remote execution is usually used to set up a certain state on a
+remote system. Salt addresses this problem as well, the salt state
+system uses salt state files to define the state a server needs to
+be in.</p>
+<p>Between the remote execution system, and state management Salt
+addresses the backbone of cloud and data center management.</p>
+<p>Distributed remote execution</p>
+<p>Salt is a distributed remote execution system used to execute
+commands and query data. It was developed in order to bring the
+best solutions found in the world of remote execution together and
+make them better, faster and more malleable. Salt accomplishes this
+via its ability to handle larger loads of information, and not just
+dozens, but hundreds or even thousands of individual servers,
+handle them quickly and through a simple and manageable interface.</p>
+<p>Simplicity</p>
+<p>Versatility between massive scale deployments and smaller systems
+may seem daunting, but Salt is very simple to set up and maintain,
+regardless of the size of the project. The architecture of Salt is
+designed to work with any number of servers, from a handful of
+local network systems to international deployments across disparate
+datacenters. The topology is a simple server/client model with the
+needed functionality built into a single set of daemons. While the
+default configuration will work with little to no modification,
+Salt can be fine tuned to meet specific needs.</p>
+<p>Parallel execution</p>
+<p>The core function of Salt is to enable remote commands to be called
+in ...</p>
+                        <a class="btn primary xsmall" href="./salt-a-remote-execution-and-configuration-management-tool.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./good-place-to-look-for-python.html">Good place to look for python?</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-03-29T14:55:00">
+        Thu 29 March 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Python related video indexed so you can find it.</p>
+<p><a class="reference external" href="http://pyvideo.org/">http://pyvideo.org</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./good-place-to-look-for-python.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./python-internals-how-callables-work.html">Python internals: how callables work</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-03-23T13:32:00">
+        Fri 23 March 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p><em>&quot;[The Python version described in this article is 3.x, more specifically - the 3.3 alpha release of CPython.]</em></p>
+<p>The concept of a <em>callable</em> is fundamental in Python. When thinking
+about what can be &quot;called&quot;, the immediately obvious answer is
+functions. Whether it’s user defined functions (written by you), or
+builtin functions (most probably implemented in C inside the
+CPython interpreter), functions were meant to be called,
+right?...&quot;</p>
+<p><a class="reference external" href="http://eli.thegreenplace.net/2012/03/23/python-internals-how-callables-work/">http://eli.thegreenplace.net/2012/03/23/python-internals-how-callables-work/</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./python-internals-how-callables-work.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./fast-enough-vms-in-fast-enough-time.html">Fast Enough VMs in Fast Enough Time</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-03-18T20:24:00">
+        Sun 18 March 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;If you can stomach the smell, put yourself briefly in the shoes of
+a programming language designer. What you want to do is create new
+programming languages, combining new and old ideas into a fresh
+whole. It sounds like a fun, intellectually demanding job, and
+occasionally it is. However, we know from experience that languages
+that exist solely in the mind or on paper are mostly worthless: it
+is only when they are implemented and we can try them out that we
+can evaluate them. As well as a language design, therefore, we need
+a corresponding language implementation.</p>
+<p>This need for a corresponding language implementation leads to what
+I think of as the <em>language designer's dilemma</em>: how much
+implementation is needed to show that a language design is good?</p>
+<ul class="simple">
+<li>If too little, the language will be dismissed out of hand as
+unusably slow: the kiss of death for many a language. Especially if
+the language design is adventurous, the language designer may not
+even be sure that it can be made adequately efficient.</li>
+<li>If too much, low-level fiddling will have consumed most of the
+energy that should have gone into design. Even worse, low-level
+implementation concerns can easily end up dictating higher-level
+design choices, to the disadvantage of the latter.</li>
+</ul>
+<p>Finding a balance between these two points is difficult. When I was
+designing <a class="reference external" href="http://convergepl.org/">Converge</a>, I came down on the side of trying to get the
+design right (though the end result has more than its fair share of
+mistakes and hacks). That decision had consequences, as I shall now
+describe...&quot;</p>
+<p><a class="reference external" href="http://tratt.net/laurie/tech_articles/articles/fast_enough_vms_in_fast_enough_time">http://tratt.net/laurie/tech_articles/articles/fast_enough_vms_in_fast_enough_time</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="./fast-enough-vms-in-fast-enough-time.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./using-ganglia-to-monitor-virtual-machine-pools.html">Using Ganglia to monitor virtual machine pools</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-03-16T21:33:00">
+        Fri 16 March 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;The <a class="reference external" href="http://blog.sflow.com/2011/07/ganglia-32-released.html">Ganglia</a> charts show virtual machine performance metrics
+collected using sFlow. Enabling sFlow monitoring on each node in a
+virtual machine pool provides a highly scalable solution for
+monitoring performance. Embedded sFlow monitoring in the
+hypervisors simplifies deployments by eliminating the need to poll
+for metrics. Instead, virtual machine metrics are pushed directly
+from each node to the central <a class="reference external" href="http://blog.sflow.com/2011/07/ganglia-32-released.html">Ganglia collector</a>. Currently sFlow
+agents are available for XCP (Xen Cloud Platform), Citrix XenServer
+and KVM/libvirt virtualization platforms, see
+<a class="reference external" href="http://host-sflow.sourceforge.net/">http://host-sflow.sourceforge.net/</a>. In addition, an sFlow agent
+has been demonstrated for the upcoming Windows 8 version of
+<a class="reference external" href="http://blog.sflow.com/2011/09/microsoft-hyper-v.html">Hyper-V</a>...&quot;</p>
+<p><a class="reference external" href="http://blog.sflow.com/2012/01/using-ganglia-to-monitor-virtual.html">http://blog.sflow.com/2012/01/using-ganglia-to-monitor-virtual.html</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="./using-ganglia-to-monitor-virtual-machine-pools.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./basic-time-series-with-cassandra.html">Basic Time Series with Cassandra</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-03-13T20:25:00">
+        Tue 13 March 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/cassandra.html"><i class="icon-tag"></i>cassandra</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;One of the most common use cases for Cassandra is tracking
+time-series data. Server log files, usage, sensor data, SIP
+packets, stuff that changes over time. For the most part this is a
+straight forward process but given that Cassandra has real-world
+limitations on how much data can or should be in a row, there are a
+few details to consider.</p>
+<p>Basic Inserts and Queries</p>
+<p>The most basic and intuitive way to go about storing time-series
+data is to use a column family that has TimeUUID columns (or Long
+if you know that no two entries willhappen at the same timestamp),
+use the name of the thing you are monitoring as the row_key
+(server1-load for example), column_name as the timestamp, and the
+column_value would be the actual value of the thing (0.75 for
+example):</p>
+<p>Inserting data — {:key =&gt; ‘server1-load’, :column_name =&gt;
+TimeUUID(now), :column_value =&gt; 0.75}</p>
+<p>Using this method, one uses a column_slice to get the data in
+question:</p>
+<p>Load at Time X — &nbsp;{:key =&gt; ‘server1-load’, :start =&gt; TimeUUID(X),
+:count =&gt; 1}</p>
+<p>Load between X and Y – {:key =&gt; ‘server1-load’, :start =&gt;
+TimeUUID(X), :end =&gt; TimeUUID(Y)}</p>
+<p>This works well enough for a while, but over time, this row will
+get very large. If you are storing sensor data that updates
+hundreds of times per second, that row will quickly become gigantic
+and unusable. The answer to that is to shard the data up in some
+way. To accomplish this, the application has to have a little more
+intelligence about how to store and query the information...&quot;</p>
+<p><a class="reference external" href="http://rubyscale.com/blog/2011/03/06/basic-time-series-with-cassandra/">http://rubyscale.com/blog/2011/03/06/basic-time-series-with-cassandra/</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./basic-time-series-with-cassandra.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        
+                <div class="pagination">
+        <ul>
+                                                                <li class="prev"><a href="./index3.html">&larr; Previous</a></li>
+                                                        <li class=""><a href="./index.html">1</a></li>
+                                        <li class=""><a href="./index2.html">2</a></li>
+                                        <li class=""><a href="./index3.html">3</a></li>
+                                        <li class="active"><a href="./index4.html">4</a></li>
+                                        <li class=""><a href="./index5.html">5</a></li>
+                                        <li class=""><a href="./index6.html">6</a></li>
+                                        <li class=""><a href="./index7.html">7</a></li>
+                                        <li class=""><a href="./index8.html">8</a></li>
+                                                        <li class="next"><a href="./index5.html">Next &rarr;</a></li>
+                        </ul>
+        </div>
+
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h5>Juliano Martinez</h5></li>
+    <a href="http://twitter.com/ncode"><i class="icon-twitter-sign icon-large"></i></a>
+    <a href="https://www.facebook.com/nc0d3"><i class="icon-facebook-sign icon-large"></i></a>
+    <a href="http://br.linkedin.com/in/ncode"><i class="icon-linkedin-sign icon-large"></i></a>
+    <a href="http://github.com/ncode"><i class="icon-github-sign icon-large"></i></a>
+    <a href="https://plus.google.com/u/0/114807336963795227899"><i class="icon-google-plus-sign icon-large"></i></a>
+<a href="./feeds/rss.xml" rel="alternate"><i class="icon-rss icon-large"></i></a>
+<li class="nav-header"></li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-3">
+    <a href="./tag/gevent.html">
+        <i class="icon-tag icon-large"></i>gevent
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/xen.html">
+        <i class="icon-tag icon-large"></i>xen
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/databases.html">
+        <i class="icon-tag icon-large"></i>databases
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/html5.html">
+        <i class="icon-tag icon-large"></i>html5
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/kernel.html">
+        <i class="icon-tag icon-large"></i>kernel
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/c.html">
+        <i class="icon-tag icon-large"></i>c
+    </a>
+</li>
+<li class="tag-1">
+    <a href="./tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/bottle.html">
+        <i class="icon-tag icon-large"></i>bottle
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mobile.html">
+        <i class="icon-tag icon-large"></i>mobile
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/mysql.html">
+        <i class="icon-tag icon-large"></i>mysql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/concurrency.html">
+        <i class="icon-tag icon-large"></i>concurrency
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/audit.html">
+        <i class="icon-tag icon-large"></i>audit
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/packaging.html">
+        <i class="icon-tag icon-large"></i>packaging
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/ciclone.html">
+        <i class="icon-tag icon-large"></i>ciclone
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/glusterfs.html">
+        <i class="icon-tag icon-large"></i>glusterfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/player.html">
+        <i class="icon-tag icon-large"></i>player
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/diskless.html">
+        <i class="icon-tag icon-large"></i>diskless
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/git.html">
+        <i class="icon-tag icon-large"></i>git
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/video.html">
+        <i class="icon-tag icon-large"></i>video
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/zfs.html">
+        <i class="icon-tag icon-large"></i>zfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/zmq.html">
+        <i class="icon-tag icon-large"></i>zmq
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/lxc.html">
+        <i class="icon-tag icon-large"></i>lxc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/hbase.html">
+        <i class="icon-tag icon-large"></i>hbase
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/geolocation.html">
+        <i class="icon-tag icon-large"></i>geolocation
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/cgroups.html">
+        <i class="icon-tag icon-large"></i>cgroups
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cloud.html">
+        <i class="icon-tag icon-large"></i>cloud
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/heatmaps.html">
+        <i class="icon-tag icon-large"></i>heatmaps
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/shell.html">
+        <i class="icon-tag icon-large"></i>shell
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/riak.html">
+        <i class="icon-tag icon-large"></i>riak
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/network.html">
+        <i class="icon-tag icon-large"></i>network
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/xcp.html">
+        <i class="icon-tag icon-large"></i>xcp
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mailservers.html">
+        <i class="icon-tag icon-large"></i>mailservers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/elasticsearch.html">
+        <i class="icon-tag icon-large"></i>elasticsearch
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/clojure.html">
+        <i class="icon-tag icon-large"></i>clojure
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/torrent.html">
+        <i class="icon-tag icon-large"></i>torrent
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/debian.html">
+        <i class="icon-tag icon-large"></i>debian
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/darner.html">
+        <i class="icon-tag icon-large"></i>darner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/openhardware.html">
+        <i class="icon-tag icon-large"></i>openhardware
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/gelf.html">
+        <i class="icon-tag icon-large"></i>gelf
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/android.html">
+        <i class="icon-tag icon-large"></i>android
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/iptables.html">
+        <i class="icon-tag icon-large"></i>iptables
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/freesoc.html">
+        <i class="icon-tag icon-large"></i>freesoc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/containers.html">
+        <i class="icon-tag icon-large"></i>containers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/openflow.html">
+        <i class="icon-tag icon-large"></i>openflow
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/osx.html">
+        <i class="icon-tag icon-large"></i>osx
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/fusionio.html">
+        <i class="icon-tag icon-large"></i>fusionio
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/redis.html">
+        <i class="icon-tag icon-large"></i>redis
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/greylog2.html">
+        <i class="icon-tag icon-large"></i>greylog2
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/apache.html">
+        <i class="icon-tag icon-large"></i>apache
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/storage.html">
+        <i class="icon-tag icon-large"></i>storage
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/performance.html">
+        <i class="icon-tag icon-large"></i>performance
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/sysadmin.html">
+        <i class="icon-tag icon-large"></i>sysadmin
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/web.html">
+        <i class="icon-tag icon-large"></i>web
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/spanner.html">
+        <i class="icon-tag icon-large"></i>spanner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/netbsd.html">
+        <i class="icon-tag icon-large"></i>netbsd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/automation.html">
+        <i class="icon-tag icon-large"></i>automation
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mailfromd.html">
+        <i class="icon-tag icon-large"></i>mailfromd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/rdbms.html">
+        <i class="icon-tag icon-large"></i>rdbms
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cfengine3.html">
+        <i class="icon-tag icon-large"></i>cfengine3
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/flashcache.html">
+        <i class="icon-tag icon-large"></i>flashcache
+    </a>
+</li>
+<li class="tag-1">
+    <a href="./tag/nosql.html">
+        <i class="icon-tag icon-large"></i>nosql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/routing.html">
+        <i class="icon-tag icon-large"></i>routing
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/messagequeue.html">
+        <i class="icon-tag icon-large"></i>messagequeue
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/postfix.html">
+        <i class="icon-tag icon-large"></i>postfix
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cassandra.html">
+        <i class="icon-tag icon-large"></i>cassandra
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/lua.html">
+        <i class="icon-tag icon-large"></i>lua
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/pxe.html">
+        <i class="icon-tag icon-large"></i>pxe
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/handlersocket.html">
+        <i class="icon-tag icon-large"></i>handlersocket
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./theme/js/jquery-1.7.2.min.js"></script>
+    <script src="./theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

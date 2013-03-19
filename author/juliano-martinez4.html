@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sysadms must be lazy - Juliano Martinez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Juliano Martinez">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 9pt;
+      }
+      .tag-3 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 7pt;
+     }
+    </style>
+    <link href="../theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="../theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../theme/images/apple-touch-icon-114x114.png">
+
+    <link href="../" type="application/atom+xml" rel="alternate" title="sysadms must be lazy ATOM Feed" />
+        <link href="../feeds/rss.xml" type="application/atom+xml" rel="alternate" title="sysadms must be lazy RSS Feed" />
+    
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="../index.html">sysadms must be lazy </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                                    <li class="divider-vertical"></li>
+                                        <ul class="nav pull-right">
+                                <li><a href="../archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span12" id="content">
+                            <div class="article">
+                <h1><a href="../flashcache-a-write-back-block-cache-for-linux.html">Flashcache : A Write Back Block Cache for Linux</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-11-03T13:19:00">
+        Thu 03 November 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/flashcache.html"><i class="icon-tag"></i>flashcache</a>
+	<a href="../tag/kernel.html"><i class="icon-tag"></i>kernel</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><div><p><strong>Introduction:</strong></p>
+</div><div><p>Flashcache is a write back block cache Linux kernel module. This</p>
+</div><div><p>document describes the design, futures ideas, configuration, tuning
+of</p>
+</div><div><p>the flashcache and concludes with a note covering the testability</p>
+</div><div><p>hooks within flashcache and the testing that we did. Flashcache was</p>
+</div><div><p>built primarily as a block cache for InnoDB but is general purpose
+and</p>
+</div><div><p>can be used by other applications as well.</p>
+</div><div><p><strong>Design:</strong></p>
+</div><div><p>Flashcache is built using the Linux Device Mapper (DM), part of the</p>
+</div><div><p>Linux Storage Stack infrastructure that facilitates building
+SW-RAID</p>
+</div><div><p>and other components. LVM, for example, is built using the DM.</p>
+</div><div><p>The cache is structured as a set associative hash, where the cache
+is</p>
+</div><div><p>divided up into a number of fixed size sets (buckets) with linear</p>
+</div><div><p>probing within a set to find blocks. The set associative hash has a</p>
+</div><div><p>number of advantages (called out in sections below) and works very</p>
+</div><div><p>well in practice.</p>
+</div><div><p>The block size, set size and cache size are configurable
+parameters,</p>
+</div><div><p>specified at cache creation. The default set size is 512 (blocks)
+and</p>
+</div><div><p>there is little reason to change this.</p>
+</div><div><p><a class="reference external" href="https://raw.github.com/facebook/flashcache/master/doc/flashcache-doc.txt">https://raw.github.com/facebook/flashcache/master/doc/flashcache-doc.txt</a></p>
+</div><div><p><a class="reference external" href="https://github.com/facebook/flashcache">https://github.com/facebook/flashcache</a></p>
+</div></p>
+                        <a class="btn primary xsmall" href="../flashcache-a-write-back-block-cache-for-linux.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../freesoc-the-open-hardware-microcontroller.html">freeSoC - The open hardware microcontroller</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-09-29T16:52:00">
+        Sat 29 September 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/freesoc.html"><i class="icon-tag"></i>freesoc</a>
+	<a href="../tag/openhardware.html"><i class="icon-tag"></i>openhardware</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><div class="section" id="what-is-freesoc">
+<h2>&quot;What is freeSoC?</h2>
+<p>freeSoC is an open hardware educational microcontroller development
+kit using Cypress Semiconductor PSoC 5 microcontrollers. It has an
+Arduino compatible pinout, as well as 5 general purpose expansion
+headers.</p>
+</div>
+<div class="section" id="what-s-different-about-freesoc">
+<h2>What's different about freeSoC?</h2>
+<p>Typical microcontrollers have fixed-function peripherals for
+functionality like ADC, DAC, PWM, SPI, I2C, etc. The PSoC 5
+microcontroller used by freeSoC gives designers the flexibility to
+use ANY pin for ANY purpose. The PSoC 5 contains dual 12-bit
+700kSps SAR ADCs, quad 8-bit current DACs, quad op-amps, and a
+flexible array of 24 digital blocks which can implement any digital
+interface.</p>
+<p>Using a drag-and-drop interface, designers can add these components
+to a graphical block diagram, route the inputs and outputs to any
+available pins, and program functionality using well-documented
+APIs for each component. It completely changes the game of embedded
+hardware design, allowing the designer to configure and reconfigure
+all their hardware in software, without ever making changes to a
+PCB or re-wiring a circuit by hand.</p>
+<p>Need a 16-input analog multiplexer? Just add it to your block
+diagram. Need a transimpedance amplifier? No need to shop around
+for op-amps, just drag-and-drop and you're done.</p>
+<p>freeSoC is more than a System on a Chip, it's an entire hardware
+design team on a chip...&quot;</p>
+<p><a class="reference external" href="http://freesoc.net">http://freesoc.net</a></p>
+</p></div>
+
+                        <a class="btn primary xsmall" href="../freesoc-the-open-hardware-microcontroller.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../git-distributed-even-if-your-workflow-isnt.html">git --distributed-even-if-your-workflow-isnt</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-07-11T21:40:00">
+        Wed 11 July 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/git.html"><i class="icon-tag"></i>git</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;The entire Pro Git book, written by Scott Chacon and published by
+Apress, is available here. All content is licensed under the
+Creative Commons Attribution Non Commercial Share Alike 3.0
+license...&quot;</p>
+<p><a class="reference external" href="http://git-scm.com/book">http://git-scm.com/book</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../git-distributed-even-if-your-workflow-isnt.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../good-place-to-look-for-python.html">Good place to look for python?</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-03-29T14:55:00">
+        Thu 29 March 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Python related video indexed so you can find it.</p>
+<p><a class="reference external" href="http://pyvideo.org/">http://pyvideo.org</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../good-place-to-look-for-python.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../handlersocket-plugin-for-mysql.html">HandlerSocket plugin for MySQL</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-10-17T10:37:00">
+        Mon 17 October 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/handlersocket.html"><i class="icon-tag"></i>handlersocket</a>
+	<a href="../tag/mysql.html"><i class="icon-tag"></i>mysql</a>
+	<a href="../tag/nosql.html"><i class="icon-tag"></i>nosql</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p><em>HandlerSocket</em>&nbsp;is a&nbsp;<em>MySQL</em>&nbsp;plugin that implements
+a&nbsp;NoSQL&nbsp;protocol for&nbsp;<em>MySQL</em>. This allows applications to
+communicate more directly with&nbsp;<em>MySQL</em>&nbsp;storage engines, without the
+overhead associated with usingSQL. This includes operations such as
+parsing and optimizing queries, as well as table handling
+operations (opening, locking, unlocking, closing). As a result,
+using&nbsp;<em>HandlerSocket</em>&nbsp;can provide much better performance for
+certain applications that using normal&nbsp;SQL&nbsp;application protocols.</p>
+<div><p><a class="reference external" href="http://www.percona.com/doc/percona-server/5.5/performance/handlersocket.html">http://www.percona.com/doc/percona-server/5.5/performance/handlersocket.html</a></p>
+</div><div><p><a class="reference external" href="https://github.com/ahiguti/HandlerSocket-Plugin-for-MySQL">https://github.com/ahiguti/HandlerSocket-Plugin-for-MySQL</a></p>
+</div></p>
+                        <a class="btn primary xsmall" href="../handlersocket-plugin-for-mysql.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../hbase-vs-cassandra-why-we-moved.html">HBase vs Cassandra: why we moved</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-03-05T23:52:00">
+        Mon 05 March 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/cassandra.html"><i class="icon-tag"></i>cassandra</a>
+	<a href="../tag/hbase.html"><i class="icon-tag"></i>hbase</a>
+	<a href="../tag/nosql.html"><i class="icon-tag"></i>nosql</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;My team is currently working on a brand new product – the
+forthcoming MMO <a class="reference external" href="http://www.FightMyMonster.com">www.FightMyMonster.com</a>. This has given us the
+luxury of building against a NOSQL database, which means we can put
+the horrors of MySQL sharding and expensive scalability behind us.
+Recently a few people have been asking why we seem to have changed
+our preference from HBase to Cassandra. I can confirm the change is
+true and that we have in fact almost completed porting our code to
+Cassandra, and here I will seek to provide an explanation.</p>
+<p>For those that are new to NOSQL, in a following post I will write
+about why I think we will see a seismic shift from SQL to NOSQL
+over the coming years, which will be just as important as the move
+to cloud computing. That post will also seek to explain why I think
+NOSQL might be the right choice for your company. But for now I
+will simply relay the reasons why we have chosen Cassandra as our
+NOSQL solution.</p>
+<p>Caveat Emptor – if you’re looking for a shortcut to engaging your
+neurons be aware this isn’t an exhaustive critical comparison, it
+just summarizes the logic of just another startup in a hurry with
+limited time and resources!!...&quot;</p>
+</p><p><a class="reference external" href="http://ria101.wordpress.com/2010/02/24/hbase-vs-cassandra-why-we-moved/">http://ria101.wordpress.com/2010/02/24/hbase-vs-cassandra-why-we-moved</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="../hbase-vs-cassandra-why-we-moved.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../heatmapjs-javascript-library-for-html5-canvas-based-heatmaps.html">heatmap.js - JavaScript Library for html5 canvas based heatmaps</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-11-12T12:11:00">
+        Mon 12 November 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/geolocation.html"><i class="icon-tag"></i>geolocation</a>
+	<a href="../tag/heatmaps.html"><i class="icon-tag"></i>heatmaps</a>
+	<a href="../tag/html5.html"><i class="icon-tag"></i>html5</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;<strong>What is a heatmap?</strong></p>
+<p>You've never heard of heatmaps? No problem! In short: a heatmap is
+a graphical representation of datapoints with different frequency,
+usually red spots on a heatmap are highly frequent spots and blue
+ones are less frequent spots. For a more detailed explanaition
+check</p>
+<div class="section" id="about-heatmap-js">
+<h2>About heatmap.js</h2>
+<p>heatmap.js is a JavaScript library that can be used to&nbsp;generate web
+heatmaps with the html5canvas element&nbsp;based on your data. Heatmap
+instances contain a store in order to colorize the&nbsp;heatmap based on
+relative data, which means if you're adding only a single datapoint
+to the store it will be displayed as the hottest(red) spot, then
+adding another point with a higher count, it will&nbsp;dynamically
+recalculate. The heatmaps are&nbsp;fully customizable&nbsp;- you're welcome
+to choose your own color gradient, change its opacity, datapoint
+radius and many more. The library is dual-licensed under the&nbsp;MIT
+and the Beerware license, feel free to use it in your projects.
+<a class="reference external" href="https://github.com/pa7/heatmap.js">Contributions on github</a>&nbsp;and feedback is very appreciated...&quot;</p>
+<p><a class="reference external" href="http://www.patrick-wied.at/static/heatmapjs">http://www.patrick-wied.at/static/heatmapjs</a>
+<a class="reference external" href="http://www.patrick-wied.at/blog/the-inner-life-of-heatmap-js">http://www.patrick-wied.at/blog/the-inner-life-of-heatmap-js&nbsp;</a></p>
+</p></div>
+
+                        <a class="btn primary xsmall" href="../heatmapjs-javascript-library-for-html5-canvas-based-heatmaps.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../how-to-create-and-seed-a-torrent-download-on-amazon-s3.html">How to Create and Seed a Torrent Download on Amazon S3</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-08-22T13:47:00">
+        Mon 22 August 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>I recently needed to share some open source files
+via&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/BitTorrent">BitTorrent</a>&nbsp;and wanted to host them on my Amazon S3 account.
+For those of you familiar with S3, here is the short-answer:
+add**?torrent**&nbsp;to the end of the URL of a public-shared file to
+get the *.torrent file, so the link would
+be&nbsp;<strong>http://s3.amazonaws.com/your_bucket_name/your_file_name?torrent</strong></p>
+<p><strong>`http://carltonbale.com/how-to-create-and-seed-a-torrent-download-on-amazon-s3`_</strong></p>
+</p>
+                        <a class="btn primary xsmall" href="../how-to-create-and-seed-a-torrent-download-on-amazon-s3.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../kernel-log-coming-in-33-part-1-networking.html">Kernel Log: Coming in 3.3 (Part 1) - Networking</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-01-29T14:54:00">
+        Sun 29 January 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/kernel.html"><i class="icon-tag"></i>kernel</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Version 3.3 of the Linux kernel offers another way to team
+multiple Ethernet devices. Support for ‘Open vSwitch’, a virtual
+network switch that was specifically developed for virtualised
+environments, has also been added. Byte Queue Limits are designed
+to reduce the latencies that cause the much-discussed ‘buffer
+bloat’...&quot;</p>
+<p><a class="reference external" href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-3-Part-1-Networking-1421959.html">http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-3-Part-1-Networking-1421959.html</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../kernel-log-coming-in-33-part-1-networking.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../know-the-wheel-binary-package.html">Know the wheel binary package</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2013-02-16T23:07:00">
+        Sat 16 February 2013
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/packaging.html"><i class="icon-tag"></i>packaging</a>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><div><div class="section" id="abstract">
+<h2>&quot;<a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id3">Abstract</a></h2>
+<p>This PEP describes a built-package format for Python called
+&quot;wheel&quot;.</p>
+<p>A wheel is a ZIP-format archive with a specially formatted file
+name and the&nbsp;.whl&nbsp;extension. It contains a single distribution
+nearly as it would be installed according to&nbsp;<a class="reference external" href="http://www.python.org/dev/peps/pep-0376">PEP 376</a>&nbsp;with a
+particular installation scheme. Although a specialized installer is
+recommended, a wheel file may be installed by simply unpacking into
+site-packages with the standard 'unzip' tool while preserving
+enough information to spread its contents out onto their final
+paths at any later time.</p>
+</div><div></div>
+<div class="section" id="pep-acceptance">
+<h2><a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id4">PEP Acceptance</a></h2>
+<p>This PEP was accepted, and the defined wheel version updated to
+1.0, by Nick Coghlan on 16th February, 2013&nbsp;<a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id2">[1]</a></p>
+</div><div></div>
+<div class="section" id="rationale">
+<h2><a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id5">Rationale</a></h2>
+<p>Python needs a package format that is easier to install than sdist.
+Python's sdist packages are defined by and require the distutils
+and setuptools build systems, running arbitrary code to
+build-and-install, and re-compile, code just so it can be installed
+into a new virtualenv. This system of conflating build-install is
+slow, hard to maintain, and hinders innovation in both build
+systems and installers.</p>
+<p>Wheel attempts to remedy these problems by providing a simpler
+interface between the build system and the installer. The wheel
+binary package format frees installers from having to know about
+the build system, saves time by amortizing compile time over many
+installations, and removes the need to install a build system in
+the target environment...&quot;</p>
+<p><a class="reference external" href="http://www.python.org/dev/peps/pep-0427">http://www.python.org/dev/peps/pep-0427/</a></p>
+</div></p></div>
+
+                        <a class="btn primary xsmall" href="../know-the-wheel-binary-package.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        
+                <div class="pagination">
+        <ul>
+                                                                <li class="prev"><a href="../author/juliano-martinez3.html">&larr; Previous</a></li>
+                                                        <li class=""><a href="../author/juliano-martinez.html">1</a></li>
+                                        <li class=""><a href="../author/juliano-martinez2.html">2</a></li>
+                                        <li class=""><a href="../author/juliano-martinez3.html">3</a></li>
+                                        <li class="active"><a href="../author/juliano-martinez4.html">4</a></li>
+                                        <li class=""><a href="../author/juliano-martinez5.html">5</a></li>
+                                        <li class=""><a href="../author/juliano-martinez6.html">6</a></li>
+                                        <li class=""><a href="../author/juliano-martinez7.html">7</a></li>
+                                        <li class=""><a href="../author/juliano-martinez8.html">8</a></li>
+                                                        <li class="next"><a href="../author/juliano-martinez5.html">Next &rarr;</a></li>
+                        </ul>
+        </div>
+
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h5>Juliano Martinez</h5></li>
+    <a href="http://twitter.com/ncode"><i class="icon-twitter-sign icon-large"></i></a>
+    <a href="https://www.facebook.com/nc0d3"><i class="icon-facebook-sign icon-large"></i></a>
+    <a href="http://br.linkedin.com/in/ncode"><i class="icon-linkedin-sign icon-large"></i></a>
+    <a href="http://github.com/ncode"><i class="icon-github-sign icon-large"></i></a>
+    <a href="https://plus.google.com/u/0/114807336963795227899"><i class="icon-google-plus-sign icon-large"></i></a>
+<a href="../feeds/rss.xml" rel="alternate"><i class="icon-rss icon-large"></i></a>
+<li class="nav-header"></li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-3">
+    <a href="../tag/gevent.html">
+        <i class="icon-tag icon-large"></i>gevent
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xen.html">
+        <i class="icon-tag icon-large"></i>xen
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/databases.html">
+        <i class="icon-tag icon-large"></i>databases
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/html5.html">
+        <i class="icon-tag icon-large"></i>html5
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/kernel.html">
+        <i class="icon-tag icon-large"></i>kernel
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/c.html">
+        <i class="icon-tag icon-large"></i>c
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/bottle.html">
+        <i class="icon-tag icon-large"></i>bottle
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mobile.html">
+        <i class="icon-tag icon-large"></i>mobile
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/mysql.html">
+        <i class="icon-tag icon-large"></i>mysql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/concurrency.html">
+        <i class="icon-tag icon-large"></i>concurrency
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/audit.html">
+        <i class="icon-tag icon-large"></i>audit
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/packaging.html">
+        <i class="icon-tag icon-large"></i>packaging
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/ciclone.html">
+        <i class="icon-tag icon-large"></i>ciclone
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/glusterfs.html">
+        <i class="icon-tag icon-large"></i>glusterfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/player.html">
+        <i class="icon-tag icon-large"></i>player
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/diskless.html">
+        <i class="icon-tag icon-large"></i>diskless
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/git.html">
+        <i class="icon-tag icon-large"></i>git
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/video.html">
+        <i class="icon-tag icon-large"></i>video
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zfs.html">
+        <i class="icon-tag icon-large"></i>zfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zmq.html">
+        <i class="icon-tag icon-large"></i>zmq
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/lxc.html">
+        <i class="icon-tag icon-large"></i>lxc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/hbase.html">
+        <i class="icon-tag icon-large"></i>hbase
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/geolocation.html">
+        <i class="icon-tag icon-large"></i>geolocation
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/cgroups.html">
+        <i class="icon-tag icon-large"></i>cgroups
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cloud.html">
+        <i class="icon-tag icon-large"></i>cloud
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/heatmaps.html">
+        <i class="icon-tag icon-large"></i>heatmaps
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/shell.html">
+        <i class="icon-tag icon-large"></i>shell
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/riak.html">
+        <i class="icon-tag icon-large"></i>riak
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/network.html">
+        <i class="icon-tag icon-large"></i>network
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xcp.html">
+        <i class="icon-tag icon-large"></i>xcp
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailservers.html">
+        <i class="icon-tag icon-large"></i>mailservers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/elasticsearch.html">
+        <i class="icon-tag icon-large"></i>elasticsearch
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/clojure.html">
+        <i class="icon-tag icon-large"></i>clojure
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/torrent.html">
+        <i class="icon-tag icon-large"></i>torrent
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/debian.html">
+        <i class="icon-tag icon-large"></i>debian
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/darner.html">
+        <i class="icon-tag icon-large"></i>darner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openhardware.html">
+        <i class="icon-tag icon-large"></i>openhardware
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/gelf.html">
+        <i class="icon-tag icon-large"></i>gelf
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/android.html">
+        <i class="icon-tag icon-large"></i>android
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/iptables.html">
+        <i class="icon-tag icon-large"></i>iptables
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/freesoc.html">
+        <i class="icon-tag icon-large"></i>freesoc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/containers.html">
+        <i class="icon-tag icon-large"></i>containers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openflow.html">
+        <i class="icon-tag icon-large"></i>openflow
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/osx.html">
+        <i class="icon-tag icon-large"></i>osx
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/fusionio.html">
+        <i class="icon-tag icon-large"></i>fusionio
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/redis.html">
+        <i class="icon-tag icon-large"></i>redis
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/greylog2.html">
+        <i class="icon-tag icon-large"></i>greylog2
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/apache.html">
+        <i class="icon-tag icon-large"></i>apache
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/storage.html">
+        <i class="icon-tag icon-large"></i>storage
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/performance.html">
+        <i class="icon-tag icon-large"></i>performance
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/sysadmin.html">
+        <i class="icon-tag icon-large"></i>sysadmin
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/web.html">
+        <i class="icon-tag icon-large"></i>web
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/spanner.html">
+        <i class="icon-tag icon-large"></i>spanner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/netbsd.html">
+        <i class="icon-tag icon-large"></i>netbsd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/automation.html">
+        <i class="icon-tag icon-large"></i>automation
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailfromd.html">
+        <i class="icon-tag icon-large"></i>mailfromd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/rdbms.html">
+        <i class="icon-tag icon-large"></i>rdbms
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cfengine3.html">
+        <i class="icon-tag icon-large"></i>cfengine3
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/flashcache.html">
+        <i class="icon-tag icon-large"></i>flashcache
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/nosql.html">
+        <i class="icon-tag icon-large"></i>nosql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/routing.html">
+        <i class="icon-tag icon-large"></i>routing
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/messagequeue.html">
+        <i class="icon-tag icon-large"></i>messagequeue
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/postfix.html">
+        <i class="icon-tag icon-large"></i>postfix
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cassandra.html">
+        <i class="icon-tag icon-large"></i>cassandra
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/lua.html">
+        <i class="icon-tag icon-large"></i>lua
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/pxe.html">
+        <i class="icon-tag icon-large"></i>pxe
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/handlersocket.html">
+        <i class="icon-tag icon-large"></i>handlersocket
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../theme/js/jquery-1.7.2.min.js"></script>
+    <script src="../theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

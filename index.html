@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sysadms must be lazy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Juliano Martinez">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 9pt;
+      }
+      .tag-3 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 7pt;
+     }
+    </style>
+    <link href="./theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="./theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="./theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./theme/images/apple-touch-icon-114x114.png">
+
+    <link href="./" type="application/atom+xml" rel="alternate" title="sysadms must be lazy ATOM Feed" />
+        <link href="./feeds/rss.xml" type="application/atom+xml" rel="alternate" title="sysadms must be lazy RSS Feed" />
+    
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">sysadms must be lazy </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                                    <li class="divider-vertical"></li>
+                                        <ul class="nav pull-right">
+                                <li><a href="./archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span12" id="content">
+                            <div class="article">
+                <h1><a href="./zfs-for-linux.html">ZFS for linux</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2013-03-29T08:45:00">
+        Fri 29 March 2013
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/storage.html"><i class="icon-tag"></i>storage</a>
+	<a href="./tag/linux.html"><i class="icon-tag"></i>linux</a>
+	<a href="./tag/zfs.html"><i class="icon-tag"></i>zfs</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Today the ZFS on Linux project reached an important milestone with the official 0.6.1 release!  Over two years of use by real users has convinced us ZoL is ready for wide scale deployment on everything from desktops to super computers.</p>
+<p>In addition to the usual bug fixes the 0.6.1 release introduces a new
+property called 'snapdev'.  The 'snapdev' property was introduced to
+control the visibility of zvol snapshot devices and may be set to
+either 'visible' or 'hidden'.  When set to 'hidden', which is the
+default, zvol snapshot devices will not be created under /dev/.
+To gain access to these devices the property must be set to 'visible'
+This behavior is analogous to the existing 'snapdir' property.</p>
+<dl class="docutils">
+<dt>Other significant changes include:</dt>
+<dd><ul class="first last simple">
+<li>Added Linux 3.9 compatibility</li>
+<li>Added snapdev property to control visibility of zvol snapshots.</li>
+<li>Disabled old on-disk format warning for <cite>zpool status -x</cite>.</li>
+<li>Enabled zfs_arc_memory_throttle_disable by default.</li>
+<li>Improved slab object reclaim behavior.</li>
+<li>Fixed disk cache flushing for 2.6.37 and newer kernels.</li>
+<li>Fixed hot spare functionality.</li>
+<li>Git &lt;id&gt;-&lt;hash&gt; included in release for working builds.</li>
+<li>Updated dkms and kmod compliant packaging.</li>
+<li>Added man pages for splat, fsck.zfs, mount.zfs, zhack,
+zinject, zpios, ztest, and zpool-features.&quot;</li>
+</ul>
+</dd>
+</dl>
+<p><a class="reference external" href="https://groups.google.com/a/zfsonlinux.org/forum/?fromgroups=#!topic/zfs-announce/ZXADhyOwFfA">https://groups.google.com/a/zfsonlinux.org/forum/?fromgroups=#!topic/zfs-announce/ZXADhyOwFfA</a></p>
+
+                        <a class="btn primary xsmall" href="./zfs-for-linux.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./dtrace-for-linux.html">dtrace for linux</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2013-03-01T15:45:00">
+        Fri 01 March 2013
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/sysadmin.html"><i class="icon-tag"></i>sysadmin</a>
+	<a href="./tag/linux.html"><i class="icon-tag"></i>linux</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Introduction This is a port of the Sun DTrace user and kernel code to Linux. No linux kernel code is touched in this build, but what is produced is a dynamically loadable kernel module. This avoids licensing issues and allows people to load and update dtrace as they desire. The goal of this project is to make available DTrace for the Linux platforms. By making it available for everyone, they can use it to optimise their systems and tools, and in return, I get to benefit from their work...&quot;</p>
+<p><a class="reference external" href="https://github.com/dtrace4linux/linux">https://github.com/dtrace4linux/linux</a></p>
+<p><a class="reference external" href="http://www.slideshare.net/brendangregg/linux-performance-analysis-and-tools">http://www.slideshare.net/brendangregg/linux-performance-analysis-and-tools</a></p>
+
+                        <a class="btn primary xsmall" href="./dtrace-for-linux.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./know-the-wheel-binary-package.html">Know the wheel binary package</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2013-02-16T23:07:00">
+        Sat 16 February 2013
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/packaging.html"><i class="icon-tag"></i>packaging</a>
+	<a href="./tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><div><div class="section" id="abstract">
+<h2>&quot;<a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id3">Abstract</a></h2>
+<p>This PEP describes a built-package format for Python called
+&quot;wheel&quot;.</p>
+<p>A wheel is a ZIP-format archive with a specially formatted file
+name and the&nbsp;.whl&nbsp;extension. It contains a single distribution
+nearly as it would be installed according to&nbsp;<a class="reference external" href="http://www.python.org/dev/peps/pep-0376">PEP 376</a>&nbsp;with a
+particular installation scheme. Although a specialized installer is
+recommended, a wheel file may be installed by simply unpacking into
+site-packages with the standard 'unzip' tool while preserving
+enough information to spread its contents out onto their final
+paths at any later time.</p>
+</div><div></div>
+<div class="section" id="pep-acceptance">
+<h2><a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id4">PEP Acceptance</a></h2>
+<p>This PEP was accepted, and the defined wheel version updated to
+1.0, by Nick Coghlan on 16th February, 2013&nbsp;<a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id2">[1]</a></p>
+</div><div></div>
+<div class="section" id="rationale">
+<h2><a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id5">Rationale</a></h2>
+<p>Python needs a package format that is easier to install than sdist.
+Python's sdist packages are defined by and require the distutils
+and setuptools build systems, running arbitrary code to
+build-and-install, and re-compile, code just so it can be installed
+into a new virtualenv. This system of conflating build-install is
+slow, hard to maintain, and hinders innovation in both build
+systems and installers.</p>
+<p>Wheel attempts to remedy these problems by providing a simpler
+interface between the build system and the installer. The wheel
+binary package format frees installers from having to know about
+the build system, saves time by amortizing compile time over many
+installations, and removes the need to install a build system in
+the target environment...&quot;</p>
+<p><a class="reference external" href="http://www.python.org/dev/peps/pep-0427">http://www.python.org/dev/peps/pep-0427/</a></p>
+</div></p></div>
+
+                        <a class="btn primary xsmall" href="./know-the-wheel-binary-package.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./debian-kit-for-android.html">Debian Kit for Android</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2013-02-12T16:04:00">
+        Tue 12 February 2013
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/android.html"><i class="icon-tag"></i>android</a>
+	<a href="./tag/debian.html"><i class="icon-tag"></i>debian</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;This kit installs a full version of Debian or Ubuntu on your
+Android phone or tablet. Key features are:</p>
+<ul class="simple">
+<li>Debian and Android side-by-side - your Android device works as
+usual but you can unleash the power of Debian&nbsp;/ Ubuntu on demand.</li>
+<li>Easy installation, provided that you have a fast Internet
+connection and you are familiar with Linux command lines to some
+extent.</li>
+<li>You can use a compiler, install a GUI (e.g. LXDE), and run any
+software that is offered by Debian&nbsp;/ Ubuntu including command line
+driven daemons as well as GUI software.</li>
+<li>The kit is accompanied by a small software repository that
+contains e.g. a daemon that updates Debian's&nbsp;/etc/resolv.conf&nbsp;file
+from the Android&nbsp;net.dns&nbsp;property.</li>
+<li>The kit runs on different hardware, i.e. armel and i386
+architectures are supported. You can use a loop disk file (up to
+2&nbsp;Gb) as well as an extra partition on an external SD card (up to
+32&nbsp;Gb).</li>
+<li>The Debian system does not run in a chroot jail, it's installed
+side-by-side to Android instead. With this, all Android files&nbsp;/
+mounts are also accessible from Debian.</li>
+<li>Easy un-installation: the pre-installed Android software on your
+device is not altered seriously and you can get rid of this stuff
+if you are done. No flashing, no system extensions, no hassles...&quot;</li>
+</ul>
+<p><a class="reference external" href="http://sven-ola.dyndns.org/repo/debian-kit-en.html">http://sven-ola.dyndns.org/repo/debian-kit-en.html</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="./debian-kit-for-android.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./c-containers-that-save-memory-and-time.html">C++ containers that save memory and time</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2013-02-04T00:58:00">
+        Mon 04 February 2013
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/c.html"><i class="icon-tag"></i>c</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;C++ standard libraries commonly implement the map and set data
+structures using Red-Black trees, which store one element per node,
+requiring three pointers plus one bit of information per element to
+keep the tree balanced. By comparison, B-tree containers store a
+number of elements per node, thereby reducing pointer overhead and
+saving a significant amount of memory. For small data types, B-tree
+containers typically reduce memory use by&nbsp;<a class="reference external" href="https://code.google.com/p/cpp-btree/wiki/UsageInstructions#Memory_usage_comparison">50 to 80%</a>&nbsp;compared
+with Red-Black tree containers...&quot;</p>
+<p><a class="reference external" href="http://google-opensource.blogspot.com.br/2013/01/c-containers-that-save-memory-and-time.html">http://google-opensource.blogspot.com.br/2013/01/c-containers-that-save-memory-and-time.html</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./c-containers-that-save-memory-and-time.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./simple-and-fast-jobs-with-python-rq-and-rq-dashboard.html">Simple and Fast jobs with python-rq and rq-dashboard</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2013-01-31T02:01:00">
+        Thu 31 January 2013
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/messagequeue.html"><i class="icon-tag"></i>messagequeue</a>
+	<a href="./tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;RQ (Redis Queue) is a simple Python library for queueing jobs and
+processing them in the background with workers. It is backed by
+Redis and it is designed to have a low barrier to entry. It should
+be integrated in your web stack easily...&quot;</p>
+<p><a class="reference external" href="http://python-rq.org">http://python-rq.org</a>
+&quot;rq-dashboard is a general purpose, lightweight, Flask-based web
+front-end to monitor your RQ queues, jobs, and workers in
+realtime...&quot;</p>
+<p><a class="reference external" href="https://github.com/nvie/rq-dashboard">https://github.com/nvie/rq-dashboard</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./simple-and-fast-jobs-with-python-rq-and-rq-dashboard.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./cfengine3-tips-3.html">Cfengine3 tips - #3</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2013-01-31T01:48:00">
+        Thu 31 January 2013
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/cfengine3.html"><i class="icon-tag"></i>cfengine3</a>
+	<a href="./tag/sysadmin.html"><i class="icon-tag"></i>sysadmin</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>With Cfengine3 you are able to define &quot;classes&quot; dinamically and
+trigger what you want to do, the following promise use this idea to
+install package based in information retrieved from your machine.</p>
+<div class="highlight"><pre>mkdir /etc/default/cf-tags/context
+touch /etc/default/cf-tags/context/default
+
+###
+
+body common control {
+
+    version =&gt; &quot;install_with_custom_classes&quot;;
+
+    bundlesequence =&gt; {
+        &quot;install_packages&quot;
+    };
+
+    inputs =&gt; {
+        &quot;cfengine_stdlib.cf&quot;,
+        &quot;library.cf&quot;
+    };
+
+}
+
+bundle common context {
+
+    vars:
+        &quot;context&quot; slist =&gt;
+            lsdir(&quot;/etc/default/cf-tags/context&quot;, &quot;&quot;, &quot;false&quot;);
+
+    classes:
+        &quot;context_relevance&quot; expression =&gt; isvariable(&quot;context&quot;);
+
+        context_relevance::
+            &quot;$(context)&quot; expression =&gt;
+                isplain(&quot;/etc/default/cf-tags/context/$(context)&quot;);
+
+}
+
+bundle agent install_packages {
+
+    methods:
+        apache::
+            &quot;any&quot; usebundle =&gt; manage_package(&quot;add&quot;, &quot;apache2&quot;);
+
+        bash_completion::
+            &quot;any&quot; usebundle =&gt; manage_package(&quot;add&quot;, &quot;bash-completion&quot;);
+
+        postfix::
+            &quot;any&quot; usebundle =&gt; manage_package(&quot;add&quot;, &quot;postfix&quot;);
+}
+</pre></div>
+<hr class="docutils" />
+<p><strong>How it works?</strong></p>
+<p><em>&quot;bundle common&quot; is a useful place to define global variables and classes :D</em></p>
+<div class="highlight"><pre>bundle common context {
+
+    vars:
+        &quot;context&quot; slist =&gt; lsdir(&quot;/etc/default/cf-tags/context&quot;, &quot;&quot;, &quot;false&quot;);
+</pre></div>
+<p><em>Inside this example lsdir will list every file inside /etc/default/cf-tags/context and store it inside slist named context</em></p>
+<div class="highlight"><pre>classes:
+    &quot;context_relevance&quot; expression =&gt; isvariable(&quot;context&quot;);
+</pre></div>
+<p><em>Here cfengine will verify if context is a variable and define the class&nbsp;context_relevance</em></p>
+<div class="highlight"><pre>        context_relevance::
+            &quot;$(context)&quot; expression =&gt;
+                isplain(&quot;/etc/default/cf-tags/context/$(context)&quot;);
+
+}
+</pre></div>
+<p><em>if you have&nbsp;context_relevance defined it will go through each value and verify if is a plain file on fs, and will declare a class with the file name if it exists&nbsp;</em></p>
+<hr class="docutils" />
+<p>Doing &quot;touch /etc/default/cf-tags/context/apache&quot; will define the
+apache classe to cfengine and install apache2 package. Using this
+idea is possible to use lots of customizations and keep your
+promises generic.</p>
+
+                        <a class="btn primary xsmall" href="./cfengine3-tips-3.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./heatmapjs-javascript-library-for-html5-canvas-based-heatmaps.html">heatmap.js - JavaScript Library for html5 canvas based heatmaps</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-11-12T12:11:00">
+        Mon 12 November 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/geolocation.html"><i class="icon-tag"></i>geolocation</a>
+	<a href="./tag/heatmaps.html"><i class="icon-tag"></i>heatmaps</a>
+	<a href="./tag/html5.html"><i class="icon-tag"></i>html5</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;<strong>What is a heatmap?</strong></p>
+<p>You've never heard of heatmaps? No problem! In short: a heatmap is
+a graphical representation of datapoints with different frequency,
+usually red spots on a heatmap are highly frequent spots and blue
+ones are less frequent spots. For a more detailed explanaition
+check</p>
+<div class="section" id="about-heatmap-js">
+<h2>About heatmap.js</h2>
+<p>heatmap.js is a JavaScript library that can be used to&nbsp;generate web
+heatmaps with the html5canvas element&nbsp;based on your data. Heatmap
+instances contain a store in order to colorize the&nbsp;heatmap based on
+relative data, which means if you're adding only a single datapoint
+to the store it will be displayed as the hottest(red) spot, then
+adding another point with a higher count, it will&nbsp;dynamically
+recalculate. The heatmaps are&nbsp;fully customizable&nbsp;- you're welcome
+to choose your own color gradient, change its opacity, datapoint
+radius and many more. The library is dual-licensed under the&nbsp;MIT
+and the Beerware license, feel free to use it in your projects.
+<a class="reference external" href="https://github.com/pa7/heatmap.js">Contributions on github</a>&nbsp;and feedback is very appreciated...&quot;</p>
+<p><a class="reference external" href="http://www.patrick-wied.at/static/heatmapjs">http://www.patrick-wied.at/static/heatmapjs</a>
+<a class="reference external" href="http://www.patrick-wied.at/blog/the-inner-life-of-heatmap-js">http://www.patrick-wied.at/blog/the-inner-life-of-heatmap-js&nbsp;</a></p>
+</p></div>
+
+                        <a class="btn primary xsmall" href="./heatmapjs-javascript-library-for-html5-canvas-based-heatmaps.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./learn-python-playing-at-wwwcheckioorg.html">Learn python playing at www.checkio.org</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-11-08T09:59:00">
+        Thu 08 November 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;There you can learn Python coding, try yourself in solving various
+kinds of problems and share your ideas with others. Moreover, you
+can consider original solutions of other users, exchange opinions
+and find new friends.</p>
+<p>If you are just starting with Python – CheckIO is a great chance
+for you to learn the basics and get a rich practice in solving
+different tasks. If you’re an experienced coder, here you’ll find
+an exciting opportunity to perfect your skills and learn new
+alternative logics from others. On CheckIO you can not only resolve
+the existing tasks, but also provide your own ones and even get
+points for them. Enjoy the possibility of playing logical games,
+participating in exciting competitions and share your success with
+friends inCheckIO.org!&quot;</p>
+<p><a class="reference external" href="http://www.checkio.org/">http://www.checkio.org</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./learn-python-playing-at-wwwcheckioorg.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./cfengine3-tips-2.html">Cfengine3 tips - #2</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-10-28T11:30:00">
+        Sun 28 October 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/cfengine3.html"><i class="icon-tag"></i>cfengine3</a>
+	<a href="./tag/sysadmin.html"><i class="icon-tag"></i>sysadmin</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p><strong>Creating your own library</strong></p>
+<p>Even write code to automate can be repetitive, so... one thing that
+you are able to do with cfengine is write your own bundles to be
+used as method inside your policy, for example you have packages
+with same name on redhat and debian what could you do to avoid
+rewrite the package promise every time?</p>
+<p><strong>*vim&nbsp;library.cf*</strong></p>
+<div class="highlight"><pre>bundle agent manage_package (action, package) {
+
+    vars:
+        i386|i486|i586|i686::
+            &quot;arch&quot; slist =&gt; { &quot;noarch&quot;, &quot;i386&quot;, &quot;i486&quot;, &quot;i586&quot;, &quot;i686&quot; };
+
+        x86_64::
+            &quot;arch&quot; slist =&gt; { &quot;noarch&quot;, &quot;x86_64&quot; };
+
+    classes:
+        redhat::
+            &quot;$(action)&quot; expression =&gt; isvariable(action);
+
+        redhat.add::
+            &quot;has_package&quot; expression =&gt;
+                returnszero(&quot;/bin/rpm -q ${package} --quiet&quot;, &quot;noshell&quot;);
+
+    packages:
+        redhat.!add::
+            &quot;${package}&quot;
+                package_policy =&gt; &quot;$(action)&quot;,
+                package_architectures =&gt; { &quot;${arch}&quot; },
+                package_method =&gt; yum;
+
+        redhat.add.!has_package::
+            &quot;${package}&quot;
+                package_policy =&gt; &quot;$(action)&quot;,
+                package_architectures =&gt; { &quot;${arch}&quot; },
+                package_method =&gt; yum;
+
+        debian::
+            &quot;${package}&quot;
+                package_policy =&gt; &quot;${action}&quot;,
+                package_method =&gt; apt;
+
+}
+</pre></div>
+<p><strong>*vim install_bash_with_library.cf&nbsp;*</strong></p>
+<div class="highlight"><pre>body common control {
+
+    version =&gt; &quot;bash_completion_debian_0.2&quot;;
+
+    bundlesequence =&gt; {
+        &quot;install_packages&quot;
+    };
+
+    inputs =&gt; {
+        &quot;cfengine_stdlib.cf&quot;
+     };
+}
+
+bundle agent install_packages {
+    vars:
+        debian|redhat::
+            &quot;packages_to_install&quot; slist =&gt; { &quot;bash&quot;, &quot;bash-completion&quot; };
+
+     methods:
+        debian|redhat::
+            &quot;any&quot; usebundle =&gt; manage_package(&quot;add&quot;, &quot;$(packages_to_install)&quot;);
+}
+</pre></div>
+<p>And now run:</p>
+<p><strong>*cf-agent -KI -f $PWD/install_bash_with_library.cf*</strong></p>
+<p>I will keep writing new recipes every week about cfengine3 and how
+to use it :D
+<a class="reference external" href="https://github.com/ncode/martinez.io-cfengine-examples">https://github.com/ncode/martinez.io-cfengine-examples</a></p>
+
+                        <a class="btn primary xsmall" href="./cfengine3-tips-2.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        
+                <div class="pagination">
+        <ul>
+                                        <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+                                                        <li class="active"><a href="./index.html">1</a></li>
+                                        <li class=""><a href="./index2.html">2</a></li>
+                                        <li class=""><a href="./index3.html">3</a></li>
+                                        <li class=""><a href="./index4.html">4</a></li>
+                                        <li class=""><a href="./index5.html">5</a></li>
+                                        <li class=""><a href="./index6.html">6</a></li>
+                                        <li class=""><a href="./index7.html">7</a></li>
+                                        <li class=""><a href="./index8.html">8</a></li>
+                                                        <li class="next"><a href="./index2.html">Next &rarr;</a></li>
+                        </ul>
+        </div>
+
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h5>Juliano Martinez</h5></li>
+    <a href="http://twitter.com/ncode"><i class="icon-twitter-sign icon-large"></i></a>
+    <a href="https://www.facebook.com/nc0d3"><i class="icon-facebook-sign icon-large"></i></a>
+    <a href="http://br.linkedin.com/in/ncode"><i class="icon-linkedin-sign icon-large"></i></a>
+    <a href="http://github.com/ncode"><i class="icon-github-sign icon-large"></i></a>
+    <a href="https://plus.google.com/u/0/114807336963795227899"><i class="icon-google-plus-sign icon-large"></i></a>
+<a href="./feeds/rss.xml" rel="alternate"><i class="icon-rss icon-large"></i></a>
+<li class="nav-header"></li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-3">
+    <a href="./tag/gevent.html">
+        <i class="icon-tag icon-large"></i>gevent
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/xen.html">
+        <i class="icon-tag icon-large"></i>xen
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/databases.html">
+        <i class="icon-tag icon-large"></i>databases
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/html5.html">
+        <i class="icon-tag icon-large"></i>html5
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/kernel.html">
+        <i class="icon-tag icon-large"></i>kernel
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/c.html">
+        <i class="icon-tag icon-large"></i>c
+    </a>
+</li>
+<li class="tag-1">
+    <a href="./tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/bottle.html">
+        <i class="icon-tag icon-large"></i>bottle
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mobile.html">
+        <i class="icon-tag icon-large"></i>mobile
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/mysql.html">
+        <i class="icon-tag icon-large"></i>mysql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/concurrency.html">
+        <i class="icon-tag icon-large"></i>concurrency
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/audit.html">
+        <i class="icon-tag icon-large"></i>audit
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/packaging.html">
+        <i class="icon-tag icon-large"></i>packaging
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/ciclone.html">
+        <i class="icon-tag icon-large"></i>ciclone
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/glusterfs.html">
+        <i class="icon-tag icon-large"></i>glusterfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/player.html">
+        <i class="icon-tag icon-large"></i>player
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/diskless.html">
+        <i class="icon-tag icon-large"></i>diskless
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/git.html">
+        <i class="icon-tag icon-large"></i>git
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/video.html">
+        <i class="icon-tag icon-large"></i>video
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/zfs.html">
+        <i class="icon-tag icon-large"></i>zfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/zmq.html">
+        <i class="icon-tag icon-large"></i>zmq
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/lxc.html">
+        <i class="icon-tag icon-large"></i>lxc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/hbase.html">
+        <i class="icon-tag icon-large"></i>hbase
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/geolocation.html">
+        <i class="icon-tag icon-large"></i>geolocation
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/cgroups.html">
+        <i class="icon-tag icon-large"></i>cgroups
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cloud.html">
+        <i class="icon-tag icon-large"></i>cloud
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/heatmaps.html">
+        <i class="icon-tag icon-large"></i>heatmaps
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/shell.html">
+        <i class="icon-tag icon-large"></i>shell
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/riak.html">
+        <i class="icon-tag icon-large"></i>riak
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/network.html">
+        <i class="icon-tag icon-large"></i>network
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/xcp.html">
+        <i class="icon-tag icon-large"></i>xcp
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mailservers.html">
+        <i class="icon-tag icon-large"></i>mailservers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/elasticsearch.html">
+        <i class="icon-tag icon-large"></i>elasticsearch
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/clojure.html">
+        <i class="icon-tag icon-large"></i>clojure
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/torrent.html">
+        <i class="icon-tag icon-large"></i>torrent
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/debian.html">
+        <i class="icon-tag icon-large"></i>debian
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/darner.html">
+        <i class="icon-tag icon-large"></i>darner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/openhardware.html">
+        <i class="icon-tag icon-large"></i>openhardware
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/gelf.html">
+        <i class="icon-tag icon-large"></i>gelf
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/android.html">
+        <i class="icon-tag icon-large"></i>android
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/iptables.html">
+        <i class="icon-tag icon-large"></i>iptables
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/freesoc.html">
+        <i class="icon-tag icon-large"></i>freesoc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/containers.html">
+        <i class="icon-tag icon-large"></i>containers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/openflow.html">
+        <i class="icon-tag icon-large"></i>openflow
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/osx.html">
+        <i class="icon-tag icon-large"></i>osx
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/fusionio.html">
+        <i class="icon-tag icon-large"></i>fusionio
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/redis.html">
+        <i class="icon-tag icon-large"></i>redis
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/greylog2.html">
+        <i class="icon-tag icon-large"></i>greylog2
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/apache.html">
+        <i class="icon-tag icon-large"></i>apache
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/storage.html">
+        <i class="icon-tag icon-large"></i>storage
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/performance.html">
+        <i class="icon-tag icon-large"></i>performance
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/sysadmin.html">
+        <i class="icon-tag icon-large"></i>sysadmin
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/web.html">
+        <i class="icon-tag icon-large"></i>web
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/spanner.html">
+        <i class="icon-tag icon-large"></i>spanner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/netbsd.html">
+        <i class="icon-tag icon-large"></i>netbsd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/automation.html">
+        <i class="icon-tag icon-large"></i>automation
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mailfromd.html">
+        <i class="icon-tag icon-large"></i>mailfromd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/rdbms.html">
+        <i class="icon-tag icon-large"></i>rdbms
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cfengine3.html">
+        <i class="icon-tag icon-large"></i>cfengine3
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/flashcache.html">
+        <i class="icon-tag icon-large"></i>flashcache
+    </a>
+</li>
+<li class="tag-1">
+    <a href="./tag/nosql.html">
+        <i class="icon-tag icon-large"></i>nosql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/routing.html">
+        <i class="icon-tag icon-large"></i>routing
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/messagequeue.html">
+        <i class="icon-tag icon-large"></i>messagequeue
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/postfix.html">
+        <i class="icon-tag icon-large"></i>postfix
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cassandra.html">
+        <i class="icon-tag icon-large"></i>cassandra
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/lua.html">
+        <i class="icon-tag icon-large"></i>lua
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/pxe.html">
+        <i class="icon-tag icon-large"></i>pxe
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/handlersocket.html">
+        <i class="icon-tag icon-large"></i>handlersocket
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./theme/js/jquery-1.7.2.min.js"></script>
+    <script src="./theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

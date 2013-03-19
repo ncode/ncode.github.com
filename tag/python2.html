@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sysadms must be lazy - python</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Juliano Martinez">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 9pt;
+      }
+      .tag-3 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 7pt;
+     }
+    </style>
+    <link href="../theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="../theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../theme/images/apple-touch-icon-114x114.png">
+
+    <link href="../" type="application/atom+xml" rel="alternate" title="sysadms must be lazy ATOM Feed" />
+        <link href="../feeds/rss.xml" type="application/atom+xml" rel="alternate" title="sysadms must be lazy RSS Feed" />
+    
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="../index.html">sysadms must be lazy </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                                    <li class="divider-vertical"></li>
+                                        <ul class="nav pull-right">
+                                <li><a href="../archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span12" id="content">
+                            <div class="article">
+                <h1><a href="../creating-debian-packages-with-setuppy.html">Creating debian packages with setup.py</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-01-31T13:48:00">
+        Tue 31 January 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/debian.html"><i class="icon-tag"></i>debian</a>
+	<a href="../tag/packaging.html"><i class="icon-tag"></i>packaging</a>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p><strong>ncode&#64;karoly:~/Devel/sica$ sudo apt-get install devscripts</strong></p>
+<p><strong>ncode&#64;karoly:~/Devel/sica$ find *</strong>
+src
+src/plugin
+src/plugin/sica.py
+src/sica.conf</p>
+<p><strong>ncode&#64;karoly:~/Devel/sica$&nbsp;vim setup.py</strong>
+#!/usr/bin/python
+from distutils.core import setup
+setup(name='sica',
+&nbsp; &nbsp; &nbsp; version='0.0.1',
+&nbsp; &nbsp; &nbsp; description='Collectd Plugin',
+&nbsp; &nbsp; &nbsp; author='Juliano Martinez',
+&nbsp; &nbsp; &nbsp; <a class="reference external" href="mailto:author_email='juliano&#64;martinez.io">author_email='juliano&#64;martinez.io</a>',
+&nbsp; &nbsp; &nbsp; url='<a class="reference external" href="https://github.com/ncode/sica">https://github.com/ncode/sica</a>',
+&nbsp; &nbsp; &nbsp; data_files=[('/etc/collectd/plugins.d', ['src/sica.conf']),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ('/usr/share/collctd/modules',
+['src/plugin/sica.py'])]</p>
+<p>&nbsp; &nbsp; &nbsp; )</p>
+<p><strong>ncode&#64;karoly:~/Devel$ mv sica sica-0.0.1 ncode&#64;karoly:~/Devel$ cd sica-0.0.1/</strong></p>
+<p><strong>ncode&#64;karoly:~/Devel/sica-0.0.1$ dh_make -n -s</strong>
+Maintainer name : Juliano Martinez
+Email-Address : <a class="reference external" href="mailto:juliano&#64;martinez.io">juliano&#64;martinez.io</a>
+Date : Tue, 31 Jan 2012 11:23:04 -0200
+Package Name : sica
+Version : 0.0.1
+License : gpl3</p>
+<p>Using dpatch : no
+Type of Package : Single
+Hit &lt;enter&gt; to confirm:
+Currently there is no top level Makefile. This may require
+additional tuning.
+Done. Please edit the files in the debian/ subdirectory now. You
+should also
+check that the sica Makefiles install into $DESTDIR and not in / .</p>
+<p><strong>ncode&#64;karoly:~/Devel/sica-0.0.1$ dch -i</strong></p>
+<p>sica (0.0.1-1) stable; urgency=low</p>
+<p>&nbsp; &nbsp; &nbsp; * Building to stable</p>
+<p>-- Juliano Martinez &lt;<a class="reference external" href="mailto:juliano&#64;martinez.io">juliano&#64;martinez.io</a>&gt;&nbsp; Tue, 31 Jan 2012
+11:27:45 -0200</p>
+<p>sica (0.0.1) unstable; urgency=low</p>
+<p>&nbsp; * Initial Release.</p>
+<p>&nbsp;-- Juliano Martinez &lt;<a class="reference external" href="mailto:juliano&#64;martinez.io">juliano&#64;martinez.io</a>&gt;&nbsp; Tue, 31 Jan 2012
+11:23:04 -0200</p>
+<p><strong>ncode&#64;karoly:~/Devel/sica-0.0.1$ vim debian/control</strong>
+Source: sica
+Section: python
+Priority: extra
+Maintainer: Juliano Martinez &lt;<a class="reference external" href="mailto:juliano&#64;martinez.io">juliano&#64;martinez.io</a>&gt;
+Build-Depends: debhelper (&gt;= 7.0.50~)
+Standards-Version: 3.8.4
+Homepage: <a class="reference external" href="https://github.com/ncode/sica">https://github.com/ncode/sica</a></p>
+<p>Package: sica
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Collectd Plugin
+&nbsp;Collectd Plugin</p>
+<p><strong>ncode&#64;karoly:~/Devel/sica-0.0.1$ dpkg-buildpackage -us -uc -rfakeroot</strong></p>
+<p><strong>ncode&#64;karoly:~/Devel/sica-0.0.1$ dpkg -c ../sica_0.0.1_amd64.deb</strong>
+drwxr-xr-x ...</p>
+                        <a class="btn primary xsmall" href="../creating-debian-packages-with-setuppy.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../logging-with-graylog2-gelf-and-logix.html">Logging with Graylog2, GELF and logix</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-01-30T13:11:00">
+        Mon 30 January 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/gelf.html"><i class="icon-tag"></i>gelf</a>
+	<a href="../tag/gevent.html"><i class="icon-tag"></i>gevent</a>
+	<a href="../tag/greylog2.html"><i class="icon-tag"></i>greylog2</a>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Graylog2 is an open source log management solution that stores
+your logs in <a class="reference external" href="http://www.elasticsearch.org/">ElasticSearch</a>. It consists of a server written in
+Java that accepts your syslog messages via TCP, UDP or AMQP and
+stores it in the database. The second part is a web interface that
+allows you to manage the log messages from your web browser. Take a
+look at the screenshots or the latest release info page to get a
+feeling of what you can do with Graylog2...&quot;</p>
+<p><a class="reference external" href="http://graylog2.org/about">http://graylog2.org/about</a></p>
+<p>&quot;Syslog is okay for logging system messages of your servers. Use it
+for that. GELF instead is great for logging from within
+applications. It is a good practice to send GELF messages directly
+from your existing logging classes so it is very easy to integrate
+into existing applications. You could use GELF to send every
+exception as a log message to your Graylog2 server. You don't have
+to care about timeouts, connection problems or anything that might
+break your application from within your logging class because GELF
+is sent via UDP. The disadvantage of this fire and forget principle
+is of course that no one guarantees that your GELF message will
+ever arrive. I'd say that important messages will just occur again.
+TCP support for those who like it is coming though...&quot;</p>
+<p><a class="reference external" href="https://github.com/Graylog2/graylog2-docs/wiki/GELF">https://github.com/Graylog2/graylog2-docs/wiki/GELF</a></p>
+<p>So... I wrote a tool to send syslog events to graylog2 via AMQP :D</p>
+<p><a class="reference external" href="https://github.com/ncode/logix">https://github.com/ncode/logix</a>
+<a class="reference external" href="https://github.com/locaweb/logix">https://github.com/locaweb/logix</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../logging-with-graylog2-gelf-and-logix.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../python-on-a-chip-pymite.html">Python-on-a-Chip ( PyMite )</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-01-16T13:05:00">
+        Mon 16 January 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Welcome! Python-on-a-Chip (p14p) is a project to develop a reduced
+Python virtual machine (codenamed PyMite) that runs a significant
+subset of the Python language on microcontrollers without an OS.
+The other parts of p14p are the device drivers, high-level
+libraries and other tools.&quot;</p>
+<p><a class="reference external" href="http://code.google.com/p/python-on-a-chip/">http://code.google.com/p/python-on-a-chip/</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../python-on-a-chip-pymite.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../language-detection-with-googles-compact-language-detector.html">Language detection with Google's Compact Language Detector</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-11-04T13:24:00">
+        Fri 04 November 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Google's&nbsp;<a class="reference external" href="http://www.google.com/chrome">Chrome browser</a>&nbsp;has a useful translate feature, where it
+detects the language of the page you've visited and if it differs
+from your local language, it offers to translate it.</p>
+<p>Wonderfully, Google has
+open-sourced&nbsp;<a class="reference external" href="http://code.google.com/chromium">most of Chrome's source code</a>, including the
+embedded CLD (Compact Language Detector) library that's used to
+detect the language of any UTF-8 encoded content. &nbsp; It looks like
+CLD was extracted from the language detection library used
+in&nbsp;<a class="reference external" href="http://toolbar.google.com/">Google's toolbar</a>.</p>
+<p>It turns out the&nbsp;<a class="reference external" href="http://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/">CLD part of the Chromium source tree</a>&nbsp;is nicely
+standalone, so I pulled it out into
+a&nbsp;<a class="reference external" href="http://code.google.com/p/chromium-compact-language-detector/">new separate Google code project</a>, making it possible to use
+CLD directly from any C++ code.</p>
+<p><a class="reference external" href="http://blog.mikemccandless.com/2011/10/language-detection-with-googles-compact.html">http://blog.mikemccandless.com/2011/10/language-detection-with-googles-compact.html</a></p>
+<p><a class="reference external" href="http://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/">http://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/</a></p>
+<p><a class="reference external" href="http://code.google.com/p/chromium-compact-language-detector/">http://code.google.com/p/chromium-compact-language-detector/</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../language-detection-with-googles-compact-language-detector.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../what-is-quantum-openstack.html">What is Quantum? #OpenStack</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-10-03T15:45:00">
+        Mon 03 October 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/cloud.html"><i class="icon-tag"></i>cloud</a>
+	<a href="../tag/network.html"><i class="icon-tag"></i>network</a>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Just like OpenStack Nova provides an API to dynamically request and
+configure virtual servers, Quantum provides an API to dynamically
+request and configure virtual networks. These networks connect
+&quot;interfaces&quot; from other OpenStack services (e.g., vNICs from Nova
+VMs). The Quantum API supports extensions to provide advanced
+network capabilities (e.g., QoS, ACLs, network monitoring, etc)</p>
+<div class="section" id="why-quantum">
+<h2>Why Quantum?</h2>
+<ul class="simple">
+<li>Support advanced network topologies beyond what is possible with
+nova's&nbsp;<a class="reference external" href="http://wiki.openstack.org/FlatManager">FlatManager</a>&nbsp;or&nbsp;<a class="reference external" href="http://wiki.openstack.org/VlanManager">VlanManager</a><ul>
+<li>Example: create multi-tier web application topology</li>
+</ul>
+</li>
+<li>Let anyone build advanced network services (open and closed
+source) that plug into Openstack networks.<ul>
+<li>Examples: VPN-aaS, firewall-aaS, IDS-aaS,
+data-center-interconnect-aaS.</li>
+</ul>
+</li>
+<li>Enable innovation plugins (open and closed source) that
+introduce advanced network capabilities<ul>
+<li>Example: use L2-in-L3 tunneling to avoid VLAN limits, provide
+end-to-end QoS guarantees, used monitoring protocols
+like`NetFlow`_.</li>
+</ul>
+</li>
+</ul>
+<p><a class="reference external" href="http://wiki.openstack.org/Quantum">http://wiki.openstack.org/Quantum</a></p>
+<p><a class="reference external" href="https://github.com/openstack/quantum">https://github.com/openstack/quantum</a></p>
+<div><p><a class="reference external" href="https://launchpad.net/quantum">https://launchpad.net/quantum</a></p>
+</div></p></div>
+
+                        <a class="btn primary xsmall" href="../what-is-quantum-openstack.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../staticpython-statically-linked-python-2x-3x-and-stackless.html">StaticPython - Statically linked Python 2.x, 3.x and Stackless</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-09-01T11:42:00">
+        Thu 01 September 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>StaticPython is a statically linked version of the Python 2.x
+(currently 2.7.1) and 3.x (currently 3.2) and Stackless Python
+interpreters and their standard modules for 32-bit (i686, i386,
+x86) Linux, Mac OS X and FreeBSD systems. It is distributed as
+single, statically linked 32-bit executable binaries, which
+contains the Python scripting engine, the interactive interpreter
+with command editing (readline), the Python debugger (pdb), most
+standard Python modules (including pure Python modules and C
+extensions), coroutine support using greenlet and multithreading
+support. The binary contains both the pure Python modules and the C
+extensions, so no additional&nbsp;.py&nbsp;or&nbsp;.so&nbsp;files are needed to run it.
+It also works in a chroot environment. The binary uses uClibc, so
+it supports username lookups and DNS lookups as well (without
+NSS).</p>
+<p>StaticPython is similar to&nbsp;<a class="reference external" href="http://www.portablepython.com/">Portable Python</a>, except that
+StaticPython runs on Linux instead of Windows, and it has Stackless
+Python, greenlet and coroutine-based I/O library support.</p>
+<p>StaticPython is a bit similar to&nbsp;<a class="reference external" href="http://pypi.python.org/pypi/bbfreeze">bbfreeze</a>&nbsp;and&nbsp;<a class="reference external" href="http://www.pyinstaller.org/">PyInstaller</a>,
+but StaticPython contains the Python interpreter, all
+the&nbsp;.py&nbsp;library files and all the built-in C extensions in a single
+executable file (while bbfreeze generates a separate&nbsp;.so&nbsp;file for
+each C extension library), and it doesn't contain any
+application-specific&nbsp;.py&nbsp;or&nbsp;.pyc&nbsp;files.</p>
+<p><a class="reference external" href="http://code.google.com/p/pts-mini-gpl/wiki/StaticPython">http://code.google.com/p/pts-mini-gpl/wiki/StaticPython</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../staticpython-statically-linked-python-2x-3x-and-stackless.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../cyclone-a-pretty-awesome-low-level-network-toolkit.html">Cyclone, a pretty awesome low-level network toolkit</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-08-25T20:20:00">
+        Thu 25 August 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Cyclone is a low-level network toolkit, which provides support for
+HTTP 1.1 in an API very similar to the one implemented by
+the&nbsp;<a class="reference external" href="http://tornadoweb.org/">Tornado</a>&nbsp;web server - which was developed
+by&nbsp;<a class="reference external" href="http://friendfeed.com/">FriendFeed</a>&nbsp;and later released as open source / free software
+by&nbsp;<a class="reference external" href="http://facebook.com/">Facebook</a>.</p>
+<div class="section" id="key-differences-between-cyclone-and-tornado">
+<h2>Key differences between Cyclone and Tornado</h2>
+<ul class="simple">
+<li>Cyclone is based on&nbsp;<a class="reference external" href="http://twistedmatrix.com/">Twisted</a>, hence it may be used as a
+webservice protocol for interconnection with any other protocol
+implemented in Twisted.</li>
+<li>Localization is based upon the standard&nbsp;<a class="reference external" href="http://www.gnu.org/software/gettext/">Gettext</a>&nbsp;instead of
+the CSV implementation in the original Tornado. Moreover, it
+supports pluralization exactly like Tornado does.</li>
+<li>It ships with an asynchronous HTTP client based
+on&nbsp;<a class="reference external" href="http://twistedmatrix.com/trac/wiki/TwistedWeb">TwistedWeb</a>, however, it's fully compatible with one provided
+by Tornado - which is based on`PyCurl`_. (The HTTP server code is
+NOT based on TwistedWeb, for several reasons)</li>
+<li>Native support for XMLRPC and JsonRPC. (see the&nbsp;<a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/rpc/">rpc demo</a>)</li>
+<li>WebSocket protocol class is just like any other Twisted Protocol
+(i.e.: LineReceiver; see the&nbsp;<a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/websocket/">websocket demo</a>)</li>
+<li>Support for sending e-mail based on&nbsp;<a class="reference external" href="http://twistedmatrix.com/trac/wiki/TwistedMail">Twisted Mail</a>, with
+authentication and TLS, plus an easy way to create plain text or
+HTML messages, and attachments. (see the&nbsp;<a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/email">e-mail demo</a>)</li>
+<li>Built-in support for&nbsp;<a class="reference external" href="http://code.google.com/p/redis/">Redis</a>, based on&nbsp;<a class="reference external" href="http://github.com/fiorix/txredisapi">txredisapi</a>. We
+usually need an in-memory caching server like memcache for web
+applications. However, we prefer redis over memcache because it
+supports more operations like pubsub, various data types like sets,
+hashes (python dict), and persistent storage. See
+the&nbsp;<a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/redis/">redis demo</a>&nbsp;for details.</li>
+<li>Support for HTTP Authentication. See
+the&nbsp;<a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/httpauth/">authentication demo</a>&nbsp;for details.</li>
+</ul>
+</div>
+<div class="section" id="advantages-of-being-a-twisted-protocol">
+<h2>Advantages of being a Twisted Protocol</h2>
+<ul class="simple">
+<li>Easy deployment of applications, using&nbsp;<a class="reference external" href="http://twistedmatrix.com/documents/current/core/howto/basics.html">twistd</a>.</li>
+<li>RDBM support via:&nbsp;<a class="reference external" href="http://twistedmatrix.com/documents/current/core/howto/rdbms.html">twisted.enterprise.adbapi</a></li>
+<li>NoSQL support for MongoDB (<a class="reference external" href="http://github.com/fiorix/mongo-async-python-driver">TxMongo</a>) and Redis
+(<a class="reference external" href="http://github.com/fiorix/txredisapi">TxRedisAPI</a>).</li>
+<li>May combine many more functionality within the webserver:
+sending emails, communicating with message brokers, etc...</li>
+</ul>
+<p /><p><a class="reference external" href="https://github.com/fiorix/cyclone">https://github.com/fiorix/cyclone</a></p>
+</p></div>
+
+                        <a class="btn primary xsmall" href="../cyclone-a-pretty-awesome-low-level-network-toolkit.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../comparing-gevent-to-eventlet.html">Comparing gevent to eventlet</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-08-23T16:59:00">
+        Tue 23 August 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/gevent.html"><i class="icon-tag"></i>gevent</a>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Gevent aims to be a small and stable core everyone can depend upon.
+It delegates the job to libevent whenever possible and provides
+convenient abstractions for coroutine-based programming. It’s
+inspired by Eventlet but it’s not a fork and it features a new API.
+The implementation is simpler and more stable.</p>
+<div><p><a class="reference external" href="http://blog.gevent.org/2010/02/27/why-gevent/">http://blog.gevent.org/2010/02/27/why-gevent</a></p>
+</div></p></p>
+                        <a class="btn primary xsmall" href="../comparing-gevent-to-eventlet.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        
+                <div class="pagination">
+        <ul>
+                                                                <li class="prev"><a href="../tag/python.html">&larr; Previous</a></li>
+                                                        <li class=""><a href="../tag/python.html">1</a></li>
+                                        <li class="active"><a href="../tag/python2.html">2</a></li>
+                                                        <li class="next disabled"><a href="#">&rarr; Next</a></li>
+                        </ul>
+        </div>
+
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h5>Juliano Martinez</h5></li>
+    <a href="http://twitter.com/ncode"><i class="icon-twitter-sign icon-large"></i></a>
+    <a href="https://www.facebook.com/nc0d3"><i class="icon-facebook-sign icon-large"></i></a>
+    <a href="http://br.linkedin.com/in/ncode"><i class="icon-linkedin-sign icon-large"></i></a>
+    <a href="http://github.com/ncode"><i class="icon-github-sign icon-large"></i></a>
+    <a href="https://plus.google.com/u/0/114807336963795227899"><i class="icon-google-plus-sign icon-large"></i></a>
+<a href="../feeds/rss.xml" rel="alternate"><i class="icon-rss icon-large"></i></a>
+<li class="nav-header"></li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-3">
+    <a href="../tag/gevent.html">
+        <i class="icon-tag icon-large"></i>gevent
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xen.html">
+        <i class="icon-tag icon-large"></i>xen
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/databases.html">
+        <i class="icon-tag icon-large"></i>databases
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/html5.html">
+        <i class="icon-tag icon-large"></i>html5
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/kernel.html">
+        <i class="icon-tag icon-large"></i>kernel
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/c.html">
+        <i class="icon-tag icon-large"></i>c
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/bottle.html">
+        <i class="icon-tag icon-large"></i>bottle
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mobile.html">
+        <i class="icon-tag icon-large"></i>mobile
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/mysql.html">
+        <i class="icon-tag icon-large"></i>mysql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/concurrency.html">
+        <i class="icon-tag icon-large"></i>concurrency
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/audit.html">
+        <i class="icon-tag icon-large"></i>audit
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/packaging.html">
+        <i class="icon-tag icon-large"></i>packaging
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/ciclone.html">
+        <i class="icon-tag icon-large"></i>ciclone
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/glusterfs.html">
+        <i class="icon-tag icon-large"></i>glusterfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/player.html">
+        <i class="icon-tag icon-large"></i>player
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/diskless.html">
+        <i class="icon-tag icon-large"></i>diskless
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/git.html">
+        <i class="icon-tag icon-large"></i>git
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/video.html">
+        <i class="icon-tag icon-large"></i>video
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zfs.html">
+        <i class="icon-tag icon-large"></i>zfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zmq.html">
+        <i class="icon-tag icon-large"></i>zmq
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/lxc.html">
+        <i class="icon-tag icon-large"></i>lxc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/hbase.html">
+        <i class="icon-tag icon-large"></i>hbase
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/geolocation.html">
+        <i class="icon-tag icon-large"></i>geolocation
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/cgroups.html">
+        <i class="icon-tag icon-large"></i>cgroups
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cloud.html">
+        <i class="icon-tag icon-large"></i>cloud
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/heatmaps.html">
+        <i class="icon-tag icon-large"></i>heatmaps
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/shell.html">
+        <i class="icon-tag icon-large"></i>shell
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/riak.html">
+        <i class="icon-tag icon-large"></i>riak
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/network.html">
+        <i class="icon-tag icon-large"></i>network
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xcp.html">
+        <i class="icon-tag icon-large"></i>xcp
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailservers.html">
+        <i class="icon-tag icon-large"></i>mailservers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/elasticsearch.html">
+        <i class="icon-tag icon-large"></i>elasticsearch
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/clojure.html">
+        <i class="icon-tag icon-large"></i>clojure
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/torrent.html">
+        <i class="icon-tag icon-large"></i>torrent
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/debian.html">
+        <i class="icon-tag icon-large"></i>debian
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/darner.html">
+        <i class="icon-tag icon-large"></i>darner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openhardware.html">
+        <i class="icon-tag icon-large"></i>openhardware
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/gelf.html">
+        <i class="icon-tag icon-large"></i>gelf
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/android.html">
+        <i class="icon-tag icon-large"></i>android
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/iptables.html">
+        <i class="icon-tag icon-large"></i>iptables
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/freesoc.html">
+        <i class="icon-tag icon-large"></i>freesoc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/containers.html">
+        <i class="icon-tag icon-large"></i>containers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openflow.html">
+        <i class="icon-tag icon-large"></i>openflow
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/osx.html">
+        <i class="icon-tag icon-large"></i>osx
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/fusionio.html">
+        <i class="icon-tag icon-large"></i>fusionio
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/redis.html">
+        <i class="icon-tag icon-large"></i>redis
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/greylog2.html">
+        <i class="icon-tag icon-large"></i>greylog2
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/apache.html">
+        <i class="icon-tag icon-large"></i>apache
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/storage.html">
+        <i class="icon-tag icon-large"></i>storage
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/performance.html">
+        <i class="icon-tag icon-large"></i>performance
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/sysadmin.html">
+        <i class="icon-tag icon-large"></i>sysadmin
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/web.html">
+        <i class="icon-tag icon-large"></i>web
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/spanner.html">
+        <i class="icon-tag icon-large"></i>spanner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/netbsd.html">
+        <i class="icon-tag icon-large"></i>netbsd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/automation.html">
+        <i class="icon-tag icon-large"></i>automation
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailfromd.html">
+        <i class="icon-tag icon-large"></i>mailfromd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/rdbms.html">
+        <i class="icon-tag icon-large"></i>rdbms
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cfengine3.html">
+        <i class="icon-tag icon-large"></i>cfengine3
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/flashcache.html">
+        <i class="icon-tag icon-large"></i>flashcache
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/nosql.html">
+        <i class="icon-tag icon-large"></i>nosql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/routing.html">
+        <i class="icon-tag icon-large"></i>routing
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/messagequeue.html">
+        <i class="icon-tag icon-large"></i>messagequeue
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/postfix.html">
+        <i class="icon-tag icon-large"></i>postfix
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cassandra.html">
+        <i class="icon-tag icon-large"></i>cassandra
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/lua.html">
+        <i class="icon-tag icon-large"></i>lua
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/pxe.html">
+        <i class="icon-tag icon-large"></i>pxe
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/handlersocket.html">
+        <i class="icon-tag icon-large"></i>handlersocket
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../theme/js/jquery-1.7.2.min.js"></script>
+    <script src="../theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

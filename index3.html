@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sysadms must be lazy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Juliano Martinez">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 9pt;
+      }
+      .tag-3 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 7pt;
+     }
+    </style>
+    <link href="./theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="./theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="./theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./theme/images/apple-touch-icon-114x114.png">
+
+    <link href="./" type="application/atom+xml" rel="alternate" title="sysadms must be lazy ATOM Feed" />
+        <link href="./feeds/rss.xml" type="application/atom+xml" rel="alternate" title="sysadms must be lazy RSS Feed" />
+    
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">sysadms must be lazy </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                                    <li class="divider-vertical"></li>
+                                        <ul class="nav pull-right">
+                                <li><a href="./archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span12" id="content">
+                            <div class="article">
+                <h1><a href="./darner-a-very-simple-and-powerful-message-queue-server.html">Darner a very simple and powerful message queue server</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-08-15T23:39:00">
+        Wed 15 August 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/darner.html"><i class="icon-tag"></i>darner</a>
+	<a href="./tag/messagequeue.html"><i class="icon-tag"></i>messagequeue</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Darner is a very simple message queue server. Unlike in-memory
+servers such as&nbsp;<a class="reference external" href="http://redis.io/">redis</a>, Darner is designed to handle queues much
+larger than what can be held in RAM. And unlike enterprise queue
+servers such as&nbsp;<a class="reference external" href="http://www.rabbitmq.com/">RabbitMQ</a>, Darner keeps all messages&nbsp;out of
+process, relying instead on the kernel's virtual memory manager
+via&nbsp;<a class="reference external" href="https://code.google.com/p/leveldb/">log-structured storage</a>.</p>
+<p>The result is a durable queue server that uses a small amount of
+in-resident memory regardless of queue size, while still
+achieving&nbsp;<a class="reference external" href="https://github.com/wavii/darner/blob/master/docs/benchmarks.md">remarkable performance</a>.</p>
+<p>Darner is based on Robey Pointer's&nbsp;<a class="reference external" href="https://github.com/robey/kestrel">Kestrel</a>&nbsp;simple, distributed
+message queue. Like Kestrel, Darner follows the &quot;No talking! Shhh!&quot;
+approach to distributed queues: A single Darner server has a set of
+queues identified by name. Each queue is a strictly-ordered FIFO,
+and querying from a fleet of Darner servers provides a
+loosely-ordered queue. Darner also supports Kestrel's two-phase
+reliable fetch: if a client disconnects before confirming it
+handled a message, the message will be handed to the next client.</p>
+<p>Compared to Kestrel, Darner boasts much higher throughput, better
+concurrency, an order of magnitude better tp99, and uses an order
+of magnitude less memory. But Darner has less configuration, and
+far fewer features than Kestrel. Check out the&nbsp;<a class="reference external" href="https://github.com/wavii/darner/blob/master/docs/benchmarks.md">benchmarks</a>!
+Darner is used at&nbsp;<a class="reference external" href="http://wavii.com/">Wavii</a>, and is written and maintained
+by&nbsp;<a class="reference external" href="https://github.com/erikfrey">Erik Frey</a>...&quot;</p>
+<p><a class="reference external" href="https://github.com/wavii/darner">https://github.com/wavii/darner</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="./darner-a-very-simple-and-powerful-message-queue-server.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./cling-interpreter-on-the-fly-c.html">cling interpreter: On-The-Fly C++</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-08-12T20:38:00">
+        Sun 12 August 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/c.html"><i class="icon-tag"></i>c</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;I can’t recall how many times I had to write a basic small C or
+C++ program just to play around with an idea, the syntax of C++11
+or anything similar. Very often indeed. Even though a good editor
+makes this very easy, it’s kind of a burden to have to create a
+project directory, a source file, spell out the same old includes
+and the main function before you actually can start the task you
+where about to try. Then you compile and link, probably missing
+some libraries the first time until you finally get to take it on a
+first test run...&quot;</p>
+<p><a class="reference external" href="http://blog.coldflake.com/posts/2012-08-09-On-the-fly-C++.html">http://blog.coldflake.com/posts/2012-08-09-On-the-fly-C++.html</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./cling-interpreter-on-the-fly-c.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./git-distributed-even-if-your-workflow-isnt.html">git --distributed-even-if-your-workflow-isnt</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-07-11T21:40:00">
+        Wed 11 July 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/git.html"><i class="icon-tag"></i>git</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;The entire Pro Git book, written by Scott Chacon and published by
+Apress, is available here. All content is licensed under the
+Creative Commons Attribution Non Commercial Share Alike 3.0
+license...&quot;</p>
+<p><a class="reference external" href="http://git-scm.com/book">http://git-scm.com/book</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./git-distributed-even-if-your-workflow-isnt.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./easy-6502-learn-the-6502-assembly-language.html">Easy 6502 - Learn the 6502 Assembly Language</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-07-08T07:16:00">
+        Sun 08 July 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;<strong>Introduction</strong></p>
+<p>In this tiny ebook I’m going to show you how to get started writing
+6502 assembly language. The 6502 processor was massive in the
+seventies and eighties, powering famous computers like the BBC
+Micro, Atari 2600, Commodore 64, and the Nintendo Entertainment
+System. Bender in Futurama has a 6502 processor for a brain. Even
+the Terminator was programmed in 6502.</p>
+<p>So, why would you want to learn 6502? It’s a dead language isn’t
+it? Well, yeah, but so’s Latin. And they still teach that.
+Q.E.D...&quot;</p>
+<p><a class="reference external" href="http://skilldrick.github.com/easy6502/index.html">http://skilldrick.github.com/easy6502/index.html</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./easy-6502-learn-the-6502-assembly-language.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./deep-dive-into-glusterfs-33.html">Deep dive into GlusterFS 3.3</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-06-26T20:42:00">
+        Tue 26 June 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/glusterfs.html"><i class="icon-tag"></i>glusterfs</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;John Mark Walker from Red Hat talks about how GlusterFS 3.3 marks
+a significant milestone for the Gluster project. This release has
+great new features like UFO (universal file and object storage),
+HDFS compatibility, and proactive self-heal. This release is a
+significant milestone for the project, giving GlusterFS even more
+capability in the cloud. With the new features, GlusterFS will be
+better than ever at managing VM images, creating shared storage
+services in the cloud, and drastically improving speed and
+performance, especially after recovering from a hardware failure.
+Learn all about the new features and improvements of old
+features...&quot;</p>
+<p><a class="reference external" href="http://video.linux.com/videos/deep-dive-into-glusterfs-33-1">http://video.linux.com/videos/deep-dive-into-glusterfs-33-1</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./deep-dive-into-glusterfs-33.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./sali-automates-linux-installs-software-distribution-and-production-deployment.html">Sali automates Linux installs, software distribution, and production deployment.</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-06-08T15:53:00">
+        Fri 08 June 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/automation.html"><i class="icon-tag"></i>automation</a>
+	<a href="./tag/diskless.html"><i class="icon-tag"></i>diskless</a>
+	<a href="./tag/pxe.html"><i class="icon-tag"></i>pxe</a>
+	<a href="./tag/torrent.html"><i class="icon-tag"></i>torrent</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;For node installation we at&nbsp;<a class="reference external" href="http://www.sara.nl/">SARA</a>&nbsp;used&nbsp;<a class="reference external" href="http://wiki.systemimager.org/">SystemImager</a>. We
+switched to SALI for all our clusters. SALI allows you to create a
+clone of your running system. This clone can be distributed by
+various protocols (<a class="reference external" href="http://aria2.sourceforge.net/">aria2</a>) eg: rsync, Bittorent, ftp, http/https,
+metalink</p>
+<p><strong>Why SALI</strong></p>
+<p>SALI is created due the fact that on the moment of starting SALI:</p>
+<ul class="simple">
+<li>Systemimager kernel/initrd and BOEL utilities are outdated. New
+hardware was not detected/supported</li>
+<li>no&nbsp;grub2&nbsp;support</li>
+<li>no ext4 support</li>
+</ul>
+<p>The trigger for us was that there is no&nbsp;grub2&nbsp;support. We thought
+this could be easily added, but during this process we decided to
+upgrade all software to the newest levels and replace some software
+components. The biggest hurdle was detecting of which hardware is
+in the system (<a class="reference external" href="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html">udev</a>). We believe that SALI is better in
+detecting which hardware is in the system than the SystemImager
+setup. The focus for this project is/was:</p>
+<ul class="simple">
+<li>Easily create a new kernel/initrd when a new kernel is released
+or one of the software components is updated, eg:&nbsp;<a class="reference external" href="http://www.busybox.net/">busybox</a>.</li>
+<li>The SALI initrd contains all kernel modules and software
+utilities. In SystemImager this software is distributed as a
+separate package (BOEL binaries).</li>
+<li>Drop support for flamethrower/multicast and floppy disk support.</li>
+<li>With some minor&nbsp;<a class="reference external" href="https://subtrac.sara.nl/oss/sali/wiki/SaliUsage/UsingYourOldInstallScript">adjustments</a>&nbsp;you can use your old generated
+SystemImager scripts. These scripts
+uses&nbsp;/etc/init.d/functions&nbsp;which is included in the initrd. We have
+added/changed a lot of functions to hide the complexity. We have
+reduced the code of the SystemImager scripts significantly,
+See&nbsp;<a class="reference external" href="https://subtrac.sara.nl/oss/sali/browser/trunk/example/masterscript.new">masterscript.new</a>. Read the&nbsp;<a class="reference external" href="https://subtrac.sara.nl/oss/sali/wiki/SaliUsage/Functions">Functions Documentation</a></li>
+<li>For detailed overview of the changes read this&nbsp;<a class="reference external" href="https://subtrac.sara.nl/oss/sali/browser/trunk/CHANGELOG">changelog</a></li>
+<li>For now you must set&nbsp;SCRIPTNAME=&lt;script_name&gt;&nbsp;in the pxelinux
+file</li>
+<li>If&nbsp;GRUB2=yes&nbsp;is set then we expect a seperate grub2 partition:</li>
+<li>Added&nbsp;<a class="reference external" href="http://code.google.com/p/diskscrub">diskscrub</a>, Diskscrub overwrites hard disks, files, and ...</li></ul>
+                        <a class="btn primary xsmall" href="./sali-automates-linux-installs-software-distribution-and-production-deployment.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./enter-the-pyed-piper-via-deferraz.html">Enter the Pyed Piper via (&#64;deferraz)</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-25T20:03:00">
+        Fri 25 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/python.html"><i class="icon-tag"></i>python</a>
+	<a href="./tag/shell.html"><i class="icon-tag"></i>shell</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;The pyed piper, or pyp, is a python-centric command line text
+manipulation tool. It allows you to format, replace, augment and
+otherwise mangle text using standard python syntax with a few
+golden-oldie tricks from unix commands of the past. You can pipe
+data into pyp just like any other unix command line tool. After
+it's in, you can use the standard repertoire of python string and
+list methods to modify the text...&quot;</p>
+<p><a class="reference external" href="http://code.google.com/p/pyp/wiki/intro">http://code.google.com/p/pyp/wiki/intro</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./enter-the-pyed-piper-via-deferraz.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./threads-and-fork-think-twice-before-mixing-them.html">Threads and fork(): think twice before mixing them</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-25T18:04:00">
+        Fri 25 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/concurrency.html"><i class="icon-tag"></i>concurrency</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;When debugging a program I came across a bug that was caused by
+using <a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html">fork(2)</a> in a multi-threaded program. I thought it's worth
+to write some words about mixing POSIX threads with <a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html">fork(2)</a>
+because there are non-obvious problems when doing that.</p>
+<p><strong>What happens after fork() in a multi-threadeed program</strong></p>
+<p>The <a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html">fork(2)</a> function creates a copy of the process, all memory
+pages are copied, open file descriptors are copied etc. All this
+stuff is intuitive for a UNIX programmer. One important thing that
+differs the child process from the parent is that the child has
+only one thread. Cloning the whole process with all threads would
+be problematic and in most cases not what the programmer wants.
+Just think about it: what to do with threads that are suspended
+executing a system call? So the <a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html">fork(2)</a> call clones just the
+thread which executed it.</p>
+<p><strong>What are the problems</strong></p>
+<p><strong>Critical sections, mutexes</strong></p>
+<p>The non-obvious problem in this approach is that at the moment of
+the <a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html">fork(2)</a> call some threads may be in critical sections of
+code, doing non-atomic operations protected by mutexes. In the
+child process the threads just disappears and left data
+half-modified without any possibility to &quot;fix&quot; them, there is no
+way to say what other threads were doing and what should be done to
+make the data consistent. Moreover: state of mutexes is undefined,
+they might be unusable and the only way to use them in the child is
+to call pthread_mutex_init() to reset them to a usable state.
+It's implementation dependent how mutexes behave after <a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html">fork(2)</a>
+was called. On my Linux machine locked mutexes are locked in the
+child...&quot;</p>
+<p><a class="reference external" href="http://www.linuxprogrammingblog.com/threads-and-fork-think-twice-before-using-them">http://www.linuxprogrammingblog.com/threads-and-fork-think-twice-before-using-them</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./threads-and-fork-think-twice-before-mixing-them.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./learn-lua-the-hard-way.html">Learn Lua the Hard Way</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-22T23:34:00">
+        Tue 22 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/lua.html"><i class="icon-tag"></i>lua</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;This series more or less mirrors the series of the same name for
+Python. It’s in my belief that the only way to learn the in and
+outs of a language is to learn by practice, and by that virtue, to
+practice as often as possible until you get the hang of the
+language...&quot;</p>
+<p><a class="reference external" href="http://www.phailed.me/2011/02/learn-lua-the-hard-way-1/#desc">http://www.phailed.me/2011/02/learn-lua-the-hard-way-1</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./learn-lua-the-hard-way.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./fast-easy-realtime-metrics-using-redis-bitmaps.html">Fast, easy, realtime metrics using Redis bitmaps</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-16T19:20:00">
+        Wed 16 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/redis.html"><i class="icon-tag"></i>redis</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;At <a class="reference external" href="http://www.getspool.com/">Spool</a>, we calculate our key metrics in real time.
+Traditionally, metrics are performed by a batch job (running
+hourly, daily, etc.). Redis backed bitmaps allow us to perform such
+calculations in realtime and are extremely space efficient. In a
+simulation of 128 million users, a typical metric such as “daily
+unique users” takes less than 50 ms on a MacBook Pro and only takes
+16 MB of memory. Spool doesn’t have 128 million users yet but it’s
+nice to know our approach will scale. We thought we’d share how we
+do it, in case other startups find our approach useful...&quot;</p>
+<p><a class="reference external" href="http://blog.getspool.com/2011/11/29/fast-easy-realtime-metrics-using-redis-bitmaps">http://blog.getspool.com/2011/11/29/fast-easy-realtime-metrics-using-redis-bitmaps</a>
+<a class="reference external" href="https://github.com/antirez/redis/commit/9ee55e8e583a139b35628c47ef8d2c9f1e65936b">https://github.com/antirez/redis/commit/9ee55e8e583a139b35628c47ef8d2c9f1e65936b</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./fast-easy-realtime-metrics-using-redis-bitmaps.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        
+                <div class="pagination">
+        <ul>
+                                                                <li class="prev"><a href="./index2.html">&larr; Previous</a></li>
+                                                        <li class=""><a href="./index.html">1</a></li>
+                                        <li class=""><a href="./index2.html">2</a></li>
+                                        <li class="active"><a href="./index3.html">3</a></li>
+                                        <li class=""><a href="./index4.html">4</a></li>
+                                        <li class=""><a href="./index5.html">5</a></li>
+                                        <li class=""><a href="./index6.html">6</a></li>
+                                        <li class=""><a href="./index7.html">7</a></li>
+                                        <li class=""><a href="./index8.html">8</a></li>
+                                                        <li class="next"><a href="./index4.html">Next &rarr;</a></li>
+                        </ul>
+        </div>
+
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h5>Juliano Martinez</h5></li>
+    <a href="http://twitter.com/ncode"><i class="icon-twitter-sign icon-large"></i></a>
+    <a href="https://www.facebook.com/nc0d3"><i class="icon-facebook-sign icon-large"></i></a>
+    <a href="http://br.linkedin.com/in/ncode"><i class="icon-linkedin-sign icon-large"></i></a>
+    <a href="http://github.com/ncode"><i class="icon-github-sign icon-large"></i></a>
+    <a href="https://plus.google.com/u/0/114807336963795227899"><i class="icon-google-plus-sign icon-large"></i></a>
+<a href="./feeds/rss.xml" rel="alternate"><i class="icon-rss icon-large"></i></a>
+<li class="nav-header"></li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-3">
+    <a href="./tag/gevent.html">
+        <i class="icon-tag icon-large"></i>gevent
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/xen.html">
+        <i class="icon-tag icon-large"></i>xen
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/databases.html">
+        <i class="icon-tag icon-large"></i>databases
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/html5.html">
+        <i class="icon-tag icon-large"></i>html5
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/kernel.html">
+        <i class="icon-tag icon-large"></i>kernel
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/c.html">
+        <i class="icon-tag icon-large"></i>c
+    </a>
+</li>
+<li class="tag-1">
+    <a href="./tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/bottle.html">
+        <i class="icon-tag icon-large"></i>bottle
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mobile.html">
+        <i class="icon-tag icon-large"></i>mobile
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/mysql.html">
+        <i class="icon-tag icon-large"></i>mysql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/concurrency.html">
+        <i class="icon-tag icon-large"></i>concurrency
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/audit.html">
+        <i class="icon-tag icon-large"></i>audit
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/packaging.html">
+        <i class="icon-tag icon-large"></i>packaging
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/ciclone.html">
+        <i class="icon-tag icon-large"></i>ciclone
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/glusterfs.html">
+        <i class="icon-tag icon-large"></i>glusterfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/player.html">
+        <i class="icon-tag icon-large"></i>player
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/diskless.html">
+        <i class="icon-tag icon-large"></i>diskless
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/git.html">
+        <i class="icon-tag icon-large"></i>git
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/video.html">
+        <i class="icon-tag icon-large"></i>video
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/zfs.html">
+        <i class="icon-tag icon-large"></i>zfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/zmq.html">
+        <i class="icon-tag icon-large"></i>zmq
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/lxc.html">
+        <i class="icon-tag icon-large"></i>lxc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/hbase.html">
+        <i class="icon-tag icon-large"></i>hbase
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/geolocation.html">
+        <i class="icon-tag icon-large"></i>geolocation
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/cgroups.html">
+        <i class="icon-tag icon-large"></i>cgroups
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cloud.html">
+        <i class="icon-tag icon-large"></i>cloud
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/heatmaps.html">
+        <i class="icon-tag icon-large"></i>heatmaps
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/shell.html">
+        <i class="icon-tag icon-large"></i>shell
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/riak.html">
+        <i class="icon-tag icon-large"></i>riak
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/network.html">
+        <i class="icon-tag icon-large"></i>network
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/xcp.html">
+        <i class="icon-tag icon-large"></i>xcp
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mailservers.html">
+        <i class="icon-tag icon-large"></i>mailservers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/elasticsearch.html">
+        <i class="icon-tag icon-large"></i>elasticsearch
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/clojure.html">
+        <i class="icon-tag icon-large"></i>clojure
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/torrent.html">
+        <i class="icon-tag icon-large"></i>torrent
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/debian.html">
+        <i class="icon-tag icon-large"></i>debian
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/darner.html">
+        <i class="icon-tag icon-large"></i>darner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/openhardware.html">
+        <i class="icon-tag icon-large"></i>openhardware
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/gelf.html">
+        <i class="icon-tag icon-large"></i>gelf
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/android.html">
+        <i class="icon-tag icon-large"></i>android
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/iptables.html">
+        <i class="icon-tag icon-large"></i>iptables
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/freesoc.html">
+        <i class="icon-tag icon-large"></i>freesoc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/containers.html">
+        <i class="icon-tag icon-large"></i>containers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/openflow.html">
+        <i class="icon-tag icon-large"></i>openflow
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/osx.html">
+        <i class="icon-tag icon-large"></i>osx
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/fusionio.html">
+        <i class="icon-tag icon-large"></i>fusionio
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/redis.html">
+        <i class="icon-tag icon-large"></i>redis
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/greylog2.html">
+        <i class="icon-tag icon-large"></i>greylog2
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/apache.html">
+        <i class="icon-tag icon-large"></i>apache
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/storage.html">
+        <i class="icon-tag icon-large"></i>storage
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/performance.html">
+        <i class="icon-tag icon-large"></i>performance
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/sysadmin.html">
+        <i class="icon-tag icon-large"></i>sysadmin
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/web.html">
+        <i class="icon-tag icon-large"></i>web
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/spanner.html">
+        <i class="icon-tag icon-large"></i>spanner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/netbsd.html">
+        <i class="icon-tag icon-large"></i>netbsd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/automation.html">
+        <i class="icon-tag icon-large"></i>automation
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mailfromd.html">
+        <i class="icon-tag icon-large"></i>mailfromd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/rdbms.html">
+        <i class="icon-tag icon-large"></i>rdbms
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cfengine3.html">
+        <i class="icon-tag icon-large"></i>cfengine3
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/flashcache.html">
+        <i class="icon-tag icon-large"></i>flashcache
+    </a>
+</li>
+<li class="tag-1">
+    <a href="./tag/nosql.html">
+        <i class="icon-tag icon-large"></i>nosql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/routing.html">
+        <i class="icon-tag icon-large"></i>routing
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/messagequeue.html">
+        <i class="icon-tag icon-large"></i>messagequeue
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/postfix.html">
+        <i class="icon-tag icon-large"></i>postfix
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cassandra.html">
+        <i class="icon-tag icon-large"></i>cassandra
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/lua.html">
+        <i class="icon-tag icon-large"></i>lua
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/pxe.html">
+        <i class="icon-tag icon-large"></i>pxe
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/handlersocket.html">
+        <i class="icon-tag icon-large"></i>handlersocket
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./theme/js/jquery-1.7.2.min.js"></script>
+    <script src="./theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

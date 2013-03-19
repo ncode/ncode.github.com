@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sysadms must be lazy - Juliano Martinez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Juliano Martinez">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 9pt;
+      }
+      .tag-3 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 7pt;
+     }
+    </style>
+    <link href="../theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="../theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../theme/images/apple-touch-icon-114x114.png">
+
+    <link href="../" type="application/atom+xml" rel="alternate" title="sysadms must be lazy ATOM Feed" />
+        <link href="../feeds/rss.xml" type="application/atom+xml" rel="alternate" title="sysadms must be lazy RSS Feed" />
+    
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="../index.html">sysadms must be lazy </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                                    <li class="divider-vertical"></li>
+                                        <ul class="nav pull-right">
+                                <li><a href="../archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span12" id="content">
+                            <div class="article">
+                <h1><a href="../cyclone-a-pretty-awesome-low-level-network-toolkit.html">Cyclone, a pretty awesome low-level network toolkit</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-08-25T20:20:00">
+        Thu 25 August 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Cyclone is a low-level network toolkit, which provides support for
+HTTP 1.1 in an API very similar to the one implemented by
+the&nbsp;<a class="reference external" href="http://tornadoweb.org/">Tornado</a>&nbsp;web server - which was developed
+by&nbsp;<a class="reference external" href="http://friendfeed.com/">FriendFeed</a>&nbsp;and later released as open source / free software
+by&nbsp;<a class="reference external" href="http://facebook.com/">Facebook</a>.</p>
+<div class="section" id="key-differences-between-cyclone-and-tornado">
+<h2>Key differences between Cyclone and Tornado</h2>
+<ul class="simple">
+<li>Cyclone is based on&nbsp;<a class="reference external" href="http://twistedmatrix.com/">Twisted</a>, hence it may be used as a
+webservice protocol for interconnection with any other protocol
+implemented in Twisted.</li>
+<li>Localization is based upon the standard&nbsp;<a class="reference external" href="http://www.gnu.org/software/gettext/">Gettext</a>&nbsp;instead of
+the CSV implementation in the original Tornado. Moreover, it
+supports pluralization exactly like Tornado does.</li>
+<li>It ships with an asynchronous HTTP client based
+on&nbsp;<a class="reference external" href="http://twistedmatrix.com/trac/wiki/TwistedWeb">TwistedWeb</a>, however, it's fully compatible with one provided
+by Tornado - which is based on`PyCurl`_. (The HTTP server code is
+NOT based on TwistedWeb, for several reasons)</li>
+<li>Native support for XMLRPC and JsonRPC. (see the&nbsp;<a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/rpc/">rpc demo</a>)</li>
+<li>WebSocket protocol class is just like any other Twisted Protocol
+(i.e.: LineReceiver; see the&nbsp;<a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/websocket/">websocket demo</a>)</li>
+<li>Support for sending e-mail based on&nbsp;<a class="reference external" href="http://twistedmatrix.com/trac/wiki/TwistedMail">Twisted Mail</a>, with
+authentication and TLS, plus an easy way to create plain text or
+HTML messages, and attachments. (see the&nbsp;<a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/email">e-mail demo</a>)</li>
+<li>Built-in support for&nbsp;<a class="reference external" href="http://code.google.com/p/redis/">Redis</a>, based on&nbsp;<a class="reference external" href="http://github.com/fiorix/txredisapi">txredisapi</a>. We
+usually need an in-memory caching server like memcache for web
+applications. However, we prefer redis over memcache because it
+supports more operations like pubsub, various data types like sets,
+hashes (python dict), and persistent storage. See
+the&nbsp;<a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/redis/">redis demo</a>&nbsp;for details.</li>
+<li>Support for HTTP Authentication. See
+the&nbsp;<a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/httpauth/">authentication demo</a>&nbsp;for details.</li>
+</ul>
+</div>
+<div class="section" id="advantages-of-being-a-twisted-protocol">
+<h2>Advantages of being a Twisted Protocol</h2>
+<ul class="simple">
+<li>Easy deployment of applications, using&nbsp;<a class="reference external" href="http://twistedmatrix.com/documents/current/core/howto/basics.html">twistd</a>.</li>
+<li>RDBM support via:&nbsp;<a class="reference external" href="http://twistedmatrix.com/documents/current/core/howto/rdbms.html">twisted.enterprise.adbapi</a></li>
+<li>NoSQL support for MongoDB (<a class="reference external" href="http://github.com/fiorix/mongo-async-python-driver">TxMongo</a>) and Redis
+(<a class="reference external" href="http://github.com/fiorix/txredisapi">TxRedisAPI</a>).</li>
+<li>May combine many more functionality within the webserver:
+sending emails, communicating with message brokers, etc...</li>
+</ul>
+<p /><p><a class="reference external" href="https://github.com/fiorix/cyclone">https://github.com/fiorix/cyclone</a></p>
+</p></div>
+
+                        <a class="btn primary xsmall" href="../cyclone-a-pretty-awesome-low-level-network-toolkit.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../darner-a-very-simple-and-powerful-message-queue-server.html">Darner a very simple and powerful message queue server</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-08-15T23:39:00">
+        Wed 15 August 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/darner.html"><i class="icon-tag"></i>darner</a>
+	<a href="../tag/messagequeue.html"><i class="icon-tag"></i>messagequeue</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Darner is a very simple message queue server. Unlike in-memory
+servers such as&nbsp;<a class="reference external" href="http://redis.io/">redis</a>, Darner is designed to handle queues much
+larger than what can be held in RAM. And unlike enterprise queue
+servers such as&nbsp;<a class="reference external" href="http://www.rabbitmq.com/">RabbitMQ</a>, Darner keeps all messages&nbsp;out of
+process, relying instead on the kernel's virtual memory manager
+via&nbsp;<a class="reference external" href="https://code.google.com/p/leveldb/">log-structured storage</a>.</p>
+<p>The result is a durable queue server that uses a small amount of
+in-resident memory regardless of queue size, while still
+achieving&nbsp;<a class="reference external" href="https://github.com/wavii/darner/blob/master/docs/benchmarks.md">remarkable performance</a>.</p>
+<p>Darner is based on Robey Pointer's&nbsp;<a class="reference external" href="https://github.com/robey/kestrel">Kestrel</a>&nbsp;simple, distributed
+message queue. Like Kestrel, Darner follows the &quot;No talking! Shhh!&quot;
+approach to distributed queues: A single Darner server has a set of
+queues identified by name. Each queue is a strictly-ordered FIFO,
+and querying from a fleet of Darner servers provides a
+loosely-ordered queue. Darner also supports Kestrel's two-phase
+reliable fetch: if a client disconnects before confirming it
+handled a message, the message will be handed to the next client.</p>
+<p>Compared to Kestrel, Darner boasts much higher throughput, better
+concurrency, an order of magnitude better tp99, and uses an order
+of magnitude less memory. But Darner has less configuration, and
+far fewer features than Kestrel. Check out the&nbsp;<a class="reference external" href="https://github.com/wavii/darner/blob/master/docs/benchmarks.md">benchmarks</a>!
+Darner is used at&nbsp;<a class="reference external" href="http://wavii.com/">Wavii</a>, and is written and maintained
+by&nbsp;<a class="reference external" href="https://github.com/erikfrey">Erik Frey</a>...&quot;</p>
+<p><a class="reference external" href="https://github.com/wavii/darner">https://github.com/wavii/darner</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="../darner-a-very-simple-and-powerful-message-queue-server.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../debian-kit-for-android.html">Debian Kit for Android</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2013-02-12T16:04:00">
+        Tue 12 February 2013
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/android.html"><i class="icon-tag"></i>android</a>
+	<a href="../tag/debian.html"><i class="icon-tag"></i>debian</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;This kit installs a full version of Debian or Ubuntu on your
+Android phone or tablet. Key features are:</p>
+<ul class="simple">
+<li>Debian and Android side-by-side - your Android device works as
+usual but you can unleash the power of Debian&nbsp;/ Ubuntu on demand.</li>
+<li>Easy installation, provided that you have a fast Internet
+connection and you are familiar with Linux command lines to some
+extent.</li>
+<li>You can use a compiler, install a GUI (e.g. LXDE), and run any
+software that is offered by Debian&nbsp;/ Ubuntu including command line
+driven daemons as well as GUI software.</li>
+<li>The kit is accompanied by a small software repository that
+contains e.g. a daemon that updates Debian's&nbsp;/etc/resolv.conf&nbsp;file
+from the Android&nbsp;net.dns&nbsp;property.</li>
+<li>The kit runs on different hardware, i.e. armel and i386
+architectures are supported. You can use a loop disk file (up to
+2&nbsp;Gb) as well as an extra partition on an external SD card (up to
+32&nbsp;Gb).</li>
+<li>The Debian system does not run in a chroot jail, it's installed
+side-by-side to Android instead. With this, all Android files&nbsp;/
+mounts are also accessible from Debian.</li>
+<li>Easy un-installation: the pre-installed Android software on your
+device is not altered seriously and you can get rid of this stuff
+if you are done. No flashing, no system extensions, no hassles...&quot;</li>
+</ul>
+<p><a class="reference external" href="http://sven-ola.dyndns.org/repo/debian-kit-en.html">http://sven-ola.dyndns.org/repo/debian-kit-en.html</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="../debian-kit-for-android.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../debianization-with-git-buildpackage.html">Debianization with git-buildpackage</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-01-24T14:04:00">
+        Tue 24 January 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/debian.html"><i class="icon-tag"></i>debian</a>
+	<a href="../tag/git.html"><i class="icon-tag"></i>git</a>
+	<a href="../tag/packaging.html"><i class="icon-tag"></i>packaging</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;After building some useful piece of software, one has to decide
+how to best deploy it. In UNIX, the standard way to do that is by
+publishing the source code in .tar.gz format and requiring users to
+compile it.</p>
+<p>In Debian there is an alternative: using a .deb package. With a
+.deb package, a single&nbsp;dpkg -i &lt;package&gt;.deb&nbsp;installs the
+software.</p>
+<p>This article explains how to create and support a .deb package for
+a simple software maintained in git, by tracking the packaging
+scheme in a specific branch on the same repository.&quot;</p>
+<p><a class="reference external" href="http://lpenz.github.com/articles/debgit/index.html">http://lpenz.github.com/articles/debgit/index.html</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../debianization-with-git-buildpackage.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../deep-dive-into-glusterfs-33.html">Deep dive into GlusterFS 3.3</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-06-26T20:42:00">
+        Tue 26 June 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/glusterfs.html"><i class="icon-tag"></i>glusterfs</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;John Mark Walker from Red Hat talks about how GlusterFS 3.3 marks
+a significant milestone for the Gluster project. This release has
+great new features like UFO (universal file and object storage),
+HDFS compatibility, and proactive self-heal. This release is a
+significant milestone for the project, giving GlusterFS even more
+capability in the cloud. With the new features, GlusterFS will be
+better than ever at managing VM images, creating shared storage
+services in the cloud, and drastically improving speed and
+performance, especially after recovering from a hardware failure.
+Learn all about the new features and improvements of old
+features...&quot;</p>
+<p><a class="reference external" href="http://video.linux.com/videos/deep-dive-into-glusterfs-33-1">http://video.linux.com/videos/deep-dive-into-glusterfs-33-1</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../deep-dive-into-glusterfs-33.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../dtrace-for-linux.html">dtrace for linux</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2013-03-01T15:45:00">
+        Fri 01 March 2013
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/sysadmin.html"><i class="icon-tag"></i>sysadmin</a>
+	<a href="../tag/linux.html"><i class="icon-tag"></i>linux</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Introduction This is a port of the Sun DTrace user and kernel code to Linux. No linux kernel code is touched in this build, but what is produced is a dynamically loadable kernel module. This avoids licensing issues and allows people to load and update dtrace as they desire. The goal of this project is to make available DTrace for the Linux platforms. By making it available for everyone, they can use it to optimise their systems and tools, and in return, I get to benefit from their work...&quot;</p>
+<p><a class="reference external" href="https://github.com/dtrace4linux/linux">https://github.com/dtrace4linux/linux</a></p>
+<p><a class="reference external" href="http://www.slideshare.net/brendangregg/linux-performance-analysis-and-tools">http://www.slideshare.net/brendangregg/linux-performance-analysis-and-tools</a></p>
+
+                        <a class="btn primary xsmall" href="../dtrace-for-linux.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../easy-6502-learn-the-6502-assembly-language.html">Easy 6502 - Learn the 6502 Assembly Language</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-07-08T07:16:00">
+        Sun 08 July 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;<strong>Introduction</strong></p>
+<p>In this tiny ebook I’m going to show you how to get started writing
+6502 assembly language. The 6502 processor was massive in the
+seventies and eighties, powering famous computers like the BBC
+Micro, Atari 2600, Commodore 64, and the Nintendo Entertainment
+System. Bender in Futurama has a 6502 processor for a brain. Even
+the Terminator was programmed in 6502.</p>
+<p>So, why would you want to learn 6502? It’s a dead language isn’t
+it? Well, yeah, but so’s Latin. And they still teach that.
+Q.E.D...&quot;</p>
+<p><a class="reference external" href="http://skilldrick.github.com/easy6502/index.html">http://skilldrick.github.com/easy6502/index.html</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../easy-6502-learn-the-6502-assembly-language.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../enter-the-pyed-piper-via-deferraz.html">Enter the Pyed Piper via (&#64;deferraz)</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-25T20:03:00">
+        Fri 25 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+	<a href="../tag/shell.html"><i class="icon-tag"></i>shell</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;The pyed piper, or pyp, is a python-centric command line text
+manipulation tool. It allows you to format, replace, augment and
+otherwise mangle text using standard python syntax with a few
+golden-oldie tricks from unix commands of the past. You can pipe
+data into pyp just like any other unix command line tool. After
+it's in, you can use the standard repertoire of python string and
+list methods to modify the text...&quot;</p>
+<p><a class="reference external" href="http://code.google.com/p/pyp/wiki/intro">http://code.google.com/p/pyp/wiki/intro</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../enter-the-pyed-piper-via-deferraz.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../fast-easy-realtime-metrics-using-redis-bitmaps.html">Fast, easy, realtime metrics using Redis bitmaps</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-16T19:20:00">
+        Wed 16 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/redis.html"><i class="icon-tag"></i>redis</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;At <a class="reference external" href="http://www.getspool.com/">Spool</a>, we calculate our key metrics in real time.
+Traditionally, metrics are performed by a batch job (running
+hourly, daily, etc.). Redis backed bitmaps allow us to perform such
+calculations in realtime and are extremely space efficient. In a
+simulation of 128 million users, a typical metric such as “daily
+unique users” takes less than 50 ms on a MacBook Pro and only takes
+16 MB of memory. Spool doesn’t have 128 million users yet but it’s
+nice to know our approach will scale. We thought we’d share how we
+do it, in case other startups find our approach useful...&quot;</p>
+<p><a class="reference external" href="http://blog.getspool.com/2011/11/29/fast-easy-realtime-metrics-using-redis-bitmaps">http://blog.getspool.com/2011/11/29/fast-easy-realtime-metrics-using-redis-bitmaps</a>
+<a class="reference external" href="https://github.com/antirez/redis/commit/9ee55e8e583a139b35628c47ef8d2c9f1e65936b">https://github.com/antirez/redis/commit/9ee55e8e583a139b35628c47ef8d2c9f1e65936b</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../fast-easy-realtime-metrics-using-redis-bitmaps.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../fast-enough-vms-in-fast-enough-time.html">Fast Enough VMs in Fast Enough Time</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-03-18T20:24:00">
+        Sun 18 March 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;If you can stomach the smell, put yourself briefly in the shoes of
+a programming language designer. What you want to do is create new
+programming languages, combining new and old ideas into a fresh
+whole. It sounds like a fun, intellectually demanding job, and
+occasionally it is. However, we know from experience that languages
+that exist solely in the mind or on paper are mostly worthless: it
+is only when they are implemented and we can try them out that we
+can evaluate them. As well as a language design, therefore, we need
+a corresponding language implementation.</p>
+<p>This need for a corresponding language implementation leads to what
+I think of as the <em>language designer's dilemma</em>: how much
+implementation is needed to show that a language design is good?</p>
+<ul class="simple">
+<li>If too little, the language will be dismissed out of hand as
+unusably slow: the kiss of death for many a language. Especially if
+the language design is adventurous, the language designer may not
+even be sure that it can be made adequately efficient.</li>
+<li>If too much, low-level fiddling will have consumed most of the
+energy that should have gone into design. Even worse, low-level
+implementation concerns can easily end up dictating higher-level
+design choices, to the disadvantage of the latter.</li>
+</ul>
+<p>Finding a balance between these two points is difficult. When I was
+designing <a class="reference external" href="http://convergepl.org/">Converge</a>, I came down on the side of trying to get the
+design right (though the end result has more than its fair share of
+mistakes and hacks). That decision had consequences, as I shall now
+describe...&quot;</p>
+<p><a class="reference external" href="http://tratt.net/laurie/tech_articles/articles/fast_enough_vms_in_fast_enough_time">http://tratt.net/laurie/tech_articles/articles/fast_enough_vms_in_fast_enough_time</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="../fast-enough-vms-in-fast-enough-time.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        
+                <div class="pagination">
+        <ul>
+                                                                <li class="prev"><a href="../author/juliano-martinez2.html">&larr; Previous</a></li>
+                                                        <li class=""><a href="../author/juliano-martinez.html">1</a></li>
+                                        <li class=""><a href="../author/juliano-martinez2.html">2</a></li>
+                                        <li class="active"><a href="../author/juliano-martinez3.html">3</a></li>
+                                        <li class=""><a href="../author/juliano-martinez4.html">4</a></li>
+                                        <li class=""><a href="../author/juliano-martinez5.html">5</a></li>
+                                        <li class=""><a href="../author/juliano-martinez6.html">6</a></li>
+                                        <li class=""><a href="../author/juliano-martinez7.html">7</a></li>
+                                        <li class=""><a href="../author/juliano-martinez8.html">8</a></li>
+                                                        <li class="next"><a href="../author/juliano-martinez4.html">Next &rarr;</a></li>
+                        </ul>
+        </div>
+
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h5>Juliano Martinez</h5></li>
+    <a href="http://twitter.com/ncode"><i class="icon-twitter-sign icon-large"></i></a>
+    <a href="https://www.facebook.com/nc0d3"><i class="icon-facebook-sign icon-large"></i></a>
+    <a href="http://br.linkedin.com/in/ncode"><i class="icon-linkedin-sign icon-large"></i></a>
+    <a href="http://github.com/ncode"><i class="icon-github-sign icon-large"></i></a>
+    <a href="https://plus.google.com/u/0/114807336963795227899"><i class="icon-google-plus-sign icon-large"></i></a>
+<a href="../feeds/rss.xml" rel="alternate"><i class="icon-rss icon-large"></i></a>
+<li class="nav-header"></li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-3">
+    <a href="../tag/gevent.html">
+        <i class="icon-tag icon-large"></i>gevent
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xen.html">
+        <i class="icon-tag icon-large"></i>xen
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/databases.html">
+        <i class="icon-tag icon-large"></i>databases
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/html5.html">
+        <i class="icon-tag icon-large"></i>html5
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/kernel.html">
+        <i class="icon-tag icon-large"></i>kernel
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/c.html">
+        <i class="icon-tag icon-large"></i>c
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/bottle.html">
+        <i class="icon-tag icon-large"></i>bottle
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mobile.html">
+        <i class="icon-tag icon-large"></i>mobile
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/mysql.html">
+        <i class="icon-tag icon-large"></i>mysql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/concurrency.html">
+        <i class="icon-tag icon-large"></i>concurrency
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/audit.html">
+        <i class="icon-tag icon-large"></i>audit
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/packaging.html">
+        <i class="icon-tag icon-large"></i>packaging
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/ciclone.html">
+        <i class="icon-tag icon-large"></i>ciclone
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/glusterfs.html">
+        <i class="icon-tag icon-large"></i>glusterfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/player.html">
+        <i class="icon-tag icon-large"></i>player
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/diskless.html">
+        <i class="icon-tag icon-large"></i>diskless
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/git.html">
+        <i class="icon-tag icon-large"></i>git
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/video.html">
+        <i class="icon-tag icon-large"></i>video
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zfs.html">
+        <i class="icon-tag icon-large"></i>zfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zmq.html">
+        <i class="icon-tag icon-large"></i>zmq
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/lxc.html">
+        <i class="icon-tag icon-large"></i>lxc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/hbase.html">
+        <i class="icon-tag icon-large"></i>hbase
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/geolocation.html">
+        <i class="icon-tag icon-large"></i>geolocation
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/cgroups.html">
+        <i class="icon-tag icon-large"></i>cgroups
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cloud.html">
+        <i class="icon-tag icon-large"></i>cloud
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/heatmaps.html">
+        <i class="icon-tag icon-large"></i>heatmaps
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/shell.html">
+        <i class="icon-tag icon-large"></i>shell
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/riak.html">
+        <i class="icon-tag icon-large"></i>riak
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/network.html">
+        <i class="icon-tag icon-large"></i>network
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xcp.html">
+        <i class="icon-tag icon-large"></i>xcp
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailservers.html">
+        <i class="icon-tag icon-large"></i>mailservers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/elasticsearch.html">
+        <i class="icon-tag icon-large"></i>elasticsearch
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/clojure.html">
+        <i class="icon-tag icon-large"></i>clojure
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/torrent.html">
+        <i class="icon-tag icon-large"></i>torrent
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/debian.html">
+        <i class="icon-tag icon-large"></i>debian
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/darner.html">
+        <i class="icon-tag icon-large"></i>darner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openhardware.html">
+        <i class="icon-tag icon-large"></i>openhardware
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/gelf.html">
+        <i class="icon-tag icon-large"></i>gelf
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/android.html">
+        <i class="icon-tag icon-large"></i>android
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/iptables.html">
+        <i class="icon-tag icon-large"></i>iptables
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/freesoc.html">
+        <i class="icon-tag icon-large"></i>freesoc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/containers.html">
+        <i class="icon-tag icon-large"></i>containers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openflow.html">
+        <i class="icon-tag icon-large"></i>openflow
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/osx.html">
+        <i class="icon-tag icon-large"></i>osx
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/fusionio.html">
+        <i class="icon-tag icon-large"></i>fusionio
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/redis.html">
+        <i class="icon-tag icon-large"></i>redis
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/greylog2.html">
+        <i class="icon-tag icon-large"></i>greylog2
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/apache.html">
+        <i class="icon-tag icon-large"></i>apache
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/storage.html">
+        <i class="icon-tag icon-large"></i>storage
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/performance.html">
+        <i class="icon-tag icon-large"></i>performance
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/sysadmin.html">
+        <i class="icon-tag icon-large"></i>sysadmin
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/web.html">
+        <i class="icon-tag icon-large"></i>web
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/spanner.html">
+        <i class="icon-tag icon-large"></i>spanner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/netbsd.html">
+        <i class="icon-tag icon-large"></i>netbsd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/automation.html">
+        <i class="icon-tag icon-large"></i>automation
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailfromd.html">
+        <i class="icon-tag icon-large"></i>mailfromd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/rdbms.html">
+        <i class="icon-tag icon-large"></i>rdbms
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cfengine3.html">
+        <i class="icon-tag icon-large"></i>cfengine3
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/flashcache.html">
+        <i class="icon-tag icon-large"></i>flashcache
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/nosql.html">
+        <i class="icon-tag icon-large"></i>nosql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/routing.html">
+        <i class="icon-tag icon-large"></i>routing
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/messagequeue.html">
+        <i class="icon-tag icon-large"></i>messagequeue
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/postfix.html">
+        <i class="icon-tag icon-large"></i>postfix
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cassandra.html">
+        <i class="icon-tag icon-large"></i>cassandra
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/lua.html">
+        <i class="icon-tag icon-large"></i>lua
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/pxe.html">
+        <i class="icon-tag icon-large"></i>pxe
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/handlersocket.html">
+        <i class="icon-tag icon-large"></i>handlersocket
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../theme/js/jquery-1.7.2.min.js"></script>
+    <script src="../theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

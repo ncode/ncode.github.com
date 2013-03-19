@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sysadms must be lazy - nosql</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Juliano Martinez">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 9pt;
+      }
+      .tag-3 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 7pt;
+     }
+    </style>
+    <link href="../theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="../theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../theme/images/apple-touch-icon-114x114.png">
+
+    <link href="../" type="application/atom+xml" rel="alternate" title="sysadms must be lazy ATOM Feed" />
+        <link href="../feeds/rss.xml" type="application/atom+xml" rel="alternate" title="sysadms must be lazy RSS Feed" />
+    
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="../index.html">sysadms must be lazy </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                                    <li class="divider-vertical"></li>
+                                        <ul class="nav pull-right">
+                                <li><a href="../archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span12" id="content">
+                            <div class="article">
+                <h1><a href="../alchemy-database-a-hybrid-rdbmsnosql-datastore.html">Alchemy Database: A Hybrid RDBMS/NOSQL-Datastore</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-11T16:26:00">
+        Fri 11 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/nosql.html"><i class="icon-tag"></i>nosql</a>
+	<a href="../tag/rdbms.html"><i class="icon-tag"></i>rdbms</a>
+	<a href="../tag/redis.html"><i class="icon-tag"></i>redis</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><table><tr><td valign="top" style="margin:.5px;padding:0 10px;"><p>&quot;Alchemy Database is a low-latency high-TPS NewSQL RDBMS embedded
+in the NOSQL datastore <a class="reference external" href="http://redis.io/">redis</a>. Extensive
+<a class="reference external" href="http://jaksprats.wordpress.com/2010/11/15/datastore-side-scripting-can-prevent-bottlenecks/">datastore-side-scripting</a> is provided via deeply embedded <a class="reference external" href="http://www.lua.org/about.html">Lua</a>.
+Unstructured data, can also be stored, as there are no limits on
+#tables, #indexes, #columns, and <a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/HighLights?ts=1317936394&amp;updated=HighLights#Memory_optimisations">sparsely populated rows</a> use
+minimal memory.</p>
+<p>AlchemyDB believes OLTP traffic's needs are best served by
+extending SQL and has recently added the following experimental
+functionalities:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/LuaTableColumnType">LuaTable</a> - A column type that is a <a class="reference external" href="http://lua-users.org/wiki/TablesTutorial">Lua Table</a>, that single
+handedly adds both Document-Store &amp; Object-DB functionality by
+mixing Lua into SQL.</li>
+<li><a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/LuaGraphDB">GraphDB</a> - so brand new it is not even fully documented :) A
+GraphDB was created on top of AlchemyDB using SQL for indexes and
+Lua for graph-traversal logic. AlchemyDB is a customizable data
+platform.</li>
+<li><a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/AppStack">AppStack</a> - AlchemyDB uses a REST API and already had Lua
+embedded, creating a dynamic HTTP server, serving Lua webpages was
+a logical step, and it is the fastest dynamic webserver I have ever
+benchmarked (probably because it can only make internal AlchemyDB
+calls, i.e. NO backend calls :)</li>
+</ul>
+<p>Alchemy Database is optimised for top notch memory efficiency and
+top notch TPS for OLTP requests:</p>
+<ul class="simple">
+<li>Speed is achieved by being an event driven network server that
+stores 100% of data in RAM, achieving disk persistence by using a
+spare cpu-core to periodically log data changes (i.e. no threads,
+no locks, no undo-logs, no disk-seeks, serving data over a network
+at RAM speed)</li>
+<li>Storage data structures w/ very low memory overhead and data
+compression, via algorithms w/ insignificant performance hits,
+greatly increase the amount of data you can fit in RAM</li>
+<li>Optimising to the <a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/CommandReference#Supported_SQL">SQL statements</a> most commonly used in OLTP
+workloads yields a lightweight RDBMS designed for
+<a class="reference external" href="http://jaksprats.wordpress.com/2010/09/27/next-generation-web-server-pole-low-latency-at-high-concurrency/">low latency at high concurrency</a> (i.e. world class
+speed/thruput).</li>
+</ul>
+<p><strong>RAM is CHEAP these days</strong></p>
+<p>RAM is now affordable enough to be able ...</p></td></tr></table>
+                        <a class="btn primary xsmall" href="../alchemy-database-a-hybrid-rdbmsnosql-datastore.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../hbase-vs-cassandra-why-we-moved.html">HBase vs Cassandra: why we moved</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-03-05T23:52:00">
+        Mon 05 March 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/cassandra.html"><i class="icon-tag"></i>cassandra</a>
+	<a href="../tag/hbase.html"><i class="icon-tag"></i>hbase</a>
+	<a href="../tag/nosql.html"><i class="icon-tag"></i>nosql</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;My team is currently working on a brand new product – the
+forthcoming MMO <a class="reference external" href="http://www.FightMyMonster.com">www.FightMyMonster.com</a>. This has given us the
+luxury of building against a NOSQL database, which means we can put
+the horrors of MySQL sharding and expensive scalability behind us.
+Recently a few people have been asking why we seem to have changed
+our preference from HBase to Cassandra. I can confirm the change is
+true and that we have in fact almost completed porting our code to
+Cassandra, and here I will seek to provide an explanation.</p>
+<p>For those that are new to NOSQL, in a following post I will write
+about why I think we will see a seismic shift from SQL to NOSQL
+over the coming years, which will be just as important as the move
+to cloud computing. That post will also seek to explain why I think
+NOSQL might be the right choice for your company. But for now I
+will simply relay the reasons why we have chosen Cassandra as our
+NOSQL solution.</p>
+<p>Caveat Emptor – if you’re looking for a shortcut to engaging your
+neurons be aware this isn’t an exhaustive critical comparison, it
+just summarizes the logic of just another startup in a hurry with
+limited time and resources!!...&quot;</p>
+</p><p><a class="reference external" href="http://ria101.wordpress.com/2010/02/24/hbase-vs-cassandra-why-we-moved/">http://ria101.wordpress.com/2010/02/24/hbase-vs-cassandra-why-we-moved</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="../hbase-vs-cassandra-why-we-moved.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../benchmarking-cassandra-scalability-on-aws-over-a-million-writes-per-second.html">Benchmarking Cassandra Scalability on AWS - Over a million writes per second</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-02-28T12:17:00">
+        Tue 28 February 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/cassandra.html"><i class="icon-tag"></i>cassandra</a>
+	<a href="../tag/nosql.html"><i class="icon-tag"></i>nosql</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Netflix has been rolling out the Apache Cassandra NoSQL data store
+for production use over the last six months. As part of our
+benchmarking we recently decided to run a test designed to validate
+our tooling and automation scalability as well as the performance
+characteristics of Cassandra. Adrian presented these results at the
+<a class="reference external" href="http://hpts.ws/">High Performance Transaction Systems</a> workshop ???last week.</p>
+<p>We picked a write oriented benchmark using the standard Cassandra
+&quot;stress&quot; tool that is part of the product, and Denis ran and
+analyzed the tests on Amazon EC2 instances. Writes stress a data
+store all the way to the disks, while read benchmarks may only
+exercise the in-memory cache. The benchmark results should be
+reproducible by anyone, but the Netflix cloud platform automation
+for AWS makes it quick and easy to do this kind of test.</p>
+<p>The automated tooling that Netflix has developed lets us quickly
+deploy large scale Cassandra clusters, in this case a few clicks on
+a web page and about an hour to go from nothing to a very large
+Cassandra cluster consisting of 288 medium sized instances, with 96
+instances in each of three EC2 availability zones in the US-East
+region. Using an additional 60 instances as clients running the
+stress program we ran a workload of 1.1 million client writes per
+second. Data was automatically replicated across all three zones
+making a total of 3.3 million writes per second across the cluster.
+The entire test was able to complete within two hours with a total
+cost of a few hundred dollars, and these EC2 instances were only in
+existence for the duration of the test. There was no setup time, no
+discussions with IT operations about datacenter space and no more
+cost once the test was over.</p>
+<p>To measure scalability, the same test ...</p>
+                        <a class="btn primary xsmall" href="../benchmarking-cassandra-scalability-on-aws-over-a-million-writes-per-second.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../cassandra-compression-is-like-more-servers-for-free.html">Cassandra compression is like more servers for free!</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-02-11T15:34:00">
+        Sat 11 February 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/cassandra.html"><i class="icon-tag"></i>cassandra</a>
+	<a href="../tag/nosql.html"><i class="icon-tag"></i>nosql</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;A naive but convenient way to look at Cassandra is to think of it
+as a persistent cache. If your dataset is small and fits into
+memory you have great performance. When your data set grows it may
+no longer fits in memory. Based on your usage pattern /active set a
+given read might hit memory and be fast, but if the request causes
+a disk access it is going to be slower. Cassandra's number one
+weapon (to me) is that the same Linux disk cache that makes reading
+frequently read files like your /etc/passwd file fast...&quot;</p>
+<p><a class="reference external" href="http://www.edwardcapriolo.com/roller/edwardcapriolo/entry/cassandra_compression_is_like_getting">http://www.edwardcapriolo.com/roller/edwardcapriolo/entry/cassandra_compression_is_like_getting</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../cassandra-compression-is-like-more-servers-for-free.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../benchmarking-cloud-serving-systems.html">Benchmarking Cloud Serving Systems</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-12-22T20:44:00">
+        Thu 22 December 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/cassandra.html"><i class="icon-tag"></i>cassandra</a>
+	<a href="../tag/cloud.html"><i class="icon-tag"></i>cloud</a>
+	<a href="../tag/mysql.html"><i class="icon-tag"></i>mysql</a>
+	<a href="../tag/nosql.html"><i class="icon-tag"></i>nosql</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;While the use of MapReduce systems (such as Hadoop) for large
+scale data analysis has been widely recognized and studied, we have
+recently seen an explosion in the number of systems developed for
+cloud data serving. These newer systems address “cloud OLTP”
+applications, though they typically do not support ACID
+transactions. Examples of systems proposed for cloud serving use
+include BigTable, PNUTS, Cassandra, HBase, Azure, CouchDB,
+SimpleDB, Voldemort, and many others. Further, they are being ap-
+plied to a diverse range of applications that differ consider- ably
+from traditional (e.g., TPC-C like) serving workloads. The number
+of emerging cloud serving systems and the wide range of proposed
+applications, coupled with a lack of apples- to-apples performance
+comparisons, makes it difficult to un- derstand the tradeoffs
+between systems and the workloads for which they are suited. We
+present the Yahoo! Cloud Serving Benchmark (YCSB) framework, with
+the goal of fa- cilitating performance comparisons of the new
+generation of cloud data serving systems. We define a core set of
+benchmarks and report results for four widely used systems:
+Cassandra, HBase, Yahoo!’s PNUTS, and a simple sharded MySQL
+implementation. We also hope to foster the devel- opment of
+additional cloud benchmark suites that represent other classes of
+applications by making our benchmark tool available via open
+source. In this regard, a key feature of the YCSB framework/tool is
+that it is extensible—it supports easy definition of new workloads,
+in addition to making it easy to benchmark new systems.&quot;</p>
+<p><a class="reference external" href="http://www.brianfrankcooper.net/pubs/ycsb.pdf">http://www.brianfrankcooper.net/pubs/ycsb.pdf</a></p>
+<p><a class="reference external" href="http://lanyrd.com/2011/apachecon-north-america/skdpy/">http://lanyrd.com/2011/apachecon-north-america/skdpy/</a></p>
+<p><a class="reference external" href="http://lanyrd.com/2011/apachecon-north-america/skdtf/">http://lanyrd.com/2011/apachecon-north-america/skdtf/</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../benchmarking-cloud-serving-systems.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../handlersocket-plugin-for-mysql.html">HandlerSocket plugin for MySQL</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-10-17T10:37:00">
+        Mon 17 October 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/handlersocket.html"><i class="icon-tag"></i>handlersocket</a>
+	<a href="../tag/mysql.html"><i class="icon-tag"></i>mysql</a>
+	<a href="../tag/nosql.html"><i class="icon-tag"></i>nosql</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p><em>HandlerSocket</em>&nbsp;is a&nbsp;<em>MySQL</em>&nbsp;plugin that implements
+a&nbsp;NoSQL&nbsp;protocol for&nbsp;<em>MySQL</em>. This allows applications to
+communicate more directly with&nbsp;<em>MySQL</em>&nbsp;storage engines, without the
+overhead associated with usingSQL. This includes operations such as
+parsing and optimizing queries, as well as table handling
+operations (opening, locking, unlocking, closing). As a result,
+using&nbsp;<em>HandlerSocket</em>&nbsp;can provide much better performance for
+certain applications that using normal&nbsp;SQL&nbsp;application protocols.</p>
+<div><p><a class="reference external" href="http://www.percona.com/doc/percona-server/5.5/performance/handlersocket.html">http://www.percona.com/doc/percona-server/5.5/performance/handlersocket.html</a></p>
+</div><div><p><a class="reference external" href="https://github.com/ahiguti/HandlerSocket-Plugin-for-MySQL">https://github.com/ahiguti/HandlerSocket-Plugin-for-MySQL</a></p>
+</div></p>
+                        <a class="btn primary xsmall" href="../handlersocket-plugin-for-mysql.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../riak-smartmachine-benchmark-the-technical-details.html">Riak SmartMachine Benchmark: The Technical Details</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-08-23T17:04:00">
+        Tue 23 August 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/nosql.html"><i class="icon-tag"></i>nosql</a>
+	<a href="../tag/riak.html"><i class="icon-tag"></i>riak</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Recently Basho and Joyent entered into
+a`comprehensive partnership`_&nbsp;to deliver&nbsp;<a class="reference external" href="http://www.joyent.com/2010/09/joyent-riak-smartmachines-now-available/">Riak Smartmachines</a>&nbsp;to
+Joyent customers. We had been experimenting with Riak since early
+in 2010 and were eager to benchmark its performance on Joyent and
+ultimately offer a robust NO-SQL solution to our customers. Along
+the way, we were pleasantly surprised how well the Riak
+Smartmachine&nbsp;<a class="reference external" href="http://www.joyent.com/2010/09/no-sql-database-performance-in-the-cloud-webinar-recording-now-available/">demonstrated</a>&nbsp;a combination of performance,
+predictability, resilience, and linear scalability that made it
+relatively quick and easy run a&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Dynamo_(storage_system)">Dynamo</a>-class distributed data
+storage system.</p>
+<div><p><a class="reference external" href="http://joyeur.com/2010/10/31/riak-smartmachine-benchmark-the-technical-details/">http://joyeur.com/2010/10/31/riak-smartmachine-benchmark-the-technical-details</a></p>
+</div></p></p>
+                        <a class="btn primary xsmall" href="../riak-smartmachine-benchmark-the-technical-details.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        
+                        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h5>Juliano Martinez</h5></li>
+    <a href="http://twitter.com/ncode"><i class="icon-twitter-sign icon-large"></i></a>
+    <a href="https://www.facebook.com/nc0d3"><i class="icon-facebook-sign icon-large"></i></a>
+    <a href="http://br.linkedin.com/in/ncode"><i class="icon-linkedin-sign icon-large"></i></a>
+    <a href="http://github.com/ncode"><i class="icon-github-sign icon-large"></i></a>
+    <a href="https://plus.google.com/u/0/114807336963795227899"><i class="icon-google-plus-sign icon-large"></i></a>
+<a href="../feeds/rss.xml" rel="alternate"><i class="icon-rss icon-large"></i></a>
+<li class="nav-header"></li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-3">
+    <a href="../tag/gevent.html">
+        <i class="icon-tag icon-large"></i>gevent
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xen.html">
+        <i class="icon-tag icon-large"></i>xen
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/databases.html">
+        <i class="icon-tag icon-large"></i>databases
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/html5.html">
+        <i class="icon-tag icon-large"></i>html5
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/kernel.html">
+        <i class="icon-tag icon-large"></i>kernel
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/c.html">
+        <i class="icon-tag icon-large"></i>c
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/bottle.html">
+        <i class="icon-tag icon-large"></i>bottle
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mobile.html">
+        <i class="icon-tag icon-large"></i>mobile
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/mysql.html">
+        <i class="icon-tag icon-large"></i>mysql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/concurrency.html">
+        <i class="icon-tag icon-large"></i>concurrency
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/audit.html">
+        <i class="icon-tag icon-large"></i>audit
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/packaging.html">
+        <i class="icon-tag icon-large"></i>packaging
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/ciclone.html">
+        <i class="icon-tag icon-large"></i>ciclone
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/glusterfs.html">
+        <i class="icon-tag icon-large"></i>glusterfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/player.html">
+        <i class="icon-tag icon-large"></i>player
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/diskless.html">
+        <i class="icon-tag icon-large"></i>diskless
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/git.html">
+        <i class="icon-tag icon-large"></i>git
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/video.html">
+        <i class="icon-tag icon-large"></i>video
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zfs.html">
+        <i class="icon-tag icon-large"></i>zfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zmq.html">
+        <i class="icon-tag icon-large"></i>zmq
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/lxc.html">
+        <i class="icon-tag icon-large"></i>lxc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/hbase.html">
+        <i class="icon-tag icon-large"></i>hbase
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/geolocation.html">
+        <i class="icon-tag icon-large"></i>geolocation
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/cgroups.html">
+        <i class="icon-tag icon-large"></i>cgroups
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cloud.html">
+        <i class="icon-tag icon-large"></i>cloud
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/heatmaps.html">
+        <i class="icon-tag icon-large"></i>heatmaps
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/shell.html">
+        <i class="icon-tag icon-large"></i>shell
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/riak.html">
+        <i class="icon-tag icon-large"></i>riak
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/network.html">
+        <i class="icon-tag icon-large"></i>network
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xcp.html">
+        <i class="icon-tag icon-large"></i>xcp
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailservers.html">
+        <i class="icon-tag icon-large"></i>mailservers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/elasticsearch.html">
+        <i class="icon-tag icon-large"></i>elasticsearch
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/clojure.html">
+        <i class="icon-tag icon-large"></i>clojure
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/torrent.html">
+        <i class="icon-tag icon-large"></i>torrent
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/debian.html">
+        <i class="icon-tag icon-large"></i>debian
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/darner.html">
+        <i class="icon-tag icon-large"></i>darner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openhardware.html">
+        <i class="icon-tag icon-large"></i>openhardware
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/gelf.html">
+        <i class="icon-tag icon-large"></i>gelf
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/android.html">
+        <i class="icon-tag icon-large"></i>android
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/iptables.html">
+        <i class="icon-tag icon-large"></i>iptables
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/freesoc.html">
+        <i class="icon-tag icon-large"></i>freesoc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/containers.html">
+        <i class="icon-tag icon-large"></i>containers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openflow.html">
+        <i class="icon-tag icon-large"></i>openflow
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/osx.html">
+        <i class="icon-tag icon-large"></i>osx
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/fusionio.html">
+        <i class="icon-tag icon-large"></i>fusionio
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/redis.html">
+        <i class="icon-tag icon-large"></i>redis
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/greylog2.html">
+        <i class="icon-tag icon-large"></i>greylog2
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/apache.html">
+        <i class="icon-tag icon-large"></i>apache
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/storage.html">
+        <i class="icon-tag icon-large"></i>storage
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/performance.html">
+        <i class="icon-tag icon-large"></i>performance
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/sysadmin.html">
+        <i class="icon-tag icon-large"></i>sysadmin
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/web.html">
+        <i class="icon-tag icon-large"></i>web
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/spanner.html">
+        <i class="icon-tag icon-large"></i>spanner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/netbsd.html">
+        <i class="icon-tag icon-large"></i>netbsd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/automation.html">
+        <i class="icon-tag icon-large"></i>automation
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailfromd.html">
+        <i class="icon-tag icon-large"></i>mailfromd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/rdbms.html">
+        <i class="icon-tag icon-large"></i>rdbms
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cfengine3.html">
+        <i class="icon-tag icon-large"></i>cfengine3
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/flashcache.html">
+        <i class="icon-tag icon-large"></i>flashcache
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/nosql.html">
+        <i class="icon-tag icon-large"></i>nosql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/routing.html">
+        <i class="icon-tag icon-large"></i>routing
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/messagequeue.html">
+        <i class="icon-tag icon-large"></i>messagequeue
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/postfix.html">
+        <i class="icon-tag icon-large"></i>postfix
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cassandra.html">
+        <i class="icon-tag icon-large"></i>cassandra
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/lua.html">
+        <i class="icon-tag icon-large"></i>lua
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/pxe.html">
+        <i class="icon-tag icon-large"></i>pxe
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/handlersocket.html">
+        <i class="icon-tag icon-large"></i>handlersocket
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../theme/js/jquery-1.7.2.min.js"></script>
+    <script src="../theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

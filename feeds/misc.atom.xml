@@ -1,0 +1,1788 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sysadms must be lazy</title><link href="http://martinez.io/" rel="alternate"></link><link href="http://martinez.io/feeds/misc.atom.xml" rel="self"></link><id>http://martinez.io/</id><updated>2013-03-29T08:45:00-03:00</updated><entry><title>ZFS for linux</title><link href="http://martinez.io/zfs-for-linux.html" rel="alternate"></link><updated>2013-03-29T08:45:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2013-03-29:zfs-for-linux.html</id><summary type="html">&lt;p&gt;&amp;quot;Today the ZFS on Linux project reached an important milestone with the official 0.6.1 release!  Over two years of use by real users has convinced us ZoL is ready for wide scale deployment on everything from desktops to super computers.&lt;/p&gt;
+&lt;p&gt;In addition to the usual bug fixes the 0.6.1 release introduces a new
+property called 'snapdev'.  The 'snapdev' property was introduced to
+control the visibility of zvol snapshot devices and may be set to
+either 'visible' or 'hidden'.  When set to 'hidden', which is the
+default, zvol snapshot devices will not be created under /dev/.
+To gain access to these devices the property must be set to 'visible'
+This behavior is analogous to the existing 'snapdir' property.&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Other significant changes include:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Added Linux 3.9 compatibility&lt;/li&gt;
+&lt;li&gt;Added snapdev property to control visibility of zvol snapshots.&lt;/li&gt;
+&lt;li&gt;Disabled old on-disk format warning for &lt;cite&gt;zpool status -x&lt;/cite&gt;.&lt;/li&gt;
+&lt;li&gt;Enabled zfs_arc_memory_throttle_disable by default.&lt;/li&gt;
+&lt;li&gt;Improved slab object reclaim behavior.&lt;/li&gt;
+&lt;li&gt;Fixed disk cache flushing for 2.6.37 and newer kernels.&lt;/li&gt;
+&lt;li&gt;Fixed hot spare functionality.&lt;/li&gt;
+&lt;li&gt;Git &amp;lt;id&amp;gt;-&amp;lt;hash&amp;gt; included in release for working builds.&lt;/li&gt;
+&lt;li&gt;Updated dkms and kmod compliant packaging.&lt;/li&gt;
+&lt;li&gt;Added man pages for splat, fsck.zfs, mount.zfs, zhack,
+zinject, zpios, ztest, and zpool-features.&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://groups.google.com/a/zfsonlinux.org/forum/?fromgroups=#!topic/zfs-announce/ZXADhyOwFfA"&gt;https://groups.google.com/a/zfsonlinux.org/forum/?fromgroups=#!topic/zfs-announce/ZXADhyOwFfA&lt;/a&gt;&lt;/p&gt;
+</summary><category term="storage"></category><category term="linux"></category><category term="zfs"></category></entry><entry><title>dtrace for linux</title><link href="http://martinez.io/dtrace-for-linux.html" rel="alternate"></link><updated>2013-03-01T15:45:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2013-03-01:dtrace-for-linux.html</id><summary type="html">&lt;p&gt;&amp;quot;Introduction This is a port of the Sun DTrace user and kernel code to Linux. No linux kernel code is touched in this build, but what is produced is a dynamically loadable kernel module. This avoids licensing issues and allows people to load and update dtrace as they desire. The goal of this project is to make available DTrace for the Linux platforms. By making it available for everyone, they can use it to optimise their systems and tools, and in return, I get to benefit from their work...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/dtrace4linux/linux"&gt;https://github.com/dtrace4linux/linux&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.slideshare.net/brendangregg/linux-performance-analysis-and-tools"&gt;http://www.slideshare.net/brendangregg/linux-performance-analysis-and-tools&lt;/a&gt;&lt;/p&gt;
+</summary><category term="sysadmin"></category><category term="linux"></category></entry><entry><title>Know the wheel binary package</title><link href="http://martinez.io/know-the-wheel-binary-package.html" rel="alternate"></link><updated>2013-02-16T23:07:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2013-02-16:know-the-wheel-binary-package.html</id><summary type="html">&lt;div&gt;&lt;div class="section" id="abstract"&gt;
+&lt;h2&gt;&amp;quot;&lt;a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id3"&gt;Abstract&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This PEP describes a built-package format for Python called
+&amp;quot;wheel&amp;quot;.&lt;/p&gt;
+&lt;p&gt;A wheel is a ZIP-format archive with a specially formatted file
+name and the&amp;nbsp;.whl&amp;nbsp;extension. It contains a single distribution
+nearly as it would be installed according to&amp;nbsp;&lt;a class="reference external" href="http://www.python.org/dev/peps/pep-0376"&gt;PEP 376&lt;/a&gt;&amp;nbsp;with a
+particular installation scheme. Although a specialized installer is
+recommended, a wheel file may be installed by simply unpacking into
+site-packages with the standard 'unzip' tool while preserving
+enough information to spread its contents out onto their final
+paths at any later time.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;
+&lt;div class="section" id="pep-acceptance"&gt;
+&lt;h2&gt;&lt;a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id4"&gt;PEP Acceptance&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This PEP was accepted, and the defined wheel version updated to
+1.0, by Nick Coghlan on 16th February, 2013&amp;nbsp;&lt;a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id2"&gt;[1]&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;
+&lt;div class="section" id="rationale"&gt;
+&lt;h2&gt;&lt;a class="reference external" href="http://www.python.org/dev/peps/pep-0427/#id5"&gt;Rationale&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Python needs a package format that is easier to install than sdist.
+Python's sdist packages are defined by and require the distutils
+and setuptools build systems, running arbitrary code to
+build-and-install, and re-compile, code just so it can be installed
+into a new virtualenv. This system of conflating build-install is
+slow, hard to maintain, and hinders innovation in both build
+systems and installers.&lt;/p&gt;
+&lt;p&gt;Wheel attempts to remedy these problems by providing a simpler
+interface between the build system and the installer. The wheel
+binary package format frees installers from having to know about
+the build system, saves time by amortizing compile time over many
+installations, and removes the need to install a build system in
+the target environment...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.python.org/dev/peps/pep-0427"&gt;http://www.python.org/dev/peps/pep-0427/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;/div&gt;
+</summary><category term="packaging"></category><category term="python"></category></entry><entry><title>Debian Kit for Android</title><link href="http://martinez.io/debian-kit-for-android.html" rel="alternate"></link><updated>2013-02-12T16:04:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2013-02-12:debian-kit-for-android.html</id><summary type="html">&lt;p&gt;&amp;quot;This kit installs a full version of Debian or Ubuntu on your
+Android phone or tablet. Key features are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Debian and Android side-by-side - your Android device works as
+usual but you can unleash the power of Debian&amp;nbsp;/ Ubuntu on demand.&lt;/li&gt;
+&lt;li&gt;Easy installation, provided that you have a fast Internet
+connection and you are familiar with Linux command lines to some
+extent.&lt;/li&gt;
+&lt;li&gt;You can use a compiler, install a GUI (e.g. LXDE), and run any
+software that is offered by Debian&amp;nbsp;/ Ubuntu including command line
+driven daemons as well as GUI software.&lt;/li&gt;
+&lt;li&gt;The kit is accompanied by a small software repository that
+contains e.g. a daemon that updates Debian's&amp;nbsp;/etc/resolv.conf&amp;nbsp;file
+from the Android&amp;nbsp;net.dns&amp;nbsp;property.&lt;/li&gt;
+&lt;li&gt;The kit runs on different hardware, i.e. armel and i386
+architectures are supported. You can use a loop disk file (up to
+2&amp;nbsp;Gb) as well as an extra partition on an external SD card (up to
+32&amp;nbsp;Gb).&lt;/li&gt;
+&lt;li&gt;The Debian system does not run in a chroot jail, it's installed
+side-by-side to Android instead. With this, all Android files&amp;nbsp;/
+mounts are also accessible from Debian.&lt;/li&gt;
+&lt;li&gt;Easy un-installation: the pre-installed Android software on your
+device is not altered seriously and you can get rid of this stuff
+if you are done. No flashing, no system extensions, no hassles...&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://sven-ola.dyndns.org/repo/debian-kit-en.html"&gt;http://sven-ola.dyndns.org/repo/debian-kit-en.html&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="android"></category><category term="debian"></category></entry><entry><title>C++ containers that save memory and time</title><link href="http://martinez.io/c-containers-that-save-memory-and-time.html" rel="alternate"></link><updated>2013-02-04T00:58:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2013-02-04:c-containers-that-save-memory-and-time.html</id><summary type="html">&lt;p&gt;&amp;quot;C++ standard libraries commonly implement the map and set data
+structures using Red-Black trees, which store one element per node,
+requiring three pointers plus one bit of information per element to
+keep the tree balanced. By comparison, B-tree containers store a
+number of elements per node, thereby reducing pointer overhead and
+saving a significant amount of memory. For small data types, B-tree
+containers typically reduce memory use by&amp;nbsp;&lt;a class="reference external" href="https://code.google.com/p/cpp-btree/wiki/UsageInstructions#Memory_usage_comparison"&gt;50 to 80%&lt;/a&gt;&amp;nbsp;compared
+with Red-Black tree containers...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://google-opensource.blogspot.com.br/2013/01/c-containers-that-save-memory-and-time.html"&gt;http://google-opensource.blogspot.com.br/2013/01/c-containers-that-save-memory-and-time.html&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="c"></category></entry><entry><title>Simple and Fast jobs with python-rq and rq-dashboard</title><link href="http://martinez.io/simple-and-fast-jobs-with-python-rq-and-rq-dashboard.html" rel="alternate"></link><updated>2013-01-31T02:01:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2013-01-31:simple-and-fast-jobs-with-python-rq-and-rq-dashboard.html</id><summary type="html">&lt;p&gt;&amp;quot;RQ (Redis Queue) is a simple Python library for queueing jobs and
+processing them in the background with workers. It is backed by
+Redis and it is designed to have a low barrier to entry. It should
+be integrated in your web stack easily...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://python-rq.org"&gt;http://python-rq.org&lt;/a&gt;
+&amp;quot;rq-dashboard is a general purpose, lightweight, Flask-based web
+front-end to monitor your RQ queues, jobs, and workers in
+realtime...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/nvie/rq-dashboard"&gt;https://github.com/nvie/rq-dashboard&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="messagequeue"></category><category term="python"></category></entry><entry><title>Cfengine3 tips - #3</title><link href="http://martinez.io/cfengine3-tips-3.html" rel="alternate"></link><updated>2013-01-31T01:48:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2013-01-31:cfengine3-tips-3.html</id><summary type="html">&lt;p&gt;With Cfengine3 you are able to define &amp;quot;classes&amp;quot; dinamically and
+trigger what you want to do, the following promise use this idea to
+install package based in information retrieved from your machine.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;mkdir /etc/default/cf-tags/context
+touch /etc/default/cf-tags/context/default
+
+###
+
+body common control {
+
+    version =&amp;gt; &amp;quot;install_with_custom_classes&amp;quot;;
+
+    bundlesequence =&amp;gt; {
+        &amp;quot;install_packages&amp;quot;
+    };
+
+    inputs =&amp;gt; {
+        &amp;quot;cfengine_stdlib.cf&amp;quot;,
+        &amp;quot;library.cf&amp;quot;
+    };
+
+}
+
+bundle common context {
+
+    vars:
+        &amp;quot;context&amp;quot; slist =&amp;gt;
+            lsdir(&amp;quot;/etc/default/cf-tags/context&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;false&amp;quot;);
+
+    classes:
+        &amp;quot;context_relevance&amp;quot; expression =&amp;gt; isvariable(&amp;quot;context&amp;quot;);
+
+        context_relevance::
+            &amp;quot;$(context)&amp;quot; expression =&amp;gt;
+                isplain(&amp;quot;/etc/default/cf-tags/context/$(context)&amp;quot;);
+
+}
+
+bundle agent install_packages {
+
+    methods:
+        apache::
+            &amp;quot;any&amp;quot; usebundle =&amp;gt; manage_package(&amp;quot;add&amp;quot;, &amp;quot;apache2&amp;quot;);
+
+        bash_completion::
+            &amp;quot;any&amp;quot; usebundle =&amp;gt; manage_package(&amp;quot;add&amp;quot;, &amp;quot;bash-completion&amp;quot;);
+
+        postfix::
+            &amp;quot;any&amp;quot; usebundle =&amp;gt; manage_package(&amp;quot;add&amp;quot;, &amp;quot;postfix&amp;quot;);
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;&lt;strong&gt;How it works?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&amp;quot;bundle common&amp;quot; is a useful place to define global variables and classes :D&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;bundle common context {
+
+    vars:
+        &amp;quot;context&amp;quot; slist =&amp;gt; lsdir(&amp;quot;/etc/default/cf-tags/context&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;false&amp;quot;);
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Inside this example lsdir will list every file inside /etc/default/cf-tags/context and store it inside slist named context&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;classes:
+    &amp;quot;context_relevance&amp;quot; expression =&amp;gt; isvariable(&amp;quot;context&amp;quot;);
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Here cfengine will verify if context is a variable and define the class&amp;nbsp;context_relevance&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;        context_relevance::
+            &amp;quot;$(context)&amp;quot; expression =&amp;gt;
+                isplain(&amp;quot;/etc/default/cf-tags/context/$(context)&amp;quot;);
+
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;if you have&amp;nbsp;context_relevance defined it will go through each value and verify if is a plain file on fs, and will declare a class with the file name if it exists&amp;nbsp;&lt;/em&gt;&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;Doing &amp;quot;touch /etc/default/cf-tags/context/apache&amp;quot; will define the
+apache classe to cfengine and install apache2 package. Using this
+idea is possible to use lots of customizations and keep your
+promises generic.&lt;/p&gt;
+</summary><category term="cfengine3"></category><category term="sysadmin"></category></entry><entry><title>heatmap.js - JavaScript Library for html5 canvas based heatmaps</title><link href="http://martinez.io/heatmapjs-javascript-library-for-html5-canvas-based-heatmaps.html" rel="alternate"></link><updated>2012-11-12T12:11:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-11-12:heatmapjs-javascript-library-for-html5-canvas-based-heatmaps.html</id><summary type="html">&lt;p&gt;&amp;quot;&lt;strong&gt;What is a heatmap?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You've never heard of heatmaps? No problem! In short: a heatmap is
+a graphical representation of datapoints with different frequency,
+usually red spots on a heatmap are highly frequent spots and blue
+ones are less frequent spots. For a more detailed explanaition
+check&lt;/p&gt;
+&lt;div class="section" id="about-heatmap-js"&gt;
+&lt;h2&gt;About heatmap.js&lt;/h2&gt;
+&lt;p&gt;heatmap.js is a JavaScript library that can be used to&amp;nbsp;generate web
+heatmaps with the html5canvas element&amp;nbsp;based on your data. Heatmap
+instances contain a store in order to colorize the&amp;nbsp;heatmap based on
+relative data, which means if you're adding only a single datapoint
+to the store it will be displayed as the hottest(red) spot, then
+adding another point with a higher count, it will&amp;nbsp;dynamically
+recalculate. The heatmaps are&amp;nbsp;fully customizable&amp;nbsp;- you're welcome
+to choose your own color gradient, change its opacity, datapoint
+radius and many more. The library is dual-licensed under the&amp;nbsp;MIT
+and the Beerware license, feel free to use it in your projects.
+&lt;a class="reference external" href="https://github.com/pa7/heatmap.js"&gt;Contributions on github&lt;/a&gt;&amp;nbsp;and feedback is very appreciated...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.patrick-wied.at/static/heatmapjs"&gt;http://www.patrick-wied.at/static/heatmapjs&lt;/a&gt;
+&lt;a class="reference external" href="http://www.patrick-wied.at/blog/the-inner-life-of-heatmap-js"&gt;http://www.patrick-wied.at/blog/the-inner-life-of-heatmap-js&amp;nbsp;&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/div&gt;
+</summary><category term="geolocation"></category><category term="heatmaps"></category><category term="html5"></category></entry><entry><title>Learn python playing at www.checkio.org</title><link href="http://martinez.io/learn-python-playing-at-wwwcheckioorg.html" rel="alternate"></link><updated>2012-11-08T09:59:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-11-08:learn-python-playing-at-wwwcheckioorg.html</id><summary type="html">&lt;p&gt;&amp;quot;There you can learn Python coding, try yourself in solving various
+kinds of problems and share your ideas with others. Moreover, you
+can consider original solutions of other users, exchange opinions
+and find new friends.&lt;/p&gt;
+&lt;p&gt;If you are just starting with Python – CheckIO is a great chance
+for you to learn the basics and get a rich practice in solving
+different tasks. If you’re an experienced coder, here you’ll find
+an exciting opportunity to perfect your skills and learn new
+alternative logics from others. On CheckIO you can not only resolve
+the existing tasks, but also provide your own ones and even get
+points for them. Enjoy the possibility of playing logical games,
+participating in exciting competitions and share your success with
+friends inCheckIO.org!&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.checkio.org/"&gt;http://www.checkio.org&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="python"></category></entry><entry><title>Cfengine3 tips - #2</title><link href="http://martinez.io/cfengine3-tips-2.html" rel="alternate"></link><updated>2012-10-28T11:30:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-10-28:cfengine3-tips-2.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Creating your own library&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Even write code to automate can be repetitive, so... one thing that
+you are able to do with cfengine is write your own bundles to be
+used as method inside your policy, for example you have packages
+with same name on redhat and debian what could you do to avoid
+rewrite the package promise every time?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;*vim&amp;nbsp;library.cf*&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;bundle agent manage_package (action, package) {
+
+    vars:
+        i386|i486|i586|i686::
+            &amp;quot;arch&amp;quot; slist =&amp;gt; { &amp;quot;noarch&amp;quot;, &amp;quot;i386&amp;quot;, &amp;quot;i486&amp;quot;, &amp;quot;i586&amp;quot;, &amp;quot;i686&amp;quot; };
+
+        x86_64::
+            &amp;quot;arch&amp;quot; slist =&amp;gt; { &amp;quot;noarch&amp;quot;, &amp;quot;x86_64&amp;quot; };
+
+    classes:
+        redhat::
+            &amp;quot;$(action)&amp;quot; expression =&amp;gt; isvariable(action);
+
+        redhat.add::
+            &amp;quot;has_package&amp;quot; expression =&amp;gt;
+                returnszero(&amp;quot;/bin/rpm -q ${package} --quiet&amp;quot;, &amp;quot;noshell&amp;quot;);
+
+    packages:
+        redhat.!add::
+            &amp;quot;${package}&amp;quot;
+                package_policy =&amp;gt; &amp;quot;$(action)&amp;quot;,
+                package_architectures =&amp;gt; { &amp;quot;${arch}&amp;quot; },
+                package_method =&amp;gt; yum;
+
+        redhat.add.!has_package::
+            &amp;quot;${package}&amp;quot;
+                package_policy =&amp;gt; &amp;quot;$(action)&amp;quot;,
+                package_architectures =&amp;gt; { &amp;quot;${arch}&amp;quot; },
+                package_method =&amp;gt; yum;
+
+        debian::
+            &amp;quot;${package}&amp;quot;
+                package_policy =&amp;gt; &amp;quot;${action}&amp;quot;,
+                package_method =&amp;gt; apt;
+
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;*vim install_bash_with_library.cf&amp;nbsp;*&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;body common control {
+
+    version =&amp;gt; &amp;quot;bash_completion_debian_0.2&amp;quot;;
+
+    bundlesequence =&amp;gt; {
+        &amp;quot;install_packages&amp;quot;
+    };
+
+    inputs =&amp;gt; {
+        &amp;quot;cfengine_stdlib.cf&amp;quot;
+     };
+}
+
+bundle agent install_packages {
+    vars:
+        debian|redhat::
+            &amp;quot;packages_to_install&amp;quot; slist =&amp;gt; { &amp;quot;bash&amp;quot;, &amp;quot;bash-completion&amp;quot; };
+
+     methods:
+        debian|redhat::
+            &amp;quot;any&amp;quot; usebundle =&amp;gt; manage_package(&amp;quot;add&amp;quot;, &amp;quot;$(packages_to_install)&amp;quot;);
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And now run:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;*cf-agent -KI -f $PWD/install_bash_with_library.cf*&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I will keep writing new recipes every week about cfengine3 and how
+to use it :D
+&lt;a class="reference external" href="https://github.com/ncode/martinez.io-cfengine-examples"&gt;https://github.com/ncode/martinez.io-cfengine-examples&lt;/a&gt;&lt;/p&gt;
+</summary><category term="cfengine3"></category><category term="sysadmin"></category></entry><entry><title>Cfengine3 tips - #1</title><link href="http://martinez.io/cfengine3-tips-1.html" rel="alternate"></link><updated>2012-10-25T12:23:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-10-25:cfengine3-tips-1.html</id><summary type="html">&lt;p&gt;Usually I hear things like Cfengine can't run without a server or
+it is so dificult to use. I agree that Cfengine learn curve isn't
+that much faster but it gives you a impressive power over your
+machine and its state. Today I will show you how to write a
+standalone policy to install bash_completion and it will work with
+any package that you would want to install:&lt;/p&gt;
+&lt;p&gt;First thing to do:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;*wget&amp;nbsp;`https://raw.github.com/cfengine/copbl/master/cfengine_stdlib.cf`_*&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;***vim install_bash.cf*&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;body common control {
+    version =&amp;gt; &amp;quot;bash_completion_debian_0.1&amp;quot;;
+
+    bundlesequence =&amp;gt; {
+        &amp;quot;install_packages&amp;quot;
+    };
+
+    inputs =&amp;gt; {
+        &amp;quot;cfengine_stdlib.cf&amp;quot;
+    };
+}
+
+
+bundle agent install_packages {
+    vars:
+        debian::
+            &amp;quot;packages_to_install&amp;quot; slist =&amp;gt; { &amp;quot;bash&amp;quot;, &amp;quot;bash-completion&amp;quot; };
+
+    packages:
+        &amp;quot;${packages_to_install}&amp;quot;
+            package_policy =&amp;gt; &amp;quot;${paction}&amp;quot;,
+            package_method =&amp;gt; apt;
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And now run:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;*cf-agent -KI -f $PWD/install_bash.cf*&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I will keep writing new recipes every week about cfengine3 and how
+to use it :D&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/ncode/martinez.io-cfengine-examples"&gt;https://github.com/ncode/martinez.io-cfengine-examples&lt;/a&gt;&lt;/p&gt;
+</summary><category term="cfengine3"></category><category term="sysadmin"></category></entry><entry><title>Tuning Linux IPv4 route cache</title><link href="http://martinez.io/tuning-linux-ipv4-route-cache.html" rel="alternate"></link><updated>2012-10-17T16:55:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-10-17:tuning-linux-ipv4-route-cache.html</id><summary type="html">&lt;p&gt;&amp;quot;The route cache is a Linux kernel component enabling route lookups
+to be faster by caching the results in some table and checking it
+before issuing a regular lookup in the route tables. When using
+Linux as a router, the inefficiency of the route cache can hinder
+the performances of your&amp;nbsp;box.&lt;/p&gt;
+&lt;p&gt;The documentation on this component is scarce and it is difficult
+to find up-to-date bits on how the route cache works and how to
+tune it. The book&amp;nbsp;&lt;a class="reference external" href="http://shop.oreilly.com/product/9780596002558.do"&gt;Understanding Linux Network Internals&lt;/a&gt;&amp;nbsp;from
+O’Reilly is an exception and contains valuable information on how
+the route cache works. Even if the book is targeted at 2.6.12, the
+part on the route cache is still quite accurate. Unfortunately, it
+fails to provide appropriate tips on how to monitor and tune the
+route&amp;nbsp;cache...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://vincent.bernat.im/en/blog/2011-ipv4-route-cache-linux.html"&gt;http://vincent.bernat.im/en/blog/2011-ipv4-route-cache-linux.html&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="linux"></category><category term="performance"></category><category term="routing"></category></entry><entry><title>mediacore - A video, audio and podcast publication platform written in Python.</title><link href="http://martinez.io/mediacore-a-video-audio-and-podcast-publication-platform-written-in-python.html" rel="alternate"></link><updated>2012-10-10T23:41:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-10-10:mediacore-a-video-audio-and-podcast-publication-platform-written-in-python.html</id><summary type="html">&lt;p&gt;&amp;quot;MediaCore CE provides unparalleled organization, statistics,
+accessibility, and scalability. Well-designed and well-engineered
+it is the ideal solution for any organization with large
+collections of video or audio.
+Run a powerful video site built in Python on your own
+infrastructure...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://mediacorecommunity.org"&gt;http://mediacorecommunity.org&lt;/a&gt;
+&lt;a class="reference external" href="https://github.com/mediacore/mediacore-community"&gt;https://github.com/mediacore/mediacore-community&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="player"></category><category term="python"></category><category term="video"></category><category term="web"></category></entry><entry><title>freeSoC - The open hardware microcontroller</title><link href="http://martinez.io/freesoc-the-open-hardware-microcontroller.html" rel="alternate"></link><updated>2012-09-29T16:52:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-09-29:freesoc-the-open-hardware-microcontroller.html</id><summary type="html">&lt;div class="section" id="what-is-freesoc"&gt;
+&lt;h2&gt;&amp;quot;What is freeSoC?&lt;/h2&gt;
+&lt;p&gt;freeSoC is an open hardware educational microcontroller development
+kit using Cypress Semiconductor PSoC 5 microcontrollers. It has an
+Arduino compatible pinout, as well as 5 general purpose expansion
+headers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-s-different-about-freesoc"&gt;
+&lt;h2&gt;What's different about freeSoC?&lt;/h2&gt;
+&lt;p&gt;Typical microcontrollers have fixed-function peripherals for
+functionality like ADC, DAC, PWM, SPI, I2C, etc. The PSoC 5
+microcontroller used by freeSoC gives designers the flexibility to
+use ANY pin for ANY purpose. The PSoC 5 contains dual 12-bit
+700kSps SAR ADCs, quad 8-bit current DACs, quad op-amps, and a
+flexible array of 24 digital blocks which can implement any digital
+interface.&lt;/p&gt;
+&lt;p&gt;Using a drag-and-drop interface, designers can add these components
+to a graphical block diagram, route the inputs and outputs to any
+available pins, and program functionality using well-documented
+APIs for each component. It completely changes the game of embedded
+hardware design, allowing the designer to configure and reconfigure
+all their hardware in software, without ever making changes to a
+PCB or re-wiring a circuit by hand.&lt;/p&gt;
+&lt;p&gt;Need a 16-input analog multiplexer? Just add it to your block
+diagram. Need a transimpedance amplifier? No need to shop around
+for op-amps, just drag-and-drop and you're done.&lt;/p&gt;
+&lt;p&gt;freeSoC is more than a System on a Chip, it's an entire hardware
+design team on a chip...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://freesoc.net"&gt;http://freesoc.net&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/div&gt;
+</summary><category term="freesoc"></category><category term="openhardware"></category></entry><entry><title>CIRCL automatic launch object detection for Mac OSX</title><link href="http://martinez.io/circl-automatic-launch-object-detection-for-mac-osx.html" rel="alternate"></link><updated>2012-09-27T14:21:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-09-27:circl-automatic-launch-object-detection-for-mac-osx.html</id><summary type="html">&lt;p&gt;&amp;quot;Current Mac OS X malware often persists and automatically starts
+by using the built-in launch system [1]. This tool makes use of
+Automatic Folder Actions [2] in order to create a very basic but
+effective way of monitoring the addition of new launch objects to
+standard locations. In case a new object is placed in one of the
+monitored directories, a pop-up informs the user about the change,
+who then has in turn to decide if the change was legitimate or
+not...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.circl.lu/pub/tr-08"&gt;http://www.circl.lu/pub/tr-08&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="osx"></category></entry><entry><title>Percona Server tree with support of Fusion-io atomic writes and DirectFS (via @djserdan)</title><link href="http://martinez.io/percona-server-tree-with-support-of-fusion-io-atomic-writes-and-directfs-via-djserdan.html" rel="alternate"></link><updated>2012-09-25T13:24:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-09-25:percona-server-tree-with-support-of-fusion-io-atomic-writes-and-directfs-via-djserdan.html</id><summary type="html">&lt;p&gt;&amp;quot;Not so long ago Fusion-io announced an SDK which provides direct
+API access to Fusion ioMemory(tm) in addition to providing a native
+filesystem (directFS) with a goal to avoid overhead from kernel and
+regular Linux filesystems: ext4 and xfs. This requires a support
+from application, it should use special calls for IO. With help
+from Fusion-io, we provide source code of Percona Server which uses
+direct API access. The main idea that with this functionality you
+can disable “innodb-doublewrite”, retain ACID compliance by using
+atomic writes, and in IO intensive workloads gain an additional
+30-50% in throughput when compared to workloads on the same
+ioMemory™ device using an unmodified Percona Server. Further
+benchmarking results on latency variability reduction expected
+soon...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.mysqlperformanceblog.com/2012/09/24/percona-server-tree-with-support-of-fusion-io-atomic-writes-and-directfs/"&gt;http://www.mysqlperformanceblog.com/2012/09/24/percona-server-tree-with-support-of-fusion-io-atomic-writes-and-directfs/&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="fusionio"></category><category term="mysql"></category></entry><entry><title>Polysh - Aggregating several remote shells into one</title><link href="http://martinez.io/polysh-aggregating-several-remote-shells-into-one.html" rel="alternate"></link><updated>2012-09-20T00:52:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-09-20:polysh-aggregating-several-remote-shells-into-one.html</id><summary type="html">&lt;p&gt;I've been using this tool for 2 years and it is pretty stable so
+far. The project was rename from gsh to Polysh, is incredible how
+helpful it can be when you need to manage more than 500 or even
+1000 servers at once.&lt;/p&gt;
+&lt;p&gt;&amp;quot;Polysh is a tool to aggregate several remote shells into one. It
+is used to launch an interactive remote shell on many machines at
+once. It is written in Python and requires Python ≥ 2.4.&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://guichaz.free.fr/polysh/"&gt;http://guichaz.free.fr/polysh/&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="python"></category><category term="sysadmin"></category></entry><entry><title>Spanner: Google???s Globally-Distributed Database</title><link href="http://martinez.io/spanner-googles-globally-distributed-database.html" rel="alternate"></link><updated>2012-09-18T12:48:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-09-18:spanner-googles-globally-distributed-database.html</id><summary type="html">&lt;p&gt;&amp;quot;Spanner is Google’s scalable, multi-version, globallydistributed,
+and synchronously-replicated database. It is
+the first system to distribute data at global scale and support
+externally-consistent distributed transactions. This
+paper describes how Spanner is structured, its feature set,
+the rationale underlying various design decisions, and a
+novel time API that exposes clock uncertainty. This API
+and its implementation are critical to supporting external
+consistency and a variety of powerful features: nonblocking
+reads in the past, lock-free read-only transactions,
+and atomic schema changes, across all of Spanner...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/pt-BR//archive/spanner-osdi2012.pdf"&gt;http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/pt-BR//archive/spanner-osdi2012.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="databases"></category><category term="spanner"></category></entry><entry><title>There is something magical about Firefox OS</title><link href="http://martinez.io/there-is-something-magical-about-firefox-os.html" rel="alternate"></link><updated>2012-09-13T13:24:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-09-13:there-is-something-magical-about-firefox-os.html</id><summary type="html">&lt;p&gt;&amp;quot;Let me be perfectly clear; Firefox OS is the start of something
+huge. It's a revolution in waiting. A breath of fresh air. A
+culmination of bleeding-edge technology. It's magical and it's
+going to change everything&lt;/p&gt;
+&lt;div class="section" id="what-is-firefox-os"&gt;
+&lt;h2&gt;What is Firefox OS?&lt;/h2&gt;
+&lt;p&gt;For those of you wondering what on earth I'm on about, let me bring
+you up to speed.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Firefox OS is a new mobile operating system developed by Mozilla's
+Boot to Gecko (B2G) project. It uses a Linux kernel and boots into
+a Gecko-based runtime engine, which lets users run applications
+developed entirely using HTML, JavaScript, and other open Web
+application APIs.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS"&gt;Mozilla Developer Network&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In short, Firefox OS is about taking the technologies behind the
+Web, like JavaScript, and using them to produce an entire mobile
+operating system. Just let that sink in for a moment — it's a
+mobile OS powered by JavaScript!&lt;/p&gt;
+&lt;p&gt;To do this, a slightly-customised version of Gecko (the engine
+behind Firefox) has been created that introduces the new
+&lt;a class="reference external" href="https://wiki.mozilla.org/WebAPI#APIs"&gt;JavaScript APIs necessary to create a phone-like experience&lt;/a&gt;.
+This includes things like WebTelephony to make phone calls, WebSMS
+to send text messages, and the Vibration API to, well, vibrate
+things...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://rawkes.com/articles/there-is-something-magical-about-firefox-os"&gt;http://rawkes.com/articles/there-is-something-magical-about-firefox-os&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/div&gt;
+</summary><category term="mobile"></category></entry><entry><title>Solving Big Data Challenges for Enterprise Application Performance Management</title><link href="http://martinez.io/solving-big-data-challenges-for-enterprise-application-performance-management.html" rel="alternate"></link><updated>2012-08-30T10:52:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-08-30:solving-big-data-challenges-for-enterprise-application-performance-management.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;&amp;quot;ABSTRACT&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;As the complexity of enterprise systems increases, the need for
+monitoring and analyzing such systems also grows. A number of
+companies have built sophisticated monitoring tools that go far
+beyond simple resource utilization reports. For example, based on
+instrumentation and specialized APIs, it is now possible to monitor
+single method invocations and trace individual transactions across
+geographically distributed systems. This high-level of detail
+enables more precise forms of analysis and prediction but comes at
+the price of high data rates (i.e., big data). To maximize the
+benefit of data monitoring, the data has to be stored for an
+extended period of time for ulterior analysis. This new wave of big
+data analytics imposes new challenges especially for the
+application performance monitoring systems. The monitoring data has
+to be stored in a system that can sustain the high data rates and
+at the same time enable an up-to-date view of the underlying
+infrastructure. With the advent of modern key-value stores, a
+variety of data storage systems have emerged that are built with a
+focus on scalability and high data rates as predominant in this
+monitoring use case. In this work, we present our experience and a
+comprehensive performance evaluation of six modern (open-source)
+data stores in the context of application performance monitoring as
+part of CA Technologies initiative. We evaluated these systems with
+data and workloads that can be found in application performance
+monitoring, as well as, on-line advertisement, power monitoring,
+and many other use cases. We present our insights not only as
+performance results but also as lessons learned and our experience
+relating to the setup and configuration complexity of these data
+stores in an industry setting...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://vldb.org/pvldb/vol5/p1724_tilmannrabl_vldb2012.pdf"&gt;http://vldb.org/pvldb/vol5/p1724_tilmannrabl_vldb2012.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary></entry><entry><title>Darner a very simple and powerful message queue server</title><link href="http://martinez.io/darner-a-very-simple-and-powerful-message-queue-server.html" rel="alternate"></link><updated>2012-08-15T23:39:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-08-15:darner-a-very-simple-and-powerful-message-queue-server.html</id><summary type="html">&lt;p&gt;&amp;quot;Darner is a very simple message queue server. Unlike in-memory
+servers such as&amp;nbsp;&lt;a class="reference external" href="http://redis.io/"&gt;redis&lt;/a&gt;, Darner is designed to handle queues much
+larger than what can be held in RAM. And unlike enterprise queue
+servers such as&amp;nbsp;&lt;a class="reference external" href="http://www.rabbitmq.com/"&gt;RabbitMQ&lt;/a&gt;, Darner keeps all messages&amp;nbsp;out of
+process, relying instead on the kernel's virtual memory manager
+via&amp;nbsp;&lt;a class="reference external" href="https://code.google.com/p/leveldb/"&gt;log-structured storage&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The result is a durable queue server that uses a small amount of
+in-resident memory regardless of queue size, while still
+achieving&amp;nbsp;&lt;a class="reference external" href="https://github.com/wavii/darner/blob/master/docs/benchmarks.md"&gt;remarkable performance&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Darner is based on Robey Pointer's&amp;nbsp;&lt;a class="reference external" href="https://github.com/robey/kestrel"&gt;Kestrel&lt;/a&gt;&amp;nbsp;simple, distributed
+message queue. Like Kestrel, Darner follows the &amp;quot;No talking! Shhh!&amp;quot;
+approach to distributed queues: A single Darner server has a set of
+queues identified by name. Each queue is a strictly-ordered FIFO,
+and querying from a fleet of Darner servers provides a
+loosely-ordered queue. Darner also supports Kestrel's two-phase
+reliable fetch: if a client disconnects before confirming it
+handled a message, the message will be handed to the next client.&lt;/p&gt;
+&lt;p&gt;Compared to Kestrel, Darner boasts much higher throughput, better
+concurrency, an order of magnitude better tp99, and uses an order
+of magnitude less memory. But Darner has less configuration, and
+far fewer features than Kestrel. Check out the&amp;nbsp;&lt;a class="reference external" href="https://github.com/wavii/darner/blob/master/docs/benchmarks.md"&gt;benchmarks&lt;/a&gt;!
+Darner is used at&amp;nbsp;&lt;a class="reference external" href="http://wavii.com/"&gt;Wavii&lt;/a&gt;, and is written and maintained
+by&amp;nbsp;&lt;a class="reference external" href="https://github.com/erikfrey"&gt;Erik Frey&lt;/a&gt;...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/wavii/darner"&gt;https://github.com/wavii/darner&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="darner"></category><category term="messagequeue"></category></entry><entry><title>cling interpreter: On-The-Fly C++</title><link href="http://martinez.io/cling-interpreter-on-the-fly-c.html" rel="alternate"></link><updated>2012-08-12T20:38:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-08-12:cling-interpreter-on-the-fly-c.html</id><summary type="html">&lt;p&gt;&amp;quot;I can’t recall how many times I had to write a basic small C or
+C++ program just to play around with an idea, the syntax of C++11
+or anything similar. Very often indeed. Even though a good editor
+makes this very easy, it’s kind of a burden to have to create a
+project directory, a source file, spell out the same old includes
+and the main function before you actually can start the task you
+where about to try. Then you compile and link, probably missing
+some libraries the first time until you finally get to take it on a
+first test run...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.coldflake.com/posts/2012-08-09-On-the-fly-C++.html"&gt;http://blog.coldflake.com/posts/2012-08-09-On-the-fly-C++.html&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="c"></category></entry><entry><title>git --distributed-even-if-your-workflow-isnt</title><link href="http://martinez.io/git-distributed-even-if-your-workflow-isnt.html" rel="alternate"></link><updated>2012-07-11T21:40:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-07-11:git-distributed-even-if-your-workflow-isnt.html</id><summary type="html">&lt;p&gt;&amp;quot;The entire Pro Git book, written by Scott Chacon and published by
+Apress, is available here. All content is licensed under the
+Creative Commons Attribution Non Commercial Share Alike 3.0
+license...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://git-scm.com/book"&gt;http://git-scm.com/book&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="git"></category></entry><entry><title>Easy 6502 - Learn the 6502 Assembly Language</title><link href="http://martinez.io/easy-6502-learn-the-6502-assembly-language.html" rel="alternate"></link><updated>2012-07-08T07:16:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-07-08:easy-6502-learn-the-6502-assembly-language.html</id><summary type="html">&lt;p&gt;&amp;quot;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In this tiny ebook I’m going to show you how to get started writing
+6502 assembly language. The 6502 processor was massive in the
+seventies and eighties, powering famous computers like the BBC
+Micro, Atari 2600, Commodore 64, and the Nintendo Entertainment
+System. Bender in Futurama has a 6502 processor for a brain. Even
+the Terminator was programmed in 6502.&lt;/p&gt;
+&lt;p&gt;So, why would you want to learn 6502? It’s a dead language isn’t
+it? Well, yeah, but so’s Latin. And they still teach that.
+Q.E.D...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://skilldrick.github.com/easy6502/index.html"&gt;http://skilldrick.github.com/easy6502/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary></entry><entry><title>Deep dive into GlusterFS 3.3</title><link href="http://martinez.io/deep-dive-into-glusterfs-33.html" rel="alternate"></link><updated>2012-06-26T20:42:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-06-26:deep-dive-into-glusterfs-33.html</id><summary type="html">&lt;p&gt;&amp;quot;John Mark Walker from Red Hat talks about how GlusterFS 3.3 marks
+a significant milestone for the Gluster project. This release has
+great new features like UFO (universal file and object storage),
+HDFS compatibility, and proactive self-heal. This release is a
+significant milestone for the project, giving GlusterFS even more
+capability in the cloud. With the new features, GlusterFS will be
+better than ever at managing VM images, creating shared storage
+services in the cloud, and drastically improving speed and
+performance, especially after recovering from a hardware failure.
+Learn all about the new features and improvements of old
+features...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://video.linux.com/videos/deep-dive-into-glusterfs-33-1"&gt;http://video.linux.com/videos/deep-dive-into-glusterfs-33-1&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="glusterfs"></category></entry><entry><title>Sali automates Linux installs, software distribution, and production deployment.</title><link href="http://martinez.io/sali-automates-linux-installs-software-distribution-and-production-deployment.html" rel="alternate"></link><updated>2012-06-08T15:53:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-06-08:sali-automates-linux-installs-software-distribution-and-production-deployment.html</id><summary type="html">&lt;p&gt;&amp;quot;For node installation we at&amp;nbsp;&lt;a class="reference external" href="http://www.sara.nl/"&gt;SARA&lt;/a&gt;&amp;nbsp;used&amp;nbsp;&lt;a class="reference external" href="http://wiki.systemimager.org/"&gt;SystemImager&lt;/a&gt;. We
+switched to SALI for all our clusters. SALI allows you to create a
+clone of your running system. This clone can be distributed by
+various protocols (&lt;a class="reference external" href="http://aria2.sourceforge.net/"&gt;aria2&lt;/a&gt;) eg: rsync, Bittorent, ftp, http/https,
+metalink&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why SALI&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;SALI is created due the fact that on the moment of starting SALI:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Systemimager kernel/initrd and BOEL utilities are outdated. New
+hardware was not detected/supported&lt;/li&gt;
+&lt;li&gt;no&amp;nbsp;grub2&amp;nbsp;support&lt;/li&gt;
+&lt;li&gt;no ext4 support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The trigger for us was that there is no&amp;nbsp;grub2&amp;nbsp;support. We thought
+this could be easily added, but during this process we decided to
+upgrade all software to the newest levels and replace some software
+components. The biggest hurdle was detecting of which hardware is
+in the system (&lt;a class="reference external" href="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"&gt;udev&lt;/a&gt;). We believe that SALI is better in
+detecting which hardware is in the system than the SystemImager
+setup. The focus for this project is/was:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Easily create a new kernel/initrd when a new kernel is released
+or one of the software components is updated, eg:&amp;nbsp;&lt;a class="reference external" href="http://www.busybox.net/"&gt;busybox&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The SALI initrd contains all kernel modules and software
+utilities. In SystemImager this software is distributed as a
+separate package (BOEL binaries).&lt;/li&gt;
+&lt;li&gt;Drop support for flamethrower/multicast and floppy disk support.&lt;/li&gt;
+&lt;li&gt;With some minor&amp;nbsp;&lt;a class="reference external" href="https://subtrac.sara.nl/oss/sali/wiki/SaliUsage/UsingYourOldInstallScript"&gt;adjustments&lt;/a&gt;&amp;nbsp;you can use your old generated
+SystemImager scripts. These scripts
+uses&amp;nbsp;/etc/init.d/functions&amp;nbsp;which is included in the initrd. We have
+added/changed a lot of functions to hide the complexity. We have
+reduced the code of the SystemImager scripts significantly,
+See&amp;nbsp;&lt;a class="reference external" href="https://subtrac.sara.nl/oss/sali/browser/trunk/example/masterscript.new"&gt;masterscript.new&lt;/a&gt;. Read the&amp;nbsp;&lt;a class="reference external" href="https://subtrac.sara.nl/oss/sali/wiki/SaliUsage/Functions"&gt;Functions Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;For detailed overview of the changes read this&amp;nbsp;&lt;a class="reference external" href="https://subtrac.sara.nl/oss/sali/browser/trunk/CHANGELOG"&gt;changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;For now you must set&amp;nbsp;SCRIPTNAME=&amp;lt;script_name&amp;gt;&amp;nbsp;in the pxelinux
+file&lt;/li&gt;
+&lt;li&gt;If&amp;nbsp;GRUB2=yes&amp;nbsp;is set then we expect a seperate grub2 partition:&lt;/li&gt;
+&lt;li&gt;Added&amp;nbsp;&lt;a class="reference external" href="http://code.google.com/p/diskscrub"&gt;diskscrub&lt;/a&gt;, Diskscrub overwrites hard disks, files, and
+other devices with repeating patterns intended to make recovering
+data from these devices more difficult...&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://subtrac.sara.nl/oss/sali"&gt;https://subtrac.sara.nl/oss/sali&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="automation"></category><category term="diskless"></category><category term="pxe"></category><category term="torrent"></category></entry><entry><title>Enter the Pyed Piper via (@deferraz)</title><link href="http://martinez.io/enter-the-pyed-piper-via-deferraz.html" rel="alternate"></link><updated>2012-05-25T20:03:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-05-25:enter-the-pyed-piper-via-deferraz.html</id><summary type="html">&lt;p&gt;&amp;quot;The pyed piper, or pyp, is a python-centric command line text
+manipulation tool. It allows you to format, replace, augment and
+otherwise mangle text using standard python syntax with a few
+golden-oldie tricks from unix commands of the past. You can pipe
+data into pyp just like any other unix command line tool. After
+it's in, you can use the standard repertoire of python string and
+list methods to modify the text...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/pyp/wiki/intro"&gt;http://code.google.com/p/pyp/wiki/intro&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="python"></category><category term="shell"></category></entry><entry><title>Threads and fork(): think twice before mixing them</title><link href="http://martinez.io/threads-and-fork-think-twice-before-mixing-them.html" rel="alternate"></link><updated>2012-05-25T18:04:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-05-25:threads-and-fork-think-twice-before-mixing-them.html</id><summary type="html">&lt;p&gt;&amp;quot;When debugging a program I came across a bug that was caused by
+using &lt;a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html"&gt;fork(2)&lt;/a&gt; in a multi-threaded program. I thought it's worth
+to write some words about mixing POSIX threads with &lt;a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html"&gt;fork(2)&lt;/a&gt;
+because there are non-obvious problems when doing that.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What happens after fork() in a multi-threadeed program&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html"&gt;fork(2)&lt;/a&gt; function creates a copy of the process, all memory
+pages are copied, open file descriptors are copied etc. All this
+stuff is intuitive for a UNIX programmer. One important thing that
+differs the child process from the parent is that the child has
+only one thread. Cloning the whole process with all threads would
+be problematic and in most cases not what the programmer wants.
+Just think about it: what to do with threads that are suspended
+executing a system call? So the &lt;a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html"&gt;fork(2)&lt;/a&gt; call clones just the
+thread which executed it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What are the problems&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Critical sections, mutexes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The non-obvious problem in this approach is that at the moment of
+the &lt;a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html"&gt;fork(2)&lt;/a&gt; call some threads may be in critical sections of
+code, doing non-atomic operations protected by mutexes. In the
+child process the threads just disappears and left data
+half-modified without any possibility to &amp;quot;fix&amp;quot; them, there is no
+way to say what other threads were doing and what should be done to
+make the data consistent. Moreover: state of mutexes is undefined,
+they might be unusable and the only way to use them in the child is
+to call pthread_mutex_init() to reset them to a usable state.
+It's implementation dependent how mutexes behave after &lt;a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html"&gt;fork(2)&lt;/a&gt;
+was called. On my Linux machine locked mutexes are locked in the
+child...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.linuxprogrammingblog.com/threads-and-fork-think-twice-before-using-them"&gt;http://www.linuxprogrammingblog.com/threads-and-fork-think-twice-before-using-them&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="concurrency"></category></entry><entry><title>Learn Lua the Hard Way</title><link href="http://martinez.io/learn-lua-the-hard-way.html" rel="alternate"></link><updated>2012-05-22T23:34:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-05-22:learn-lua-the-hard-way.html</id><summary type="html">&lt;p&gt;&amp;quot;This series more or less mirrors the series of the same name for
+Python. It’s in my belief that the only way to learn the in and
+outs of a language is to learn by practice, and by that virtue, to
+practice as often as possible until you get the hang of the
+language...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.phailed.me/2011/02/learn-lua-the-hard-way-1/#desc"&gt;http://www.phailed.me/2011/02/learn-lua-the-hard-way-1&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="lua"></category></entry><entry><title>Fast, easy, realtime metrics using Redis bitmaps</title><link href="http://martinez.io/fast-easy-realtime-metrics-using-redis-bitmaps.html" rel="alternate"></link><updated>2012-05-16T19:20:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-05-16:fast-easy-realtime-metrics-using-redis-bitmaps.html</id><summary type="html">&lt;p&gt;&amp;quot;At &lt;a class="reference external" href="http://www.getspool.com/"&gt;Spool&lt;/a&gt;, we calculate our key metrics in real time.
+Traditionally, metrics are performed by a batch job (running
+hourly, daily, etc.). Redis backed bitmaps allow us to perform such
+calculations in realtime and are extremely space efficient. In a
+simulation of 128 million users, a typical metric such as “daily
+unique users” takes less than 50 ms on a MacBook Pro and only takes
+16 MB of memory. Spool doesn’t have 128 million users yet but it’s
+nice to know our approach will scale. We thought we’d share how we
+do it, in case other startups find our approach useful...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.getspool.com/2011/11/29/fast-easy-realtime-metrics-using-redis-bitmaps"&gt;http://blog.getspool.com/2011/11/29/fast-easy-realtime-metrics-using-redis-bitmaps&lt;/a&gt;
+&lt;a class="reference external" href="https://github.com/antirez/redis/commit/9ee55e8e583a139b35628c47ef8d2c9f1e65936b"&gt;https://github.com/antirez/redis/commit/9ee55e8e583a139b35628c47ef8d2c9f1e65936b&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="redis"></category></entry><entry><title>Batch Acknowledged Pipelines with ZeroMQ</title><link href="http://martinez.io/batch-acknowledged-pipelines-with-zeromq.html" rel="alternate"></link><updated>2012-05-14T12:27:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-05-14:batch-acknowledged-pipelines-with-zeromq.html</id><summary type="html">&lt;p&gt;&amp;quot;Parallel processing with a task ventilator is a common pattern
+with ZeroMQ.&amp;nbsp; The basics of this pattern are outlined in
+the&amp;nbsp;&lt;a class="reference external" href="http://zguide.zeromq.org/page:all#Divide-and-Conquer"&gt;“Divide and Conquer”&lt;/a&gt;&amp;nbsp;section of the ZeroMQ guide.&amp;nbsp; The
+pattern consists of the following components:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;A task ventilator that produces tasks.&lt;/li&gt;
+&lt;li&gt;A number of workers that do the processing work.&lt;/li&gt;
+&lt;li&gt;A sink that collects results from the worker processes...&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.aggregateknowledge.com/tag/pyzmq"&gt;http://blog.aggregateknowledge.com/tag/pyzmq&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="python"></category><category term="zmq"></category></entry><entry><title>Alchemy Database: A Hybrid RDBMS/NOSQL-Datastore</title><link href="http://martinez.io/alchemy-database-a-hybrid-rdbmsnosql-datastore.html" rel="alternate"></link><updated>2012-05-11T16:26:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-05-11:alchemy-database-a-hybrid-rdbmsnosql-datastore.html</id><summary type="html">&lt;table&gt;&lt;tr&gt;&lt;td valign="top" style="margin:.5px;padding:0 10px;"&gt;&lt;p&gt;&amp;quot;Alchemy Database is a low-latency high-TPS NewSQL RDBMS embedded
+in the NOSQL datastore &lt;a class="reference external" href="http://redis.io/"&gt;redis&lt;/a&gt;. Extensive
+&lt;a class="reference external" href="http://jaksprats.wordpress.com/2010/11/15/datastore-side-scripting-can-prevent-bottlenecks/"&gt;datastore-side-scripting&lt;/a&gt; is provided via deeply embedded &lt;a class="reference external" href="http://www.lua.org/about.html"&gt;Lua&lt;/a&gt;.
+Unstructured data, can also be stored, as there are no limits on
+#tables, #indexes, #columns, and &lt;a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/HighLights?ts=1317936394&amp;amp;updated=HighLights#Memory_optimisations"&gt;sparsely populated rows&lt;/a&gt; use
+minimal memory.&lt;/p&gt;
+&lt;p&gt;AlchemyDB believes OLTP traffic's needs are best served by
+extending SQL and has recently added the following experimental
+functionalities:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/LuaTableColumnType"&gt;LuaTable&lt;/a&gt; - A column type that is a &lt;a class="reference external" href="http://lua-users.org/wiki/TablesTutorial"&gt;Lua Table&lt;/a&gt;, that single
+handedly adds both Document-Store &amp;amp; Object-DB functionality by
+mixing Lua into SQL.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/LuaGraphDB"&gt;GraphDB&lt;/a&gt; - so brand new it is not even fully documented :) A
+GraphDB was created on top of AlchemyDB using SQL for indexes and
+Lua for graph-traversal logic. AlchemyDB is a customizable data
+platform.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/AppStack"&gt;AppStack&lt;/a&gt; - AlchemyDB uses a REST API and already had Lua
+embedded, creating a dynamic HTTP server, serving Lua webpages was
+a logical step, and it is the fastest dynamic webserver I have ever
+benchmarked (probably because it can only make internal AlchemyDB
+calls, i.e. NO backend calls :)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Alchemy Database is optimised for top notch memory efficiency and
+top notch TPS for OLTP requests:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Speed is achieved by being an event driven network server that
+stores 100% of data in RAM, achieving disk persistence by using a
+spare cpu-core to periodically log data changes (i.e. no threads,
+no locks, no undo-logs, no disk-seeks, serving data over a network
+at RAM speed)&lt;/li&gt;
+&lt;li&gt;Storage data structures w/ very low memory overhead and data
+compression, via algorithms w/ insignificant performance hits,
+greatly increase the amount of data you can fit in RAM&lt;/li&gt;
+&lt;li&gt;Optimising to the &lt;a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/CommandReference#Supported_SQL"&gt;SQL statements&lt;/a&gt; most commonly used in OLTP
+workloads yields a lightweight RDBMS designed for
+&lt;a class="reference external" href="http://jaksprats.wordpress.com/2010/09/27/next-generation-web-server-pole-low-latency-at-high-concurrency/"&gt;low latency at high concurrency&lt;/a&gt; (i.e. world class
+speed/thruput).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;RAM is CHEAP these days&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;RAM is now affordable enough to be able to store ENTIRE OLTP
+Databases in a single machine's RAM (e.g. &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Wikipedia:Database_download"&gt;Wikipedia's English DB&lt;/a&gt;
+is 30GB and a &lt;a class="reference external" href="http://configure.us.dell.com/dellstore/config.aspx?oc=becwek1&amp;amp;c=us&amp;amp;l=en&amp;amp;s=bsd&amp;amp;cs=04&amp;amp;model_id=poweredge-t610"&gt;Dell T610&lt;/a&gt; w/ 32GB RAM costs $2100). Data can be
+asynchronously replicated over the wire (providing high
+availability) and written to disk via snapshots and appending log
+files (providing durability) and data I/O is done at RAM speed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;FAST ON COMMODITY HARDWARE:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Client/Server using 1GbE LAN to/from a &lt;strong&gt;single&lt;/strong&gt; core running at
+3.0GHz, RAM PC3200 (400MHz)&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;95K INSERT/sec, 95K SELECT/sec, 90K UPDATE/sec, 100K DELETE/sec&lt;/li&gt;
+&lt;li&gt;Range Queries returning 10 rows: 40K/sec&lt;/li&gt;
+&lt;li&gt;2 Table Joins returning 10 rows: 20K/sec&lt;/li&gt;
+&lt;li&gt;Lua script performing read and write: 85K/sec&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;MEMORY EFFICIENT:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Each row has very little overhead when stored (20-30bytes) and
+Insert speed does not significantly degrade as more indices are
+added&lt;ul&gt;
+&lt;li&gt;Simple row (PK+TEXT-&amp;gt;16 bytes), 1GB stores 40 million rows,
+insert speed: 70K/sec&lt;/li&gt;
+&lt;li&gt;Complex row (10 Indices+TEXT-&amp;gt;48 bytes), 1GB stores 9 million
+rows, insert speed: 40K/s&lt;/li&gt;
+&lt;li&gt;TEXT fields are compressed. If a 100 character column compresses
+down to 80 bytes, the row can be stored w/ ZERO storage overhead
+(e.g. 1million rows of 100 chars will take up 100MB)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Sparse-Rows: tables w/ 1000s of columns, that are sparsely
+populated, use a serialised hash table in the row's stream to store
+column offsets. Sparse-Rows can be Orders-Of-Magnitude smaller than
+full rows ... &lt;a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/HighLights"&gt;more info&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;EASY TO USE:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Its &lt;a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/CommandReference#Supported_SQL"&gt;SQL&lt;/a&gt; ... you already know it :)&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://redis.io/commands"&gt;Redis commands&lt;/a&gt; are VERY easy to learn :)&lt;/li&gt;
+&lt;li&gt;Need more, &lt;a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/CommandReference#LUA_Command"&gt;Lua is embedded&lt;/a&gt;, opening up ... EVERYTHING&lt;/li&gt;
+&lt;li&gt;Alchemy's &lt;a class="reference external" href="http://code.google.com/p/alchemydatabase/wiki/CommandReference#Beyond_SQL"&gt;SQL extensions&lt;/a&gt; enhance SQL and fix some of its
+common shortcomings...&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/alchemydatabase/"&gt;http://code.google.com/p/alchemydatabase&lt;/a&gt;
+&lt;a class="reference external" href="https://github.com/JakSprats/Alchemy-Database"&gt;https://github.com/JakSprats/Alchemy-Database&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="nosql"></category><category term="rdbms"></category><category term="redis"></category></entry><entry><title>An implementation of Clojure in pure Python</title><link href="http://martinez.io/an-implementation-of-clojure-in-pure-python.html" rel="alternate"></link><updated>2012-05-08T12:14:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-05-08:an-implementation-of-clojure-in-pure-python.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;&amp;quot;Why Python?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;It is our belief that static virtual machines make very poor
+runtimes for dynamic languages. They constrain the languages to
+their view of what the &amp;quot;world should look like&amp;quot; and limit the
+options available to language implementors. We are attempting to
+prove this by writing an implementation of Clojure that runs on the
+Python VM. We believe that with a proper dynamic JIT (like pypy) a
+version of clojure running on a dynamic VM can outperform its JVM
+and CLR counterparts.&lt;/p&gt;
+&lt;p&gt;Aside from that, there are many Python libraries like PySide (Qt
+GUI), numpy, scipy, and stackless that do not have JVM
+counterparts, or at least the Python implementations are easier to
+use and learn. clojure-py will integrate tightly with thy Python VM
+and will be able to use all of these libraries...&amp;quot;&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/halgari/clojure-py"&gt;https://github.com/halgari/clojure-py&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="clojure"></category><category term="python"></category></entry><entry><title>Advanced Time Series with Cassandra</title><link href="http://martinez.io/advanced-time-series-with-cassandra.html" rel="alternate"></link><updated>2012-05-07T12:07:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-05-07:advanced-time-series-with-cassandra.html</id><summary type="html">&lt;p&gt;&amp;quot;Cassandra is an excellent fit for time series data, and it’s
+widely used for storing many types of data that follow the time
+series pattern: performance metrics, fleet tracking, sensor data,
+logs, financial data (pricing and ratings histories), user
+activity, and so on.&lt;/p&gt;
+&lt;p&gt;A great introduction to this topic is Kelley Reynolds’ Basic Time
+Series with Cassandra. If you haven’t read that yet, I highly
+recommend starting with it. This post builds on that material,
+covering a few more details, corner cases, and&amp;nbsp;advanced
+techniques.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Indexes vs Materialized Views&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;When working with time series data, one of two strategies is
+typically employed: either the column values contain row keys
+pointing to a separate column family which contains the actual data
+for events, or the complete set of data for each event is stored in
+the timeline itself. The latter strategy can be implemented by
+serializing the entire event into a single column value or by using
+composite column names of the form &amp;lt;timestamp&amp;gt;:&amp;lt;event_field&amp;gt;.&lt;/p&gt;
+&lt;p&gt;With the first strategy, which is similar to building an index, you
+first fetch a set of row keys from a timeline and then multiget the
+matching data rows from a separate column family. This approach is
+appealing to many at first because it is more normalized; it allows
+for easy updates of events, doesn’t require you to repeat the same
+data in multiple timelines, and lets you easily add built-in
+secondary indexes to your main data column family. However, the
+second step of the data fetching process, the multiget, is fairly
+expensive and slow. It requires querying many nodes where each node
+will need to perform many disk seeks to fetch the rows if they
+aren’t well cached. This approach will not scale well with large
+data sets.&lt;/p&gt;
+&lt;p&gt;The second strategy, which resembles maintaining a materialized
+view, provides much more efficient reads. Fetching a time slice of
+events only requires reading a contiguous portion of a row on one
+set of replicas. If the same event is tracked in multiple
+timelines, it’s okay to denormalize and store all of the event data
+in each of those timelines. One of the main principles that
+Cassandra was built on is that disk space is very cheap resource;
+minimizing disk seeks at the cost of higher space consumption is a
+good tradeoff. Unless the data for each event is very large, I
+always prefer this strategy over the index strategy...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.datastax.com/dev/blog/advanced-time-series-with-cassandra"&gt;http://www.datastax.com/dev/blog/advanced-time-series-with-cassandra&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="cassandra"></category></entry><entry><title>Salt a remote execution and configuration management tool.</title><link href="http://martinez.io/salt-a-remote-execution-and-configuration-management-tool.html" rel="alternate"></link><updated>2012-04-02T22:46:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-04-02:salt-a-remote-execution-and-configuration-management-tool.html</id><summary type="html">&lt;p&gt;&amp;quot;&lt;strong&gt;What is Salt?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Salt is a powerful remote execution manager that can be used to
+administer servers in a fast and efficient way.&lt;/p&gt;
+&lt;p&gt;Salt allows commands to be executed across large groups of servers.
+This means systems can be easily managed, but data can also be
+easily gathered. Quick introspection into running systems becomes a
+reality.&lt;/p&gt;
+&lt;p&gt;Remote execution is usually used to set up a certain state on a
+remote system. Salt addresses this problem as well, the salt state
+system uses salt state files to define the state a server needs to
+be in.&lt;/p&gt;
+&lt;p&gt;Between the remote execution system, and state management Salt
+addresses the backbone of cloud and data center management.&lt;/p&gt;
+&lt;p&gt;Distributed remote execution&lt;/p&gt;
+&lt;p&gt;Salt is a distributed remote execution system used to execute
+commands and query data. It was developed in order to bring the
+best solutions found in the world of remote execution together and
+make them better, faster and more malleable. Salt accomplishes this
+via its ability to handle larger loads of information, and not just
+dozens, but hundreds or even thousands of individual servers,
+handle them quickly and through a simple and manageable interface.&lt;/p&gt;
+&lt;p&gt;Simplicity&lt;/p&gt;
+&lt;p&gt;Versatility between massive scale deployments and smaller systems
+may seem daunting, but Salt is very simple to set up and maintain,
+regardless of the size of the project. The architecture of Salt is
+designed to work with any number of servers, from a handful of
+local network systems to international deployments across disparate
+datacenters. The topology is a simple server/client model with the
+needed functionality built into a single set of daemons. While the
+default configuration will work with little to no modification,
+Salt can be fine tuned to meet specific needs.&lt;/p&gt;
+&lt;p&gt;Parallel execution&lt;/p&gt;
+&lt;p&gt;The core function of Salt is to enable remote commands to be called
+in parallel rather than in serial, to use a secure and encrypted
+protocol, the smallest and fastest network payloads possible, and
+with a simple programming interface. Salt also introduces more
+granular controls to the realm of remote execution, allowing for
+commands to be executed in parallel and for systems to be targeted
+based on more than just hostname, but by system properties.&lt;/p&gt;
+&lt;p&gt;Building on proven technology&lt;/p&gt;
+&lt;p&gt;Salt takes advantage of a number of technologies and techniques.
+The networking layer is built with the excellent &lt;a class="reference external" href="http://www.zeromq.org/"&gt;ZeroMQ&lt;/a&gt;
+networking library, so Salt itself contains a viable, and
+transparent, AMQ broker inside the daemon. Salt uses public keys
+for authentication with the master daemon, then uses faster AES
+encryption for payload communication, this means that
+authentication and encryption are also built into Salt. Salt takes
+advantage of communication via &lt;a class="reference external" href="http://msgpack.org/"&gt;msgpack&lt;/a&gt;, enabling fast and light
+network traffic.&lt;/p&gt;
+&lt;p&gt;Python client interface&lt;/p&gt;
+&lt;p&gt;In order to allow for simple expansion, Salt execution routines can
+be written as plain Python modules and the data collected from Salt
+executions can be sent back to the master server, or to any
+arbitrary program. Salt can be called from a simple Python API, or
+from the command line, so that Salt can be used to execute one-off
+commands as well as operate as an integral part of a larger
+application.&lt;/p&gt;
+&lt;p&gt;Fast, flexible, scalable&lt;/p&gt;
+&lt;p&gt;The result is a system that can execute commands across groups of
+varying size, from very few to very many servers at considerably
+high speed. A system that is very fast, easy to set up and
+amazingly malleable, able to suit the needs of any number of
+servers working within the same system. Salt’s unique architecture
+brings together the best of the remote execution world, amplifies
+its capabilities and expands its range, resulting in this system
+that is as versatile as it is practical, able to suit any network.&lt;/p&gt;
+&lt;p&gt;Open&lt;/p&gt;
+&lt;p&gt;Salt is developed under the &lt;a class="reference external" href="http://www.apache.org/licenses/LICENSE-2.0.html"&gt;Apache 2.0 licence&lt;/a&gt;, and can be used
+for open and proprietary projects. Please submit your expansions
+back to the Salt project so that we can all benefit together as
+Salt grows. So, please feel free to sprinkle some of this around
+your systems and let the deliciousness come forth...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://saltstack.org"&gt;http://saltstack.org&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary></entry><entry><title>Good place to look for python?</title><link href="http://martinez.io/good-place-to-look-for-python.html" rel="alternate"></link><updated>2012-03-29T14:55:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-03-29:good-place-to-look-for-python.html</id><summary type="html">&lt;p&gt;Python related video indexed so you can find it.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://pyvideo.org/"&gt;http://pyvideo.org&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary></entry><entry><title>Python internals: how callables work</title><link href="http://martinez.io/python-internals-how-callables-work.html" rel="alternate"></link><updated>2012-03-23T13:32:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-03-23:python-internals-how-callables-work.html</id><summary type="html">&lt;p&gt;&lt;em&gt;&amp;quot;[The Python version described in this article is 3.x, more specifically - the 3.3 alpha release of CPython.]&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The concept of a &lt;em&gt;callable&lt;/em&gt; is fundamental in Python. When thinking
+about what can be &amp;quot;called&amp;quot;, the immediately obvious answer is
+functions. Whether it’s user defined functions (written by you), or
+builtin functions (most probably implemented in C inside the
+CPython interpreter), functions were meant to be called,
+right?...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://eli.thegreenplace.net/2012/03/23/python-internals-how-callables-work/"&gt;http://eli.thegreenplace.net/2012/03/23/python-internals-how-callables-work/&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary></entry><entry><title>Fast Enough VMs in Fast Enough Time</title><link href="http://martinez.io/fast-enough-vms-in-fast-enough-time.html" rel="alternate"></link><updated>2012-03-18T20:24:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-03-18:fast-enough-vms-in-fast-enough-time.html</id><summary type="html">&lt;p&gt;&amp;quot;If you can stomach the smell, put yourself briefly in the shoes of
+a programming language designer. What you want to do is create new
+programming languages, combining new and old ideas into a fresh
+whole. It sounds like a fun, intellectually demanding job, and
+occasionally it is. However, we know from experience that languages
+that exist solely in the mind or on paper are mostly worthless: it
+is only when they are implemented and we can try them out that we
+can evaluate them. As well as a language design, therefore, we need
+a corresponding language implementation.&lt;/p&gt;
+&lt;p&gt;This need for a corresponding language implementation leads to what
+I think of as the &lt;em&gt;language designer's dilemma&lt;/em&gt;: how much
+implementation is needed to show that a language design is good?&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;If too little, the language will be dismissed out of hand as
+unusably slow: the kiss of death for many a language. Especially if
+the language design is adventurous, the language designer may not
+even be sure that it can be made adequately efficient.&lt;/li&gt;
+&lt;li&gt;If too much, low-level fiddling will have consumed most of the
+energy that should have gone into design. Even worse, low-level
+implementation concerns can easily end up dictating higher-level
+design choices, to the disadvantage of the latter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finding a balance between these two points is difficult. When I was
+designing &lt;a class="reference external" href="http://convergepl.org/"&gt;Converge&lt;/a&gt;, I came down on the side of trying to get the
+design right (though the end result has more than its fair share of
+mistakes and hacks). That decision had consequences, as I shall now
+describe...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://tratt.net/laurie/tech_articles/articles/fast_enough_vms_in_fast_enough_time"&gt;http://tratt.net/laurie/tech_articles/articles/fast_enough_vms_in_fast_enough_time&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary></entry><entry><title>Using Ganglia to monitor virtual machine pools</title><link href="http://martinez.io/using-ganglia-to-monitor-virtual-machine-pools.html" rel="alternate"></link><updated>2012-03-16T21:33:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-03-16:using-ganglia-to-monitor-virtual-machine-pools.html</id><summary type="html">&lt;p&gt;&amp;quot;The &lt;a class="reference external" href="http://blog.sflow.com/2011/07/ganglia-32-released.html"&gt;Ganglia&lt;/a&gt; charts show virtual machine performance metrics
+collected using sFlow. Enabling sFlow monitoring on each node in a
+virtual machine pool provides a highly scalable solution for
+monitoring performance. Embedded sFlow monitoring in the
+hypervisors simplifies deployments by eliminating the need to poll
+for metrics. Instead, virtual machine metrics are pushed directly
+from each node to the central &lt;a class="reference external" href="http://blog.sflow.com/2011/07/ganglia-32-released.html"&gt;Ganglia collector&lt;/a&gt;. Currently sFlow
+agents are available for XCP (Xen Cloud Platform), Citrix XenServer
+and KVM/libvirt virtualization platforms, see
+&lt;a class="reference external" href="http://host-sflow.sourceforge.net/"&gt;http://host-sflow.sourceforge.net/&lt;/a&gt;. In addition, an sFlow agent
+has been demonstrated for the upcoming Windows 8 version of
+&lt;a class="reference external" href="http://blog.sflow.com/2011/09/microsoft-hyper-v.html"&gt;Hyper-V&lt;/a&gt;...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.sflow.com/2012/01/using-ganglia-to-monitor-virtual.html"&gt;http://blog.sflow.com/2012/01/using-ganglia-to-monitor-virtual.html&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary></entry><entry><title>Basic Time Series with Cassandra</title><link href="http://martinez.io/basic-time-series-with-cassandra.html" rel="alternate"></link><updated>2012-03-13T20:25:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-03-13:basic-time-series-with-cassandra.html</id><summary type="html">&lt;p&gt;&amp;quot;One of the most common use cases for Cassandra is tracking
+time-series data. Server log files, usage, sensor data, SIP
+packets, stuff that changes over time. For the most part this is a
+straight forward process but given that Cassandra has real-world
+limitations on how much data can or should be in a row, there are a
+few details to consider.&lt;/p&gt;
+&lt;p&gt;Basic Inserts and Queries&lt;/p&gt;
+&lt;p&gt;The most basic and intuitive way to go about storing time-series
+data is to use a column family that has TimeUUID columns (or Long
+if you know that no two entries willhappen at the same timestamp),
+use the name of the thing you are monitoring as the row_key
+(server1-load for example), column_name as the timestamp, and the
+column_value would be the actual value of the thing (0.75 for
+example):&lt;/p&gt;
+&lt;p&gt;Inserting data — {:key =&amp;gt; ‘server1-load’, :column_name =&amp;gt;
+TimeUUID(now), :column_value =&amp;gt; 0.75}&lt;/p&gt;
+&lt;p&gt;Using this method, one uses a column_slice to get the data in
+question:&lt;/p&gt;
+&lt;p&gt;Load at Time X — &amp;nbsp;{:key =&amp;gt; ‘server1-load’, :start =&amp;gt; TimeUUID(X),
+:count =&amp;gt; 1}&lt;/p&gt;
+&lt;p&gt;Load between X and Y – {:key =&amp;gt; ‘server1-load’, :start =&amp;gt;
+TimeUUID(X), :end =&amp;gt; TimeUUID(Y)}&lt;/p&gt;
+&lt;p&gt;This works well enough for a while, but over time, this row will
+get very large. If you are storing sensor data that updates
+hundreds of times per second, that row will quickly become gigantic
+and unusable. The answer to that is to shard the data up in some
+way. To accomplish this, the application has to have a little more
+intelligence about how to store and query the information...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://rubyscale.com/blog/2011/03/06/basic-time-series-with-cassandra/"&gt;http://rubyscale.com/blog/2011/03/06/basic-time-series-with-cassandra/&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="cassandra"></category></entry><entry><title>HBase vs Cassandra: why we moved</title><link href="http://martinez.io/hbase-vs-cassandra-why-we-moved.html" rel="alternate"></link><updated>2012-03-05T23:52:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-03-05:hbase-vs-cassandra-why-we-moved.html</id><summary type="html">&lt;p&gt;&amp;quot;My team is currently working on a brand new product – the
+forthcoming MMO &lt;a class="reference external" href="http://www.FightMyMonster.com"&gt;www.FightMyMonster.com&lt;/a&gt;. This has given us the
+luxury of building against a NOSQL database, which means we can put
+the horrors of MySQL sharding and expensive scalability behind us.
+Recently a few people have been asking why we seem to have changed
+our preference from HBase to Cassandra. I can confirm the change is
+true and that we have in fact almost completed porting our code to
+Cassandra, and here I will seek to provide an explanation.&lt;/p&gt;
+&lt;p&gt;For those that are new to NOSQL, in a following post I will write
+about why I think we will see a seismic shift from SQL to NOSQL
+over the coming years, which will be just as important as the move
+to cloud computing. That post will also seek to explain why I think
+NOSQL might be the right choice for your company. But for now I
+will simply relay the reasons why we have chosen Cassandra as our
+NOSQL solution.&lt;/p&gt;
+&lt;p&gt;Caveat Emptor – if you’re looking for a shortcut to engaging your
+neurons be aware this isn’t an exhaustive critical comparison, it
+just summarizes the logic of just another startup in a hurry with
+limited time and resources!!...&amp;quot;&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;&lt;a class="reference external" href="http://ria101.wordpress.com/2010/02/24/hbase-vs-cassandra-why-we-moved/"&gt;http://ria101.wordpress.com/2010/02/24/hbase-vs-cassandra-why-we-moved&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="cassandra"></category><category term="hbase"></category><category term="nosql"></category></entry><entry><title>Programming in Lua (first edition)</title><link href="http://martinez.io/programming-in-lua-first-edition.html" rel="alternate"></link><updated>2012-02-29T23:59:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-02-29:programming-in-lua-first-edition.html</id><summary type="html">&lt;p&gt;&amp;quot;This is an online version of the &lt;a class="reference external" href="http://www.inf.puc-rio.br/~roberto/book/"&gt;first edition&lt;/a&gt; of the book&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.inf.puc-rio.br/~roberto/book/"&gt;Programming in Lua&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;by Roberto Ierusalimschy&lt;/p&gt;
+&lt;p&gt;Lua.org, December 2003&lt;/p&gt;
+&lt;p&gt;ISBN 85-903798-1-7&lt;/p&gt;
+&lt;p&gt;The book is a detailed and authoritative introduction to all
+aspects of Lua programming, by Lua's chief architect. The
+&lt;a class="reference external" href="http://www.inf.puc-rio.br/~roberto/book/"&gt;first edition&lt;/a&gt; was aimed at Lua 5.0 and remains largely relevant,
+although there are some &lt;a class="reference external" href="http://www.lua.org/manual/5.1/manual.html#7"&gt;differences&lt;/a&gt;.
+If you find this online version useful, please consider
+&lt;a class="reference external" href="http://www.lua.org/donations.html#books"&gt;buying a copy&lt;/a&gt; of the &lt;a class="reference external" href="http://www.inf.puc-rio.br/~roberto/pil2/"&gt;second edition&lt;/a&gt;, which updates the text
+to Lua 5.1 and brings substantial new material. This helps to
+&lt;a class="reference external" href="http://www.lua.org/donations.html"&gt;support the Lua project&lt;/a&gt;.
+For the official definition of the Lua language, see the
+&lt;a class="reference external" href="http://www.lua.org/manual/5.1/"&gt;reference manual&lt;/a&gt;...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.lua.org/pil/"&gt;http://www.lua.org/pil/&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="lua"></category></entry><entry><title>Theano: A CPU and GPU Math Compiler in Python</title><link href="http://martinez.io/theano-a-cpu-and-gpu-math-compiler-in-python.html" rel="alternate"></link><updated>2012-02-28T15:04:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-02-28:theano-a-cpu-and-gpu-math-compiler-in-python.html</id><summary type="html">&lt;p&gt;&lt;em&gt;&amp;quot;Abstract—Theano is a compiler for mathematical expressions in Python that combines the convenience of NumPy’s syntax with the speed of optimized native machine language. The user composes mathematical expressions in a high-level description that mimics NumPy’s syntax and semantics, while being statically typed and functional (as opposed to imperative). These expressions allow Theano to provide symbolic differentiation. Before performing computation, Theano optimizes the choice of expressions, translates them into C++ (or CUDA for GPU), compiles them into dynamically loaded Python modules, all automatically. Common machine learn- ing algorithms implemented with Theano are from*1.6×
+*to*7.5×
+*faster than competitive alternatives (including those implemented with C/C++, NumPy/SciPy and MATLAB) when compiled for the CPU and between*6.5×
+*and*44×
+*faster when compiled for the GPU. This paper illustrates how to use Theano, outlines the scope of the compiler, provides benchmarks on both CPU and GPU processors, and explains its overall design...&amp;quot;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.iro.umontreal.ca/~lisa/pointeurs/theano_scipy2010.pdf"&gt;http://www.iro.umontreal.ca/~lisa/pointeurs/theano_scipy2010.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary></entry><entry><title>Benchmarking Cassandra Scalability on AWS - Over a million writes per second</title><link href="http://martinez.io/benchmarking-cassandra-scalability-on-aws-over-a-million-writes-per-second.html" rel="alternate"></link><updated>2012-02-28T12:17:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-02-28:benchmarking-cassandra-scalability-on-aws-over-a-million-writes-per-second.html</id><summary type="html">&lt;p&gt;&amp;quot;Netflix has been rolling out the Apache Cassandra NoSQL data store
+for production use over the last six months. As part of our
+benchmarking we recently decided to run a test designed to validate
+our tooling and automation scalability as well as the performance
+characteristics of Cassandra. Adrian presented these results at the
+&lt;a class="reference external" href="http://hpts.ws/"&gt;High Performance Transaction Systems&lt;/a&gt; workshop ???last week.&lt;/p&gt;
+&lt;p&gt;We picked a write oriented benchmark using the standard Cassandra
+&amp;quot;stress&amp;quot; tool that is part of the product, and Denis ran and
+analyzed the tests on Amazon EC2 instances. Writes stress a data
+store all the way to the disks, while read benchmarks may only
+exercise the in-memory cache. The benchmark results should be
+reproducible by anyone, but the Netflix cloud platform automation
+for AWS makes it quick and easy to do this kind of test.&lt;/p&gt;
+&lt;p&gt;The automated tooling that Netflix has developed lets us quickly
+deploy large scale Cassandra clusters, in this case a few clicks on
+a web page and about an hour to go from nothing to a very large
+Cassandra cluster consisting of 288 medium sized instances, with 96
+instances in each of three EC2 availability zones in the US-East
+region. Using an additional 60 instances as clients running the
+stress program we ran a workload of 1.1 million client writes per
+second. Data was automatically replicated across all three zones
+making a total of 3.3 million writes per second across the cluster.
+The entire test was able to complete within two hours with a total
+cost of a few hundred dollars, and these EC2 instances were only in
+existence for the duration of the test. There was no setup time, no
+discussions with IT operations about datacenter space and no more
+cost once the test was over.&lt;/p&gt;
+&lt;p&gt;To measure scalability, the same test was run with 48, 96, 144 and
+288 instances, with 10, 20, 30 and 60 clients respectively. The
+load on each instance was very similar in all cases, and the
+throughput scaled linearly as we increased the number of instances.
+Our previous benchmarks and production roll-out had resulted in
+many application specific Cassandra clusters from 6 to 48
+instances, so we were very happy to see linear scale to six times
+the size of our current largest deployment. This benchmark went
+from concept to final result in five days as a spare time activity
+alongside other work, using our standard production configuration
+of Cassandra 0.8.6, running in our test account. The time taken by
+EC2 to create 288 new instances was about 15 minutes out of our
+total of 66 minutes. The rest of the time was taken to boot Linux,
+start the Apache Tomcat JVM that runs our automation tooling, start
+the Cassandra JVM and join the &amp;quot;ring&amp;quot; that makes up the Cassandra
+data store. For a more typical 12 instance Cassandra cluster the
+same sequence takes 8 minutes.&lt;/p&gt;
+&lt;p&gt;The Netflix cloud systems group recently created a Cloud
+Performance Team to focus on characterizing the performance of
+components such as Cassandra, and helping other teams make their
+code and AWS usage more efficient to reduce latency for customers
+and costs for Netflix. This team is currently
+&lt;a class="reference external" href="http://www.netflix.com/Jobs?id=7563&amp;amp;jvi=oq8xVfwK"&gt;looking for an additional engineer&lt;/a&gt;...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://techblog.netflix.com/2011/11/benchmarking-cassandra-scalability-on.html"&gt;http://techblog.netflix.com/2011/11/benchmarking-cassandra-scalability-on.html&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="cassandra"></category><category term="nosql"></category></entry><entry><title>Apache Module mod_lua</title><link href="http://martinez.io/apache-module-mod_lua.html" rel="alternate"></link><updated>2012-02-22T18:19:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-02-22:apache-module-mod_lua.html</id><summary type="html">&lt;p&gt;&amp;quot;This module allows the server to be extended with scripts written
+in the Lua programming language. The extension points (hooks)
+available with &lt;a class="reference external" href="http://httpd.apache.org/docs/2.3/mod/mod_lua.html"&gt;mod_lua&lt;/a&gt; include many of the hooks available to
+natively compiled Apache HTTP Server modules, such as mapping
+requests to files, generating dynamic responses, access control,
+authentication, and authorization...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://httpd.apache.org/docs/2.3/mod/mod_lua.html"&gt;http://httpd.apache.org/docs/2.3/mod/mod_lua.html&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="apache"></category><category term="lua"></category></entry><entry><title>What will pypy do for your website? Benchmarking python web servers on pypy and cpython</title><link href="http://martinez.io/what-will-pypy-do-for-your-website-benchmarking-python-web-servers-on-pypy-and-cpython.html" rel="alternate"></link><updated>2012-02-22T18:04:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-02-22:what-will-pypy-do-for-your-website-benchmarking-python-web-servers-on-pypy-and-cpython.html</id><summary type="html">&lt;p&gt;&amp;quot;There are currently quite a few different ways of developing a web
+application in python.&amp;nbsp; When you add in how you deploy the
+application as well, there are even more choices.&amp;nbsp; In terms of
+application frameworks, you have at least:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Django&lt;/li&gt;
+&lt;li&gt;twisted.web&lt;/li&gt;
+&lt;li&gt;flask&lt;/li&gt;
+&lt;li&gt;bottle&lt;/li&gt;
+&lt;li&gt;cyclone&lt;/li&gt;
+&lt;li&gt;tornado&lt;/li&gt;
+&lt;li&gt;pyramid&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then these can be run using many different servers, including:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;tornado&lt;/li&gt;
+&lt;li&gt;twisted&lt;/li&gt;
+&lt;li&gt;cyclone&lt;/li&gt;
+&lt;li&gt;wsgiref&lt;/li&gt;
+&lt;li&gt;rocket&lt;/li&gt;
+&lt;li&gt;cherrypy&lt;/li&gt;
+&lt;li&gt;gunicorn&lt;/li&gt;
+&lt;li&gt;fapws&lt;/li&gt;
+&lt;li&gt;google app engine&lt;/li&gt;
+&lt;li&gt;gevent&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And many more.&amp;nbsp; Typically, these take one of several approaches.
+Asynchronous either explicit (cyclone, tornado) or via monkey patch
+and event loop (gevent); threaded such as rocket, or written in C
+to use an event loop.&amp;nbsp; In addition to this, you now have several
+different pythons for deployment:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;cpython&lt;/li&gt;
+&lt;li&gt;jython&lt;/li&gt;
+&lt;li&gt;pypy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At some point, these servers are generally dealing with
+asynchronous event loops or using threading.&amp;nbsp; The two approaches to
+handling this are either to program in a normal style (gevent) or
+to explicitly use event based programming (eg cyclone).&amp;nbsp; The rise
+of javascript and node.js has seen event based programming becoming
+more mainstream.&amp;nbsp; I wanted to find out which of these many
+combinations would perform best, and in particular what effect
+using pypy as the interpreter would have on the performance...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://casbon.me/what-will-pypy-do-for-your-website-benchmarki"&gt;http://casbon.me/what-will-pypy-do-for-your-website-benchmarki&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="bottle"></category><category term="ciclone"></category><category term="python"></category></entry><entry><title>Python bindings for iptables</title><link href="http://martinez.io/python-bindings-for-iptables.html" rel="alternate"></link><updated>2012-02-11T17:14:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-02-11:python-bindings-for-iptables.html</id><summary type="html">&lt;p&gt;&amp;quot;Iptables is the tool that is used to manage netfilter, the
+standard packet filtering and manipulation framework under Linux.
+As the iptables manpage puts it:&lt;/p&gt;
+&lt;p&gt;Iptables is used to set up, maintain, and inspect the tables of
+IPv4 packet filter rules in the Linux kernel.&lt;/p&gt;
+&lt;p&gt;Several different tables may be defined.&lt;/p&gt;
+&lt;p&gt;Each table contains a number of built-in chains and may also
+contain user- defined chains.&lt;/p&gt;
+&lt;p&gt;Each chain is a list of rules which can match a set of packets.
+Each rule specifies what to do with a packet that matches. This is
+called a target, which may be a jump to a user-defined chain in the
+same table.&lt;/p&gt;
+&lt;p&gt;Python-iptables provides python bindings to iptables under Linux.
+Interoperability with iptables is achieved via using the iptables C
+libraries (libiptc, libxtables, and the iptables extensions), not
+calling the iptables binary and parsing its output...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/ldx/python-iptables"&gt;https://github.com/ldx/python-iptables&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="iptables"></category><category term="python"></category></entry><entry><title>Cassandra compression is like more servers for free!</title><link href="http://martinez.io/cassandra-compression-is-like-more-servers-for-free.html" rel="alternate"></link><updated>2012-02-11T15:34:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-02-11:cassandra-compression-is-like-more-servers-for-free.html</id><summary type="html">&lt;p&gt;&amp;quot;A naive but convenient way to look at Cassandra is to think of it
+as a persistent cache. If your dataset is small and fits into
+memory you have great performance. When your data set grows it may
+no longer fits in memory. Based on your usage pattern /active set a
+given read might hit memory and be fast, but if the request causes
+a disk access it is going to be slower. Cassandra's number one
+weapon (to me) is that the same Linux disk cache that makes reading
+frequently read files like your /etc/passwd file fast...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.edwardcapriolo.com/roller/edwardcapriolo/entry/cassandra_compression_is_like_getting"&gt;http://www.edwardcapriolo.com/roller/edwardcapriolo/entry/cassandra_compression_is_like_getting&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="cassandra"></category><category term="nosql"></category></entry><entry><title>Backup/restore Elasticsearch index</title><link href="http://martinez.io/backuprestore-elasticsearch-index.html" rel="alternate"></link><updated>2012-02-01T11:50:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-02-01:backuprestore-elasticsearch-index.html</id><summary type="html">&lt;p&gt;&amp;quot;I've been spending a lot of time with&amp;nbsp;&lt;a class="reference external" href="http://www.elasticsearch.org/"&gt;Elasticsearch&lt;/a&gt;&amp;nbsp;recently,
+as I've been implementing&amp;nbsp;&lt;a class="reference external" href="http://logstash.net/"&gt;logstash&lt;/a&gt;&amp;nbsp;for our environment.
+Logstash, by the way, is a billion times awesome and I can't
+recommend it enough for large-scale log management/search.
+Elasticsearch is pretty awesome too, but considering the sheer
+amount of data I was putting into it, I don't feel satisfied with
+its replication-based redundancy — I need backups that I can save
+and restore at will. Since logstash creates a new Elasticsearch
+index for each day worth of logs, I want the ability to backup and
+restore arbitrary indices...&amp;quot;&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;&lt;a class="reference external" href="http://tech.superhappykittymeow.com/?p=296"&gt;http://tech.superhappykittymeow.com/?p=296&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="elasticsearch"></category></entry><entry><title>Creating debian packages with setup.py</title><link href="http://martinez.io/creating-debian-packages-with-setuppy.html" rel="alternate"></link><updated>2012-01-31T13:48:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-01-31:creating-debian-packages-with-setuppy.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;ncode&amp;#64;karoly:~/Devel/sica$ sudo apt-get install devscripts&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ncode&amp;#64;karoly:~/Devel/sica$ find *&lt;/strong&gt;
+src
+src/plugin
+src/plugin/sica.py
+src/sica.conf&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ncode&amp;#64;karoly:~/Devel/sica$&amp;nbsp;vim setup.py&lt;/strong&gt;
+#!/usr/bin/python
+from distutils.core import setup
+setup(name='sica',
+&amp;nbsp; &amp;nbsp; &amp;nbsp; version='0.0.1',
+&amp;nbsp; &amp;nbsp; &amp;nbsp; description='Collectd Plugin',
+&amp;nbsp; &amp;nbsp; &amp;nbsp; author='Juliano Martinez',
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;a class="reference external" href="mailto:author_email='juliano&amp;#64;martinez.io"&gt;author_email='juliano&amp;#64;martinez.io&lt;/a&gt;',
+&amp;nbsp; &amp;nbsp; &amp;nbsp; url='&lt;a class="reference external" href="https://github.com/ncode/sica"&gt;https://github.com/ncode/sica&lt;/a&gt;',
+&amp;nbsp; &amp;nbsp; &amp;nbsp; data_files=[('/etc/collectd/plugins.d', ['src/sica.conf']),
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ('/usr/share/collctd/modules',
+['src/plugin/sica.py'])]&lt;/p&gt;
+&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; )&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ncode&amp;#64;karoly:~/Devel$ mv sica sica-0.0.1 ncode&amp;#64;karoly:~/Devel$ cd sica-0.0.1/&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ncode&amp;#64;karoly:~/Devel/sica-0.0.1$ dh_make -n -s&lt;/strong&gt;
+Maintainer name : Juliano Martinez
+Email-Address : &lt;a class="reference external" href="mailto:juliano&amp;#64;martinez.io"&gt;juliano&amp;#64;martinez.io&lt;/a&gt;
+Date : Tue, 31 Jan 2012 11:23:04 -0200
+Package Name : sica
+Version : 0.0.1
+License : gpl3&lt;/p&gt;
+&lt;p&gt;Using dpatch : no
+Type of Package : Single
+Hit &amp;lt;enter&amp;gt; to confirm:
+Currently there is no top level Makefile. This may require
+additional tuning.
+Done. Please edit the files in the debian/ subdirectory now. You
+should also
+check that the sica Makefiles install into $DESTDIR and not in / .&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ncode&amp;#64;karoly:~/Devel/sica-0.0.1$ dch -i&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;sica (0.0.1-1) stable; urgency=low&lt;/p&gt;
+&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; * Building to stable&lt;/p&gt;
+&lt;p&gt;-- Juliano Martinez &amp;lt;&lt;a class="reference external" href="mailto:juliano&amp;#64;martinez.io"&gt;juliano&amp;#64;martinez.io&lt;/a&gt;&amp;gt;&amp;nbsp; Tue, 31 Jan 2012
+11:27:45 -0200&lt;/p&gt;
+&lt;p&gt;sica (0.0.1) unstable; urgency=low&lt;/p&gt;
+&lt;p&gt;&amp;nbsp; * Initial Release.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;-- Juliano Martinez &amp;lt;&lt;a class="reference external" href="mailto:juliano&amp;#64;martinez.io"&gt;juliano&amp;#64;martinez.io&lt;/a&gt;&amp;gt;&amp;nbsp; Tue, 31 Jan 2012
+11:23:04 -0200&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ncode&amp;#64;karoly:~/Devel/sica-0.0.1$ vim debian/control&lt;/strong&gt;
+Source: sica
+Section: python
+Priority: extra
+Maintainer: Juliano Martinez &amp;lt;&lt;a class="reference external" href="mailto:juliano&amp;#64;martinez.io"&gt;juliano&amp;#64;martinez.io&lt;/a&gt;&amp;gt;
+Build-Depends: debhelper (&amp;gt;= 7.0.50~)
+Standards-Version: 3.8.4
+Homepage: &lt;a class="reference external" href="https://github.com/ncode/sica"&gt;https://github.com/ncode/sica&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Package: sica
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Collectd Plugin
+&amp;nbsp;Collectd Plugin&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ncode&amp;#64;karoly:~/Devel/sica-0.0.1$ dpkg-buildpackage -us -uc -rfakeroot&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ncode&amp;#64;karoly:~/Devel/sica-0.0.1$ dpkg -c ../sica_0.0.1_amd64.deb&lt;/strong&gt;
+drwxr-xr-x root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0 2012-01-31 11:23 ./
+drwxr-xr-x root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0 2012-01-31 11:23 ./etc/
+drwxr-xr-x root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0 2012-01-31 11:23 ./etc/collectd/
+drwxr-xr-x root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0 2012-01-31 11:23
+./etc/collectd/plugins.d/
+-rw-r--r-- root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; 344 2012-01-31 00:29
+./etc/collectd/plugins.d/sica.conf
+drwxr-xr-x root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0 2012-01-31 11:23 ./usr/
+drwxr-xr-x root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0 2012-01-31 11:23 ./usr/share/
+drwxr-xr-x root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0 2012-01-31 11:23
+./usr/share/pyshared/
+-rw-r--r-- root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; 247 2012-01-31 11:23
+./usr/share/pyshared/sica-0.0.1.egg-info
+drwxr-xr-x root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0 2012-01-31 11:23
+./usr/share/collctd/
+drwxr-xr-x root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0 2012-01-31 11:23
+./usr/share/collctd/modules/
+-rw-r--r-- root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; 949 2012-01-31 01:20
+./usr/share/collctd/modules/sica.py
+drwxr-xr-x root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0 2012-01-31 11:23 ./usr/share/doc/
+drwxr-xr-x root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0 2012-01-31 11:23
+./usr/share/doc/sica/
+-rw-r--r-- root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; 190 2012-01-31 11:23
+./usr/share/doc/sica/README.Debian
+-rw-r--r-- root/root&amp;nbsp; &amp;nbsp; &amp;nbsp; 1815 2012-01-31 11:23
+./usr/share/doc/sica/copyright
+-rw-r--r-- root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; 143 2012-01-31 11:23
+./usr/share/doc/sica/changelog.gz
+drwxr-xr-x root/root &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0 2012-01-31 11:23
+./usr/share/python-support/
+-rw-r--r-- root/root&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 40 2012-01-31 11:23
+./usr/share/python-support/sica.public&lt;/p&gt;
+</summary><category term="debian"></category><category term="packaging"></category><category term="python"></category></entry><entry><title>Logging with Graylog2, GELF and logix</title><link href="http://martinez.io/logging-with-graylog2-gelf-and-logix.html" rel="alternate"></link><updated>2012-01-30T13:11:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-01-30:logging-with-graylog2-gelf-and-logix.html</id><summary type="html">&lt;p&gt;&amp;quot;Graylog2 is an open source log management solution that stores
+your logs in &lt;a class="reference external" href="http://www.elasticsearch.org/"&gt;ElasticSearch&lt;/a&gt;. It consists of a server written in
+Java that accepts your syslog messages via TCP, UDP or AMQP and
+stores it in the database. The second part is a web interface that
+allows you to manage the log messages from your web browser. Take a
+look at the screenshots or the latest release info page to get a
+feeling of what you can do with Graylog2...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://graylog2.org/about"&gt;http://graylog2.org/about&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;quot;Syslog is okay for logging system messages of your servers. Use it
+for that. GELF instead is great for logging from within
+applications. It is a good practice to send GELF messages directly
+from your existing logging classes so it is very easy to integrate
+into existing applications. You could use GELF to send every
+exception as a log message to your Graylog2 server. You don't have
+to care about timeouts, connection problems or anything that might
+break your application from within your logging class because GELF
+is sent via UDP. The disadvantage of this fire and forget principle
+is of course that no one guarantees that your GELF message will
+ever arrive. I'd say that important messages will just occur again.
+TCP support for those who like it is coming though...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/Graylog2/graylog2-docs/wiki/GELF"&gt;https://github.com/Graylog2/graylog2-docs/wiki/GELF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So... I wrote a tool to send syslog events to graylog2 via AMQP :D&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/ncode/logix"&gt;https://github.com/ncode/logix&lt;/a&gt;
+&lt;a class="reference external" href="https://github.com/locaweb/logix"&gt;https://github.com/locaweb/logix&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="gelf"></category><category term="gevent"></category><category term="greylog2"></category><category term="python"></category></entry><entry><title>Kernel Log: Coming in 3.3 (Part 1) - Networking</title><link href="http://martinez.io/kernel-log-coming-in-33-part-1-networking.html" rel="alternate"></link><updated>2012-01-29T14:54:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-01-29:kernel-log-coming-in-33-part-1-networking.html</id><summary type="html">&lt;p&gt;&amp;quot;Version 3.3 of the Linux kernel offers another way to team
+multiple Ethernet devices. Support for ‘Open vSwitch’, a virtual
+network switch that was specifically developed for virtualised
+environments, has also been added. Byte Queue Limits are designed
+to reduce the latencies that cause the much-discussed ‘buffer
+bloat’...&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-3-Part-1-Networking-1421959.html"&gt;http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-3-Part-1-Networking-1421959.html&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="kernel"></category></entry><entry><title>Debianization with git-buildpackage</title><link href="http://martinez.io/debianization-with-git-buildpackage.html" rel="alternate"></link><updated>2012-01-24T14:04:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-01-24:debianization-with-git-buildpackage.html</id><summary type="html">&lt;p&gt;&amp;quot;After building some useful piece of software, one has to decide
+how to best deploy it. In UNIX, the standard way to do that is by
+publishing the source code in .tar.gz format and requiring users to
+compile it.&lt;/p&gt;
+&lt;p&gt;In Debian there is an alternative: using a .deb package. With a
+.deb package, a single&amp;nbsp;dpkg -i &amp;lt;package&amp;gt;.deb&amp;nbsp;installs the
+software.&lt;/p&gt;
+&lt;p&gt;This article explains how to create and support a .deb package for
+a simple software maintained in git, by tracking the packaging
+scheme in a specific branch on the same repository.&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://lpenz.github.com/articles/debgit/index.html"&gt;http://lpenz.github.com/articles/debgit/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="debian"></category><category term="git"></category><category term="packaging"></category></entry><entry><title>Python-on-a-Chip ( PyMite )</title><link href="http://martinez.io/python-on-a-chip-pymite.html" rel="alternate"></link><updated>2012-01-16T13:05:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-01-16:python-on-a-chip-pymite.html</id><summary type="html">&lt;p&gt;&amp;quot;Welcome! Python-on-a-Chip (p14p) is a project to develop a reduced
+Python virtual machine (codenamed PyMite) that runs a significant
+subset of the Python language on microcontrollers without an OS.
+The other parts of p14p are the device drivers, high-level
+libraries and other tools.&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/python-on-a-chip/"&gt;http://code.google.com/p/python-on-a-chip/&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="python"></category></entry><entry><title>NetBSD-SoC - Dynamic NetBSD kernel extensions using the Lua language</title><link href="http://martinez.io/netbsd-soc-dynamic-netbsd-kernel-extensions-using-the-lua-language.html" rel="alternate"></link><updated>2012-01-16T12:12:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2012-01-16:netbsd-soc-dynamic-netbsd-kernel-extensions-using-the-lua-language.html</id><summary type="html">&lt;div class="section" id="this-project-has-the-goal-to-develop-a-kernel-subsystem-called-lunatik-to-provide-support-for-dynamically-extending-the-netbsd-kernel-using-the-lua-programming-language-we-intend-to-allow-the-adaptation-of-the-kernel-for-different-purposes-at-runtime-through-loading-lua-scripts-into-the-kernel-and-exposing-the-kernel-internals-to-these-scripts-lunatik-will-provide-also-support-for-rapid-prototyping-and-experimentation-with-new-algorithms-and-mechanisms-inside-the-kernel-here-are-some-examples-of-possible-kernel-extensions-using-lunatik"&gt;
+&lt;h2&gt;&amp;quot;This project has the goal to develop a kernel subsystem, called&amp;nbsp;&lt;em&gt;Lunatik&lt;/em&gt;, to provide support for dynamically extending the NetBSD kernel using the&amp;nbsp;&lt;a class="reference external" href="http://www.lua.org/"&gt;Lua programming language&lt;/a&gt;. We intend to allow the adaptation of the kernel for different purposes at runtime, through loading Lua scripts into the kernel and exposing the kernel internals to these scripts. Lunatik will provide also support for rapid prototyping and experimentation with new algorithms and mechanisms inside the kernel. Here are some examples of possible kernel extensions using Lunatik:&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;Process schedulers&lt;/strong&gt;&amp;nbsp;- this extension could allow users to
+define new algorithms for global process scheduling and/or to
+create different scheduling polices for independent sets of
+processes or threads at run-time. This could also help to implement
+quality of service (QoS).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Packet filters&lt;/strong&gt;&amp;nbsp;- this extension could allow the creation of
+more elaborated rules to process and filter the network packet
+traffic, instead of using plain rules tables.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Power management&lt;/strong&gt;&amp;nbsp;- this extension could allow users to
+define their own methods of governance of the system power usage.
+For example, users could define their own algorithm to scaling the
+central processing unit (CPU) frequency and voltage in order to
+save power or prevent overheating.&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://netbsd-soc.sourceforge.net/projects/luakern/"&gt;http://netbsd-soc.sourceforge.net/projects/luakern/&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/div&gt;
+</summary><category term="kernel"></category><category term="lua"></category><category term="netbsd"></category></entry><entry><title>Benchmarking Cloud Serving Systems</title><link href="http://martinez.io/benchmarking-cloud-serving-systems.html" rel="alternate"></link><updated>2011-12-22T20:44:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-12-22:benchmarking-cloud-serving-systems.html</id><summary type="html">&lt;p&gt;&amp;quot;While the use of MapReduce systems (such as Hadoop) for large
+scale data analysis has been widely recognized and studied, we have
+recently seen an explosion in the number of systems developed for
+cloud data serving. These newer systems address “cloud OLTP”
+applications, though they typically do not support ACID
+transactions. Examples of systems proposed for cloud serving use
+include BigTable, PNUTS, Cassandra, HBase, Azure, CouchDB,
+SimpleDB, Voldemort, and many others. Further, they are being ap-
+plied to a diverse range of applications that differ consider- ably
+from traditional (e.g., TPC-C like) serving workloads. The number
+of emerging cloud serving systems and the wide range of proposed
+applications, coupled with a lack of apples- to-apples performance
+comparisons, makes it difficult to un- derstand the tradeoffs
+between systems and the workloads for which they are suited. We
+present the Yahoo! Cloud Serving Benchmark (YCSB) framework, with
+the goal of fa- cilitating performance comparisons of the new
+generation of cloud data serving systems. We define a core set of
+benchmarks and report results for four widely used systems:
+Cassandra, HBase, Yahoo!’s PNUTS, and a simple sharded MySQL
+implementation. We also hope to foster the devel- opment of
+additional cloud benchmark suites that represent other classes of
+applications by making our benchmark tool available via open
+source. In this regard, a key feature of the YCSB framework/tool is
+that it is extensible—it supports easy definition of new workloads,
+in addition to making it easy to benchmark new systems.&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.brianfrankcooper.net/pubs/ycsb.pdf"&gt;http://www.brianfrankcooper.net/pubs/ycsb.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://lanyrd.com/2011/apachecon-north-america/skdpy/"&gt;http://lanyrd.com/2011/apachecon-north-america/skdpy/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://lanyrd.com/2011/apachecon-north-america/skdtf/"&gt;http://lanyrd.com/2011/apachecon-north-america/skdtf/&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="cassandra"></category><category term="cloud"></category><category term="mysql"></category><category term="nosql"></category></entry><entry><title>New CFEngine 3 Policy Wizard</title><link href="http://martinez.io/new-cfengine-3-policy-wizard.html" rel="alternate"></link><updated>2011-12-08T23:56:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-12-08:new-cfengine-3-policy-wizard.html</id><summary type="html">&lt;p&gt;&lt;em&gt;&amp;quot;The&amp;nbsp;**CFEngine Policy Wizard*&lt;/em&gt;&amp;nbsp;attempts to bridge the gap between established concepts that are second nature to System Administrators -- such as setting file permissions, process management and software installation -- by offering a side-by-side comparative view of the CFEngine syntax.&amp;quot;*&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;`http://www.cfengine.com/blog/cfengine-3-policy-wizard`_&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;`https://cfengine.com/policy_wizard/`_&lt;/em&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="cfengine3"></category></entry><entry><title>Linux - Control Groups ( cgroups )</title><link href="http://martinez.io/linux-control-groups-cgroups.html" rel="alternate"></link><updated>2011-12-08T01:39:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-12-08:linux-control-groups-cgroups.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;What are cgroups ?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Control Groups provide a mechanism for aggregating/partitioning sets of&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;tasks, and all their future children, into hierarchical groups with&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;specialized behaviour.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&amp;nbsp;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definitions:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A *cgroup* associates a set of tasks with a set of parameters for
+one&lt;/p&gt;
+&lt;p&gt;or more subsystems.&lt;/p&gt;
+&lt;p&gt;A *subsystem* is a module that makes use of the task grouping&lt;/p&gt;
+&lt;p&gt;facilities provided by cgroups to treat groups of tasks in&lt;/p&gt;
+&lt;p&gt;particular ways. A subsystem is typically a &amp;quot;resource controller&amp;quot;
+that&lt;/p&gt;
+&lt;p&gt;schedules a resource or applies per-cgroup limits, but it may be&lt;/p&gt;
+&lt;p&gt;anything that wants to act on a group of processes, e.g. a&lt;/p&gt;
+&lt;p&gt;virtualization subsystem.&lt;/p&gt;
+&lt;p&gt;A *hierarchy* is a set of cgroups arranged in a tree, such that&lt;/p&gt;
+&lt;p&gt;every task in the system is in exactly one of the cgroups in the&lt;/p&gt;
+&lt;p&gt;hierarchy, and a set of subsystems; each subsystem has
+system-specific&lt;/p&gt;
+&lt;p&gt;state attached to each cgroup in the hierarchy.&amp;nbsp; Each hierarchy
+has&lt;/p&gt;
+&lt;p&gt;an instance of the cgroup virtual filesystem associated with it.&lt;/p&gt;
+&lt;p&gt;At any one time there may be multiple active hierarchies of task&lt;/p&gt;
+&lt;p&gt;cgroups. Each hierarchy is a partition of all tasks in the system.&lt;/p&gt;
+&lt;p&gt;User level code may create and destroy cgroups by name in an&lt;/p&gt;
+&lt;p&gt;instance of the cgroup virtual file system, specify and query to&lt;/p&gt;
+&lt;p&gt;which cgroup a task is assigned, and list the task pids assigned
+to&lt;/p&gt;
+&lt;p&gt;a cgroup. Those creations and assignments only affect the
+hierarchy&lt;/p&gt;
+&lt;p&gt;associated with that instance of the cgroup file system.&lt;/p&gt;
+&lt;p&gt;On their own, the only use for cgroups is for simple job&lt;/p&gt;
+&lt;p&gt;tracking. The intention is that other subsystems hook into the
+generic&lt;/p&gt;
+&lt;p&gt;cgroup support to provide new attributes for cgroups, such as&lt;/p&gt;
+&lt;p&gt;accounting/limiting the resources which processes in a cgroup can&lt;/p&gt;
+&lt;p&gt;access. For example, cpusets (see
+Documentation/cgroups/cpusets.txt) allows&lt;/p&gt;
+&lt;p&gt;you to associate a set of CPUs and a set of memory nodes with the&lt;/p&gt;
+&lt;p&gt;tasks in each cgroup.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why are cgroups needed ?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;There are multiple efforts to provide process aggregations in the&lt;/p&gt;
+&lt;p&gt;Linux kernel, mainly for resource tracking purposes. Such efforts&lt;/p&gt;
+&lt;p&gt;include cpusets, CKRM/ResGroups, UserBeanCounters, and virtual
+server&lt;/p&gt;
+&lt;p&gt;namespaces. These all require the basic notion of a&lt;/p&gt;
+&lt;p&gt;grouping/partitioning of processes, with newly forked processes
+ending&lt;/p&gt;
+&lt;p&gt;in the same group (cgroup) as their parent process.&lt;/p&gt;
+&lt;p&gt;The kernel cgroup patch provides the minimum essential kernel&lt;/p&gt;
+&lt;p&gt;mechanisms required to efficiently implement such groups. It has&lt;/p&gt;
+&lt;p&gt;minimal impact on the system fast paths, and provides hooks for&lt;/p&gt;
+&lt;p&gt;specific subsystems such as cpusets to provide additional behaviour
+as&lt;/p&gt;
+&lt;p&gt;desired.&lt;/p&gt;
+&lt;p&gt;Multiple hierarchy support is provided to allow for situations
+where&lt;/p&gt;
+&lt;p&gt;the division of tasks into cgroups is distinctly different for&lt;/p&gt;
+&lt;p&gt;different subsystems - having parallel hierarchies allows each&lt;/p&gt;
+&lt;p&gt;hierarchy to be a natural division of tasks, without having to
+handle&lt;/p&gt;
+&lt;p&gt;complex combinations of tasks that would be present if several&lt;/p&gt;
+&lt;p&gt;unrelated subsystems needed to be forced into the same tree of&lt;/p&gt;
+&lt;p&gt;cgroups.&lt;/p&gt;
+&lt;p&gt;At one extreme, each resource controller or subsystem could be in
+a&lt;/p&gt;
+&lt;p&gt;separate hierarchy; at the other extreme, all subsystems&lt;/p&gt;
+&lt;p&gt;would be attached to the same hierarchy.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.kernel.org/doc/Documentation/cgroups/cgroups.txt"&gt;http://www.kernel.org/doc/Documentation/cgroups/cgroups.txt&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="cgroups"></category><category term="kernel"></category><category term="linux"></category></entry><entry><title>Linux Containers ( LXC )</title><link href="http://martinez.io/linux-containers-lxc.html" rel="alternate"></link><updated>2011-12-04T04:47:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-12-04:linux-containers-lxc.html</id><summary type="html">&lt;p&gt;LXC builds up from chroot to implement complete virtual systems,
+adding resource management and isolation mechanisms to Linux’s
+existing process management infrastructure.&lt;/p&gt;
+&lt;p&gt;Linux Containers (lxc) implement:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Resource management via “process control groups” (implemented
+via the cgroup filesystem)&lt;/li&gt;
+&lt;li&gt;Resource isolation via new flags to the clone(2) system call
+(capable of create several types of new namespaces for things like
+PIDs and network routing)&lt;/li&gt;
+&lt;li&gt;Several additional isolation mechanisms (such as the “-o
+newinstance” flag to the devpts filesystem).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The LXC package combines these Linux kernel mechanisms to provide a
+userspace&amp;nbsp;container&amp;nbsp;object, a lightweight virtual system&amp;nbsp;with full
+resource isolation and resource control for an application or a
+system.&lt;/p&gt;
+&lt;p&gt;Linux Containers take a completely different approach than system
+virtualization technologies such as KVM and Xen, which started by
+booting separate virtual systems on emulated hardware and then
+attempted to lower their overhead via paravirtualization and
+related mechanisms. Instead of retrofitting efficiency onto full
+isolation, LXC started out with an efficient mechanism (existing
+Linux process management) and added isolation, resulting in a
+system virtualization mechanism as scalable and portable as chroot,
+capable of simultaneously supporting thousands of emulated systems
+on a single server while also providing lightweight virtualization
+options to routers and smart phones.&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://lxc.sourceforge.net/"&gt;http://lxc.sourceforge.net&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://wiki.debian.org/LXC"&gt;http://wiki.debian.org/LXC&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://sutas.eu/setting-up-lxc-on-debian-squeeze/"&gt;http://sutas.eu/setting-up-lxc-on-debian-squeeze&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="cgroups"></category><category term="containers"></category><category term="lxc"></category></entry><entry><title>What is OpenFlow?</title><link href="http://martinez.io/what-is-openflow.html" rel="alternate"></link><updated>2011-11-23T20:35:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-11-23:what-is-openflow.html</id><summary type="html">&lt;p&gt;&amp;quot;&lt;em&gt;OpenFlow is an open standard&amp;nbsp;**to deploy innovative protocols&amp;nbsp;**in production networks.&amp;quot;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;OpenFlow enables researchers to run experimental protocols in the
+campus networks we use every day. OpenFlow is added as a feature to
+commercial Ethernet switches, routers and wireless access points –
+and provides a standardized hook to allow researchers to run
+experiments, without requiring vendors to expose the internal
+workings of their network devices. OpenFlow is currently being
+implemented by major vendors, with OpenFlow-enabled switches now
+commercially available.&lt;/p&gt;
+&lt;div class="section" id="how-does-openflow-work"&gt;
+&lt;h2&gt;How does OpenFlow work?&lt;/h2&gt;
+&lt;p&gt;In a classical router or switch, the fast packet forwarding (data
+path) and the high level routing decisions (control path) occur on
+the same device. An OpenFlow Switch separates these two functions.
+The data path portion still resides on the switch, while high-level
+routing decisions are moved to a separate controller, typically a
+standard server. The OpenFlow Switch and Controller communicate via
+the OpenFlow protocol, which defines messages, such as
+packet-received, send-packet-out, modify-forwarding-table, and
+get-stats.&lt;/p&gt;
+&lt;p&gt;The data path of an OpenFlow Switch presents a clean flow table
+abstraction; each flow table entry contains a set of packet fields
+to match, and an action (such as send-out-port, modify-field, or
+drop). When an OpenFlow Switch receives a packet it has never seen
+before, for which it has no matching flow entries, it sends this
+packet to the controller. The controller then makes a decision on
+how to handle this packet. It can drop the packet, or it can add a
+flow entry directing the switch on how to forward similar packets
+in the future.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-can-i-do-with-openflow"&gt;
+&lt;h2&gt;What can I do with OpenFlow?&lt;/h2&gt;
+&lt;p&gt;OpenFlow allows you to easily deploy innovative routing and
+switching protocols in your network. It is used for applications
+such as virtual machine mobility, high-security networks and next
+generation ip based mobile networks&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.openflow.org/documents/openflow-spec-v1.1.0.pdf"&gt;http://www.openflow.org/documents/openflow-spec-v1.1.0.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.openflow.org/documents/openflow-wp-latest.pdf"&gt;http://www.openflow.org/documents/openflow-wp-latest.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.openflow.org/"&gt;http://www.openflow.org&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/div&gt;
+</summary><category term="cloud"></category><category term="openflow"></category></entry><entry><title>Auditd Real-time Event Interface Specifications</title><link href="http://martinez.io/auditd-real-time-event-interface-specifications.html" rel="alternate"></link><updated>2011-11-09T18:16:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-11-09:auditd-real-time-event-interface-specifications.html</id><summary type="html">&lt;p&gt;Definitions&lt;/p&gt;
+&lt;p&gt;An audit event is all records that have the same host (node),
+timestamp, and&lt;/p&gt;
+&lt;p&gt;serial number. Each event on a host (node) has a unique timestamp
+and serial&lt;/p&gt;
+&lt;p&gt;number. An event is composed of multiple records which have
+information about&lt;/p&gt;
+&lt;p&gt;different aspects of an audit event. Each record is denoted by a
+type which&lt;/p&gt;
+&lt;p&gt;indicates what fields will follow. Information in the fields are
+held by a&lt;/p&gt;
+&lt;p&gt;name/value pair that contains an '=' between them. Each field is
+separated&lt;/p&gt;
+&lt;p&gt;from one another by a space or comma.&lt;/p&gt;
+&lt;p&gt;Ground Rules&lt;/p&gt;
+&lt;p&gt;The audit daemon will start up a program when its &amp;quot;dispatcher=&amp;quot;
+line is&lt;/p&gt;
+&lt;p&gt;non-NULL. The program will be started as root. Therefore, please
+take care&lt;/p&gt;
+&lt;p&gt;to ensure the program is safe with those capabilities or shed them.
+The program&lt;/p&gt;
+&lt;p&gt;should not fork and call setsid since that would escape the audit
+daemon's grip&lt;/p&gt;
+&lt;p&gt;on the program. (Its ok to fork child processes.) When the audit
+daemon starts&lt;/p&gt;
+&lt;p&gt;the dispatcher process, it opens stdin to the socketpair used to
+pass events.&lt;/p&gt;
+&lt;p&gt;So, the dispatcher only needs to read stdin. The dispatcher should
+never send&lt;/p&gt;
+&lt;p&gt;anything back to the audit daemon. It doesn't listen for anything
+and you might&lt;/p&gt;
+&lt;p&gt;fill up the buffers. The dispatcher must read the events as fast as
+possible&lt;/p&gt;
+&lt;p&gt;since the IPC communication buffers have a limited size.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://people.redhat.com/sgrubb/audit/audit-rt-events.txt"&gt;http://people.redhat.com/sgrubb/audit/audit-rt-events.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://people.redhat.com/sgrubb/audit/audit-parse.txt"&gt;http://people.redhat.com/sgrubb/audit/audit-parse.txt&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="audit"></category><category term="kernel"></category></entry><entry><title>Language detection with Google's Compact Language Detector</title><link href="http://martinez.io/language-detection-with-googles-compact-language-detector.html" rel="alternate"></link><updated>2011-11-04T13:24:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-11-04:language-detection-with-googles-compact-language-detector.html</id><summary type="html">&lt;p&gt;Google's&amp;nbsp;&lt;a class="reference external" href="http://www.google.com/chrome"&gt;Chrome browser&lt;/a&gt;&amp;nbsp;has a useful translate feature, where it
+detects the language of the page you've visited and if it differs
+from your local language, it offers to translate it.&lt;/p&gt;
+&lt;p&gt;Wonderfully, Google has
+open-sourced&amp;nbsp;&lt;a class="reference external" href="http://code.google.com/chromium"&gt;most of Chrome's source code&lt;/a&gt;, including the
+embedded CLD (Compact Language Detector) library that's used to
+detect the language of any UTF-8 encoded content. &amp;nbsp; It looks like
+CLD was extracted from the language detection library used
+in&amp;nbsp;&lt;a class="reference external" href="http://toolbar.google.com/"&gt;Google's toolbar&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It turns out the&amp;nbsp;&lt;a class="reference external" href="http://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/"&gt;CLD part of the Chromium source tree&lt;/a&gt;&amp;nbsp;is nicely
+standalone, so I pulled it out into
+a&amp;nbsp;&lt;a class="reference external" href="http://code.google.com/p/chromium-compact-language-detector/"&gt;new separate Google code project&lt;/a&gt;, making it possible to use
+CLD directly from any C++ code.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.mikemccandless.com/2011/10/language-detection-with-googles-compact.html"&gt;http://blog.mikemccandless.com/2011/10/language-detection-with-googles-compact.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/"&gt;http://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/chromium-compact-language-detector/"&gt;http://code.google.com/p/chromium-compact-language-detector/&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="python"></category></entry><entry><title>Flashcache : A Write Back Block Cache for Linux</title><link href="http://martinez.io/flashcache-a-write-back-block-cache-for-linux.html" rel="alternate"></link><updated>2011-11-03T13:19:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-11-03:flashcache-a-write-back-block-cache-for-linux.html</id><summary type="html">&lt;div&gt;&lt;p&gt;&lt;strong&gt;Introduction:&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;Flashcache is a write back block cache Linux kernel module. This&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;document describes the design, futures ideas, configuration, tuning
+of&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;the flashcache and concludes with a note covering the testability&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;hooks within flashcache and the testing that we did. Flashcache was&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;built primarily as a block cache for InnoDB but is general purpose
+and&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;can be used by other applications as well.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Design:&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;Flashcache is built using the Linux Device Mapper (DM), part of the&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;Linux Storage Stack infrastructure that facilitates building
+SW-RAID&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;and other components. LVM, for example, is built using the DM.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;The cache is structured as a set associative hash, where the cache
+is&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;divided up into a number of fixed size sets (buckets) with linear&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;probing within a set to find blocks. The set associative hash has a&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;number of advantages (called out in sections below) and works very&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;well in practice.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;The block size, set size and cache size are configurable
+parameters,&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;specified at cache creation. The default set size is 512 (blocks)
+and&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;there is little reason to change this.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="https://raw.github.com/facebook/flashcache/master/doc/flashcache-doc.txt"&gt;https://raw.github.com/facebook/flashcache/master/doc/flashcache-doc.txt&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/facebook/flashcache"&gt;https://github.com/facebook/flashcache&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="flashcache"></category><category term="kernel"></category></entry><entry><title>Postfix Postscreen Howto</title><link href="http://martinez.io/postfix-postscreen-howto.html" rel="alternate"></link><updated>2011-10-25T14:49:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-10-25:postfix-postscreen-howto.html</id><summary type="html">&lt;div class="section" id="the-basic-idea-behind-postscreen-8"&gt;
+&lt;h2&gt;The basic idea behind postscreen(8)&lt;/h2&gt;
+&lt;p&gt;Most email is spam, and most spam is sent out by zombies (malware
+on compromised end-user computers). Wietse expects that the zombie
+problem will get worse before things improve, if ever. Without a
+tool like&amp;nbsp;&lt;a class="reference external" href="http://www.postfix.org/postscreen.8.html"&gt;postscreen(8)&lt;/a&gt;&amp;nbsp;that keeps the zombies away, Postfix
+would be spending most of its resources not receiving email.&lt;/p&gt;
+&lt;p&gt;The main challenge for&amp;nbsp;&lt;a class="reference external" href="http://www.postfix.org/postscreen.8.html"&gt;postscreen(8)&lt;/a&gt;&amp;nbsp;is to make an
+is-it-a-zombie decision based on a single measurement. This is
+necessary because many zombies try to fly under the radar and avoid
+spamming the same site repeatedly. Once&amp;nbsp;&lt;a class="reference external" href="http://www.postfix.org/postscreen.8.html"&gt;postscreen(8)&lt;/a&gt;&amp;nbsp;decides
+that a client is not-a-zombie, it whitelists the client temporarily
+to avoid further delays for legitimate mail.&lt;/p&gt;
+&lt;p&gt;Zombies have challenges too: they have only a limited amount of
+time to deliver spam before their IP address becomes blacklisted.
+To speed up spam deliveries, zombies make compromises in their SMTP
+protocol implementation. For example, they speak before their turn,
+or they ignore responses from SMTP servers and continue sending
+mail even when the server tells them to go away.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.postfix.org/postscreen.8.html"&gt;postscreen(8)&lt;/a&gt;&amp;nbsp;uses a variety of measurements to recognize
+zombies. First,&amp;nbsp;&lt;a class="reference external" href="http://www.postfix.org/postscreen.8.html"&gt;postscreen(8)&lt;/a&gt;&amp;nbsp;determines if the remote SMTP
+client IP address is blacklisted. Second,&amp;nbsp;&lt;a class="reference external" href="http://www.postfix.org/postscreen.8.html"&gt;postscreen(8)&lt;/a&gt;&amp;nbsp;looks
+for protocol compromises that are made to speed up delivery. These
+are good indicators for making is-it-a-zombie decisions based on
+single measurements.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.postfix.org/postscreen.8.html"&gt;postscreen(8)&lt;/a&gt;&amp;nbsp;does not inspect message content. Message content
+can vary from one delivery to the next, especially with clients
+that (also) send legitimate email. Content is not a good indicator
+for making is-it-a-zombie decisions based on single measurements,
+and that is the problem that&amp;nbsp;&lt;a class="reference external" href="http://www.postfix.org/postscreen.8.html"&gt;postscreen(8)&lt;/a&gt;&amp;nbsp;is focused on.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.postfix.org/POSTSCREEN_README.html"&gt;http://www.postfix.org/POSTSCREEN_README.html&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/div&gt;
+</summary><category term="postfix"></category></entry><entry><title>HandlerSocket plugin for MySQL</title><link href="http://martinez.io/handlersocket-plugin-for-mysql.html" rel="alternate"></link><updated>2011-10-17T10:37:00-02:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-10-17:handlersocket-plugin-for-mysql.html</id><summary type="html">&lt;p&gt;&lt;em&gt;HandlerSocket&lt;/em&gt;&amp;nbsp;is a&amp;nbsp;&lt;em&gt;MySQL&lt;/em&gt;&amp;nbsp;plugin that implements
+a&amp;nbsp;NoSQL&amp;nbsp;protocol for&amp;nbsp;&lt;em&gt;MySQL&lt;/em&gt;. This allows applications to
+communicate more directly with&amp;nbsp;&lt;em&gt;MySQL&lt;/em&gt;&amp;nbsp;storage engines, without the
+overhead associated with usingSQL. This includes operations such as
+parsing and optimizing queries, as well as table handling
+operations (opening, locking, unlocking, closing). As a result,
+using&amp;nbsp;&lt;em&gt;HandlerSocket&lt;/em&gt;&amp;nbsp;can provide much better performance for
+certain applications that using normal&amp;nbsp;SQL&amp;nbsp;application protocols.&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.percona.com/doc/percona-server/5.5/performance/handlersocket.html"&gt;http://www.percona.com/doc/percona-server/5.5/performance/handlersocket.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/ahiguti/HandlerSocket-Plugin-for-MySQL"&gt;https://github.com/ahiguti/HandlerSocket-Plugin-for-MySQL&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="handlersocket"></category><category term="mysql"></category><category term="nosql"></category></entry><entry><title>What is Quantum? #OpenStack</title><link href="http://martinez.io/what-is-quantum-openstack.html" rel="alternate"></link><updated>2011-10-03T15:45:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-10-03:what-is-quantum-openstack.html</id><summary type="html">&lt;p&gt;Just like OpenStack Nova provides an API to dynamically request and
+configure virtual servers, Quantum provides an API to dynamically
+request and configure virtual networks. These networks connect
+&amp;quot;interfaces&amp;quot; from other OpenStack services (e.g., vNICs from Nova
+VMs). The Quantum API supports extensions to provide advanced
+network capabilities (e.g., QoS, ACLs, network monitoring, etc)&lt;/p&gt;
+&lt;div class="section" id="why-quantum"&gt;
+&lt;h2&gt;Why Quantum?&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Support advanced network topologies beyond what is possible with
+nova's&amp;nbsp;&lt;a class="reference external" href="http://wiki.openstack.org/FlatManager"&gt;FlatManager&lt;/a&gt;&amp;nbsp;or&amp;nbsp;&lt;a class="reference external" href="http://wiki.openstack.org/VlanManager"&gt;VlanManager&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;Example: create multi-tier web application topology&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Let anyone build advanced network services (open and closed
+source) that plug into Openstack networks.&lt;ul&gt;
+&lt;li&gt;Examples: VPN-aaS, firewall-aaS, IDS-aaS,
+data-center-interconnect-aaS.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Enable innovation plugins (open and closed source) that
+introduce advanced network capabilities&lt;ul&gt;
+&lt;li&gt;Example: use L2-in-L3 tunneling to avoid VLAN limits, provide
+end-to-end QoS guarantees, used monitoring protocols
+like`NetFlow`_.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://wiki.openstack.org/Quantum"&gt;http://wiki.openstack.org/Quantum&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/openstack/quantum"&gt;https://github.com/openstack/quantum&lt;/a&gt;&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="https://launchpad.net/quantum"&gt;https://launchpad.net/quantum&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;/div&gt;
+</summary><category term="cloud"></category><category term="network"></category><category term="python"></category></entry><entry><title>What Is Machine Learning?</title><link href="http://martinez.io/what-is-machine-learning.html" rel="alternate"></link><updated>2011-09-19T16:58:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-09-19:what-is-machine-learning.html</id><summary type="html">&lt;p&gt;Machine learning is the science of getting computers to act without
+being explicitly programmed. In the past decade, machine learning
+has given us self-driving cars, practical speech recognition,
+effective web search, and a vastly improved understanding of the
+human genome. Machine learning is so pervasive today that you
+probably use it dozens of times a day without knowing it. Many
+researchers also think it is the best way to make progress towards
+human-level AI. In this class, you will learn about the most
+effective machine learning techniques, and gain practice
+implementing them and getting them to work for yourself. More
+importantly, you'll learn about not only the theoretical
+underpinnings of learning, but also gain the practical know-how
+needed to quickly and powerfully apply these techniques to new
+problems. Finally, you'll learn about some of Silicon Valley's best
+practices in innovation as it pertains to machine learning and AI.&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;&amp;nbsp;&lt;a class="reference external" href="http://ml-class.org/"&gt;http://ml-class.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Project Kronos: XenAPI on Debian and Ubuntu</title><link href="http://martinez.io/project-kronos-xenapi-on-debian-and-ubuntu.html" rel="alternate"></link><updated>2011-09-14T14:32:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-09-14:project-kronos-xenapi-on-debian-and-ubuntu.html</id><summary type="html">&lt;p&gt;The XCP team would like to formally announce Project Kronos, our
+port of XCP’s XenAPI toolstack to Debian and Ubuntu dom0. This will
+give users the ability to install Debian or Ubuntu, and then just
+do ‘apt-get install xapi’ in order to build a system that is
+(roughly) functionally equivalent to a standard XCP distribution.&lt;/p&gt;
+&lt;p&gt;This project provides a number of benefits. First of all, it will
+provide Xen users with the option of using the same API and
+toolstack that XCP and XenServer provide. It will give early
+adopters the chance to try out new changes to the XenAPI before
+they get released in new XCP and XenServer versions. And because
+we’ve ported all of our toolstack to build on Debian, it’s now
+much, much easier to build our tools outside of an SDK VM.&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.xen.org/index.php/2011/07/22/project-kronos"&gt;http://blog.xen.org/index.php/2011/07/22/project-kronos&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;/p&gt;</summary><category term="debian"></category><category term="xcp"></category><category term="xen"></category></entry><entry><title>StaticPython - Statically linked Python 2.x, 3.x and Stackless</title><link href="http://martinez.io/staticpython-statically-linked-python-2x-3x-and-stackless.html" rel="alternate"></link><updated>2011-09-01T11:42:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-09-01:staticpython-statically-linked-python-2x-3x-and-stackless.html</id><summary type="html">&lt;p&gt;StaticPython is a statically linked version of the Python 2.x
+(currently 2.7.1) and 3.x (currently 3.2) and Stackless Python
+interpreters and their standard modules for 32-bit (i686, i386,
+x86) Linux, Mac OS X and FreeBSD systems. It is distributed as
+single, statically linked 32-bit executable binaries, which
+contains the Python scripting engine, the interactive interpreter
+with command editing (readline), the Python debugger (pdb), most
+standard Python modules (including pure Python modules and C
+extensions), coroutine support using greenlet and multithreading
+support. The binary contains both the pure Python modules and the C
+extensions, so no additional&amp;nbsp;.py&amp;nbsp;or&amp;nbsp;.so&amp;nbsp;files are needed to run it.
+It also works in a chroot environment. The binary uses uClibc, so
+it supports username lookups and DNS lookups as well (without
+NSS).&lt;/p&gt;
+&lt;p&gt;StaticPython is similar to&amp;nbsp;&lt;a class="reference external" href="http://www.portablepython.com/"&gt;Portable Python&lt;/a&gt;, except that
+StaticPython runs on Linux instead of Windows, and it has Stackless
+Python, greenlet and coroutine-based I/O library support.&lt;/p&gt;
+&lt;p&gt;StaticPython is a bit similar to&amp;nbsp;&lt;a class="reference external" href="http://pypi.python.org/pypi/bbfreeze"&gt;bbfreeze&lt;/a&gt;&amp;nbsp;and&amp;nbsp;&lt;a class="reference external" href="http://www.pyinstaller.org/"&gt;PyInstaller&lt;/a&gt;,
+but StaticPython contains the Python interpreter, all
+the&amp;nbsp;.py&amp;nbsp;library files and all the built-in C extensions in a single
+executable file (while bbfreeze generates a separate&amp;nbsp;.so&amp;nbsp;file for
+each C extension library), and it doesn't contain any
+application-specific&amp;nbsp;.py&amp;nbsp;or&amp;nbsp;.pyc&amp;nbsp;files.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/pts-mini-gpl/wiki/StaticPython"&gt;http://code.google.com/p/pts-mini-gpl/wiki/StaticPython&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="python"></category></entry><entry><title>Mailfromd - General-Purpose Mail Filter</title><link href="http://martinez.io/mailfromd-general-purpose-mail-filter.html" rel="alternate"></link><updated>2011-08-31T18:24:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-08-31:mailfromd-general-purpose-mail-filter.html</id><summary type="html">&lt;p&gt;Mailfromd&amp;nbsp;is a general-purpose mail filtering daemon and a suite of accompanying utilities
+for&amp;nbsp;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;Sendmail```(1)`_,&amp;nbsp;``MeTA1```(2)`_,&amp;nbsp;``Postfix```(3)`_&amp;nbsp;or&lt;/span&gt; any
+other&amp;nbsp;MTA&amp;nbsp;that &lt;span class="pre"&gt;supports&amp;nbsp;``Milter``&amp;nbsp;(or&amp;nbsp;``Pmilter&lt;/span&gt;&lt;/tt&gt;) protocol. It is
+able to filter both incoming and outgoing messages using a filter
+program, written in&amp;nbsp;&lt;em&gt;mail filtering language&lt;/em&gt;&amp;nbsp;(MFL). The daemon
+interfaces with the&amp;nbsp;MTA&amp;nbsp;using&amp;nbsp;&lt;a href="#id1"&gt;&lt;span class="problematic" id="id2"&gt;``&lt;/span&gt;&lt;/a&gt;Milter``&amp;nbsp;protocol.&lt;/p&gt;
+&lt;div class="system-message" id="id1"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;/home/ncode/Devel/martinez.io/content/mailfromd-general-purpose-mail-filter.rst&lt;/tt&gt;, line 9); &lt;em&gt;&lt;a href="#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
+&lt;p&gt;The name&amp;nbsp;&lt;em&gt;mailfromd&lt;/em&gt;&amp;nbsp;can be thought of as an abbreviation for
+‘&lt;em&gt;Mail&lt;/em&gt;&amp;nbsp;&lt;em&gt;F*iltering and&amp;nbsp;*R*untime&amp;nbsp;*M*odification’&amp;nbsp;*D*aemon, with an
+‘o’ for itself. Historically, it stemmed from the fact that the
+original implementation was a simple filter implementing
+the&amp;nbsp;*sender address verification&lt;/em&gt;&amp;nbsp;technique. Since then the program
+has changed dramatically, and now it is actually a language
+translator and run-time evaluator providing a set of built-in and
+library functions for filtering electronic mail.&lt;/p&gt;
+&lt;p&gt;The first part of this manual is an overview, describing the
+features&amp;nbsp;&lt;a href="#id3"&gt;&lt;span class="problematic" id="id4"&gt;``&lt;/span&gt;&lt;/a&gt;mailfromd``&amp;nbsp;offers in general.&lt;/p&gt;
+&lt;div class="system-message" id="id3"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;/home/ncode/Devel/martinez.io/content/mailfromd-general-purpose-mail-filter.rst&lt;/tt&gt;, line 25); &lt;em&gt;&lt;a href="#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
+&lt;p&gt;The second part is a tutorial, which provides an introduction for
+those who have not used&amp;nbsp;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;mailfromd``&amp;nbsp;previously.&lt;/span&gt; It moves from
+topic to topic in a logical, progressive order, building on
+information already explained. It offers only the principal
+information needed to master basic practical usage
+&lt;span class="pre"&gt;of&amp;nbsp;``mailfromd&lt;/span&gt;&lt;/tt&gt;, while omitting many subtleties.&lt;/p&gt;
+&lt;p&gt;The other parts are meant to be used as a reference for those who
+know&amp;nbsp;&lt;a href="#id5"&gt;&lt;span class="problematic" id="id6"&gt;``&lt;/span&gt;&lt;/a&gt;mailfromd``&amp;nbsp;well enough, but need to look up some notions
+from time to time. Each chapter presents everything that needs to
+be said about a specific topic.&lt;/p&gt;
+&lt;div class="system-message" id="id5"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;/home/ncode/Devel/martinez.io/content/mailfromd-general-purpose-mail-filter.rst&lt;/tt&gt;, line 35); &lt;em&gt;&lt;a href="#id6"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
+&lt;p&gt;The manual assumes that the reader has a good knowledge of
+the&amp;nbsp;SMTP&amp;nbsp;protocol and the mail transport system he uses
+(&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;Sendmail``&amp;nbsp;,&amp;nbsp;``Postfix``&amp;nbsp;or&amp;nbsp;``MeTA1&lt;/span&gt;&lt;/tt&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://puszcza.gnu.org.ua/software/mailfromd/manual/mailfromd.html"&gt;http://puszcza.gnu.org.ua/software/mailfromd/manual/mailfromd.html&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary><category term="mailfromd"></category><category term="mailservers"></category><category term="postfix"></category></entry><entry><title>Cyclone, a pretty awesome low-level network toolkit</title><link href="http://martinez.io/cyclone-a-pretty-awesome-low-level-network-toolkit.html" rel="alternate"></link><updated>2011-08-25T20:20:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-08-25:cyclone-a-pretty-awesome-low-level-network-toolkit.html</id><summary type="html">&lt;p&gt;Cyclone is a low-level network toolkit, which provides support for
+HTTP 1.1 in an API very similar to the one implemented by
+the&amp;nbsp;&lt;a class="reference external" href="http://tornadoweb.org/"&gt;Tornado&lt;/a&gt;&amp;nbsp;web server - which was developed
+by&amp;nbsp;&lt;a class="reference external" href="http://friendfeed.com/"&gt;FriendFeed&lt;/a&gt;&amp;nbsp;and later released as open source / free software
+by&amp;nbsp;&lt;a class="reference external" href="http://facebook.com/"&gt;Facebook&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="key-differences-between-cyclone-and-tornado"&gt;
+&lt;h2&gt;Key differences between Cyclone and Tornado&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Cyclone is based on&amp;nbsp;&lt;a class="reference external" href="http://twistedmatrix.com/"&gt;Twisted&lt;/a&gt;, hence it may be used as a
+webservice protocol for interconnection with any other protocol
+implemented in Twisted.&lt;/li&gt;
+&lt;li&gt;Localization is based upon the standard&amp;nbsp;&lt;a class="reference external" href="http://www.gnu.org/software/gettext/"&gt;Gettext&lt;/a&gt;&amp;nbsp;instead of
+the CSV implementation in the original Tornado. Moreover, it
+supports pluralization exactly like Tornado does.&lt;/li&gt;
+&lt;li&gt;It ships with an asynchronous HTTP client based
+on&amp;nbsp;&lt;a class="reference external" href="http://twistedmatrix.com/trac/wiki/TwistedWeb"&gt;TwistedWeb&lt;/a&gt;, however, it's fully compatible with one provided
+by Tornado - which is based on`PyCurl`_. (The HTTP server code is
+NOT based on TwistedWeb, for several reasons)&lt;/li&gt;
+&lt;li&gt;Native support for XMLRPC and JsonRPC. (see the&amp;nbsp;&lt;a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/rpc/"&gt;rpc demo&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;WebSocket protocol class is just like any other Twisted Protocol
+(i.e.: LineReceiver; see the&amp;nbsp;&lt;a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/websocket/"&gt;websocket demo&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Support for sending e-mail based on&amp;nbsp;&lt;a class="reference external" href="http://twistedmatrix.com/trac/wiki/TwistedMail"&gt;Twisted Mail&lt;/a&gt;, with
+authentication and TLS, plus an easy way to create plain text or
+HTML messages, and attachments. (see the&amp;nbsp;&lt;a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/email"&gt;e-mail demo&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Built-in support for&amp;nbsp;&lt;a class="reference external" href="http://code.google.com/p/redis/"&gt;Redis&lt;/a&gt;, based on&amp;nbsp;&lt;a class="reference external" href="http://github.com/fiorix/txredisapi"&gt;txredisapi&lt;/a&gt;. We
+usually need an in-memory caching server like memcache for web
+applications. However, we prefer redis over memcache because it
+supports more operations like pubsub, various data types like sets,
+hashes (python dict), and persistent storage. See
+the&amp;nbsp;&lt;a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/redis/"&gt;redis demo&lt;/a&gt;&amp;nbsp;for details.&lt;/li&gt;
+&lt;li&gt;Support for HTTP Authentication. See
+the&amp;nbsp;&lt;a class="reference external" href="http://github.com/fiorix/cyclone/tree/master/demos/httpauth/"&gt;authentication demo&lt;/a&gt;&amp;nbsp;for details.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="advantages-of-being-a-twisted-protocol"&gt;
+&lt;h2&gt;Advantages of being a Twisted Protocol&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Easy deployment of applications, using&amp;nbsp;&lt;a class="reference external" href="http://twistedmatrix.com/documents/current/core/howto/basics.html"&gt;twistd&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;RDBM support via:&amp;nbsp;&lt;a class="reference external" href="http://twistedmatrix.com/documents/current/core/howto/rdbms.html"&gt;twisted.enterprise.adbapi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;NoSQL support for MongoDB (&lt;a class="reference external" href="http://github.com/fiorix/mongo-async-python-driver"&gt;TxMongo&lt;/a&gt;) and Redis
+(&lt;a class="reference external" href="http://github.com/fiorix/txredisapi"&gt;TxRedisAPI&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;May combine many more functionality within the webserver:
+sending emails, communicating with message brokers, etc...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p /&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/fiorix/cyclone"&gt;https://github.com/fiorix/cyclone&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/div&gt;
+</summary><category term="python"></category></entry><entry><title>Riak SmartMachine Benchmark: The Technical Details</title><link href="http://martinez.io/riak-smartmachine-benchmark-the-technical-details.html" rel="alternate"></link><updated>2011-08-23T17:04:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-08-23:riak-smartmachine-benchmark-the-technical-details.html</id><summary type="html">&lt;p&gt;Recently Basho and Joyent entered into
+a`comprehensive partnership`_&amp;nbsp;to deliver&amp;nbsp;&lt;a class="reference external" href="http://www.joyent.com/2010/09/joyent-riak-smartmachines-now-available/"&gt;Riak Smartmachines&lt;/a&gt;&amp;nbsp;to
+Joyent customers. We had been experimenting with Riak since early
+in 2010 and were eager to benchmark its performance on Joyent and
+ultimately offer a robust NO-SQL solution to our customers. Along
+the way, we were pleasantly surprised how well the Riak
+Smartmachine&amp;nbsp;&lt;a class="reference external" href="http://www.joyent.com/2010/09/no-sql-database-performance-in-the-cloud-webinar-recording-now-available/"&gt;demonstrated&lt;/a&gt;&amp;nbsp;a combination of performance,
+predictability, resilience, and linear scalability that made it
+relatively quick and easy run a&amp;nbsp;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Dynamo_(storage_system)"&gt;Dynamo&lt;/a&gt;-class distributed data
+storage system.&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://joyeur.com/2010/10/31/riak-smartmachine-benchmark-the-technical-details/"&gt;http://joyeur.com/2010/10/31/riak-smartmachine-benchmark-the-technical-details&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;/p&gt;</summary><category term="nosql"></category><category term="riak"></category></entry><entry><title>Comparing gevent to eventlet</title><link href="http://martinez.io/comparing-gevent-to-eventlet.html" rel="alternate"></link><updated>2011-08-23T16:59:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-08-23:comparing-gevent-to-eventlet.html</id><summary type="html">&lt;p&gt;Gevent aims to be a small and stable core everyone can depend upon.
+It delegates the job to libevent whenever possible and provides
+convenient abstractions for coroutine-based programming. It’s
+inspired by Eventlet but it’s not a fork and it features a new API.
+The implementation is simpler and more stable.&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.gevent.org/2010/02/27/why-gevent/"&gt;http://blog.gevent.org/2010/02/27/why-gevent&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;/p&gt;</summary><category term="gevent"></category><category term="python"></category></entry><entry><title>Bootstrap, from Twitter</title><link href="http://martinez.io/bootstrap-from-twitter.html" rel="alternate"></link><updated>2011-08-23T16:52:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-08-23:bootstrap-from-twitter.html</id><summary type="html">&lt;p&gt;In the earlier days of Twitter, engineers used almost any library
+they were familiar with to meet front-end requirements. Bootstrap
+began as an answer to the challenges that presented and development
+quickly accelerated during Twitter’s first Hackweek.&lt;/p&gt;
+&lt;p&gt;With the help and feedback of many engineers at Twitter, Bootstrap
+has grown significantly to encompass not only basic styles, but
+more elegant and durable front-end design patterns.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://twitter.github.com/bootstrap/"&gt;http://twitter.github.com/bootstrap&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;</summary></entry><entry><title>How to Create and Seed a Torrent Download on Amazon S3</title><link href="http://martinez.io/how-to-create-and-seed-a-torrent-download-on-amazon-s3.html" rel="alternate"></link><updated>2011-08-22T13:47:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-08-22:how-to-create-and-seed-a-torrent-download-on-amazon-s3.html</id><summary type="html">&lt;p&gt;I recently needed to share some open source files
+via&amp;nbsp;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/BitTorrent"&gt;BitTorrent&lt;/a&gt;&amp;nbsp;and wanted to host them on my Amazon S3 account.
+For those of you familiar with S3, here is the short-answer:
+add**?torrent**&amp;nbsp;to the end of the URL of a public-shared file to
+get the *.torrent file, so the link would
+be&amp;nbsp;&lt;strong&gt;http://s3.amazonaws.com/your_bucket_name/your_file_name?torrent&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;`http://carltonbale.com/how-to-create-and-seed-a-torrent-download-on-amazon-s3`_&lt;/strong&gt;&lt;/p&gt;
+&lt;/p&gt;</summary></entry><entry><title>ZooKeeper: A Distributed Coordination Service for Distributed Applications</title><link href="http://martinez.io/zookeeper-a-distributed-coordination-service-for-distributed-applications.html" rel="alternate"></link><updated>2011-08-05T01:34:00-03:00</updated><author><name>Juliano Martinez</name></author><id>tag:martinez.io,2011-08-05:zookeeper-a-distributed-coordination-service-for-distributed-applications.html</id><summary type="html">&lt;p&gt;Coordination services are notoriously hard to get right. They are
+especially prone to errors such as race conditions and deadlock.
+The motivation behind ZooKeeper is to relieve distributed
+applications the responsibility of implementing coordination
+services from scratch.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://zookeeper.apache.org/doc/trunk/zookeeperOver.html"&gt;http://zookeeper.apache.org/doc/trunk/zookeeperOver.html&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</summary></entry></feed>

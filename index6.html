@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sysadms must be lazy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Juliano Martinez">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 9pt;
+      }
+      .tag-3 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 7pt;
+     }
+    </style>
+    <link href="./theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="./theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="./theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./theme/images/apple-touch-icon-114x114.png">
+
+    <link href="./" type="application/atom+xml" rel="alternate" title="sysadms must be lazy ATOM Feed" />
+        <link href="./feeds/rss.xml" type="application/atom+xml" rel="alternate" title="sysadms must be lazy RSS Feed" />
+    
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">sysadms must be lazy </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                                    <li class="divider-vertical"></li>
+                                        <ul class="nav pull-right">
+                                <li><a href="./archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span12" id="content">
+                            <div class="article">
+                <h1><a href="./logging-with-graylog2-gelf-and-logix.html">Logging with Graylog2, GELF and logix</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-01-30T13:11:00">
+        Mon 30 January 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/gelf.html"><i class="icon-tag"></i>gelf</a>
+	<a href="./tag/gevent.html"><i class="icon-tag"></i>gevent</a>
+	<a href="./tag/greylog2.html"><i class="icon-tag"></i>greylog2</a>
+	<a href="./tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Graylog2 is an open source log management solution that stores
+your logs in <a class="reference external" href="http://www.elasticsearch.org/">ElasticSearch</a>. It consists of a server written in
+Java that accepts your syslog messages via TCP, UDP or AMQP and
+stores it in the database. The second part is a web interface that
+allows you to manage the log messages from your web browser. Take a
+look at the screenshots or the latest release info page to get a
+feeling of what you can do with Graylog2...&quot;</p>
+<p><a class="reference external" href="http://graylog2.org/about">http://graylog2.org/about</a></p>
+<p>&quot;Syslog is okay for logging system messages of your servers. Use it
+for that. GELF instead is great for logging from within
+applications. It is a good practice to send GELF messages directly
+from your existing logging classes so it is very easy to integrate
+into existing applications. You could use GELF to send every
+exception as a log message to your Graylog2 server. You don't have
+to care about timeouts, connection problems or anything that might
+break your application from within your logging class because GELF
+is sent via UDP. The disadvantage of this fire and forget principle
+is of course that no one guarantees that your GELF message will
+ever arrive. I'd say that important messages will just occur again.
+TCP support for those who like it is coming though...&quot;</p>
+<p><a class="reference external" href="https://github.com/Graylog2/graylog2-docs/wiki/GELF">https://github.com/Graylog2/graylog2-docs/wiki/GELF</a></p>
+<p>So... I wrote a tool to send syslog events to graylog2 via AMQP :D</p>
+<p><a class="reference external" href="https://github.com/ncode/logix">https://github.com/ncode/logix</a>
+<a class="reference external" href="https://github.com/locaweb/logix">https://github.com/locaweb/logix</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./logging-with-graylog2-gelf-and-logix.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./kernel-log-coming-in-33-part-1-networking.html">Kernel Log: Coming in 3.3 (Part 1) - Networking</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-01-29T14:54:00">
+        Sun 29 January 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/kernel.html"><i class="icon-tag"></i>kernel</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Version 3.3 of the Linux kernel offers another way to team
+multiple Ethernet devices. Support for ‘Open vSwitch’, a virtual
+network switch that was specifically developed for virtualised
+environments, has also been added. Byte Queue Limits are designed
+to reduce the latencies that cause the much-discussed ‘buffer
+bloat’...&quot;</p>
+<p><a class="reference external" href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-3-Part-1-Networking-1421959.html">http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-3-Part-1-Networking-1421959.html</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./kernel-log-coming-in-33-part-1-networking.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./debianization-with-git-buildpackage.html">Debianization with git-buildpackage</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-01-24T14:04:00">
+        Tue 24 January 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/debian.html"><i class="icon-tag"></i>debian</a>
+	<a href="./tag/git.html"><i class="icon-tag"></i>git</a>
+	<a href="./tag/packaging.html"><i class="icon-tag"></i>packaging</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;After building some useful piece of software, one has to decide
+how to best deploy it. In UNIX, the standard way to do that is by
+publishing the source code in .tar.gz format and requiring users to
+compile it.</p>
+<p>In Debian there is an alternative: using a .deb package. With a
+.deb package, a single&nbsp;dpkg -i &lt;package&gt;.deb&nbsp;installs the
+software.</p>
+<p>This article explains how to create and support a .deb package for
+a simple software maintained in git, by tracking the packaging
+scheme in a specific branch on the same repository.&quot;</p>
+<p><a class="reference external" href="http://lpenz.github.com/articles/debgit/index.html">http://lpenz.github.com/articles/debgit/index.html</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./debianization-with-git-buildpackage.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./python-on-a-chip-pymite.html">Python-on-a-Chip ( PyMite )</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-01-16T13:05:00">
+        Mon 16 January 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Welcome! Python-on-a-Chip (p14p) is a project to develop a reduced
+Python virtual machine (codenamed PyMite) that runs a significant
+subset of the Python language on microcontrollers without an OS.
+The other parts of p14p are the device drivers, high-level
+libraries and other tools.&quot;</p>
+<p><a class="reference external" href="http://code.google.com/p/python-on-a-chip/">http://code.google.com/p/python-on-a-chip/</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./python-on-a-chip-pymite.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./netbsd-soc-dynamic-netbsd-kernel-extensions-using-the-lua-language.html">NetBSD-SoC - Dynamic NetBSD kernel extensions using the Lua language</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-01-16T12:12:00">
+        Mon 16 January 2012
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/kernel.html"><i class="icon-tag"></i>kernel</a>
+	<a href="./tag/lua.html"><i class="icon-tag"></i>lua</a>
+	<a href="./tag/netbsd.html"><i class="icon-tag"></i>netbsd</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><div class="section" id="this-project-has-the-goal-to-develop-a-kernel-subsystem-called-lunatik-to-provide-support-for-dynamically-extending-the-netbsd-kernel-using-the-lua-programming-language-we-intend-to-allow-the-adaptation-of-the-kernel-for-different-purposes-at-runtime-through-loading-lua-scripts-into-the-kernel-and-exposing-the-kernel-internals-to-these-scripts-lunatik-will-provide-also-support-for-rapid-prototyping-and-experimentation-with-new-algorithms-and-mechanisms-inside-the-kernel-here-are-some-examples-of-possible-kernel-extensions-using-lunatik">
+<h2>&quot;This project has the goal to develop a kernel subsystem, called&nbsp;<em>Lunatik</em>, to provide support for dynamically extending the NetBSD kernel using the&nbsp;<a class="reference external" href="http://www.lua.org/">Lua programming language</a>. We intend to allow the adaptation of the kernel for different purposes at runtime, through loading Lua scripts into the kernel and exposing the kernel internals to these scripts. Lunatik will provide also support for rapid prototyping and experimentation with new algorithms and mechanisms inside the kernel. Here are some examples of possible kernel extensions using Lunatik:</h2>
+<ul class="simple">
+<li><strong>Process schedulers</strong>&nbsp;- this extension could allow users to
+define new algorithms for global process scheduling and/or to
+create different scheduling polices for independent sets of
+processes or threads at run-time. This could also help to implement
+quality of service (QoS).</li>
+<li><strong>Packet filters</strong>&nbsp;- this extension could allow the creation of
+more elaborated rules to process and filter the network packet
+traffic, instead of using plain rules tables.</li>
+<li><strong>Power management</strong>&nbsp;- this extension could allow users to
+define their own methods of governance of the system power usage.
+For example, users could define their own algorithm to scaling the
+central processing unit (CPU) frequency and voltage in order to
+save power or prevent overheating.&quot;</li>
+</ul>
+<p><a class="reference external" href="http://netbsd-soc.sourceforge.net/projects/luakern/">http://netbsd-soc.sourceforge.net/projects/luakern/</a></p>
+</p></div>
+
+                        <a class="btn primary xsmall" href="./netbsd-soc-dynamic-netbsd-kernel-extensions-using-the-lua-language.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./benchmarking-cloud-serving-systems.html">Benchmarking Cloud Serving Systems</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-12-22T20:44:00">
+        Thu 22 December 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/cassandra.html"><i class="icon-tag"></i>cassandra</a>
+	<a href="./tag/cloud.html"><i class="icon-tag"></i>cloud</a>
+	<a href="./tag/mysql.html"><i class="icon-tag"></i>mysql</a>
+	<a href="./tag/nosql.html"><i class="icon-tag"></i>nosql</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;While the use of MapReduce systems (such as Hadoop) for large
+scale data analysis has been widely recognized and studied, we have
+recently seen an explosion in the number of systems developed for
+cloud data serving. These newer systems address “cloud OLTP”
+applications, though they typically do not support ACID
+transactions. Examples of systems proposed for cloud serving use
+include BigTable, PNUTS, Cassandra, HBase, Azure, CouchDB,
+SimpleDB, Voldemort, and many others. Further, they are being ap-
+plied to a diverse range of applications that differ consider- ably
+from traditional (e.g., TPC-C like) serving workloads. The number
+of emerging cloud serving systems and the wide range of proposed
+applications, coupled with a lack of apples- to-apples performance
+comparisons, makes it difficult to un- derstand the tradeoffs
+between systems and the workloads for which they are suited. We
+present the Yahoo! Cloud Serving Benchmark (YCSB) framework, with
+the goal of fa- cilitating performance comparisons of the new
+generation of cloud data serving systems. We define a core set of
+benchmarks and report results for four widely used systems:
+Cassandra, HBase, Yahoo!’s PNUTS, and a simple sharded MySQL
+implementation. We also hope to foster the devel- opment of
+additional cloud benchmark suites that represent other classes of
+applications by making our benchmark tool available via open
+source. In this regard, a key feature of the YCSB framework/tool is
+that it is extensible—it supports easy definition of new workloads,
+in addition to making it easy to benchmark new systems.&quot;</p>
+<p><a class="reference external" href="http://www.brianfrankcooper.net/pubs/ycsb.pdf">http://www.brianfrankcooper.net/pubs/ycsb.pdf</a></p>
+<p><a class="reference external" href="http://lanyrd.com/2011/apachecon-north-america/skdpy/">http://lanyrd.com/2011/apachecon-north-america/skdpy/</a></p>
+<p><a class="reference external" href="http://lanyrd.com/2011/apachecon-north-america/skdtf/">http://lanyrd.com/2011/apachecon-north-america/skdtf/</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./benchmarking-cloud-serving-systems.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./new-cfengine-3-policy-wizard.html">New CFEngine 3 Policy Wizard</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-12-08T23:56:00">
+        Thu 08 December 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/cfengine3.html"><i class="icon-tag"></i>cfengine3</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p><em>&quot;The&nbsp;**CFEngine Policy Wizard*</em>&nbsp;attempts to bridge the gap between established concepts that are second nature to System Administrators -- such as setting file permissions, process management and software installation -- by offering a side-by-side comparative view of the CFEngine syntax.&quot;*</p>
+<p><em>`http://www.cfengine.com/blog/cfengine-3-policy-wizard`_</em></p>
+<p><em>`https://cfengine.com/policy_wizard/`_</em></p>
+</p>
+                        <a class="btn primary xsmall" href="./new-cfengine-3-policy-wizard.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./linux-control-groups-cgroups.html">Linux - Control Groups ( cgroups )</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-12-08T01:39:00">
+        Thu 08 December 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/cgroups.html"><i class="icon-tag"></i>cgroups</a>
+	<a href="./tag/kernel.html"><i class="icon-tag"></i>kernel</a>
+	<a href="./tag/linux.html"><i class="icon-tag"></i>linux</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p><strong>What are cgroups ?</strong></p>
+<p><em>Control Groups provide a mechanism for aggregating/partitioning sets of</em></p>
+<p><em>tasks, and all their future children, into hierarchical groups with</em></p>
+<p><em>specialized behaviour.</em></p>
+<p><em>&nbsp;</em></p>
+<p><strong>Definitions:</strong></p>
+<p>A *cgroup* associates a set of tasks with a set of parameters for
+one</p>
+<p>or more subsystems.</p>
+<p>A *subsystem* is a module that makes use of the task grouping</p>
+<p>facilities provided by cgroups to treat groups of tasks in</p>
+<p>particular ways. A subsystem is typically a &quot;resource controller&quot;
+that</p>
+<p>schedules a resource or applies per-cgroup limits, but it may be</p>
+<p>anything that wants to act on a group of processes, e.g. a</p>
+<p>virtualization subsystem.</p>
+<p>A *hierarchy* is a set of cgroups arranged in a tree, such that</p>
+<p>every task in the system is in exactly one of the cgroups in the</p>
+<p>hierarchy, and a set of subsystems; each subsystem has
+system-specific</p>
+<p>state attached to each cgroup in the hierarchy.&nbsp; Each hierarchy
+has</p>
+<p>an instance of the cgroup virtual filesystem associated with it.</p>
+<p>At any one time there may be multiple active hierarchies of task</p>
+<p>cgroups. Each hierarchy is a partition of all tasks in the system.</p>
+<p>User level code may create and destroy cgroups by name in an</p>
+<p>instance of the cgroup virtual file system, specify and query to</p>
+<p>which cgroup a task is assigned, and list the task pids assigned
+to</p>
+<p>a cgroup. Those creations and assignments only affect the
+hierarchy</p>
+<p>associated with that instance of the cgroup file system.</p>
+<p>On their own, the only use for cgroups is for simple job</p>
+<p>tracking. The intention is that other subsystems hook into the
+generic</p>
+<p>cgroup support to provide new attributes for cgroups, such as</p>
+<p>accounting/limiting the resources which processes in a cgroup can</p>
+<p>access. For example, cpusets (see
+Documentation/cgroups/cpusets.txt) allows</p>
+<p>you to associate a set of CPUs and a ...</p>
+                        <a class="btn primary xsmall" href="./linux-control-groups-cgroups.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./linux-containers-lxc.html">Linux Containers ( LXC )</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-12-04T04:47:00">
+        Sun 04 December 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/cgroups.html"><i class="icon-tag"></i>cgroups</a>
+	<a href="./tag/containers.html"><i class="icon-tag"></i>containers</a>
+	<a href="./tag/lxc.html"><i class="icon-tag"></i>lxc</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>LXC builds up from chroot to implement complete virtual systems,
+adding resource management and isolation mechanisms to Linux’s
+existing process management infrastructure.</p>
+<p>Linux Containers (lxc) implement:</p>
+<ul class="simple">
+<li>Resource management via “process control groups” (implemented
+via the cgroup filesystem)</li>
+<li>Resource isolation via new flags to the clone(2) system call
+(capable of create several types of new namespaces for things like
+PIDs and network routing)</li>
+<li>Several additional isolation mechanisms (such as the “-o
+newinstance” flag to the devpts filesystem).</li>
+</ul>
+<p>The LXC package combines these Linux kernel mechanisms to provide a
+userspace&nbsp;container&nbsp;object, a lightweight virtual system&nbsp;with full
+resource isolation and resource control for an application or a
+system.</p>
+<p>Linux Containers take a completely different approach than system
+virtualization technologies such as KVM and Xen, which started by
+booting separate virtual systems on emulated hardware and then
+attempted to lower their overhead via paravirtualization and
+related mechanisms. Instead of retrofitting efficiency onto full
+isolation, LXC started out with an efficient mechanism (existing
+Linux process management) and added isolation, resulting in a
+system virtualization mechanism as scalable and portable as chroot,
+capable of simultaneously supporting thousands of emulated systems
+on a single server while also providing lightweight virtualization
+options to routers and smart phones.</p>
+<div><p><a class="reference external" href="http://lxc.sourceforge.net/">http://lxc.sourceforge.net</a></p>
+</div><div><p><a class="reference external" href="http://wiki.debian.org/LXC">http://wiki.debian.org/LXC</a></p>
+</div><div><p><a class="reference external" href="http://sutas.eu/setting-up-lxc-on-debian-squeeze/">http://sutas.eu/setting-up-lxc-on-debian-squeeze</a></p>
+</div></p>
+                        <a class="btn primary xsmall" href="./linux-containers-lxc.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./what-is-openflow.html">What is OpenFlow?</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-11-23T20:35:00">
+        Wed 23 November 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/cloud.html"><i class="icon-tag"></i>cloud</a>
+	<a href="./tag/openflow.html"><i class="icon-tag"></i>openflow</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;<em>OpenFlow is an open standard&nbsp;**to deploy innovative protocols&nbsp;**in production networks.&quot;</em></p>
+<p>OpenFlow enables researchers to run experimental protocols in the
+campus networks we use every day. OpenFlow is added as a feature to
+commercial Ethernet switches, routers and wireless access points –
+and provides a standardized hook to allow researchers to run
+experiments, without requiring vendors to expose the internal
+workings of their network devices. OpenFlow is currently being
+implemented by major vendors, with OpenFlow-enabled switches now
+commercially available.</p>
+<div class="section" id="how-does-openflow-work">
+<h2>How does OpenFlow work?</h2>
+<p>In a classical router or switch, the fast packet forwarding (data
+path) and the high level routing decisions (control path) occur on
+the same device. An OpenFlow Switch separates these two functions.
+The data path portion still resides on the switch, while high-level
+routing decisions are moved to a separate controller, typically a
+standard server. The OpenFlow Switch and Controller communicate via
+the OpenFlow protocol, which defines messages, such as
+packet-received, send-packet-out, modify-forwarding-table, and
+get-stats.</p>
+<p>The data path of an OpenFlow Switch presents a clean flow table
+abstraction; each flow table entry contains a set of packet fields
+to match, and an action (such as send-out-port, modify-field, or
+drop). When an OpenFlow Switch receives a packet it has never seen
+before, for which it has no matching flow entries, it sends this
+packet to the controller. The controller then makes a decision on
+how to handle this packet. It can drop the packet, or it can add a
+flow entry directing the switch on how to forward similar packets
+in the future.</p>
+</div>
+<div class="section" id="what-can-i-do-with-openflow">
+<h2>What can I do with OpenFlow?</h2>
+<p>OpenFlow allows you to easily deploy innovative routing and
+switching protocols in your network. It is used for applications
+such as virtual machine mobility, high-security networks and next
+generation ip based mobile networks</p>
+<p><a class="reference external" href="http://www.openflow.org/documents/openflow-spec-v1.1.0.pdf">http://www.openflow.org/documents/openflow-spec-v1 ...</a></p></div>
+                        <a class="btn primary xsmall" href="./what-is-openflow.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        
+                <div class="pagination">
+        <ul>
+                                                                <li class="prev"><a href="./index5.html">&larr; Previous</a></li>
+                                                        <li class=""><a href="./index.html">1</a></li>
+                                        <li class=""><a href="./index2.html">2</a></li>
+                                        <li class=""><a href="./index3.html">3</a></li>
+                                        <li class=""><a href="./index4.html">4</a></li>
+                                        <li class=""><a href="./index5.html">5</a></li>
+                                        <li class="active"><a href="./index6.html">6</a></li>
+                                        <li class=""><a href="./index7.html">7</a></li>
+                                        <li class=""><a href="./index8.html">8</a></li>
+                                                        <li class="next"><a href="./index7.html">Next &rarr;</a></li>
+                        </ul>
+        </div>
+
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h5>Juliano Martinez</h5></li>
+    <a href="http://twitter.com/ncode"><i class="icon-twitter-sign icon-large"></i></a>
+    <a href="https://www.facebook.com/nc0d3"><i class="icon-facebook-sign icon-large"></i></a>
+    <a href="http://br.linkedin.com/in/ncode"><i class="icon-linkedin-sign icon-large"></i></a>
+    <a href="http://github.com/ncode"><i class="icon-github-sign icon-large"></i></a>
+    <a href="https://plus.google.com/u/0/114807336963795227899"><i class="icon-google-plus-sign icon-large"></i></a>
+<a href="./feeds/rss.xml" rel="alternate"><i class="icon-rss icon-large"></i></a>
+<li class="nav-header"></li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-3">
+    <a href="./tag/gevent.html">
+        <i class="icon-tag icon-large"></i>gevent
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/xen.html">
+        <i class="icon-tag icon-large"></i>xen
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/databases.html">
+        <i class="icon-tag icon-large"></i>databases
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/html5.html">
+        <i class="icon-tag icon-large"></i>html5
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/kernel.html">
+        <i class="icon-tag icon-large"></i>kernel
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/c.html">
+        <i class="icon-tag icon-large"></i>c
+    </a>
+</li>
+<li class="tag-1">
+    <a href="./tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/bottle.html">
+        <i class="icon-tag icon-large"></i>bottle
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mobile.html">
+        <i class="icon-tag icon-large"></i>mobile
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/mysql.html">
+        <i class="icon-tag icon-large"></i>mysql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/concurrency.html">
+        <i class="icon-tag icon-large"></i>concurrency
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/audit.html">
+        <i class="icon-tag icon-large"></i>audit
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/packaging.html">
+        <i class="icon-tag icon-large"></i>packaging
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/ciclone.html">
+        <i class="icon-tag icon-large"></i>ciclone
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/glusterfs.html">
+        <i class="icon-tag icon-large"></i>glusterfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/player.html">
+        <i class="icon-tag icon-large"></i>player
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/diskless.html">
+        <i class="icon-tag icon-large"></i>diskless
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/git.html">
+        <i class="icon-tag icon-large"></i>git
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/video.html">
+        <i class="icon-tag icon-large"></i>video
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/zfs.html">
+        <i class="icon-tag icon-large"></i>zfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/zmq.html">
+        <i class="icon-tag icon-large"></i>zmq
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/lxc.html">
+        <i class="icon-tag icon-large"></i>lxc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/hbase.html">
+        <i class="icon-tag icon-large"></i>hbase
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/geolocation.html">
+        <i class="icon-tag icon-large"></i>geolocation
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/cgroups.html">
+        <i class="icon-tag icon-large"></i>cgroups
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cloud.html">
+        <i class="icon-tag icon-large"></i>cloud
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/heatmaps.html">
+        <i class="icon-tag icon-large"></i>heatmaps
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/shell.html">
+        <i class="icon-tag icon-large"></i>shell
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/riak.html">
+        <i class="icon-tag icon-large"></i>riak
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/network.html">
+        <i class="icon-tag icon-large"></i>network
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/xcp.html">
+        <i class="icon-tag icon-large"></i>xcp
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mailservers.html">
+        <i class="icon-tag icon-large"></i>mailservers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/elasticsearch.html">
+        <i class="icon-tag icon-large"></i>elasticsearch
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/clojure.html">
+        <i class="icon-tag icon-large"></i>clojure
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/torrent.html">
+        <i class="icon-tag icon-large"></i>torrent
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/debian.html">
+        <i class="icon-tag icon-large"></i>debian
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/darner.html">
+        <i class="icon-tag icon-large"></i>darner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/openhardware.html">
+        <i class="icon-tag icon-large"></i>openhardware
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/gelf.html">
+        <i class="icon-tag icon-large"></i>gelf
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/android.html">
+        <i class="icon-tag icon-large"></i>android
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/iptables.html">
+        <i class="icon-tag icon-large"></i>iptables
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/freesoc.html">
+        <i class="icon-tag icon-large"></i>freesoc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/containers.html">
+        <i class="icon-tag icon-large"></i>containers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/openflow.html">
+        <i class="icon-tag icon-large"></i>openflow
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/osx.html">
+        <i class="icon-tag icon-large"></i>osx
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/fusionio.html">
+        <i class="icon-tag icon-large"></i>fusionio
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/redis.html">
+        <i class="icon-tag icon-large"></i>redis
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/greylog2.html">
+        <i class="icon-tag icon-large"></i>greylog2
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/apache.html">
+        <i class="icon-tag icon-large"></i>apache
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/storage.html">
+        <i class="icon-tag icon-large"></i>storage
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/performance.html">
+        <i class="icon-tag icon-large"></i>performance
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/sysadmin.html">
+        <i class="icon-tag icon-large"></i>sysadmin
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/web.html">
+        <i class="icon-tag icon-large"></i>web
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/spanner.html">
+        <i class="icon-tag icon-large"></i>spanner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/netbsd.html">
+        <i class="icon-tag icon-large"></i>netbsd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/automation.html">
+        <i class="icon-tag icon-large"></i>automation
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mailfromd.html">
+        <i class="icon-tag icon-large"></i>mailfromd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/rdbms.html">
+        <i class="icon-tag icon-large"></i>rdbms
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cfengine3.html">
+        <i class="icon-tag icon-large"></i>cfengine3
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/flashcache.html">
+        <i class="icon-tag icon-large"></i>flashcache
+    </a>
+</li>
+<li class="tag-1">
+    <a href="./tag/nosql.html">
+        <i class="icon-tag icon-large"></i>nosql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/routing.html">
+        <i class="icon-tag icon-large"></i>routing
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/messagequeue.html">
+        <i class="icon-tag icon-large"></i>messagequeue
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/postfix.html">
+        <i class="icon-tag icon-large"></i>postfix
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cassandra.html">
+        <i class="icon-tag icon-large"></i>cassandra
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/lua.html">
+        <i class="icon-tag icon-large"></i>lua
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/pxe.html">
+        <i class="icon-tag icon-large"></i>pxe
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/handlersocket.html">
+        <i class="icon-tag icon-large"></i>handlersocket
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./theme/js/jquery-1.7.2.min.js"></script>
+    <script src="./theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

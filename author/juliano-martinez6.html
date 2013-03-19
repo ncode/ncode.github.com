@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sysadms must be lazy - Juliano Martinez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Juliano Martinez">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 9pt;
+      }
+      .tag-3 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 7pt;
+     }
+    </style>
+    <link href="../theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="../theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../theme/images/apple-touch-icon-114x114.png">
+
+    <link href="../" type="application/atom+xml" rel="alternate" title="sysadms must be lazy ATOM Feed" />
+        <link href="../feeds/rss.xml" type="application/atom+xml" rel="alternate" title="sysadms must be lazy RSS Feed" />
+    
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="../index.html">sysadms must be lazy </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                                    <li class="divider-vertical"></li>
+                                        <ul class="nav pull-right">
+                                <li><a href="../archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span12" id="content">
+                            <div class="article">
+                <h1><a href="../percona-server-tree-with-support-of-fusion-io-atomic-writes-and-directfs-via-djserdan.html">Percona Server tree with support of Fusion-io atomic writes and DirectFS (via &#64;djserdan)</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-09-25T13:24:00">
+        Tue 25 September 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/fusionio.html"><i class="icon-tag"></i>fusionio</a>
+	<a href="../tag/mysql.html"><i class="icon-tag"></i>mysql</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Not so long ago Fusion-io announced an SDK which provides direct
+API access to Fusion ioMemory(tm) in addition to providing a native
+filesystem (directFS) with a goal to avoid overhead from kernel and
+regular Linux filesystems: ext4 and xfs. This requires a support
+from application, it should use special calls for IO. With help
+from Fusion-io, we provide source code of Percona Server which uses
+direct API access. The main idea that with this functionality you
+can disable “innodb-doublewrite”, retain ACID compliance by using
+atomic writes, and in IO intensive workloads gain an additional
+30-50% in throughput when compared to workloads on the same
+ioMemory™ device using an unmodified Percona Server. Further
+benchmarking results on latency variability reduction expected
+soon...&quot;</p>
+<p><a class="reference external" href="http://www.mysqlperformanceblog.com/2012/09/24/percona-server-tree-with-support-of-fusion-io-atomic-writes-and-directfs/">http://www.mysqlperformanceblog.com/2012/09/24/percona-server-tree-with-support-of-fusion-io-atomic-writes-and-directfs/</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../percona-server-tree-with-support-of-fusion-io-atomic-writes-and-directfs-via-djserdan.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../polysh-aggregating-several-remote-shells-into-one.html">Polysh - Aggregating several remote shells into one</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-09-20T00:52:00">
+        Thu 20 September 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+	<a href="../tag/sysadmin.html"><i class="icon-tag"></i>sysadmin</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>I've been using this tool for 2 years and it is pretty stable so
+far. The project was rename from gsh to Polysh, is incredible how
+helpful it can be when you need to manage more than 500 or even
+1000 servers at once.</p>
+<p>&quot;Polysh is a tool to aggregate several remote shells into one. It
+is used to launch an interactive remote shell on many machines at
+once. It is written in Python and requires Python ≥ 2.4.&quot;</p>
+<p><a class="reference external" href="http://guichaz.free.fr/polysh/">http://guichaz.free.fr/polysh/</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../polysh-aggregating-several-remote-shells-into-one.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../postfix-postscreen-howto.html">Postfix Postscreen Howto</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-10-25T14:49:00">
+        Tue 25 October 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/postfix.html"><i class="icon-tag"></i>postfix</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><div class="section" id="the-basic-idea-behind-postscreen-8">
+<h2>The basic idea behind postscreen(8)</h2>
+<p>Most email is spam, and most spam is sent out by zombies (malware
+on compromised end-user computers). Wietse expects that the zombie
+problem will get worse before things improve, if ever. Without a
+tool like&nbsp;<a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;that keeps the zombies away, Postfix
+would be spending most of its resources not receiving email.</p>
+<p>The main challenge for&nbsp;<a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;is to make an
+is-it-a-zombie decision based on a single measurement. This is
+necessary because many zombies try to fly under the radar and avoid
+spamming the same site repeatedly. Once&nbsp;<a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;decides
+that a client is not-a-zombie, it whitelists the client temporarily
+to avoid further delays for legitimate mail.</p>
+<p>Zombies have challenges too: they have only a limited amount of
+time to deliver spam before their IP address becomes blacklisted.
+To speed up spam deliveries, zombies make compromises in their SMTP
+protocol implementation. For example, they speak before their turn,
+or they ignore responses from SMTP servers and continue sending
+mail even when the server tells them to go away.</p>
+<p><a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;uses a variety of measurements to recognize
+zombies. First,&nbsp;<a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;determines if the remote SMTP
+client IP address is blacklisted. Second,&nbsp;<a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;looks
+for protocol compromises that are made to speed up delivery. These
+are good indicators for making is-it-a-zombie decisions based on
+single measurements.</p>
+<p><a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;does not inspect message content. Message content
+can vary from one delivery to the next, especially with clients
+that (also) send legitimate email. Content is not a good indicator
+for making is-it-a-zombie decisions based on single measurements,
+and that is the problem that&nbsp;<a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;is focused on.</p>
+<p><a class="reference external" href="http://www.postfix.org/POSTSCREEN_README.html">http://www.postfix.org/POSTSCREEN_README.html</a></p>
+</p></div>
+
+                        <a class="btn primary xsmall" href="../postfix-postscreen-howto.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../programming-in-lua-first-edition.html">Programming in Lua (first edition)</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-02-29T23:59:00">
+        Wed 29 February 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/lua.html"><i class="icon-tag"></i>lua</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;This is an online version of the <a class="reference external" href="http://www.inf.puc-rio.br/~roberto/book/">first edition</a> of the book</p>
+<p><a class="reference external" href="http://www.inf.puc-rio.br/~roberto/book/">Programming in Lua</a></p>
+<p>by Roberto Ierusalimschy</p>
+<p>Lua.org, December 2003</p>
+<p>ISBN 85-903798-1-7</p>
+<p>The book is a detailed and authoritative introduction to all
+aspects of Lua programming, by Lua's chief architect. The
+<a class="reference external" href="http://www.inf.puc-rio.br/~roberto/book/">first edition</a> was aimed at Lua 5.0 and remains largely relevant,
+although there are some <a class="reference external" href="http://www.lua.org/manual/5.1/manual.html#7">differences</a>.
+If you find this online version useful, please consider
+<a class="reference external" href="http://www.lua.org/donations.html#books">buying a copy</a> of the <a class="reference external" href="http://www.inf.puc-rio.br/~roberto/pil2/">second edition</a>, which updates the text
+to Lua 5.1 and brings substantial new material. This helps to
+<a class="reference external" href="http://www.lua.org/donations.html">support the Lua project</a>.
+For the official definition of the Lua language, see the
+<a class="reference external" href="http://www.lua.org/manual/5.1/">reference manual</a>...&quot;</p>
+<p><a class="reference external" href="http://www.lua.org/pil/">http://www.lua.org/pil/</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="../programming-in-lua-first-edition.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../project-kronos-xenapi-on-debian-and-ubuntu.html">Project Kronos: XenAPI on Debian and Ubuntu</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-09-14T14:32:00">
+        Wed 14 September 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/debian.html"><i class="icon-tag"></i>debian</a>
+	<a href="../tag/xcp.html"><i class="icon-tag"></i>xcp</a>
+	<a href="../tag/xen.html"><i class="icon-tag"></i>xen</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>The XCP team would like to formally announce Project Kronos, our
+port of XCP’s XenAPI toolstack to Debian and Ubuntu dom0. This will
+give users the ability to install Debian or Ubuntu, and then just
+do ‘apt-get install xapi’ in order to build a system that is
+(roughly) functionally equivalent to a standard XCP distribution.</p>
+<p>This project provides a number of benefits. First of all, it will
+provide Xen users with the option of using the same API and
+toolstack that XCP and XenServer provide. It will give early
+adopters the chance to try out new changes to the XenAPI before
+they get released in new XCP and XenServer versions. And because
+we’ve ported all of our toolstack to build on Debian, it’s now
+much, much easier to build our tools outside of an SDK VM.</p>
+<div><p><a class="reference external" href="http://blog.xen.org/index.php/2011/07/22/project-kronos">http://blog.xen.org/index.php/2011/07/22/project-kronos</a></p>
+</div></p></p>
+                        <a class="btn primary xsmall" href="../project-kronos-xenapi-on-debian-and-ubuntu.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../python-bindings-for-iptables.html">Python bindings for iptables</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-02-11T17:14:00">
+        Sat 11 February 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/iptables.html"><i class="icon-tag"></i>iptables</a>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Iptables is the tool that is used to manage netfilter, the
+standard packet filtering and manipulation framework under Linux.
+As the iptables manpage puts it:</p>
+<p>Iptables is used to set up, maintain, and inspect the tables of
+IPv4 packet filter rules in the Linux kernel.</p>
+<p>Several different tables may be defined.</p>
+<p>Each table contains a number of built-in chains and may also
+contain user- defined chains.</p>
+<p>Each chain is a list of rules which can match a set of packets.
+Each rule specifies what to do with a packet that matches. This is
+called a target, which may be a jump to a user-defined chain in the
+same table.</p>
+<p>Python-iptables provides python bindings to iptables under Linux.
+Interoperability with iptables is achieved via using the iptables C
+libraries (libiptc, libxtables, and the iptables extensions), not
+calling the iptables binary and parsing its output...&quot;</p>
+<p><a class="reference external" href="https://github.com/ldx/python-iptables">https://github.com/ldx/python-iptables</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../python-bindings-for-iptables.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../python-internals-how-callables-work.html">Python internals: how callables work</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-03-23T13:32:00">
+        Fri 23 March 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p><em>&quot;[The Python version described in this article is 3.x, more specifically - the 3.3 alpha release of CPython.]</em></p>
+<p>The concept of a <em>callable</em> is fundamental in Python. When thinking
+about what can be &quot;called&quot;, the immediately obvious answer is
+functions. Whether it’s user defined functions (written by you), or
+builtin functions (most probably implemented in C inside the
+CPython interpreter), functions were meant to be called,
+right?...&quot;</p>
+<p><a class="reference external" href="http://eli.thegreenplace.net/2012/03/23/python-internals-how-callables-work/">http://eli.thegreenplace.net/2012/03/23/python-internals-how-callables-work/</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../python-internals-how-callables-work.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../python-on-a-chip-pymite.html">Python-on-a-Chip ( PyMite )</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-01-16T13:05:00">
+        Mon 16 January 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Welcome! Python-on-a-Chip (p14p) is a project to develop a reduced
+Python virtual machine (codenamed PyMite) that runs a significant
+subset of the Python language on microcontrollers without an OS.
+The other parts of p14p are the device drivers, high-level
+libraries and other tools.&quot;</p>
+<p><a class="reference external" href="http://code.google.com/p/python-on-a-chip/">http://code.google.com/p/python-on-a-chip/</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../python-on-a-chip-pymite.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../riak-smartmachine-benchmark-the-technical-details.html">Riak SmartMachine Benchmark: The Technical Details</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-08-23T17:04:00">
+        Tue 23 August 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/nosql.html"><i class="icon-tag"></i>nosql</a>
+	<a href="../tag/riak.html"><i class="icon-tag"></i>riak</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Recently Basho and Joyent entered into
+a`comprehensive partnership`_&nbsp;to deliver&nbsp;<a class="reference external" href="http://www.joyent.com/2010/09/joyent-riak-smartmachines-now-available/">Riak Smartmachines</a>&nbsp;to
+Joyent customers. We had been experimenting with Riak since early
+in 2010 and were eager to benchmark its performance on Joyent and
+ultimately offer a robust NO-SQL solution to our customers. Along
+the way, we were pleasantly surprised how well the Riak
+Smartmachine&nbsp;<a class="reference external" href="http://www.joyent.com/2010/09/no-sql-database-performance-in-the-cloud-webinar-recording-now-available/">demonstrated</a>&nbsp;a combination of performance,
+predictability, resilience, and linear scalability that made it
+relatively quick and easy run a&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Dynamo_(storage_system)">Dynamo</a>-class distributed data
+storage system.</p>
+<div><p><a class="reference external" href="http://joyeur.com/2010/10/31/riak-smartmachine-benchmark-the-technical-details/">http://joyeur.com/2010/10/31/riak-smartmachine-benchmark-the-technical-details</a></p>
+</div></p></p>
+                        <a class="btn primary xsmall" href="../riak-smartmachine-benchmark-the-technical-details.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../sali-automates-linux-installs-software-distribution-and-production-deployment.html">Sali automates Linux installs, software distribution, and production deployment.</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-06-08T15:53:00">
+        Fri 08 June 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/automation.html"><i class="icon-tag"></i>automation</a>
+	<a href="../tag/diskless.html"><i class="icon-tag"></i>diskless</a>
+	<a href="../tag/pxe.html"><i class="icon-tag"></i>pxe</a>
+	<a href="../tag/torrent.html"><i class="icon-tag"></i>torrent</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;For node installation we at&nbsp;<a class="reference external" href="http://www.sara.nl/">SARA</a>&nbsp;used&nbsp;<a class="reference external" href="http://wiki.systemimager.org/">SystemImager</a>. We
+switched to SALI for all our clusters. SALI allows you to create a
+clone of your running system. This clone can be distributed by
+various protocols (<a class="reference external" href="http://aria2.sourceforge.net/">aria2</a>) eg: rsync, Bittorent, ftp, http/https,
+metalink</p>
+<p><strong>Why SALI</strong></p>
+<p>SALI is created due the fact that on the moment of starting SALI:</p>
+<ul class="simple">
+<li>Systemimager kernel/initrd and BOEL utilities are outdated. New
+hardware was not detected/supported</li>
+<li>no&nbsp;grub2&nbsp;support</li>
+<li>no ext4 support</li>
+</ul>
+<p>The trigger for us was that there is no&nbsp;grub2&nbsp;support. We thought
+this could be easily added, but during this process we decided to
+upgrade all software to the newest levels and replace some software
+components. The biggest hurdle was detecting of which hardware is
+in the system (<a class="reference external" href="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html">udev</a>). We believe that SALI is better in
+detecting which hardware is in the system than the SystemImager
+setup. The focus for this project is/was:</p>
+<ul class="simple">
+<li>Easily create a new kernel/initrd when a new kernel is released
+or one of the software components is updated, eg:&nbsp;<a class="reference external" href="http://www.busybox.net/">busybox</a>.</li>
+<li>The SALI initrd contains all kernel modules and software
+utilities. In SystemImager this software is distributed as a
+separate package (BOEL binaries).</li>
+<li>Drop support for flamethrower/multicast and floppy disk support.</li>
+<li>With some minor&nbsp;<a class="reference external" href="https://subtrac.sara.nl/oss/sali/wiki/SaliUsage/UsingYourOldInstallScript">adjustments</a>&nbsp;you can use your old generated
+SystemImager scripts. These scripts
+uses&nbsp;/etc/init.d/functions&nbsp;which is included in the initrd. We have
+added/changed a lot of functions to hide the complexity. We have
+reduced the code of the SystemImager scripts significantly,
+See&nbsp;<a class="reference external" href="https://subtrac.sara.nl/oss/sali/browser/trunk/example/masterscript.new">masterscript.new</a>. Read the&nbsp;<a class="reference external" href="https://subtrac.sara.nl/oss/sali/wiki/SaliUsage/Functions">Functions Documentation</a></li>
+<li>For detailed overview of the changes read this&nbsp;<a class="reference external" href="https://subtrac.sara.nl/oss/sali/browser/trunk/CHANGELOG">changelog</a></li>
+<li>For now you must set&nbsp;SCRIPTNAME=&lt;script_name&gt;&nbsp;in the pxelinux
+file</li>
+<li>If&nbsp;GRUB2=yes&nbsp;is set then we expect a seperate grub2 partition:</li>
+<li>Added&nbsp;<a class="reference external" href="http://code.google.com/p/diskscrub">diskscrub</a>, Diskscrub overwrites hard disks, files, and ...</li></ul>
+                        <a class="btn primary xsmall" href="../sali-automates-linux-installs-software-distribution-and-production-deployment.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        
+                <div class="pagination">
+        <ul>
+                                                                <li class="prev"><a href="../author/juliano-martinez5.html">&larr; Previous</a></li>
+                                                        <li class=""><a href="../author/juliano-martinez.html">1</a></li>
+                                        <li class=""><a href="../author/juliano-martinez2.html">2</a></li>
+                                        <li class=""><a href="../author/juliano-martinez3.html">3</a></li>
+                                        <li class=""><a href="../author/juliano-martinez4.html">4</a></li>
+                                        <li class=""><a href="../author/juliano-martinez5.html">5</a></li>
+                                        <li class="active"><a href="../author/juliano-martinez6.html">6</a></li>
+                                        <li class=""><a href="../author/juliano-martinez7.html">7</a></li>
+                                        <li class=""><a href="../author/juliano-martinez8.html">8</a></li>
+                                                        <li class="next"><a href="../author/juliano-martinez7.html">Next &rarr;</a></li>
+                        </ul>
+        </div>
+
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h5>Juliano Martinez</h5></li>
+    <a href="http://twitter.com/ncode"><i class="icon-twitter-sign icon-large"></i></a>
+    <a href="https://www.facebook.com/nc0d3"><i class="icon-facebook-sign icon-large"></i></a>
+    <a href="http://br.linkedin.com/in/ncode"><i class="icon-linkedin-sign icon-large"></i></a>
+    <a href="http://github.com/ncode"><i class="icon-github-sign icon-large"></i></a>
+    <a href="https://plus.google.com/u/0/114807336963795227899"><i class="icon-google-plus-sign icon-large"></i></a>
+<a href="../feeds/rss.xml" rel="alternate"><i class="icon-rss icon-large"></i></a>
+<li class="nav-header"></li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-3">
+    <a href="../tag/gevent.html">
+        <i class="icon-tag icon-large"></i>gevent
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xen.html">
+        <i class="icon-tag icon-large"></i>xen
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/databases.html">
+        <i class="icon-tag icon-large"></i>databases
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/html5.html">
+        <i class="icon-tag icon-large"></i>html5
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/kernel.html">
+        <i class="icon-tag icon-large"></i>kernel
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/c.html">
+        <i class="icon-tag icon-large"></i>c
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/bottle.html">
+        <i class="icon-tag icon-large"></i>bottle
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mobile.html">
+        <i class="icon-tag icon-large"></i>mobile
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/mysql.html">
+        <i class="icon-tag icon-large"></i>mysql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/concurrency.html">
+        <i class="icon-tag icon-large"></i>concurrency
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/audit.html">
+        <i class="icon-tag icon-large"></i>audit
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/packaging.html">
+        <i class="icon-tag icon-large"></i>packaging
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/ciclone.html">
+        <i class="icon-tag icon-large"></i>ciclone
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/glusterfs.html">
+        <i class="icon-tag icon-large"></i>glusterfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/player.html">
+        <i class="icon-tag icon-large"></i>player
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/diskless.html">
+        <i class="icon-tag icon-large"></i>diskless
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/git.html">
+        <i class="icon-tag icon-large"></i>git
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/video.html">
+        <i class="icon-tag icon-large"></i>video
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zfs.html">
+        <i class="icon-tag icon-large"></i>zfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zmq.html">
+        <i class="icon-tag icon-large"></i>zmq
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/lxc.html">
+        <i class="icon-tag icon-large"></i>lxc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/hbase.html">
+        <i class="icon-tag icon-large"></i>hbase
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/geolocation.html">
+        <i class="icon-tag icon-large"></i>geolocation
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/cgroups.html">
+        <i class="icon-tag icon-large"></i>cgroups
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cloud.html">
+        <i class="icon-tag icon-large"></i>cloud
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/heatmaps.html">
+        <i class="icon-tag icon-large"></i>heatmaps
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/shell.html">
+        <i class="icon-tag icon-large"></i>shell
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/riak.html">
+        <i class="icon-tag icon-large"></i>riak
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/network.html">
+        <i class="icon-tag icon-large"></i>network
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xcp.html">
+        <i class="icon-tag icon-large"></i>xcp
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailservers.html">
+        <i class="icon-tag icon-large"></i>mailservers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/elasticsearch.html">
+        <i class="icon-tag icon-large"></i>elasticsearch
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/clojure.html">
+        <i class="icon-tag icon-large"></i>clojure
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/torrent.html">
+        <i class="icon-tag icon-large"></i>torrent
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/debian.html">
+        <i class="icon-tag icon-large"></i>debian
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/darner.html">
+        <i class="icon-tag icon-large"></i>darner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openhardware.html">
+        <i class="icon-tag icon-large"></i>openhardware
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/gelf.html">
+        <i class="icon-tag icon-large"></i>gelf
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/android.html">
+        <i class="icon-tag icon-large"></i>android
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/iptables.html">
+        <i class="icon-tag icon-large"></i>iptables
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/freesoc.html">
+        <i class="icon-tag icon-large"></i>freesoc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/containers.html">
+        <i class="icon-tag icon-large"></i>containers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openflow.html">
+        <i class="icon-tag icon-large"></i>openflow
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/osx.html">
+        <i class="icon-tag icon-large"></i>osx
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/fusionio.html">
+        <i class="icon-tag icon-large"></i>fusionio
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/redis.html">
+        <i class="icon-tag icon-large"></i>redis
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/greylog2.html">
+        <i class="icon-tag icon-large"></i>greylog2
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/apache.html">
+        <i class="icon-tag icon-large"></i>apache
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/storage.html">
+        <i class="icon-tag icon-large"></i>storage
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/performance.html">
+        <i class="icon-tag icon-large"></i>performance
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/sysadmin.html">
+        <i class="icon-tag icon-large"></i>sysadmin
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/web.html">
+        <i class="icon-tag icon-large"></i>web
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/spanner.html">
+        <i class="icon-tag icon-large"></i>spanner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/netbsd.html">
+        <i class="icon-tag icon-large"></i>netbsd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/automation.html">
+        <i class="icon-tag icon-large"></i>automation
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailfromd.html">
+        <i class="icon-tag icon-large"></i>mailfromd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/rdbms.html">
+        <i class="icon-tag icon-large"></i>rdbms
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cfengine3.html">
+        <i class="icon-tag icon-large"></i>cfengine3
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/flashcache.html">
+        <i class="icon-tag icon-large"></i>flashcache
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/nosql.html">
+        <i class="icon-tag icon-large"></i>nosql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/routing.html">
+        <i class="icon-tag icon-large"></i>routing
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/messagequeue.html">
+        <i class="icon-tag icon-large"></i>messagequeue
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/postfix.html">
+        <i class="icon-tag icon-large"></i>postfix
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cassandra.html">
+        <i class="icon-tag icon-large"></i>cassandra
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/lua.html">
+        <i class="icon-tag icon-large"></i>lua
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/pxe.html">
+        <i class="icon-tag icon-large"></i>pxe
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/handlersocket.html">
+        <i class="icon-tag icon-large"></i>handlersocket
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../theme/js/jquery-1.7.2.min.js"></script>
+    <script src="../theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

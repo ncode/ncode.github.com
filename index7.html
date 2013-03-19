@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sysadms must be lazy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Juliano Martinez">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 9pt;
+      }
+      .tag-3 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 7pt;
+     }
+    </style>
+    <link href="./theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="./theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="./theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./theme/images/apple-touch-icon-114x114.png">
+
+    <link href="./" type="application/atom+xml" rel="alternate" title="sysadms must be lazy ATOM Feed" />
+        <link href="./feeds/rss.xml" type="application/atom+xml" rel="alternate" title="sysadms must be lazy RSS Feed" />
+    
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">sysadms must be lazy </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                                    <li class="divider-vertical"></li>
+                                        <ul class="nav pull-right">
+                                <li><a href="./archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span12" id="content">
+                            <div class="article">
+                <h1><a href="./auditd-real-time-event-interface-specifications.html">Auditd Real-time Event Interface Specifications</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-11-09T18:16:00">
+        Wed 09 November 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/audit.html"><i class="icon-tag"></i>audit</a>
+	<a href="./tag/kernel.html"><i class="icon-tag"></i>kernel</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Definitions</p>
+<p>An audit event is all records that have the same host (node),
+timestamp, and</p>
+<p>serial number. Each event on a host (node) has a unique timestamp
+and serial</p>
+<p>number. An event is composed of multiple records which have
+information about</p>
+<p>different aspects of an audit event. Each record is denoted by a
+type which</p>
+<p>indicates what fields will follow. Information in the fields are
+held by a</p>
+<p>name/value pair that contains an '=' between them. Each field is
+separated</p>
+<p>from one another by a space or comma.</p>
+<p>Ground Rules</p>
+<p>The audit daemon will start up a program when its &quot;dispatcher=&quot;
+line is</p>
+<p>non-NULL. The program will be started as root. Therefore, please
+take care</p>
+<p>to ensure the program is safe with those capabilities or shed them.
+The program</p>
+<p>should not fork and call setsid since that would escape the audit
+daemon's grip</p>
+<p>on the program. (Its ok to fork child processes.) When the audit
+daemon starts</p>
+<p>the dispatcher process, it opens stdin to the socketpair used to
+pass events.</p>
+<p>So, the dispatcher only needs to read stdin. The dispatcher should
+never send</p>
+<p>anything back to the audit daemon. It doesn't listen for anything
+and you might</p>
+<p>fill up the buffers. The dispatcher must read the events as fast as
+possible</p>
+<p>since the IPC communication buffers have a limited size.</p>
+<p><a class="reference external" href="http://people.redhat.com/sgrubb/audit/audit-rt-events.txt">http://people.redhat.com/sgrubb/audit/audit-rt-events.txt</a></p>
+<p><a class="reference external" href="http://people.redhat.com/sgrubb/audit/audit-parse.txt">http://people.redhat.com/sgrubb/audit/audit-parse.txt</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="./auditd-real-time-event-interface-specifications.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./language-detection-with-googles-compact-language-detector.html">Language detection with Google's Compact Language Detector</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-11-04T13:24:00">
+        Fri 04 November 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Google's&nbsp;<a class="reference external" href="http://www.google.com/chrome">Chrome browser</a>&nbsp;has a useful translate feature, where it
+detects the language of the page you've visited and if it differs
+from your local language, it offers to translate it.</p>
+<p>Wonderfully, Google has
+open-sourced&nbsp;<a class="reference external" href="http://code.google.com/chromium">most of Chrome's source code</a>, including the
+embedded CLD (Compact Language Detector) library that's used to
+detect the language of any UTF-8 encoded content. &nbsp; It looks like
+CLD was extracted from the language detection library used
+in&nbsp;<a class="reference external" href="http://toolbar.google.com/">Google's toolbar</a>.</p>
+<p>It turns out the&nbsp;<a class="reference external" href="http://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/">CLD part of the Chromium source tree</a>&nbsp;is nicely
+standalone, so I pulled it out into
+a&nbsp;<a class="reference external" href="http://code.google.com/p/chromium-compact-language-detector/">new separate Google code project</a>, making it possible to use
+CLD directly from any C++ code.</p>
+<p><a class="reference external" href="http://blog.mikemccandless.com/2011/10/language-detection-with-googles-compact.html">http://blog.mikemccandless.com/2011/10/language-detection-with-googles-compact.html</a></p>
+<p><a class="reference external" href="http://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/">http://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/</a></p>
+<p><a class="reference external" href="http://code.google.com/p/chromium-compact-language-detector/">http://code.google.com/p/chromium-compact-language-detector/</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./language-detection-with-googles-compact-language-detector.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./flashcache-a-write-back-block-cache-for-linux.html">Flashcache : A Write Back Block Cache for Linux</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-11-03T13:19:00">
+        Thu 03 November 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/flashcache.html"><i class="icon-tag"></i>flashcache</a>
+	<a href="./tag/kernel.html"><i class="icon-tag"></i>kernel</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><div><p><strong>Introduction:</strong></p>
+</div><div><p>Flashcache is a write back block cache Linux kernel module. This</p>
+</div><div><p>document describes the design, futures ideas, configuration, tuning
+of</p>
+</div><div><p>the flashcache and concludes with a note covering the testability</p>
+</div><div><p>hooks within flashcache and the testing that we did. Flashcache was</p>
+</div><div><p>built primarily as a block cache for InnoDB but is general purpose
+and</p>
+</div><div><p>can be used by other applications as well.</p>
+</div><div><p><strong>Design:</strong></p>
+</div><div><p>Flashcache is built using the Linux Device Mapper (DM), part of the</p>
+</div><div><p>Linux Storage Stack infrastructure that facilitates building
+SW-RAID</p>
+</div><div><p>and other components. LVM, for example, is built using the DM.</p>
+</div><div><p>The cache is structured as a set associative hash, where the cache
+is</p>
+</div><div><p>divided up into a number of fixed size sets (buckets) with linear</p>
+</div><div><p>probing within a set to find blocks. The set associative hash has a</p>
+</div><div><p>number of advantages (called out in sections below) and works very</p>
+</div><div><p>well in practice.</p>
+</div><div><p>The block size, set size and cache size are configurable
+parameters,</p>
+</div><div><p>specified at cache creation. The default set size is 512 (blocks)
+and</p>
+</div><div><p>there is little reason to change this.</p>
+</div><div><p><a class="reference external" href="https://raw.github.com/facebook/flashcache/master/doc/flashcache-doc.txt">https://raw.github.com/facebook/flashcache/master/doc/flashcache-doc.txt</a></p>
+</div><div><p><a class="reference external" href="https://github.com/facebook/flashcache">https://github.com/facebook/flashcache</a></p>
+</div></p>
+                        <a class="btn primary xsmall" href="./flashcache-a-write-back-block-cache-for-linux.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./postfix-postscreen-howto.html">Postfix Postscreen Howto</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-10-25T14:49:00">
+        Tue 25 October 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/postfix.html"><i class="icon-tag"></i>postfix</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><div class="section" id="the-basic-idea-behind-postscreen-8">
+<h2>The basic idea behind postscreen(8)</h2>
+<p>Most email is spam, and most spam is sent out by zombies (malware
+on compromised end-user computers). Wietse expects that the zombie
+problem will get worse before things improve, if ever. Without a
+tool like&nbsp;<a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;that keeps the zombies away, Postfix
+would be spending most of its resources not receiving email.</p>
+<p>The main challenge for&nbsp;<a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;is to make an
+is-it-a-zombie decision based on a single measurement. This is
+necessary because many zombies try to fly under the radar and avoid
+spamming the same site repeatedly. Once&nbsp;<a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;decides
+that a client is not-a-zombie, it whitelists the client temporarily
+to avoid further delays for legitimate mail.</p>
+<p>Zombies have challenges too: they have only a limited amount of
+time to deliver spam before their IP address becomes blacklisted.
+To speed up spam deliveries, zombies make compromises in their SMTP
+protocol implementation. For example, they speak before their turn,
+or they ignore responses from SMTP servers and continue sending
+mail even when the server tells them to go away.</p>
+<p><a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;uses a variety of measurements to recognize
+zombies. First,&nbsp;<a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;determines if the remote SMTP
+client IP address is blacklisted. Second,&nbsp;<a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;looks
+for protocol compromises that are made to speed up delivery. These
+are good indicators for making is-it-a-zombie decisions based on
+single measurements.</p>
+<p><a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;does not inspect message content. Message content
+can vary from one delivery to the next, especially with clients
+that (also) send legitimate email. Content is not a good indicator
+for making is-it-a-zombie decisions based on single measurements,
+and that is the problem that&nbsp;<a class="reference external" href="http://www.postfix.org/postscreen.8.html">postscreen(8)</a>&nbsp;is focused on.</p>
+<p><a class="reference external" href="http://www.postfix.org/POSTSCREEN_README.html">http://www.postfix.org/POSTSCREEN_README.html</a></p>
+</p></div>
+
+                        <a class="btn primary xsmall" href="./postfix-postscreen-howto.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./handlersocket-plugin-for-mysql.html">HandlerSocket plugin for MySQL</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-10-17T10:37:00">
+        Mon 17 October 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/handlersocket.html"><i class="icon-tag"></i>handlersocket</a>
+	<a href="./tag/mysql.html"><i class="icon-tag"></i>mysql</a>
+	<a href="./tag/nosql.html"><i class="icon-tag"></i>nosql</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p><em>HandlerSocket</em>&nbsp;is a&nbsp;<em>MySQL</em>&nbsp;plugin that implements
+a&nbsp;NoSQL&nbsp;protocol for&nbsp;<em>MySQL</em>. This allows applications to
+communicate more directly with&nbsp;<em>MySQL</em>&nbsp;storage engines, without the
+overhead associated with usingSQL. This includes operations such as
+parsing and optimizing queries, as well as table handling
+operations (opening, locking, unlocking, closing). As a result,
+using&nbsp;<em>HandlerSocket</em>&nbsp;can provide much better performance for
+certain applications that using normal&nbsp;SQL&nbsp;application protocols.</p>
+<div><p><a class="reference external" href="http://www.percona.com/doc/percona-server/5.5/performance/handlersocket.html">http://www.percona.com/doc/percona-server/5.5/performance/handlersocket.html</a></p>
+</div><div><p><a class="reference external" href="https://github.com/ahiguti/HandlerSocket-Plugin-for-MySQL">https://github.com/ahiguti/HandlerSocket-Plugin-for-MySQL</a></p>
+</div></p>
+                        <a class="btn primary xsmall" href="./handlersocket-plugin-for-mysql.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./what-is-quantum-openstack.html">What is Quantum? #OpenStack</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-10-03T15:45:00">
+        Mon 03 October 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/cloud.html"><i class="icon-tag"></i>cloud</a>
+	<a href="./tag/network.html"><i class="icon-tag"></i>network</a>
+	<a href="./tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Just like OpenStack Nova provides an API to dynamically request and
+configure virtual servers, Quantum provides an API to dynamically
+request and configure virtual networks. These networks connect
+&quot;interfaces&quot; from other OpenStack services (e.g., vNICs from Nova
+VMs). The Quantum API supports extensions to provide advanced
+network capabilities (e.g., QoS, ACLs, network monitoring, etc)</p>
+<div class="section" id="why-quantum">
+<h2>Why Quantum?</h2>
+<ul class="simple">
+<li>Support advanced network topologies beyond what is possible with
+nova's&nbsp;<a class="reference external" href="http://wiki.openstack.org/FlatManager">FlatManager</a>&nbsp;or&nbsp;<a class="reference external" href="http://wiki.openstack.org/VlanManager">VlanManager</a><ul>
+<li>Example: create multi-tier web application topology</li>
+</ul>
+</li>
+<li>Let anyone build advanced network services (open and closed
+source) that plug into Openstack networks.<ul>
+<li>Examples: VPN-aaS, firewall-aaS, IDS-aaS,
+data-center-interconnect-aaS.</li>
+</ul>
+</li>
+<li>Enable innovation plugins (open and closed source) that
+introduce advanced network capabilities<ul>
+<li>Example: use L2-in-L3 tunneling to avoid VLAN limits, provide
+end-to-end QoS guarantees, used monitoring protocols
+like`NetFlow`_.</li>
+</ul>
+</li>
+</ul>
+<p><a class="reference external" href="http://wiki.openstack.org/Quantum">http://wiki.openstack.org/Quantum</a></p>
+<p><a class="reference external" href="https://github.com/openstack/quantum">https://github.com/openstack/quantum</a></p>
+<div><p><a class="reference external" href="https://launchpad.net/quantum">https://launchpad.net/quantum</a></p>
+</div></p></div>
+
+                        <a class="btn primary xsmall" href="./what-is-quantum-openstack.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./what-is-machine-learning.html">What Is Machine Learning?</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-09-19T16:58:00">
+        Mon 19 September 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Machine learning is the science of getting computers to act without
+being explicitly programmed. In the past decade, machine learning
+has given us self-driving cars, practical speech recognition,
+effective web search, and a vastly improved understanding of the
+human genome. Machine learning is so pervasive today that you
+probably use it dozens of times a day without knowing it. Many
+researchers also think it is the best way to make progress towards
+human-level AI. In this class, you will learn about the most
+effective machine learning techniques, and gain practice
+implementing them and getting them to work for yourself. More
+importantly, you'll learn about not only the theoretical
+underpinnings of learning, but also gain the practical know-how
+needed to quickly and powerfully apply these techniques to new
+problems. Finally, you'll learn about some of Silicon Valley's best
+practices in innovation as it pertains to machine learning and AI.</p>
+<div><p>&nbsp;<a class="reference external" href="http://ml-class.org/">http://ml-class.org/</a></p>
+</div></p>
+                        <a class="btn primary xsmall" href="./what-is-machine-learning.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./project-kronos-xenapi-on-debian-and-ubuntu.html">Project Kronos: XenAPI on Debian and Ubuntu</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-09-14T14:32:00">
+        Wed 14 September 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/debian.html"><i class="icon-tag"></i>debian</a>
+	<a href="./tag/xcp.html"><i class="icon-tag"></i>xcp</a>
+	<a href="./tag/xen.html"><i class="icon-tag"></i>xen</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>The XCP team would like to formally announce Project Kronos, our
+port of XCP’s XenAPI toolstack to Debian and Ubuntu dom0. This will
+give users the ability to install Debian or Ubuntu, and then just
+do ‘apt-get install xapi’ in order to build a system that is
+(roughly) functionally equivalent to a standard XCP distribution.</p>
+<p>This project provides a number of benefits. First of all, it will
+provide Xen users with the option of using the same API and
+toolstack that XCP and XenServer provide. It will give early
+adopters the chance to try out new changes to the XenAPI before
+they get released in new XCP and XenServer versions. And because
+we’ve ported all of our toolstack to build on Debian, it’s now
+much, much easier to build our tools outside of an SDK VM.</p>
+<div><p><a class="reference external" href="http://blog.xen.org/index.php/2011/07/22/project-kronos">http://blog.xen.org/index.php/2011/07/22/project-kronos</a></p>
+</div></p></p>
+                        <a class="btn primary xsmall" href="./project-kronos-xenapi-on-debian-and-ubuntu.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./staticpython-statically-linked-python-2x-3x-and-stackless.html">StaticPython - Statically linked Python 2.x, 3.x and Stackless</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-09-01T11:42:00">
+        Thu 01 September 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>StaticPython is a statically linked version of the Python 2.x
+(currently 2.7.1) and 3.x (currently 3.2) and Stackless Python
+interpreters and their standard modules for 32-bit (i686, i386,
+x86) Linux, Mac OS X and FreeBSD systems. It is distributed as
+single, statically linked 32-bit executable binaries, which
+contains the Python scripting engine, the interactive interpreter
+with command editing (readline), the Python debugger (pdb), most
+standard Python modules (including pure Python modules and C
+extensions), coroutine support using greenlet and multithreading
+support. The binary contains both the pure Python modules and the C
+extensions, so no additional&nbsp;.py&nbsp;or&nbsp;.so&nbsp;files are needed to run it.
+It also works in a chroot environment. The binary uses uClibc, so
+it supports username lookups and DNS lookups as well (without
+NSS).</p>
+<p>StaticPython is similar to&nbsp;<a class="reference external" href="http://www.portablepython.com/">Portable Python</a>, except that
+StaticPython runs on Linux instead of Windows, and it has Stackless
+Python, greenlet and coroutine-based I/O library support.</p>
+<p>StaticPython is a bit similar to&nbsp;<a class="reference external" href="http://pypi.python.org/pypi/bbfreeze">bbfreeze</a>&nbsp;and&nbsp;<a class="reference external" href="http://www.pyinstaller.org/">PyInstaller</a>,
+but StaticPython contains the Python interpreter, all
+the&nbsp;.py&nbsp;library files and all the built-in C extensions in a single
+executable file (while bbfreeze generates a separate&nbsp;.so&nbsp;file for
+each C extension library), and it doesn't contain any
+application-specific&nbsp;.py&nbsp;or&nbsp;.pyc&nbsp;files.</p>
+<p><a class="reference external" href="http://code.google.com/p/pts-mini-gpl/wiki/StaticPython">http://code.google.com/p/pts-mini-gpl/wiki/StaticPython</a></p>
+</p>
+                        <a class="btn primary xsmall" href="./staticpython-statically-linked-python-2x-3x-and-stackless.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="./mailfromd-general-purpose-mail-filter.html">Mailfromd - General-Purpose Mail Filter</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-08-31T18:24:00">
+        Wed 31 August 2011
+</abbr>
+<span class="label">By</span>
+<a href="./author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/mailfromd.html"><i class="icon-tag"></i>mailfromd</a>
+	<a href="./tag/mailservers.html"><i class="icon-tag"></i>mailservers</a>
+	<a href="./tag/postfix.html"><i class="icon-tag"></i>postfix</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Mailfromd&nbsp;is a general-purpose mail filtering daemon and a suite of accompanying utilities
+for&nbsp;<tt class="docutils literal"><span class="pre">Sendmail```(1)`_,&nbsp;``MeTA1```(2)`_,&nbsp;``Postfix```(3)`_&nbsp;or</span> any
+other&nbsp;MTA&nbsp;that <span class="pre">supports&nbsp;``Milter``&nbsp;(or&nbsp;``Pmilter</span></tt>) protocol. It is
+able to filter both incoming and outgoing messages using a filter
+program, written in&nbsp;<em>mail filtering language</em>&nbsp;(MFL). The daemon
+interfaces with the&nbsp;MTA&nbsp;using&nbsp;<a href="#id1"><span class="problematic" id="id2">``</span></a>Milter``&nbsp;protocol.</p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/ncode/Devel/martinez.io/content/mailfromd-general-purpose-mail-filter.rst</tt>, line 9); <em><a href="#id2">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+<p>The name&nbsp;<em>mailfromd</em>&nbsp;can be thought of as an abbreviation for
+‘<em>Mail</em>&nbsp;<em>F*iltering and&nbsp;*R*untime&nbsp;*M*odification’&nbsp;*D*aemon, with an
+‘o’ for itself. Historically, it stemmed from the fact that the
+original implementation was a simple filter implementing
+the&nbsp;*sender address verification</em>&nbsp;technique. Since then the program
+has changed dramatically, and now it is actually a language
+translator and run-time evaluator providing a set of built-in and
+library functions for filtering electronic mail.</p>
+<p>The first part of this manual is an overview, describing the
+features&nbsp;<a href="#id3"><span class="problematic" id="id4">``</span></a>mailfromd``&nbsp;offers in general.</p>
+<div class="system-message" id="id3">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/ncode/Devel/martinez.io/content/mailfromd-general-purpose-mail-filter.rst</tt>, line 25); <em><a href="#id4">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+<p>The second part is a tutorial, which provides an introduction for
+those who have not used&nbsp;<tt class="docutils literal"><span class="pre">mailfromd``&nbsp;previously.</span> It moves from
+topic to topic in a logical, progressive order, building on
+information already explained. It offers only the principal
+information needed to master basic practical usage
+<span class="pre">of&nbsp;``mailfromd</span></tt>, while omitting many subtleties.</p>
+<p>The other parts are meant to be used as a reference for those who
+know&nbsp;<a href="#id5"><span class="problematic" id="id6">``</span></a>mailfromd``&nbsp;well enough, but need to look up some notions
+from time to time. Each chapter presents everything that needs to
+be said about a specific topic.</p>
+<div class="system-message" id="id5">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/ncode/Devel/martinez.io/content/mailfromd-general-purpose-mail-filter.rst ...</tt></p></div>
+                        <a class="btn primary xsmall" href="./mailfromd-general-purpose-mail-filter.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        
+                <div class="pagination">
+        <ul>
+                                                                <li class="prev"><a href="./index6.html">&larr; Previous</a></li>
+                                                        <li class=""><a href="./index.html">1</a></li>
+                                        <li class=""><a href="./index2.html">2</a></li>
+                                        <li class=""><a href="./index3.html">3</a></li>
+                                        <li class=""><a href="./index4.html">4</a></li>
+                                        <li class=""><a href="./index5.html">5</a></li>
+                                        <li class=""><a href="./index6.html">6</a></li>
+                                        <li class="active"><a href="./index7.html">7</a></li>
+                                        <li class=""><a href="./index8.html">8</a></li>
+                                                        <li class="next"><a href="./index8.html">Next &rarr;</a></li>
+                        </ul>
+        </div>
+
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h5>Juliano Martinez</h5></li>
+    <a href="http://twitter.com/ncode"><i class="icon-twitter-sign icon-large"></i></a>
+    <a href="https://www.facebook.com/nc0d3"><i class="icon-facebook-sign icon-large"></i></a>
+    <a href="http://br.linkedin.com/in/ncode"><i class="icon-linkedin-sign icon-large"></i></a>
+    <a href="http://github.com/ncode"><i class="icon-github-sign icon-large"></i></a>
+    <a href="https://plus.google.com/u/0/114807336963795227899"><i class="icon-google-plus-sign icon-large"></i></a>
+<a href="./feeds/rss.xml" rel="alternate"><i class="icon-rss icon-large"></i></a>
+<li class="nav-header"></li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-3">
+    <a href="./tag/gevent.html">
+        <i class="icon-tag icon-large"></i>gevent
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/xen.html">
+        <i class="icon-tag icon-large"></i>xen
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/databases.html">
+        <i class="icon-tag icon-large"></i>databases
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/html5.html">
+        <i class="icon-tag icon-large"></i>html5
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/kernel.html">
+        <i class="icon-tag icon-large"></i>kernel
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/c.html">
+        <i class="icon-tag icon-large"></i>c
+    </a>
+</li>
+<li class="tag-1">
+    <a href="./tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/bottle.html">
+        <i class="icon-tag icon-large"></i>bottle
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mobile.html">
+        <i class="icon-tag icon-large"></i>mobile
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/mysql.html">
+        <i class="icon-tag icon-large"></i>mysql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/concurrency.html">
+        <i class="icon-tag icon-large"></i>concurrency
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/audit.html">
+        <i class="icon-tag icon-large"></i>audit
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/packaging.html">
+        <i class="icon-tag icon-large"></i>packaging
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/ciclone.html">
+        <i class="icon-tag icon-large"></i>ciclone
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/glusterfs.html">
+        <i class="icon-tag icon-large"></i>glusterfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/player.html">
+        <i class="icon-tag icon-large"></i>player
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/diskless.html">
+        <i class="icon-tag icon-large"></i>diskless
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/git.html">
+        <i class="icon-tag icon-large"></i>git
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/video.html">
+        <i class="icon-tag icon-large"></i>video
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/zfs.html">
+        <i class="icon-tag icon-large"></i>zfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/zmq.html">
+        <i class="icon-tag icon-large"></i>zmq
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/lxc.html">
+        <i class="icon-tag icon-large"></i>lxc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/hbase.html">
+        <i class="icon-tag icon-large"></i>hbase
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/geolocation.html">
+        <i class="icon-tag icon-large"></i>geolocation
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/cgroups.html">
+        <i class="icon-tag icon-large"></i>cgroups
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cloud.html">
+        <i class="icon-tag icon-large"></i>cloud
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/heatmaps.html">
+        <i class="icon-tag icon-large"></i>heatmaps
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/shell.html">
+        <i class="icon-tag icon-large"></i>shell
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/riak.html">
+        <i class="icon-tag icon-large"></i>riak
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/network.html">
+        <i class="icon-tag icon-large"></i>network
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/xcp.html">
+        <i class="icon-tag icon-large"></i>xcp
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mailservers.html">
+        <i class="icon-tag icon-large"></i>mailservers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/elasticsearch.html">
+        <i class="icon-tag icon-large"></i>elasticsearch
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/clojure.html">
+        <i class="icon-tag icon-large"></i>clojure
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/torrent.html">
+        <i class="icon-tag icon-large"></i>torrent
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/debian.html">
+        <i class="icon-tag icon-large"></i>debian
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/darner.html">
+        <i class="icon-tag icon-large"></i>darner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/openhardware.html">
+        <i class="icon-tag icon-large"></i>openhardware
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/gelf.html">
+        <i class="icon-tag icon-large"></i>gelf
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/android.html">
+        <i class="icon-tag icon-large"></i>android
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/iptables.html">
+        <i class="icon-tag icon-large"></i>iptables
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/freesoc.html">
+        <i class="icon-tag icon-large"></i>freesoc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/containers.html">
+        <i class="icon-tag icon-large"></i>containers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/openflow.html">
+        <i class="icon-tag icon-large"></i>openflow
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/osx.html">
+        <i class="icon-tag icon-large"></i>osx
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/fusionio.html">
+        <i class="icon-tag icon-large"></i>fusionio
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/redis.html">
+        <i class="icon-tag icon-large"></i>redis
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/greylog2.html">
+        <i class="icon-tag icon-large"></i>greylog2
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/apache.html">
+        <i class="icon-tag icon-large"></i>apache
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/storage.html">
+        <i class="icon-tag icon-large"></i>storage
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/performance.html">
+        <i class="icon-tag icon-large"></i>performance
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/sysadmin.html">
+        <i class="icon-tag icon-large"></i>sysadmin
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/web.html">
+        <i class="icon-tag icon-large"></i>web
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/spanner.html">
+        <i class="icon-tag icon-large"></i>spanner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/netbsd.html">
+        <i class="icon-tag icon-large"></i>netbsd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/automation.html">
+        <i class="icon-tag icon-large"></i>automation
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mailfromd.html">
+        <i class="icon-tag icon-large"></i>mailfromd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/rdbms.html">
+        <i class="icon-tag icon-large"></i>rdbms
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cfengine3.html">
+        <i class="icon-tag icon-large"></i>cfengine3
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/flashcache.html">
+        <i class="icon-tag icon-large"></i>flashcache
+    </a>
+</li>
+<li class="tag-1">
+    <a href="./tag/nosql.html">
+        <i class="icon-tag icon-large"></i>nosql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/routing.html">
+        <i class="icon-tag icon-large"></i>routing
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/messagequeue.html">
+        <i class="icon-tag icon-large"></i>messagequeue
+    </a>
+</li>
+<li class="tag-3">
+    <a href="./tag/postfix.html">
+        <i class="icon-tag icon-large"></i>postfix
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/cassandra.html">
+        <i class="icon-tag icon-large"></i>cassandra
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/lua.html">
+        <i class="icon-tag icon-large"></i>lua
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/pxe.html">
+        <i class="icon-tag icon-large"></i>pxe
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/handlersocket.html">
+        <i class="icon-tag icon-large"></i>handlersocket
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./theme/js/jquery-1.7.2.min.js"></script>
+    <script src="./theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

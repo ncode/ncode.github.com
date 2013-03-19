@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sysadms must be lazy - Juliano Martinez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Juliano Martinez">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 9pt;
+      }
+      .tag-3 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 7pt;
+     }
+    </style>
+    <link href="../theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="../theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../theme/images/apple-touch-icon-114x114.png">
+
+    <link href="../" type="application/atom+xml" rel="alternate" title="sysadms must be lazy ATOM Feed" />
+        <link href="../feeds/rss.xml" type="application/atom+xml" rel="alternate" title="sysadms must be lazy RSS Feed" />
+    
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="../index.html">sysadms must be lazy </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                                    <li class="divider-vertical"></li>
+                                        <ul class="nav pull-right">
+                                <li><a href="../archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span12" id="content">
+                            <div class="article">
+                <h1><a href="../salt-a-remote-execution-and-configuration-management-tool.html">Salt a remote execution and configuration management tool.</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-04-02T22:46:00">
+        Mon 02 April 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;<strong>What is Salt?</strong></p>
+<p>Salt is a powerful remote execution manager that can be used to
+administer servers in a fast and efficient way.</p>
+<p>Salt allows commands to be executed across large groups of servers.
+This means systems can be easily managed, but data can also be
+easily gathered. Quick introspection into running systems becomes a
+reality.</p>
+<p>Remote execution is usually used to set up a certain state on a
+remote system. Salt addresses this problem as well, the salt state
+system uses salt state files to define the state a server needs to
+be in.</p>
+<p>Between the remote execution system, and state management Salt
+addresses the backbone of cloud and data center management.</p>
+<p>Distributed remote execution</p>
+<p>Salt is a distributed remote execution system used to execute
+commands and query data. It was developed in order to bring the
+best solutions found in the world of remote execution together and
+make them better, faster and more malleable. Salt accomplishes this
+via its ability to handle larger loads of information, and not just
+dozens, but hundreds or even thousands of individual servers,
+handle them quickly and through a simple and manageable interface.</p>
+<p>Simplicity</p>
+<p>Versatility between massive scale deployments and smaller systems
+may seem daunting, but Salt is very simple to set up and maintain,
+regardless of the size of the project. The architecture of Salt is
+designed to work with any number of servers, from a handful of
+local network systems to international deployments across disparate
+datacenters. The topology is a simple server/client model with the
+needed functionality built into a single set of daemons. While the
+default configuration will work with little to no modification,
+Salt can be fine tuned to meet specific needs.</p>
+<p>Parallel execution</p>
+<p>The core function of Salt is to enable remote commands to be called
+in ...</p>
+                        <a class="btn primary xsmall" href="../salt-a-remote-execution-and-configuration-management-tool.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../simple-and-fast-jobs-with-python-rq-and-rq-dashboard.html">Simple and Fast jobs with python-rq and rq-dashboard</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2013-01-31T02:01:00">
+        Thu 31 January 2013
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/messagequeue.html"><i class="icon-tag"></i>messagequeue</a>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;RQ (Redis Queue) is a simple Python library for queueing jobs and
+processing them in the background with workers. It is backed by
+Redis and it is designed to have a low barrier to entry. It should
+be integrated in your web stack easily...&quot;</p>
+<p><a class="reference external" href="http://python-rq.org">http://python-rq.org</a>
+&quot;rq-dashboard is a general purpose, lightweight, Flask-based web
+front-end to monitor your RQ queues, jobs, and workers in
+realtime...&quot;</p>
+<p><a class="reference external" href="https://github.com/nvie/rq-dashboard">https://github.com/nvie/rq-dashboard</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../simple-and-fast-jobs-with-python-rq-and-rq-dashboard.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../solving-big-data-challenges-for-enterprise-application-performance-management.html">Solving Big Data Challenges for Enterprise Application Performance Management</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-08-30T10:52:00">
+        Thu 30 August 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p><strong>&quot;ABSTRACT</strong></p>
+<p>As the complexity of enterprise systems increases, the need for
+monitoring and analyzing such systems also grows. A number of
+companies have built sophisticated monitoring tools that go far
+beyond simple resource utilization reports. For example, based on
+instrumentation and specialized APIs, it is now possible to monitor
+single method invocations and trace individual transactions across
+geographically distributed systems. This high-level of detail
+enables more precise forms of analysis and prediction but comes at
+the price of high data rates (i.e., big data). To maximize the
+benefit of data monitoring, the data has to be stored for an
+extended period of time for ulterior analysis. This new wave of big
+data analytics imposes new challenges especially for the
+application performance monitoring systems. The monitoring data has
+to be stored in a system that can sustain the high data rates and
+at the same time enable an up-to-date view of the underlying
+infrastructure. With the advent of modern key-value stores, a
+variety of data storage systems have emerged that are built with a
+focus on scalability and high data rates as predominant in this
+monitoring use case. In this work, we present our experience and a
+comprehensive performance evaluation of six modern (open-source)
+data stores in the context of application performance monitoring as
+part of CA Technologies initiative. We evaluated these systems with
+data and workloads that can be found in application performance
+monitoring, as well as, on-line advertisement, power monitoring,
+and many other use cases. We present our insights not only as
+performance results but also as lessons learned and our experience
+relating to the setup and configuration complexity of these data
+stores in an industry setting...&quot;</p>
+<p><a class="reference external" href="http://vldb.org/pvldb/vol5/p1724_tilmannrabl_vldb2012.pdf">http://vldb.org/pvldb/vol5/p1724_tilmannrabl_vldb2012.pdf</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../solving-big-data-challenges-for-enterprise-application-performance-management.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../spanner-googles-globally-distributed-database.html">Spanner: Google???s Globally-Distributed Database</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-09-18T12:48:00">
+        Tue 18 September 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/databases.html"><i class="icon-tag"></i>databases</a>
+	<a href="../tag/spanner.html"><i class="icon-tag"></i>spanner</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Spanner is Google’s scalable, multi-version, globallydistributed,
+and synchronously-replicated database. It is
+the first system to distribute data at global scale and support
+externally-consistent distributed transactions. This
+paper describes how Spanner is structured, its feature set,
+the rationale underlying various design decisions, and a
+novel time API that exposes clock uncertainty. This API
+and its implementation are critical to supporting external
+consistency and a variety of powerful features: nonblocking
+reads in the past, lock-free read-only transactions,
+and atomic schema changes, across all of Spanner...&quot;</p>
+<p><a class="reference external" href="http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/pt-BR//archive/spanner-osdi2012.pdf">http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/pt-BR//archive/spanner-osdi2012.pdf</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../spanner-googles-globally-distributed-database.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../staticpython-statically-linked-python-2x-3x-and-stackless.html">StaticPython - Statically linked Python 2.x, 3.x and Stackless</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2011-09-01T11:42:00">
+        Thu 01 September 2011
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>StaticPython is a statically linked version of the Python 2.x
+(currently 2.7.1) and 3.x (currently 3.2) and Stackless Python
+interpreters and their standard modules for 32-bit (i686, i386,
+x86) Linux, Mac OS X and FreeBSD systems. It is distributed as
+single, statically linked 32-bit executable binaries, which
+contains the Python scripting engine, the interactive interpreter
+with command editing (readline), the Python debugger (pdb), most
+standard Python modules (including pure Python modules and C
+extensions), coroutine support using greenlet and multithreading
+support. The binary contains both the pure Python modules and the C
+extensions, so no additional&nbsp;.py&nbsp;or&nbsp;.so&nbsp;files are needed to run it.
+It also works in a chroot environment. The binary uses uClibc, so
+it supports username lookups and DNS lookups as well (without
+NSS).</p>
+<p>StaticPython is similar to&nbsp;<a class="reference external" href="http://www.portablepython.com/">Portable Python</a>, except that
+StaticPython runs on Linux instead of Windows, and it has Stackless
+Python, greenlet and coroutine-based I/O library support.</p>
+<p>StaticPython is a bit similar to&nbsp;<a class="reference external" href="http://pypi.python.org/pypi/bbfreeze">bbfreeze</a>&nbsp;and&nbsp;<a class="reference external" href="http://www.pyinstaller.org/">PyInstaller</a>,
+but StaticPython contains the Python interpreter, all
+the&nbsp;.py&nbsp;library files and all the built-in C extensions in a single
+executable file (while bbfreeze generates a separate&nbsp;.so&nbsp;file for
+each C extension library), and it doesn't contain any
+application-specific&nbsp;.py&nbsp;or&nbsp;.pyc&nbsp;files.</p>
+<p><a class="reference external" href="http://code.google.com/p/pts-mini-gpl/wiki/StaticPython">http://code.google.com/p/pts-mini-gpl/wiki/StaticPython</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../staticpython-statically-linked-python-2x-3x-and-stackless.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../theano-a-cpu-and-gpu-math-compiler-in-python.html">Theano: A CPU and GPU Math Compiler in Python</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-02-28T15:04:00">
+        Tue 28 February 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p><em>&quot;Abstract—Theano is a compiler for mathematical expressions in Python that combines the convenience of NumPy’s syntax with the speed of optimized native machine language. The user composes mathematical expressions in a high-level description that mimics NumPy’s syntax and semantics, while being statically typed and functional (as opposed to imperative). These expressions allow Theano to provide symbolic differentiation. Before performing computation, Theano optimizes the choice of expressions, translates them into C++ (or CUDA for GPU), compiles them into dynamically loaded Python modules, all automatically. Common machine learn- ing algorithms implemented with Theano are from*1.6×
+*to*7.5×
+*faster than competitive alternatives (including those implemented with C/C++, NumPy/SciPy and MATLAB) when compiled for the CPU and between*6.5×
+*and*44×
+*faster when compiled for the GPU. This paper illustrates how to use Theano, outlines the scope of the compiler, provides benchmarks on both CPU and GPU processors, and explains its overall design...&quot;</em></p>
+<p><a class="reference external" href="http://www.iro.umontreal.ca/~lisa/pointeurs/theano_scipy2010.pdf">http://www.iro.umontreal.ca/~lisa/pointeurs/theano_scipy2010.pdf</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="../theano-a-cpu-and-gpu-math-compiler-in-python.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../there-is-something-magical-about-firefox-os.html">There is something magical about Firefox OS</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-09-13T13:24:00">
+        Thu 13 September 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/mobile.html"><i class="icon-tag"></i>mobile</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;Let me be perfectly clear; Firefox OS is the start of something
+huge. It's a revolution in waiting. A breath of fresh air. A
+culmination of bleeding-edge technology. It's magical and it's
+going to change everything</p>
+<div class="section" id="what-is-firefox-os">
+<h2>What is Firefox OS?</h2>
+<p>For those of you wondering what on earth I'm on about, let me bring
+you up to speed.</p>
+<blockquote>
+<p>Firefox OS is a new mobile operating system developed by Mozilla's
+Boot to Gecko (B2G) project. It uses a Linux kernel and boots into
+a Gecko-based runtime engine, which lets users run applications
+developed entirely using HTML, JavaScript, and other open Web
+application APIs.</p>
+<p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS">Mozilla Developer Network</a></p>
+</blockquote>
+<p>In short, Firefox OS is about taking the technologies behind the
+Web, like JavaScript, and using them to produce an entire mobile
+operating system. Just let that sink in for a moment — it's a
+mobile OS powered by JavaScript!</p>
+<p>To do this, a slightly-customised version of Gecko (the engine
+behind Firefox) has been created that introduces the new
+<a class="reference external" href="https://wiki.mozilla.org/WebAPI#APIs">JavaScript APIs necessary to create a phone-like experience</a>.
+This includes things like WebTelephony to make phone calls, WebSMS
+to send text messages, and the Vibration API to, well, vibrate
+things...&quot;</p>
+<p><a class="reference external" href="http://rawkes.com/articles/there-is-something-magical-about-firefox-os">http://rawkes.com/articles/there-is-something-magical-about-firefox-os</a></p>
+</p></div>
+
+                        <a class="btn primary xsmall" href="../there-is-something-magical-about-firefox-os.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../threads-and-fork-think-twice-before-mixing-them.html">Threads and fork(): think twice before mixing them</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-05-25T18:04:00">
+        Fri 25 May 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/concurrency.html"><i class="icon-tag"></i>concurrency</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;When debugging a program I came across a bug that was caused by
+using <a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html">fork(2)</a> in a multi-threaded program. I thought it's worth
+to write some words about mixing POSIX threads with <a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html">fork(2)</a>
+because there are non-obvious problems when doing that.</p>
+<p><strong>What happens after fork() in a multi-threadeed program</strong></p>
+<p>The <a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html">fork(2)</a> function creates a copy of the process, all memory
+pages are copied, open file descriptors are copied etc. All this
+stuff is intuitive for a UNIX programmer. One important thing that
+differs the child process from the parent is that the child has
+only one thread. Cloning the whole process with all threads would
+be problematic and in most cases not what the programmer wants.
+Just think about it: what to do with threads that are suspended
+executing a system call? So the <a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html">fork(2)</a> call clones just the
+thread which executed it.</p>
+<p><strong>What are the problems</strong></p>
+<p><strong>Critical sections, mutexes</strong></p>
+<p>The non-obvious problem in this approach is that at the moment of
+the <a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html">fork(2)</a> call some threads may be in critical sections of
+code, doing non-atomic operations protected by mutexes. In the
+child process the threads just disappears and left data
+half-modified without any possibility to &quot;fix&quot; them, there is no
+way to say what other threads were doing and what should be done to
+make the data consistent. Moreover: state of mutexes is undefined,
+they might be unusable and the only way to use them in the child is
+to call pthread_mutex_init() to reset them to a usable state.
+It's implementation dependent how mutexes behave after <a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man2/fork.2.html">fork(2)</a>
+was called. On my Linux machine locked mutexes are locked in the
+child...&quot;</p>
+<p><a class="reference external" href="http://www.linuxprogrammingblog.com/threads-and-fork-think-twice-before-using-them">http://www.linuxprogrammingblog.com/threads-and-fork-think-twice-before-using-them</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../threads-and-fork-think-twice-before-mixing-them.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../tuning-linux-ipv4-route-cache.html">Tuning Linux IPv4 route cache</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-10-17T16:55:00">
+        Wed 17 October 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+<span class="label">Tags</span>
+	<a href="../tag/linux.html"><i class="icon-tag"></i>linux</a>
+	<a href="../tag/performance.html"><i class="icon-tag"></i>performance</a>
+	<a href="../tag/routing.html"><i class="icon-tag"></i>routing</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;The route cache is a Linux kernel component enabling route lookups
+to be faster by caching the results in some table and checking it
+before issuing a regular lookup in the route tables. When using
+Linux as a router, the inefficiency of the route cache can hinder
+the performances of your&nbsp;box.</p>
+<p>The documentation on this component is scarce and it is difficult
+to find up-to-date bits on how the route cache works and how to
+tune it. The book&nbsp;<a class="reference external" href="http://shop.oreilly.com/product/9780596002558.do">Understanding Linux Network Internals</a>&nbsp;from
+O’Reilly is an exception and contains valuable information on how
+the route cache works. Even if the book is targeted at 2.6.12, the
+part on the route cache is still quite accurate. Unfortunately, it
+fails to provide appropriate tips on how to monitor and tune the
+route&nbsp;cache...&quot;</p>
+<p><a class="reference external" href="http://vincent.bernat.im/en/blog/2011-ipv4-route-cache-linux.html">http://vincent.bernat.im/en/blog/2011-ipv4-route-cache-linux.html</a></p>
+</p>
+                        <a class="btn primary xsmall" href="../tuning-linux-ipv4-route-cache.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
+                <h1><a href="../using-ganglia-to-monitor-virtual-machine-pools.html">Using Ganglia to monitor virtual machine pools</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label"><i class="icon-calendar"></i></span>
+<abbr class="published" title="2012-03-16T21:33:00">
+        Fri 16 March 2012
+</abbr>
+<span class="label">By</span>
+<a href="../author/juliano-martinez.html">Juliano Martinez</a>
+
+
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>&quot;The <a class="reference external" href="http://blog.sflow.com/2011/07/ganglia-32-released.html">Ganglia</a> charts show virtual machine performance metrics
+collected using sFlow. Enabling sFlow monitoring on each node in a
+virtual machine pool provides a highly scalable solution for
+monitoring performance. Embedded sFlow monitoring in the
+hypervisors simplifies deployments by eliminating the need to poll
+for metrics. Instead, virtual machine metrics are pushed directly
+from each node to the central <a class="reference external" href="http://blog.sflow.com/2011/07/ganglia-32-released.html">Ganglia collector</a>. Currently sFlow
+agents are available for XCP (Xen Cloud Platform), Citrix XenServer
+and KVM/libvirt virtualization platforms, see
+<a class="reference external" href="http://host-sflow.sourceforge.net/">http://host-sflow.sourceforge.net/</a>. In addition, an sFlow agent
+has been demonstrated for the upcoming Windows 8 version of
+<a class="reference external" href="http://blog.sflow.com/2011/09/microsoft-hyper-v.html">Hyper-V</a>...&quot;</p>
+<p><a class="reference external" href="http://blog.sflow.com/2012/01/using-ganglia-to-monitor-virtual.html">http://blog.sflow.com/2012/01/using-ganglia-to-monitor-virtual.html</a></p>
+</p></p>
+                        <a class="btn primary xsmall" href="../using-ganglia-to-monitor-virtual-machine-pools.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        
+                <div class="pagination">
+        <ul>
+                                                                <li class="prev"><a href="../author/juliano-martinez6.html">&larr; Previous</a></li>
+                                                        <li class=""><a href="../author/juliano-martinez.html">1</a></li>
+                                        <li class=""><a href="../author/juliano-martinez2.html">2</a></li>
+                                        <li class=""><a href="../author/juliano-martinez3.html">3</a></li>
+                                        <li class=""><a href="../author/juliano-martinez4.html">4</a></li>
+                                        <li class=""><a href="../author/juliano-martinez5.html">5</a></li>
+                                        <li class=""><a href="../author/juliano-martinez6.html">6</a></li>
+                                        <li class="active"><a href="../author/juliano-martinez7.html">7</a></li>
+                                        <li class=""><a href="../author/juliano-martinez8.html">8</a></li>
+                                                        <li class="next"><a href="../author/juliano-martinez8.html">Next &rarr;</a></li>
+                        </ul>
+        </div>
+
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h5>Juliano Martinez</h5></li>
+    <a href="http://twitter.com/ncode"><i class="icon-twitter-sign icon-large"></i></a>
+    <a href="https://www.facebook.com/nc0d3"><i class="icon-facebook-sign icon-large"></i></a>
+    <a href="http://br.linkedin.com/in/ncode"><i class="icon-linkedin-sign icon-large"></i></a>
+    <a href="http://github.com/ncode"><i class="icon-github-sign icon-large"></i></a>
+    <a href="https://plus.google.com/u/0/114807336963795227899"><i class="icon-google-plus-sign icon-large"></i></a>
+<a href="../feeds/rss.xml" rel="alternate"><i class="icon-rss icon-large"></i></a>
+<li class="nav-header"></li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-3">
+    <a href="../tag/gevent.html">
+        <i class="icon-tag icon-large"></i>gevent
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xen.html">
+        <i class="icon-tag icon-large"></i>xen
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/databases.html">
+        <i class="icon-tag icon-large"></i>databases
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/html5.html">
+        <i class="icon-tag icon-large"></i>html5
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/kernel.html">
+        <i class="icon-tag icon-large"></i>kernel
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/c.html">
+        <i class="icon-tag icon-large"></i>c
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/bottle.html">
+        <i class="icon-tag icon-large"></i>bottle
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mobile.html">
+        <i class="icon-tag icon-large"></i>mobile
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/mysql.html">
+        <i class="icon-tag icon-large"></i>mysql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/concurrency.html">
+        <i class="icon-tag icon-large"></i>concurrency
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/audit.html">
+        <i class="icon-tag icon-large"></i>audit
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/packaging.html">
+        <i class="icon-tag icon-large"></i>packaging
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/ciclone.html">
+        <i class="icon-tag icon-large"></i>ciclone
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/glusterfs.html">
+        <i class="icon-tag icon-large"></i>glusterfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/player.html">
+        <i class="icon-tag icon-large"></i>player
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/diskless.html">
+        <i class="icon-tag icon-large"></i>diskless
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/git.html">
+        <i class="icon-tag icon-large"></i>git
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/video.html">
+        <i class="icon-tag icon-large"></i>video
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zfs.html">
+        <i class="icon-tag icon-large"></i>zfs
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/zmq.html">
+        <i class="icon-tag icon-large"></i>zmq
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/lxc.html">
+        <i class="icon-tag icon-large"></i>lxc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/hbase.html">
+        <i class="icon-tag icon-large"></i>hbase
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/geolocation.html">
+        <i class="icon-tag icon-large"></i>geolocation
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/cgroups.html">
+        <i class="icon-tag icon-large"></i>cgroups
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cloud.html">
+        <i class="icon-tag icon-large"></i>cloud
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/heatmaps.html">
+        <i class="icon-tag icon-large"></i>heatmaps
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/shell.html">
+        <i class="icon-tag icon-large"></i>shell
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/riak.html">
+        <i class="icon-tag icon-large"></i>riak
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/network.html">
+        <i class="icon-tag icon-large"></i>network
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/xcp.html">
+        <i class="icon-tag icon-large"></i>xcp
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailservers.html">
+        <i class="icon-tag icon-large"></i>mailservers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/elasticsearch.html">
+        <i class="icon-tag icon-large"></i>elasticsearch
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/clojure.html">
+        <i class="icon-tag icon-large"></i>clojure
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/torrent.html">
+        <i class="icon-tag icon-large"></i>torrent
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/debian.html">
+        <i class="icon-tag icon-large"></i>debian
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/darner.html">
+        <i class="icon-tag icon-large"></i>darner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openhardware.html">
+        <i class="icon-tag icon-large"></i>openhardware
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/gelf.html">
+        <i class="icon-tag icon-large"></i>gelf
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/android.html">
+        <i class="icon-tag icon-large"></i>android
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/iptables.html">
+        <i class="icon-tag icon-large"></i>iptables
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/freesoc.html">
+        <i class="icon-tag icon-large"></i>freesoc
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/containers.html">
+        <i class="icon-tag icon-large"></i>containers
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/openflow.html">
+        <i class="icon-tag icon-large"></i>openflow
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/osx.html">
+        <i class="icon-tag icon-large"></i>osx
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/fusionio.html">
+        <i class="icon-tag icon-large"></i>fusionio
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/redis.html">
+        <i class="icon-tag icon-large"></i>redis
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/greylog2.html">
+        <i class="icon-tag icon-large"></i>greylog2
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/apache.html">
+        <i class="icon-tag icon-large"></i>apache
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/storage.html">
+        <i class="icon-tag icon-large"></i>storage
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/performance.html">
+        <i class="icon-tag icon-large"></i>performance
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/sysadmin.html">
+        <i class="icon-tag icon-large"></i>sysadmin
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/web.html">
+        <i class="icon-tag icon-large"></i>web
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/spanner.html">
+        <i class="icon-tag icon-large"></i>spanner
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/netbsd.html">
+        <i class="icon-tag icon-large"></i>netbsd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/automation.html">
+        <i class="icon-tag icon-large"></i>automation
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/mailfromd.html">
+        <i class="icon-tag icon-large"></i>mailfromd
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/rdbms.html">
+        <i class="icon-tag icon-large"></i>rdbms
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cfengine3.html">
+        <i class="icon-tag icon-large"></i>cfengine3
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/flashcache.html">
+        <i class="icon-tag icon-large"></i>flashcache
+    </a>
+</li>
+<li class="tag-1">
+    <a href="../tag/nosql.html">
+        <i class="icon-tag icon-large"></i>nosql
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/routing.html">
+        <i class="icon-tag icon-large"></i>routing
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/messagequeue.html">
+        <i class="icon-tag icon-large"></i>messagequeue
+    </a>
+</li>
+<li class="tag-3">
+    <a href="../tag/postfix.html">
+        <i class="icon-tag icon-large"></i>postfix
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/cassandra.html">
+        <i class="icon-tag icon-large"></i>cassandra
+    </a>
+</li>
+<li class="tag-2">
+    <a href="../tag/lua.html">
+        <i class="icon-tag icon-large"></i>lua
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/pxe.html">
+        <i class="icon-tag icon-large"></i>pxe
+    </a>
+</li>
+<li class="tag-4">
+    <a href="../tag/handlersocket.html">
+        <i class="icon-tag icon-large"></i>handlersocket
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../theme/js/jquery-1.7.2.min.js"></script>
+    <script src="../theme/js/bootstrap.min.js"></script>
+  </body>
+</html>
